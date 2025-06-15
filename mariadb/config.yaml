@@ -1,44 +1,46 @@
-name: MariaDB
+---
+version: 2.7.2
 slug: mariadb
-version: 1.0.1
+name: MariaDB
 description: 一个SQL数据库服务器。
-url: https://ghfast.top/github.com/erik73/hassio-addons
+url: https://ghfast.top/github.com/home-assistant/addons/tree/master/mariadb
 arch:
-- armhf
-- armv7
-- aarch64
-- amd64
-- i386
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
 backup_post: unlock-tables-for-backup
 backup_pre: lock-tables-for-backup
-image: ghcr.nju.edu.cn/erik73/mariadb/{arch}
+image: docker.m.daocloud.io/homeassistant/{arch}-addon-mariadb
 init: false
 options:
   databases:
-  - homeassistant
+    - homeassistant
   logins:
-  - password: null
-    username: homeassistant
+    - password: null
+      username: homeassistant
   rights:
-  - database: homeassistant
-    username: homeassistant
+    - database: homeassistant
+      username: homeassistant
 ports:
   3306/tcp: null
 schema:
   databases:
-  - str
+    - str
   logins:
-  - username: str
-    password: password
+    - username: str
+      password: password
   rights:
-  - database: str
-    privileges:
-    - list(ALTER|CREATE|CREATE ROUTINE|CREATE TEMPORARY TABLES|CREATE VIEW|DELETE|DELETE
-      HISTORY|DROP|EVENT|GRANT OPTION|INDEX|INSERT|LOCK TABLES|SELECT|SHOW VIEW|TRIGGER|UPDATE)?
-    username: str
+    - database: str
+      privileges:
+        - "list(ALTER|CREATE|CREATE ROUTINE|CREATE TEMPORARY TABLES|\
+          CREATE VIEW|DELETE|DELETE HISTORY|DROP|EVENT|GRANT OPTION|INDEX|\
+          INSERT|LOCK TABLES|SELECT|SHOW VIEW|TRIGGER|UPDATE)?"
+      username: str
   mariadb_server_args:
-  - str?
+    - str?
 services:
-- mysql:provide
+  - mysql:provide
 startup: system
 timeout: 300
