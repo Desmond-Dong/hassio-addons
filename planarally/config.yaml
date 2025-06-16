@@ -1,8 +1,9 @@
 name: PlanarAlly
-version: "v2025.1.1"
+version: "v2025.2.1"
 upstream: 2024.3 
 slug: planarally
-description: 平面盟友是一个开源的虚拟桌面工具（VTT）网络工具，旨在帮助您和您的玩家发现各种虚构的世界。它设计为无需互联网访问即可使用，以适应黑暗地牢，并具有多种功能来增强沉浸感，如照明和视野。
+description: 平面盟友是一个开源的虚拟桌面游戏（VTT）网络工具，旨在帮助您和您的玩家发现各种虚构的世界。它设计为无需互联网访问即可使用，以适应黑暗地牢的需求，并具有多种功能来增强沉浸感，如照明和视野。
+  PlanarAlly is an opensource Virtual TableTop (VTT) web tool that aims to help you and your players discover the various fictive worlds out there. It's designed to be usable without any internet access to accommodate your dark dungeons and has a variety of features to enhance your immersion like lighting and vision.
 arch:
   - amd64
   - aarch64
