@@ -7,7 +7,7 @@
     "i386"
   ],
   "boot": "auto",
-  "description": "积极管理你的数据生活，跟踪网站内容的更改并通过Discord、Email、Slack、Telegram等70多个平台接收通知。",
+  "description": "积极生活数据生活，跟踪网站内容变化并通过Discord、电子邮件、Slack、Telegram等70多种方式接收通知。",
   "environment": {
     "PLAYWRIGHT_DRIVER_URL": "ws://db21ed7f-browserless-chrome:3000/?stealth=1&--disable-web-security=true",
     "FETCH_WORKERS": "1"
@@ -24,9 +24,9 @@
   },
   "slug": "changedetection",
   "startup": "services",
-  "upstream": "0.50.2",
+  "upstream": "0.50.3",
   "url": "https://ghfast.top/github.com/jdeath/homeassistant-addons/tree/main/changedetection",
-  "version": "0.50.2",
+  "version": "0.50.3",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:5000]",
   "panel_admin": false,
   "ingress": true,

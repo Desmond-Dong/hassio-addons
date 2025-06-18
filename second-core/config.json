@@ -1,6 +1,6 @@
 {
   "name": "HA Second Core",
-  "version": "2025.5.3",
+  "version": "2025.6.1",
   "slug": "second_core",
   "description": "默认情况下在端口8124上运行第二个家庭助手核心。",
   "arch": [

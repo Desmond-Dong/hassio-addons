@@ -4,13 +4,13 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "YouTube-dl的网页图形用户界面。",
+  "description": "YouTube-dl的网络图形用户界面。",
   "map": [
     "share:rw",
     "addon_config:rw",
     "media:rw"
   ],
-  "version": "master-20250605-f1f79af",
+  "version": "master-20250610-670c995",
   "name": "ytptube",
   "environment": {
     "PUID": "1000",

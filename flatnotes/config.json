@@ -7,7 +7,7 @@
     "i386"
   ],
   "boot": "auto",
-  "description": "一个自托管的、无数据库的笔记应用程序，使用扁平化的markdown文件存储。",
+  "description": "一个自托管的、无数据库的笔记应用程序，它使用一个扁平化的markdown文件文件夹进行存储。",
   "environment": {
     "FLATNOTES_PATH": "/config/addons_config/flatnotes",
     "PUID": "0",
@@ -38,7 +38,7 @@
   "startup": "application",
   "upstream": "1.0",
   "url": "https://ghfast.top/github.com/jdeath/homeassistant-addons/tree/main/flatnotes",
-  "version": "v5.5.1",
+  "version": "v5.5.2",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "init": false,
   "ingress": false

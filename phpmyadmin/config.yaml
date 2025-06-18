@@ -1,7 +1,7 @@
 name: phpMyAdmin
 version: 1.0.0
 slug: phpmyadmin
-description: 一个用于官方MariaDB插件的网页界面。
+description: 官方MariaDB附加组件的Web界面。
 url: https://ghfast.top/github.com/hassio-addons/addon-phpmyadmin
 codenotary: codenotary@frenck.dev
 ingress: true

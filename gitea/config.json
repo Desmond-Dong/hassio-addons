@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Gitea for Home Assistant 的翻译是“家庭助手使用的 Gitea”。",
+  "description": "Gitea for Home Assistant 的翻译是“家庭助手 Gitea”。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -102,6 +102,6 @@
   "slug": "gitea",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/gitea",
-  "version": "1.23.8",
+  "version": "1.24.0",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:3000]"
 }

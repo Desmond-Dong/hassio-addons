@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "可以监控多个RSS源以获取您最喜爱的节目的新剧集，并抓取、分类和重命名它们。",
+  "description": "可以监控多个RSS源以获取您最喜欢的节目的新剧集，并抓取、分类和重命名它们。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -115,5 +115,5 @@
   "slug": "sonarr_nas",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/sonarr",
-  "version": "4.0.14.2939"
+  "version": "4.0.15.2940"
 }

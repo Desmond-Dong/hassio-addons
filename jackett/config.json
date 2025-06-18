@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "将应用程序（如 Sonarr、Sickrage、CouchPotato、Mylar 等）的查询转换为特定于跟踪网站的 HTTP 查询，解析 HTML 响应，然后将结果发送回请求软件。",
+  "description": "将应用程序（如 Sonarr、Sickrage、CouchPotato、Mylar 等）的查询转换为特定于追踪网站的 HTTP 查询，解析 HTML 响应，然后将结果发送回请求软件。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -111,6 +111,6 @@
   "slug": "jackett_nas",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/jackett",
-  "version": "0.22.1995",
+  "version": "0.22.2015",
   "webui": "http://[HOST]:[PORT:9117]"
 }

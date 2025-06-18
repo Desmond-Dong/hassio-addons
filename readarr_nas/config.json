@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "书管员和自动化",
+  "description": "书籍管理员和自动化",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -115,5 +115,5 @@
   "slug": "readarr_nas",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/readarr",
-  "version": "0.4.17.2800"
+  "version": "0.4.18.2805"
 }

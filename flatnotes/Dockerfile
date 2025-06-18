@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM docker.1ms.run/dullage/flatnotes
+FROM dullage/flatnotes
 
 VOLUME [ "/share" ]
 RUN apt update && apt install -y jq

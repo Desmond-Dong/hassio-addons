@@ -9,7 +9,7 @@
     "*/logs/*"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "一个免费的软件媒体系统，让你能够管理和流式传输你的媒体（测试版）",
+  "description": "一个免费软件媒体系统，让你能够管理和流式传输你的媒体（测试版）",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -128,6 +128,6 @@
   "slug": "emby_nas",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/emby",
-  "version": "4.9.1.0-3",
+  "version": "4.9.1.1",
   "video": true
 }

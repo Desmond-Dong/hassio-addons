@@ -1,6 +1,6 @@
 name: MariaDB
 slug: mariadb
-version: 1.0.0
+version: 1.0.1
 description: 一个SQL数据库服务器。
 url: https://ghfast.top/github.com/erik73/hassio-addons
 arch:
