@@ -22,4 +22,4 @@ schema:
 ports:
   "10300/tcp": null
 homeassistant: 2023.11.0
-image: docker.m.daocloud.io/homeassistant/{arch}-addon-speech-to-phrase
+image: docker.1ms.run/homeassistant/{arch}-addon-speech-to-phrase

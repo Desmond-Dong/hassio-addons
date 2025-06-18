@@ -21,7 +21,7 @@ host_uts: true
 privileged:
   - IPC_LOCK
   - NET_ADMIN
-image: docker.m.daocloud.io/homeassistant/{arch}-addon-silabs-multiprotocol
+image: docker.1ms.run/homeassistant/{arch}-addon-silabs-multiprotocol
 init: false
 options:
   device: null

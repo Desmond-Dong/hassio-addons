@@ -13,7 +13,7 @@ arch:
   - i386
 gpio: true
 hassio_api: true
-image: docker.m.daocloud.io/homeassistant/{arch}-addon-silabs-flasher
+image: docker.1ms.run/homeassistant/{arch}-addon-silabs-flasher
 init: false
 options:
   device: null

@@ -26,4 +26,4 @@ schema:
 ports:
   "10400/tcp": null
 homeassistant: 2023.9.0.dev20230809
-image: docker.m.daocloud.io/homeassistant/{arch}-addon-openwakeword
+image: docker.1ms.run/homeassistant/{arch}-addon-openwakeword

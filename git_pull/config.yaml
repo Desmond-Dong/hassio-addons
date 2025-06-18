@@ -14,7 +14,7 @@ arch:
 boot: manual
 hassio_api: true
 hassio_role: homeassistant
-image: docker.m.daocloud.io/homeassistant/{arch}-addon-git_pull
+image: docker.1ms.run/homeassistant/{arch}-addon-git_pull
 init: false
 map:
   - config:rw

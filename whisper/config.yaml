@@ -34,4 +34,4 @@ schema:
 ports:
   "10300/tcp": null
 homeassistant: 2023.8.0.dev20230728
-image: docker.m.daocloud.io/homeassistant/{arch}-addon-whisper
+image: docker.1ms.run/homeassistant/{arch}-addon-whisper

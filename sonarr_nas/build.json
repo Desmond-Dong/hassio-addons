@@ -1,8 +1,8 @@
 {
   "build_from": {
-    "aarch64": "docker.m.daocloud.io/linuxserver/sonarr:arm64v8-develop",
-    "amd64": "docker.m.daocloud.io/linuxserver/sonarr:amd64-develop",
-    "armv7": "docker.m.daocloud.io/linuxserver/sonarr:arm32v7-3.0.9.1549-ls173"
+    "aarch64": "docker.1ms.run/linuxserver/sonarr:arm64v8-develop",
+    "amd64": "docker.1ms.run/linuxserver/sonarr:amd64-develop",
+    "armv7": "docker.1ms.run/linuxserver/sonarr:arm32v7-3.0.9.1549-ls173"
   },
   "codenotary": {
     "signer": "alexandrep.github@gmail.com"

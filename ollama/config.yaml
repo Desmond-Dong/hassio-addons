@@ -10,7 +10,7 @@ url: https://ollama.com
 map:
   - config:rw
   - share:rw
-image: docker.m.daocloud.io/ollama/ollama
+image: docker.1ms.run/ollama/ollama
 init: false
 ingress: true
 legacy: true

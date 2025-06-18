@@ -25,8 +25,8 @@
 | 原地址                | 国内加速地址                  |
 |---------------------|-------------------------|
 | ghcr.io             | ghcr.nju.edu.cn         |
-| docker.io           | docker.m.daocloud.io    |
-| lscr.io             | docker.m.daocloud.io    |
+| docker.io           | docker.1ms.run    |
+| lscr.io             | docker.1ms.run    |
 | docker.io           | docker.1ms.run          |
 | https://github.com  | https://ghfast.top      |
 

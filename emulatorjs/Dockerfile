@@ -1,5 +1,5 @@
 ARG BUILD_VERSION
-FROM docker.m.daocloud.io/linuxserver/emulatorjs
+FROM docker.1ms.run/linuxserver/emulatorjs
 
 VOLUME [ "/share" ]
 

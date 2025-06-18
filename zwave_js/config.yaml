@@ -15,7 +15,7 @@ discovery:
   - zwave_js
 hassio_api: true
 homeassistant: 2025.5.0
-image: docker.m.daocloud.io/homeassistant/{arch}-addon-zwave_js
+image: docker.1ms.run/homeassistant/{arch}-addon-zwave_js
 init: false
 map:
   - addon_config:rw

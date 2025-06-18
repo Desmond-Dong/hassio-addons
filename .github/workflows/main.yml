@@ -195,9 +195,9 @@ jobs:
         run: |
           find addons -type f \( -name "*.yaml" -o -name "*.json" -o -name "Dockerfile" \) -exec sed -i \
             -e 's|ghcr.io|ghcr.nju.edu.cn|g' \
-            -e 's|image: homeassistant|image: docker.m.daocloud.io/homeassistant|g' \
-            -e 's|docker.io|docker.m.daocloud.io|g' \
-            -e 's|lscr.io|docker.m.daocloud.io|g' \
+            -e 's|image: homeassistant|image: docker.1ms.run/homeassistant|g' \
+            -e 's|docker.io|docker.1ms.run|g' \
+            -e 's|lscr.io|docker.1ms.run|g' \
             -e 's|https://github.com|https://ghfast.top/github.com|g' \
             -e 's|ADD "https://raw.githubusercontent.com|ADD "https://ghfast.top//raw.githubusercontent.com|g' {} +
       

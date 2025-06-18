@@ -1,6 +1,6 @@
 #FROM $BUILD_FROM
 
-FROM docker.m.daocloud.io/library/python:3.13.3-alpine
+FROM docker.1ms.run/library/python:3.13.3-alpine
 
 #RUN apk add --no-cache python3 py-pip \
 RUN python3 -m venv /opt/venv \

@@ -1,7 +1,7 @@
 {
   "build_from": {
-    "aarch64": "docker.m.daocloud.io/linuxserver/calibre:arm64v8-latest",
-    "amd64": "docker.m.daocloud.io/linuxserver/calibre:amd64-latest"
+    "aarch64": "docker.1ms.run/linuxserver/calibre:arm64v8-latest",
+    "amd64": "docker.1ms.run/linuxserver/calibre:amd64-latest"
   },
   "codenotary": {
     "signer": "alexandrep.github@gmail.com"

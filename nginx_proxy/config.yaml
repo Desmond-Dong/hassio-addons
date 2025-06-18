@@ -11,7 +11,7 @@ arch:
   - aarch64
   - amd64
   - i386
-image: docker.m.daocloud.io/homeassistant/{arch}-addon-nginx_proxy
+image: docker.1ms.run/homeassistant/{arch}-addon-nginx_proxy
 init: false
 map:
   - ssl

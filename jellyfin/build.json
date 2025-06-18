@@ -1,8 +1,8 @@
 {
   "build_from": {
-    "aarch64": "docker.m.daocloud.io/linuxserver/jellyfin:arm64v8-latest",
-    "amd64": "docker.m.daocloud.io/linuxserver/jellyfin:amd64-latest",
-    "armv7": "docker.m.daocloud.io/linuxserver/jellyfin:arm32v7-10.8.10"
+    "aarch64": "docker.1ms.run/linuxserver/jellyfin:arm64v8-latest",
+    "amd64": "docker.1ms.run/linuxserver/jellyfin:amd64-latest",
+    "armv7": "docker.1ms.run/linuxserver/jellyfin:arm32v7-10.8.10"
   },
   "codenotary": {
     "signer": "alexandrep.github@gmail.com"

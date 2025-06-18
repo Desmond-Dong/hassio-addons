@@ -11,7 +11,7 @@ arch:
   - armv7
   - amd64
 audio: true
-image: docker.m.daocloud.io/homeassistant/{arch}-addon-google_assistant
+image: docker.1ms.run/homeassistant/{arch}-addon-google_assistant
 init: false
 map:
   - share

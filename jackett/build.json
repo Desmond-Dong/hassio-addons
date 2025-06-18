@@ -1,8 +1,8 @@
 {
   "build_from": {
-    "aarch64": "docker.m.daocloud.io/linuxserver/jackett:arm64v8-latest",
-    "amd64": "docker.m.daocloud.io/linuxserver/jackett:amd64-latest",
-    "armv7": "docker.m.daocloud.io/linuxserver/jackett:arm32v7-version-v0.21.334"
+    "aarch64": "docker.1ms.run/linuxserver/jackett:arm64v8-latest",
+    "amd64": "docker.1ms.run/linuxserver/jackett:amd64-latest",
+    "armv7": "docker.1ms.run/linuxserver/jackett:arm32v7-version-v0.21.334"
   },
   "codenotary": {
     "signer": "alexandrep.github@gmail.com"

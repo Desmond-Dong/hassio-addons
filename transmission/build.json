@@ -1,8 +1,8 @@
 {
   "build_from": {
-    "aarch64": "docker.m.daocloud.io/linuxserver/transmission:arm64v8-latest",
-    "amd64": "docker.m.daocloud.io/linuxserver/transmission:amd64-latest",
-    "armv7": "docker.m.daocloud.io/linuxserver/transmission:arm32v7-4.0.3"
+    "aarch64": "docker.1ms.run/linuxserver/transmission:arm64v8-latest",
+    "amd64": "docker.1ms.run/linuxserver/transmission:amd64-latest",
+    "armv7": "docker.1ms.run/linuxserver/transmission:arm32v7-4.0.3"
   },
   "codenotary": {
     "signer": "alexandrep.github@gmail.com"

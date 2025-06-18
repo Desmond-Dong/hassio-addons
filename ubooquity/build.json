@@ -1,7 +1,7 @@
 {
   "build_from": {
-    "aarch64": "docker.m.daocloud.io/linuxserver/ubooquity:arm64v8-latest",
-    "amd64": "docker.m.daocloud.io/linuxserver/ubooquity:amd64-latest"
+    "aarch64": "docker.1ms.run/linuxserver/ubooquity:arm64v8-latest",
+    "amd64": "docker.1ms.run/linuxserver/ubooquity:amd64-latest"
   },
   "codenotary": {
     "signer": "alexandrep.github@gmail.com"

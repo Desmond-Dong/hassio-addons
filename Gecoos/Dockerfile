@@ -1,4 +1,4 @@
-FROM docker.m.daocloud.io/library/alpine:3.21
+FROM docker.1ms.run/library/alpine:3.21
 ARG BUILD_ARCH
 ENV BUILD_ARCH=$BUILD_ARCH
 RUN apk add --no-cache wget jq bash

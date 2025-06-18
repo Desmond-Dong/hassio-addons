@@ -12,7 +12,7 @@ arch:
   - amd64
   - i386
 boot: manual
-image: docker.m.daocloud.io/homeassistant/{arch}-addon-letsencrypt
+image: docker.1ms.run/homeassistant/{arch}-addon-letsencrypt
 init: false
 map:
   - ssl:rw

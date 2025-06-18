@@ -16,7 +16,7 @@
     "share:rw"
   ],
   "init": "false",
-  "image": "docker.m.daocloud.io/linuxserver/pairdrop",
+  "image": "docker.1ms.run/linuxserver/pairdrop",
   "version": "version-v1.11.2",
   "name": "pairdrop",
   "options": {},

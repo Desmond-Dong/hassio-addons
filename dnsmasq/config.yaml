@@ -11,7 +11,7 @@ arch:
   - aarch64
   - amd64
   - i386
-image: docker.m.daocloud.io/homeassistant/{arch}-addon-dnsmasq
+image: docker.1ms.run/homeassistant/{arch}-addon-dnsmasq
 init: false
 options:
   defaults:
