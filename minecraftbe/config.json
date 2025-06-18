@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "Minecraft 专用服务器",
+  "description": "我的世界专用服务器",
   "environment": {
     "EULA": "TRUE"
   },
@@ -22,8 +22,8 @@
   "schema": {},
   "slug": "minecraftbe",
   "startup": "services",
-  "upstream": "2025.5.0",
+  "upstream": "2025.6.0",
   "url": "https://ghfast.top/github.com/jdeath/homeassistant-addons",
-  "version": "2025.5.0",
+  "version": "2025.6.0",
   "ingress": false
 }
