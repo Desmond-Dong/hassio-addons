@@ -5,7 +5,7 @@
     "armv7"
   ],
   "boot": "auto",
-  "description": "一个简单的网络图形用户界面，允许您使用自己的设置编译令人惊叹的Tasmota固件。",
+  "description": "一个简单的Web图形用户界面，允许您使用自己的设置编译令人惊叹的Tasmota固件。",
   "environment": {
     "TZ": "America/New_York"
   },
@@ -23,7 +23,7 @@
   "upstream": "1.0",
   "url": "https://ghfast.top/github.com/jdeath/homeassistant-addons",
   "image": "benzino77/tasmocompiler",
-  "version": "12.6.1",
+  "version": "12.6.2",
   "ingress": false,
   "ingress_port": 3000,
   "webui": "[PROTO:ssl]://[HOST]:[PORT:3000]"
