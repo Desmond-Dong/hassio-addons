@@ -2,4 +2,4 @@
 
 ## 🐛 Bug fixes
 
-- Change permissions to fix quota warning script @erik73 ([#368](https://github.com/erik73/addon-mail/pull/368))
+- Fix error in spam-learning sieve script @erik73 ([#369](https://github.com/erik73/addon-mail/pull/369))

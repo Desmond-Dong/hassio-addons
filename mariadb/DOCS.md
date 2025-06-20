@@ -10,15 +10,14 @@
 
 ## 如何使用
 
-1. 将 `logins` -> `password` 字段设置为强大且唯一的密码。
+1. 将 `logins` -> `password` 字段设置为强且独特的密码。
 2. 启动插件。
 3. 检查插件日志输出以查看结果。
 4. 将 `recorder` 集成添加到您的 Home Assistant 配置中。
 
 ## 插件配置
 
-可以根据您的喜好调整 MariaDB 服务器插件。本节
-描述了每个插件配置选项。
+MariaDB 服务器插件可以根据您的喜好进行调整。本节描述每个插件配置选项。
 
 示例插件配置：
 
@@ -39,50 +38,49 @@ rights:
       - SELECT
 ```
 
-### 选项：`databases`（必选）
+### 选项：`databases`（必需）
 
 数据库名称，例如 `homeassistant`。允许多个。
 
-### 选项：`logins`（必选）
+### 选项：`logins`（必需）
 
-本节定义了在 MariaDB 中创建用户的定义。[创建用户][createuser] 文档。
+本节定义了在 MariaDB 中创建用户的定义。 [创建用户][createuser] 文档。
 
-### 选项：`logins.username`（必选）
+### 选项：`logins.username`（必需）
 
-数据库用户登录名，例如 `homeassistant`。[用户名][username] 文档。
+数据库用户登录名，例如 `homeassistant`。 [用户名][username] 文档。
 
-### 选项：`logins.password`（必选）
+### 选项：`logins.password`（必需）
 
-用户登录密码。应该是强大且唯一的。
+用户登录的密码。这应该是强且独特的。
 
-### 选项：`rights`（必选）
+### 选项：`rights`（必需）
 
-本节授予 MariaDB 中用户的特权。[授予][grant] 文档。
+本节授予用户在 MariaDB 中的权限。 [授予][grant] 文档。
 
-### 选项：`rights.username`（必选）
+### 选项：`rights.username`（必需）
 
 这应该与 `logins` -> `username` 中定义的用户名相同。
 
-### 选项：`rights.database`（必选）
+### 选项：`rights.database`（必需）
 
 这应该与 `databases` 中定义的数据库相同。
 
 ### 选项：`rights.privileges`（可选）
 
-要授予此用户的特权列表，从 [grant][grant] 中选择，如 `SELECT` 和 `CREATE`。
-如果省略，将授予用户 `ALL PRIVILEGES`。限制 Home Assistant 使用的用户特权
-并不推荐，但如果您想允许其他应用程序查看记录器数据，应该创建一个限于数据库只读访问的用户。
+要授予该用户的权限列表，来自 [授予][grant]，如 `SELECT` 和 `CREATE`。
+如果省略，将授予用户 `所有权限`。 不建议限制 Home Assistant 使用的用户的权限，但如果您希望允许其他应用程序查看记录器数据，则应创建一个只限只读访问数据库的用户。
 
 ### 选项：`mariadb_server_args`（可选）
 
-一些用户在大型数据库上的 Home Assistant 架构更新期间遇到了 [错误][migration-issues]。
-如果有可用的内存，定义推荐的参数可以帮助。
+一些用户在大型数据库上经历了 Home Assistant 架构更新时的 [错误][migration-issues]。
+如果有可用的 RAM，定义建议的参数可能有帮助。
 
 示例：`--innodb_buffer_pool_size=512M`
 
 ## Home Assistant 配置
 
-MariaDB 将被 Home Assistant 中的 `recorder` 和 `history` 组件使用。有关如何设置的更多信息，请参阅 Home Assistant 的 [recorder 集成][mariadb-ha-recorder] 文档。
+MariaDB 将被 Home Assistant 中的 `recorder` 和 `history` 组件使用。有关设置该配置的更多信息，请参见 Home Assistant 的 [recorder 集成][mariadb-ha-recorder] 文档。
 
 示例 Home Assistant 配置：
 
@@ -93,25 +91,14 @@ recorder:
 
 ## 支持
 
-有问题？
+有问题吗？
 
-您可以通过几种方式获取答案：
+您可以 [在这里打开问题][issue] GitHub。
 
-- [Home Assistant Discord 聊天服务器][discord]。
-- Home Assistant [社区论坛][forum]。
-- 加入 [/r/homeassistant][reddit] 的 [Reddit 子版块][reddit]
-
-如果您发现了错误，请 [在我们的 GitHub 上报告问题][issue]。
-
-[createuser]: https://mariadb.com/kb/en/create-user/
-[username]: https://mariadb.com/kb/en/create-user/#user-name-component
-[hostname]: https://mariadb.com/kb/en/create-user/#host-name-component
-[grant]: https://mariadb.com/kb/en/grant/
-[migration-issues]: https://github.com/home-assistant/core/issues/125339
-[mariadb-ha-recorder]: https://www.home-assistant.io/integrations/recorder/
-[discord]: https://discord.gg/c5DvZ4e
-[forum]: https://community.home-assistant.io
+[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
+[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
+[armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
+[armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
-[issue]: https://github.com/home-assistant/addons/issues
-[reddit]: https://reddit.com/r/homeassistant
-[repository]: https://github.com/hassio-addons/repository
+[issue]: https://github.com/erik73/addon-mariadb/issues
+[repository]: https://github.com/erik73/hassio-addons

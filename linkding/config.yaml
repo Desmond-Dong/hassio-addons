@@ -1,8 +1,8 @@
 name: "linkding"
-version: "1.40.0"
-upstream: "1.40.0"
+version: "1.41.0"
+upstream: "1.41.0"
 slug: linkding
-description: Linkding 是一个你可以自己托管的书签管理器。它旨在设计得简约、快速且易于使用 Docker 设置。
+description: Linkding 是一个你可以自己托管的书签管理器。它旨在设计得简单、快速且易于使用 Docker 设置。
   linkding is a bookmark manager that you can host yourself. It's designed be to be minimal, fast, and easy to set up using Docker
 arch:
   - amd64
