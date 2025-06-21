@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Sonarr的一个分支，用于与CouchPotato一起管理电影。",
+  "description": "Sonarr的一个分支，用于处理电影，类似于CouchPotato。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -115,5 +115,5 @@
   "slug": "radarr_nas",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/radarr",
-  "version": "5.25.0.10024"
+  "version": "5.26.2.10099"
 }

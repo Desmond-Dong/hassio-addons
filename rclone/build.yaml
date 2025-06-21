@@ -1,9 +1,9 @@
 ---
 build_from:
-  i386: "ghcr.nju.edu.cn/home-assistant/i386-base:3.21"
-  aarch64: "ghcr.nju.edu.cn/home-assistant/aarch64-base:3.21"
-  amd64: "ghcr.nju.edu.cn/home-assistant/amd64-base:3.21"
-  armv7: "ghcr.nju.edu.cn/home-assistant/armv7-base:3.21"
+  i386: "ghcr.nju.edu.cn/home-assistant/i386-base:3.22"
+  aarch64: "ghcr.nju.edu.cn/home-assistant/aarch64-base:3.22"
+  amd64: "ghcr.nju.edu.cn/home-assistant/amd64-base:3.22"
+  armv7: "ghcr.nju.edu.cn/home-assistant/armv7-base:3.22"
 codenotary:
   signer: homeassistant@blmx.de
   base_image: notary@home-assistant.io
@@ -15,6 +15,6 @@ labels:
   org.opencontainers.image.url: https://ghfast.top/github.com/bluemaex/home-assistant-addons
   org.opencontainers.image.source: https://ghfast.top/github.com/bluemaex/home-assistant-addons/rclone
   org.opencontainers.image.documentation: https://ghfast.top/github.com/bluemaex/home-assistant-addons/rclone/README.md
-  org.opencontainers.image.created: "2024-10-13T15:17:25Z"
-  org.opencontainers.image.revision: 29b77c15c88de72411344141bba1b80c6b3a2e0b
-  org.opencontainers.image.version: 3.1.5
+  org.opencontainers.image.created: "2025-06-21T09:50:30Z"
+  org.opencontainers.image.revision: 077acca173e2cc7a77ca7688b98277938437ea4f
+  org.opencontainers.image.version: 3.1.6

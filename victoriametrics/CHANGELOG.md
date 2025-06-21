@@ -1,5 +1,33 @@
 # Changelog
 
+## victoriametrics 2.0.7 - 2025-06-21
+
+### Changes
+
+#### ⬆️ Dependency updates
+
+- ⏫ Update VictoriaMetrics to v1.105.0 @[renovate[bot]](https://github.com/apps/renovate) (#288)
+- ⏫ Update VictoriaMetrics to v1.106.0 @[renovate[bot]](https://github.com/apps/renovate) (#295)
+- ⏫ Update VictoriaMetrics to v1.106.1 @[renovate[bot]](https://github.com/apps/renovate) (#300)
+- ⏫ Update VictoriaMetrics to v1.107.0 @[renovate[bot]](https://github.com/apps/renovate) (#309)
+- ⏫ Update HomeAssistant Add-on base image to v3.21 @[renovate[bot]](https://github.com/apps/renovate) (#316)
+- ⏫ Update VictoriaMetrics to v1.108.0 @[renovate[bot]](https://github.com/apps/renovate) (#318)
+- ⏫ Update VictoriaMetrics to v1.108.1 @[renovate[bot]](https://github.com/apps/renovate) (#323)
+- ⏫ Update VictoriaMetrics to v1.109.0 @[renovate[bot]](https://github.com/apps/renovate) (#333)
+- ⏫ Update VictoriaMetrics to v1.109.1 @[renovate[bot]](https://github.com/apps/renovate) (#340)
+- ⏫ Update VictoriaMetrics to v1.110.0 @[renovate[bot]](https://github.com/apps/renovate) (#343)
+- ⏫ Update VictoriaMetrics to v1.111.0 @[renovate[bot]](https://github.com/apps/renovate) (#345)
+- ⏫ Update VictoriaMetrics to v1.112.0 @[renovate[bot]](https://github.com/apps/renovate) (#353)
+- ⏫ Update VictoriaMetrics to v1.113.0 @[renovate[bot]](https://github.com/apps/renovate) (#357)
+- ⏫ Update VictoriaMetrics to v1.114.0 @[renovate[bot]](https://github.com/apps/renovate) (#363)
+- ⏫ Update VictoriaMetrics to v1.115.0 @[renovate[bot]](https://github.com/apps/renovate) (#368)
+- ⏫ Update VictoriaMetrics to v1.116.0 @[renovate[bot]](https://github.com/apps/renovate) (#375)
+- ⏫ Update VictoriaMetrics to v1.117.0 @[renovate[bot]](https://github.com/apps/renovate) (#383)
+- ⏫ Update VictoriaMetrics to v1.117.1 @[renovate[bot]](https://github.com/apps/renovate) (#386)
+- ⏫ Update VictoriaMetrics to v1.118.0 @[renovate[bot]](https://github.com/apps/renovate) (#391)
+- ⏫ Update VictoriaMetrics to v1.119.0 @[renovate[bot]](https://github.com/apps/renovate) (#395)
+- ⏫ Update HomeAssistant Add-on base image to v3.22 @[renovate[bot]](https://github.com/apps/renovate) (#397)
+
 ## victoriametrics 2.0.6 - 2024-10-13
 
 ### Changes

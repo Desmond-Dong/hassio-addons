@@ -4,12 +4,12 @@ Healthchecks (<https://healthchecks.io/>) 打包为 Home Assistant 插件。
 
 ## 关于
 
-Healthchecks 是您定时任务的监控工具。它是一个监听来自您定时任务的 ping 的 网络服务器，并提供一个网页界面。
+Healthchecks 是你定时任务的看门狗。它是一个监听来自你定时任务的 ping 的网络服务器，以及一个网络界面。
 
-## 最后的说明
+## 最后的注意事项
 
-有关如何配置此插件的信息，请参阅插件页面内的
+有关如何配置此插件的信息，请参阅插件页面中的
 [文档](DOCS.md)
 
-该项目与 Healthchecks 并无关联，仅仅是社区的努力。
-Healthchecks 本身是在 BSD 3-Clause License 下发布的。
+该项目与 Healthchecks 没有关联，只是一个社区项目。
+Healthchecks 本身是根据 BSD 3-Clause License 分发的。

@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Tracker和Usenet索引器提供完整的Sonarr、Radarr、Lidarr和Readarr管理，无需为每个应用程序设置。",
+  "description": "Tracker和Usenet索引器提供对Sonarr、Radarr、Lidarr和Readarr索引器的完整管理，无需为每个应用程序设置。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -109,6 +109,6 @@
   "slug": "prowlarr",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "nightly-2.0.0.5094-ls203",
+  "version": "nightly-2.0.1.5095-ls203",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:9696]"
 }

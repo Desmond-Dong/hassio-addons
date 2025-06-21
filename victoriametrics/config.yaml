@@ -1,8 +1,8 @@
 ---
 name: Victoria Metrics
-version: 2.0.6
+version: 2.0.7
 slug: victoriametrics
-description: VictoriaMetrics 是一个快速、低成本的可扩展监控解决方案和时间序列数据库。
+description: VictoriaMetrics 是一个快速、低成本且可扩展的监控解决方案和时间序列数据库。
   VictoriaMetrics is a fast, cost-effective and scalable monitoring solution and time series database.
 arch:
   - aarch64

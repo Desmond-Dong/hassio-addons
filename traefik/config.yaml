@@ -1,8 +1,8 @@
 ---
 name: Traefik
-version: 4.2.5
+version: 4.2.6
 slug: traefik
-description: Traefik 是一个现代的 HTTP 反向代理和负载均衡器，使部署微服务变得简单。
+description: Traefik是一款现代的HTTP反向代理和负载均衡器，使部署微服务变得简单。
   Traefik is a modern HTTP reverse proxy and load balancer that makes deploying
   microservices easy.
 arch:

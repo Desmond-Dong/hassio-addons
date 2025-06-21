@@ -1,5 +1,31 @@
 # Changelog
 
+## healthchecks 3.1.3 - 2025-06-21
+
+### Changes
+
+#### ⬆️ Dependency updates
+
+- ⏫ Update ghcr.io/linuxserver/healthchecks Docker tag to v3.6.20241014 @[renovate[bot]](https://github.com/apps/renovate) (#285)
+- ⏫ Update ghcr.io/linuxserver/healthchecks Docker tag to v3.7.20241021 @[renovate[bot]](https://github.com/apps/renovate) (#289)
+- ⏫ Update ghcr.io/linuxserver/healthchecks Docker tag to v3.7.20241028 @[renovate[bot]](https://github.com/apps/renovate) (#292)
+- ⏫ Update ghcr.io/linuxserver/healthchecks Docker tag to v3.7.20241104 @[renovate[bot]](https://github.com/apps/renovate) (#294)
+- ⏫ Update ghcr.io/linuxserver/healthchecks Docker tag to v3.7.20241111 @[renovate[bot]](https://github.com/apps/renovate) (#297)
+- ⏫ Update ghcr.io/linuxserver/healthchecks Docker tag to v3.7.20241118 @[renovate[bot]](https://github.com/apps/renovate) (#303)
+- ⏫ Update ghcr.io/linuxserver/healthchecks Docker tag to v3.7.20241125 @[renovate[bot]](https://github.com/apps/renovate) (#307)
+- ⏫ Update ghcr.io/linuxserver/healthchecks Docker tag to v3.7.20241202 @[renovate[bot]](https://github.com/apps/renovate) (#310)
+- ⏫ Update ghcr.io/linuxserver/healthchecks Docker tag to v3.8.20241209 @[renovate[bot]](https://github.com/apps/renovate) (#317)
+- ⏫ Update ghcr.io/linuxserver/healthchecks Docker tag to v3.9.20241220 @[renovate[bot]](https://github.com/apps/renovate) (#324)
+- ⏫ Update ghcr.io/linuxserver/healthchecks Docker tag to v3.9.20241223 @[renovate[bot]](https://github.com/apps/renovate) (#325)
+- ⏫ Update ghcr.io/linuxserver/healthchecks Docker tag to v3.9.20241224 @[renovate[bot]](https://github.com/apps/renovate) (#326)
+- ⏫ Update ghcr.io/linuxserver/healthchecks Docker tag to v3.9.20251230 @[renovate[bot]](https://github.com/apps/renovate) (#327)
+- ⏫ Update ghcr.io/linuxserver/healthchecks Docker tag to v3.10.20250509 @[renovate[bot]](https://github.com/apps/renovate) (#382)
+- ⏫ Update ghcr.io/linuxserver/healthchecks Docker tag to v3.10.20250512 @[renovate[bot]](https://github.com/apps/renovate) (#385)
+- ⏫ Update ghcr.io/linuxserver/healthchecks Docker tag to v3.10.20250519 @[renovate[bot]](https://github.com/apps/renovate) (#387)
+- ⏫ Update ghcr.io/linuxserver/healthchecks Docker tag to v3.10.20250526 @[renovate[bot]](https://github.com/apps/renovate) (#392)
+- ⏫ Update ghcr.io/linuxserver/healthchecks Docker tag to v3.10.20250609 @[renovate[bot]](https://github.com/apps/renovate) (#396)
+- ⏫ Update ghcr.io/linuxserver/healthchecks Docker tag to v3.10.20250616 @[renovate[bot]](https://github.com/apps/renovate) (#399)
+
 ## healthchecks 3.1.2 - 2024-10-13
 
 ### Changes

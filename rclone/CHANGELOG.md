@@ -1,5 +1,21 @@
 # Changelog
 
+## rclone 3.1.6 - 2025-06-21
+
+### Changes
+
+#### ⬆️ Dependency updates
+
+- ⏫ Update rclone/rclone Docker tag to v1.68.2 @[renovate[bot]](https://github.com/apps/renovate) (#298)
+- ⏫ Update HomeAssistant Add-on base image to v3.21 @[renovate[bot]](https://github.com/apps/renovate) (#316)
+- ⏫ Update rclone/rclone Docker tag to v1.69.0 @[renovate[bot]](https://github.com/apps/renovate) (#338)
+- ⏫ Update rclone/rclone Docker tag to v1.69.1 @[renovate[bot]](https://github.com/apps/renovate) (#351)
+- ⏫ Update rclone/rclone Docker tag to v1.69.2 @[renovate[bot]](https://github.com/apps/renovate) (#378)
+- ⏫ Update rclone/rclone Docker tag to v1.69.3 @[renovate[bot]](https://github.com/apps/renovate) (#388)
+- ⏫ Update HomeAssistant Add-on base image to v3.22 @[renovate[bot]](https://github.com/apps/renovate) (#397)
+- ⏫ Update rclone/rclone Docker tag to v1.70.0 @[renovate[bot]](https://github.com/apps/renovate) (#400)
+- ⏫ Update rclone/rclone Docker tag to v1.70.1 @[renovate[bot]](https://github.com/apps/renovate) (#401)
+
 ## rclone 3.1.5 - 2024-10-13
 
 ### Changes

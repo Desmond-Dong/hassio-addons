@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "一个免费的开源个人财务管理工具。",
+  "description": "一个免费的开源个人财务管理软件。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -111,6 +111,6 @@
   "startup": "services",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "6.2.17",
+  "version": "6.2.18",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]"
 }

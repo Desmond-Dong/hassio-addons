@@ -1,8 +1,11 @@
 ---
 name: syslog-ng
-version: 5.0.4
+version: 5.0.5
 slug: syslog-ng
-description: syslog-ng 允许您灵活地收集、解析、分类、重写和关联来自基础设施的日志，并将它们存储或路由到日志分析工具。
+description: syslog-ng 允许您灵活地收集、解析、分类、重写和关联来自整个基础设施的日志，并将它们存储或路由到日志分析工具。
+  syslog-ng allows you to flexibly collect, parse, classify, rewrite
+  and correlate logs from across your infrastructure and store or route
+  them to log analysis tools
 arch:
   - aarch64
   - amd64

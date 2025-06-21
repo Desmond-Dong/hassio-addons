@@ -1,8 +1,8 @@
 ---
 name: UnPoller
-version: 3.0.12
+version: 3.0.13
 slug: unpoller
-description: 收集您的UniFi控制器数据并将其报告给InfluxDB实例，或者将其导出供Prometheus收集。
+description: 收集您的UniFi控制器数据并将其报告给InfluxDB实例，或将其导出以供Prometheus收集。
   Collect your UniFi controller data and report it to an InfluxDB instance, or export it for Prometheus collection.
 arch:
   - aarch64

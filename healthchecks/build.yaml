@@ -1,7 +1,7 @@
 ---
 build_from:
-  aarch64: "ghcr.nju.edu.cn/linuxserver/healthchecks:3.9.20251230"
-  amd64: "ghcr.nju.edu.cn/linuxserver/healthchecks:3.9.20251230"
+  aarch64: "ghcr.nju.edu.cn/linuxserver/healthchecks:3.10.20250616"
+  amd64: "ghcr.nju.edu.cn/linuxserver/healthchecks:3.10.20250616"
 labels:
   maintainer: "bluemaex <homeassistant@blmx.de>"
   org.opencontainers.image.authors: "bluemaex <homeassistant@blmx.de>"
@@ -10,6 +10,6 @@ labels:
   org.opencontainers.image.url: https://ghfast.top/github.com/bluemaex/home-assistant-addons
   org.opencontainers.image.source: https://ghfast.top/github.com/bluemaex/home-assistant-addons/healthchecks
   org.opencontainers.image.documentation: https://ghfast.top/github.com/bluemaex/home-assistant-addons/healthchecks/README.md
-  org.opencontainers.image.created: "2024-10-13T15:26:34Z"
-  org.opencontainers.image.revision: 6eb39baedc7fb48abff91142ab90ec6419127452
-  org.opencontainers.image.version: 3.1.2
+  org.opencontainers.image.created: "2025-06-21T09:48:49Z"
+  org.opencontainers.image.revision: 29c1f7ebf455479d95628ae3b1bea856f82809a3
+  org.opencontainers.image.version: 3.1.3

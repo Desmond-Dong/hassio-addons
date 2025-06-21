@@ -1,6 +1,6 @@
 ---
 name: Grafana Promtail
-version: 3.0.6
+version: 4.0.0
 slug: grafana-promtail
 description: Promtail 是一个代理程序，它将本地日志的内容发送到私有 Loki 实例或 Grafana Cloud。
   Promtail is an agent which ships the contents of local logs to a private Loki instance or Grafana Cloud.

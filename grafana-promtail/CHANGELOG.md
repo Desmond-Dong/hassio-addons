@@ -1,5 +1,54 @@
 # Changelog
 
+## grafana-promtail 4.0.0 - 2025-06-21
+
+### Changes
+
+#### ⬆️ Dependency updates
+
+- ⏫ Update grafana/promtail Docker tag to v2.9.6 @[renovate[bot]](https://github.com/apps/renovate) (#176)
+- ⏫ Update mikefarah/yq Docker tag to v4.43.1 @[renovate[bot]](https://github.com/apps/renovate) (#177)
+- ⏫ Update grafana/promtail Docker tag to v2.9.7 @[renovate[bot]](https://github.com/apps/renovate) (#188)
+- ⏫ Update grafana/promtail Docker tag to v3 @[renovate[bot]](https://github.com/apps/renovate) (#202)
+- ⏫ Update mikefarah/yq Docker tag to v4.44.1 @[renovate[bot]](https://github.com/apps/renovate) (#209)
+- ⏫ Update HomeAssistant hassio-addons debian base image to v7.3.4 @[renovate[bot]](https://github.com/apps/renovate) (#221)
+- ⏫ Update mikefarah/yq Docker tag to v4.44.2 @[renovate[bot]](https://github.com/apps/renovate) (#226)
+- ⏫ Update ghcr.io/hassio-addons/debian-base/amd64 Docker tag to v7.3.5 @[renovate[bot]](https://github.com/apps/renovate) (#233)
+- ⏫ Update ghcr.io/hassio-addons/debian-base/aarch64 Docker tag to v7.3.5 @[renovate[bot]](https://github.com/apps/renovate) (#234)
+- ⏫ Update grafana/promtail Docker tag to v3.1.0 @[renovate[bot]](https://github.com/apps/renovate) (#237)
+- ⏫ Update HomeAssistant hassio-addons debian base image to v7.4.0 @[renovate[bot]](https://github.com/apps/renovate) (#241)
+- ⏫ Update mikefarah/yq Docker tag to v4.44.3 @[renovate[bot]](https://github.com/apps/renovate) (#251)
+- ⏫ Update grafana/promtail Docker tag to v3.1.1 @[renovate[bot]](https://github.com/apps/renovate) (#255)
+- ⏫ Update HomeAssistant hassio-addons debian base image to v7.5.0 @[renovate[bot]](https://github.com/apps/renovate) (#265)
+- ⏫ Update grafana/promtail Docker tag to v3.2.0 @[renovate[bot]](https://github.com/apps/renovate) (#271)
+- ⏫ Update HomeAssistant hassio-addons debian base image to v7.5.1 @[renovate[bot]](https://github.com/apps/renovate) (#284)
+- ⏫ Update grafana/promtail Docker tag to v3.2.1 @[renovate[bot]](https://github.com/apps/renovate) (#287)
+- ⏫ Update HomeAssistant hassio-addons debian base image to v7.5.2 @[renovate[bot]](https://github.com/apps/renovate) (#296)
+- ⏫ Update HomeAssistant hassio-addons debian base image to v7.6.0 @[renovate[bot]](https://github.com/apps/renovate) (#299)
+- ⏫ Update mikefarah/yq Docker tag to v4.44.5 @[renovate[bot]](https://github.com/apps/renovate) (#302)
+- ⏫ Update grafana/promtail Docker tag to v3.3.0 @[renovate[bot]](https://github.com/apps/renovate) (#304)
+- ⏫ Update HomeAssistant hassio-addons debian base image to v7.6.1 @[renovate[bot]](https://github.com/apps/renovate) (#308)
+- ⏫ Update grafana/promtail Docker tag to v3.3.1 @[renovate[bot]](https://github.com/apps/renovate) (#312)
+- ⏫ Update HomeAssistant hassio-addons debian base image to v7.6.2 @[renovate[bot]](https://github.com/apps/renovate) (#313)
+- ⏫ Update mikefarah/yq Docker tag to v4.44.6 @[renovate[bot]](https://github.com/apps/renovate) (#314)
+- ⏫ Update grafana/promtail Docker tag to v3.3.2 @[renovate[bot]](https://github.com/apps/renovate) (#322)
+- ⏫ Update HomeAssistant hassio-addons debian base image to v7.6.3 @[renovate[bot]](https://github.com/apps/renovate) (#331)
+- ⏫ Update mikefarah/yq Docker tag to v4.45.1 @[renovate[bot]](https://github.com/apps/renovate) (#337)
+- ⏫ Update HomeAssistant hassio-addons debian base image to v7.7.0 @[renovate[bot]](https://github.com/apps/renovate) (#342)
+- ⏫ Update grafana/promtail Docker tag to v3.4.1 @[renovate[bot]](https://github.com/apps/renovate) (#347)
+- ⏫ Update grafana/promtail Docker tag to v3.4.2 @[renovate[bot]](https://github.com/apps/renovate) (#350)
+- ⏫ Update HomeAssistant hassio-addons debian base image to v7.7.1 @[renovate[bot]](https://github.com/apps/renovate) (#352)
+- ⏫ Update HomeAssistant hassio-addons debian base image to v7.8.0 @[renovate[bot]](https://github.com/apps/renovate) (#362)
+- ⏫ Update HomeAssistant hassio-addons debian base image to v7.8.1 @[renovate[bot]](https://github.com/apps/renovate) (#364)
+- ⏫ Update grafana/promtail Docker tag to v3.4.3 @[renovate[bot]](https://github.com/apps/renovate) (#367)
+- ⏫ Update HomeAssistant hassio-addons debian base image to v7.8.2 @[renovate[bot]](https://github.com/apps/renovate) (#369)
+- ⏫ Update grafana/promtail Docker tag to v3.5.0 @[renovate[bot]](https://github.com/apps/renovate) (#373)
+- ⏫ Update mikefarah/yq Docker tag to v4.45.2 @[renovate[bot]](https://github.com/apps/renovate) (#379)
+- ⏫ Update HomeAssistant hassio-addons debian base image to v7.8.3 @[renovate[bot]](https://github.com/apps/renovate) (#380)
+- ⏫ Update mikefarah/yq Docker tag to v4.45.3 @[renovate[bot]](https://github.com/apps/renovate) (#381)
+- ⏫ Update mikefarah/yq Docker tag to v4.45.4 @[renovate[bot]](https://github.com/apps/renovate) (#384)
+- ⏫ Update grafana/promtail Docker tag to v3.5.1 @[renovate[bot]](https://github.com/apps/renovate) (#390)
+
 ## grafana-promtail 3.0.6 - 2024-03-10
 
 ### Changes

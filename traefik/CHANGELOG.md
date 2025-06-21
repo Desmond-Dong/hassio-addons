@@ -1,5 +1,24 @@
 # Changelog
 
+## traefik 4.2.6 - 2025-06-21
+
+### Changes
+
+#### ⬆️ Dependency updates
+
+- ⏫ Update traefik Docker tag to v2.11.13 @[renovate[bot]](https://github.com/apps/renovate) (#293)
+- ⏫ Update traefik Docker tag to v2.11.14 @[renovate[bot]](https://github.com/apps/renovate) (#306)
+- ⏫ Update traefik Docker tag to v2.11.15 @[renovate[bot]](https://github.com/apps/renovate) (#315)
+- ⏫ Update HomeAssistant Add-on base image to v3.21 @[renovate[bot]](https://github.com/apps/renovate) (#316)
+- ⏫ Update traefik Docker tag to v2.11.16 @[renovate[bot]](https://github.com/apps/renovate) (#319)
+- ⏫ Update traefik Docker tag to v2.11.18 @[renovate[bot]](https://github.com/apps/renovate) (#332)
+- ⏫ Update traefik Docker tag to v2.11.20 @[renovate[bot]](https://github.com/apps/renovate) (#344)
+- ⏫ Update traefik Docker tag to v2.11.21 @[renovate[bot]](https://github.com/apps/renovate) (#355)
+- ⏫ Update traefik Docker tag to v2.11.22 @[renovate[bot]](https://github.com/apps/renovate) (#365)
+- ⏫ Update traefik Docker tag to v2.11.24 @[renovate[bot]](https://github.com/apps/renovate) (#370)
+- ⏫ Update traefik Docker tag to v2.11.25 @[renovate[bot]](https://github.com/apps/renovate) (#393)
+- ⏫ Update HomeAssistant Add-on base image to v3.22 @[renovate[bot]](https://github.com/apps/renovate) (#397)
+
 ## traefik 4.2.5 - 2024-10-13
 
 ### Changes

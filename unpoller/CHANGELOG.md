@@ -1,5 +1,18 @@
 # Changelog
 
+## unpoller 3.0.13 - 2025-06-21
+
+### Changes
+
+#### ⬆️ Dependency updates
+
+- ⏫ Update HomeAssistant Add-on base image to v3.21 @[renovate[bot]](https://github.com/apps/renovate) (#316)
+- ⏫ Update ghcr.io/unpoller/unpoller Docker tag to v2.12.0 @[renovate[bot]](https://github.com/apps/renovate) (#328)
+- ⏫ Update ghcr.io/unpoller/unpoller Docker tag to v2.14.0 @[renovate[bot]](https://github.com/apps/renovate) (#335)
+- ⏫ Update ghcr.io/unpoller/unpoller Docker tag to v2.14.1 @[renovate[bot]](https://github.com/apps/renovate) (#339)
+- ⏫ Update ghcr.io/unpoller/unpoller Docker tag to v2.15.3 @[renovate[bot]](https://github.com/apps/renovate) (#377)
+- ⏫ Update HomeAssistant Add-on base image to v3.22 @[renovate[bot]](https://github.com/apps/renovate) (#397)
+
 ## unpoller 3.0.12 - 2024-10-13
 
 ### Changes

@@ -1,7 +1,7 @@
 ---
 build_from:
-  aarch64: ghcr.nju.edu.cn/hassio-addons/debian-base/aarch64:7.7.1
-  amd64: ghcr.nju.edu.cn/hassio-addons/debian-base/amd64:7.7.1
+  aarch64: ghcr.nju.edu.cn/hassio-addons/debian-base/aarch64:7.8.3
+  amd64: ghcr.nju.edu.cn/hassio-addons/debian-base/amd64:7.8.3
 codenotary:
   signer: homeassistant@blmx.de
   base_image: notary@home-assistant.io
@@ -13,6 +13,6 @@ labels:
   org.opencontainers.image.url: https://ghfast.top/github.com/bluemaex/home-assistant-addons
   org.opencontainers.image.source: https://ghfast.top/github.com/bluemaex/home-assistant-addons/grafana-promtail
   org.opencontainers.image.documentation: https://ghfast.top/github.com/bluemaex/home-assistant-addons/grafana-promtail/README.md
-  org.opencontainers.image.created: "2024-03-10T19:17:01Z"
-  org.opencontainers.image.revision: 72a8b7a288baac5e2629f6f72ae0e41d9a0e4d68
-  org.opencontainers.image.version: 3.0.6
+  org.opencontainers.image.created: "2025-06-21T09:46:57Z"
+  org.opencontainers.image.revision: 3698c5d68c830957fb9a7f4d731707c3c9ec74a7
+  org.opencontainers.image.version: 4.0.0
