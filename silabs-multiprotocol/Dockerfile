@@ -1,6 +1,6 @@
 ARG BUILD_FROM
 ARG BUILD_ARCH
-FROM docker.1ms.run/-docker.1ms.run/-platform=linux/amd64 docker.1ms.run/debian:bullseye AS cross-builder-base
+FROM --platform=linux/amd64 debian:bullseye AS cross-builder-base
 
 ENV \
     LANG="C.UTF-8" \
@@ -21,7 +21,7 @@ RUN \
        build-essential \
        git
 
-FROM docker.1ms.run/-docker.1ms.run/-platform=linux/amd64 cross-builder-base AS cross-builder-armv7
+FROM --platform=linux/amd64 cross-builder-base AS cross-builder-armv7
 
 COPY debian-armv7.cmake /usr/src/debian.cmake
 
@@ -36,7 +36,7 @@ RUN \
     && apt-get install -y --no-install-recommends \
        crossbuild-essential-armhf
 
-FROM docker.1ms.run/-docker.1ms.run/-platform=linux/amd64 cross-builder-base AS cross-builder-aarch64
+FROM --platform=linux/amd64 cross-builder-base AS cross-builder-aarch64
 
 COPY debian-arm64.cmake /usr/src/debian.cmake
 
@@ -51,7 +51,7 @@ RUN \
     && apt-get install -y --no-install-recommends \
        crossbuild-essential-arm64
 
-FROM docker.1ms.run/-docker.1ms.run/-platform=linux/amd64 cross-builder-base AS cross-builder-amd64
+FROM --platform=linux/amd64 cross-builder-base AS cross-builder-amd64
 
 COPY debian-amd64.cmake /usr/src/debian.cmake
 
@@ -67,7 +67,7 @@ RUN \
        crossbuild-essential-amd64
 
 
-FROM docker.1ms.run/-platform=linux/amd64 cross-builder-${BUILD_ARCH} AS cpcd-builder
+FROM -platform=linux/amd64 cross-builder-${BUILD_ARCH} AS cpcd-builder
 
 ARG CPCD_VERSION
 
@@ -86,7 +86,7 @@ RUN \
     && make \
     && make install
 
-FROM docker.1ms.run/-docker.1ms.run/-platform=linux/amd64 cross-builder-${BUILD_ARCH} AS zigbeed-builder
+FROM --platform=linux/amd64 cross-builder-${BUILD_ARCH} AS zigbeed-builder
 
 ARG GECKO_SDK_VERSION
 
