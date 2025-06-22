@@ -1,6 +1,7 @@
 [English](README_EN.md) | [中文](README.md)
 
-# 🔔 Home Assistant 加载项库
+# 🔔 Home Assistant 加载项库 
+> 此库存只是为了方便自动更新，要使用的话请用 **Gitee同步镜像站** [![添加加载项到 Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://gitee.com/desmond_GT/hassio-addons) 🚀
 
 🎉 **欢迎来到 Home Assistant 加载项库！** 在这里，您将发现众多自定义加载项，✨  
 
@@ -30,13 +31,6 @@
 | docker.io           | docker.1ms.run          |
 | https://github.com  | https://ghfast.top      |
 
-## 🌟 本库的目标
-
-本库的目标有两个：
-1. ~~**持续丰富和扩展加载项的内容**🔧。~~  
-   ~~目前还在集成中。~~
-2. **让中国的 Home Assistant 用户能够在国内轻松安装所有加载项**，而无需使用任何翻墙工具。  
-   如果失败请让我知悉。
 
 ## ✨ 加载项介绍
 
