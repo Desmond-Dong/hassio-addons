@@ -1,0 +1,7 @@
+import { IConfig } from '../ts/interfaces';
+declare function createNonce(): string;
+declare function createAppTs(): string;
+declare function createDeviceTs(): number;
+declare function getListenerHook(config: IConfig): string;
+declare function sleep(time: number): Promise<unknown>;
+export { createNonce, createAppTs, createDeviceTs, getListenerHook, sleep };
