@@ -13,6 +13,6 @@ labels:
   org.opencontainers.image.url: https://ghfast.top/github.com/bluemaex/home-assistant-addons
   org.opencontainers.image.source: https://ghfast.top/github.com/bluemaex/home-assistant-addons/grafana-loki
   org.opencontainers.image.documentation: https://ghfast.top/github.com/bluemaex/home-assistant-addons/grafana-loki/README.md
-  org.opencontainers.image.created: "2025-06-21T09:43:23Z"
-  org.opencontainers.image.revision: dea6f0e3b14bb3034dd03865a89d5795db65eff4
-  org.opencontainers.image.version: 4.0.0
+  org.opencontainers.image.created: "2025-06-22T19:55:36Z"
+  org.opencontainers.image.revision: 754f7623ae4f824609b754748028f35786baa5e6
+  org.opencontainers.image.version: 4.0.1

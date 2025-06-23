@@ -1,7 +1,7 @@
 name: Music Assistant Server
-version: 2.5.4
+version: 2.5.5
 slug: music_assistant
-description: 音乐助手服务器是一款免费的开源媒体库管理器，它可以连接到您的流媒体服务和一系列的扬声器。
+description: 音乐助手服务器是一款免费的开源媒体库管理器，它连接到您的流媒体服务和一系列的扬声器。
   that connects to your streaming services and a wide range of connected speakers.
 url: https://music-assistant.io
 arch:

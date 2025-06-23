@@ -1,5 +1,13 @@
 # Changelog
 
+## grafana-loki 4.0.1 - 2025-06-22
+
+### Changes
+
+#### 🐛 Bug fixes
+
+- Update loki's default configuration example @bluemaex (#402)
+
 ## grafana-loki 4.0.0 - 2025-06-21
 
 ### Changes

@@ -6,12 +6,13 @@
   ],
   "backup": "cold",
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "PostgreSQL 15 支持向量弦乐",
+  "description": "带有向量弦支持的PostgreSQL 15。",
   "environment": {
     "CONFIG_LOCATION": "/config/postgresql.conf",
     "PGDATA": "/config/database"
   },
   "hassio_api": true,
+  "hassio_role": "manager",
   "image": "ghcr.nju.edu.cn/alexbelgium/postgres-{arch}",
   "init": false,
   "map": [
@@ -39,5 +40,5 @@
   "slug": "postgres",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/postgres",
-  "version": "15.7-44"
+  "version": "15.7-45"
 }
