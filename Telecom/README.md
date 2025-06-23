@@ -2,7 +2,7 @@
 
 ## 概述
 该项目旨在监控中国电信的用户话费、通话和流量使用情况。用户可以通过该工具获取实时的套餐用量信息。
-这是一个初版，根据https://github.com/Cp0204/ChinaTelecomMonitor而来
+这是一个初版，根据https://github.com/Cp0204/ChinaTelecomMonitor 而来
 
 
 ## 配置
