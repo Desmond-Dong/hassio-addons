@@ -1,5 +1,5 @@
 ---
-version: 9.17.0
+version: 9.18.0
 slug: ssh
 name: Terminal & SSH
 description: 允许通过SSH远程登录到Home Assistant。

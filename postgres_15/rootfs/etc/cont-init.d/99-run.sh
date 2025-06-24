@@ -245,6 +245,8 @@ upgrade_extension_if_needed() {
 			if compare_versions "$installed_version" "$available_version"; then
 				bashio::log.info "Upgrading $extname in $db from $installed_version to $available_version"
 				if psql -h "$DB_HOSTNAME" -p "$DB_PORT" -U "$DB_USERNAME" -d "$db" -v ON_ERROR_STOP=1 -c "ALTER EXTENSION $extname UPDATE;"; then
+					bashio::log.info "Reindexing database $db"
+					psql -h "$DB_HOSTNAME" -p "$DB_PORT" -U "$DB_USERNAME" -d "$db" -v ON_ERROR_STOP=1 -c "REINDEX DATABASE $db;"
 					RESTART_NEEDED=true
 				else
 					bashio::log.error "Failed to upgrade $extname in $db. Aborting startup."
@@ -348,6 +350,18 @@ upgrade_postgres_if_needed() {
 	fi
 }
 
+check_for_reindex() {
+	local log_tail
+	log_tail=$(timeout 15 cat /proc/1/fd/1 | tail -n 5)
+
+	if echo "$log_tail" | grep -q "please use REINDEX to rebuild the index"; then
+		bashio::log.warning "REINDEX needed, starting now"
+		for db in $(get_user_databases); do
+			psql -h "$DB_HOSTNAME" -p "$DB_PORT" -U "$DB_USERNAME" -d "$db" -v ON_ERROR_STOP=1 -c "REINDEX DATABASE $db;"
+		done
+	fi
+}
+
 main() {
 	bashio::log.info "Checking for required PostgreSQL cluster upgrade before server start..."
 	if [ -f /config/database/PG_VERSION ]; then
@@ -384,12 +398,14 @@ main() {
 		exit 0
 	fi
 
-	bashio::log.info "All initialization/version check steps completed successfully!"
-
 	if [ -d /config/backups ]; then
 		echo "Cleaning /config/backups now that upgrade is done"
 		rm -r /config/backups
 	fi
+
+	check_for_reindex &
+	bashio::log.info "All initialization/version check steps completed successfully!"
+
 }
 
 main

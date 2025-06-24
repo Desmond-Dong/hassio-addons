@@ -121,4 +121,4 @@ HEALTHCHECK \
     --retries=5 \
     --start-period=90s \
     --timeout=25s \
-    CMD pg_isready -d postgres || exit 1
+    CMD /usr/local/bin/healthcheck.sh
