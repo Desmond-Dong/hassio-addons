@@ -199,7 +199,7 @@ jobs:
             -e 's|docker.io|docker.1ms.run|g' \
             -e 's|lscr.io|docker.1ms.run|g' \
             -e 's|https://github.com|https://ghfast.top/github.com|g' \
-            -e 's|ADD "https://raw.githubusercontent.com|ADD "https://ghfast.top//raw.githubusercontent.com|g' {} +
+            -e 's|ADD "https://raw.githubusercontent.com|ADD "https://ghfast.top/raw.githubusercontent.com|g' {} +
       
       
 
