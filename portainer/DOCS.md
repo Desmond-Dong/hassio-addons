@@ -1,107 +1,34 @@
-# Home Assistant Community Add-on: Portainer
+Portainer 可用于在 Docker 容器中执行自定义命令。它是一个开源的轻量级管理 UI，允许您轻松管理一个或多个 Docker 主机或 Docker Swarm 集群。
 
-Portainer 是一个开源的轻量级管理用户界面，允许您轻松管理 Docker 主机或 Docker 集群。
+# 快速开始
+- 使用此链接添加我的仓库
+[![Add repository on my Home Assistant][repository-badge]][repository-url]
+- 从我的仓库安装 Portainer 插件
+- 在插件的配置面板中，您可以更改密码
+- 在插件的主页面，禁用“保护模式”，然后启动插件
+- 登录（默认用户名为 `admin`，默认密码为 `homeassistant`）
+- 点击环境中的 `Primary`（在页面中心）
+- 在左侧菜单栏中点击 `Containers`
+- 增加每页项目的数量，以查看您所有的插件
+- 点击您所选插件名称旁边的符号 `>_` 以打开控制台页面
+- 修改用户名，或更常见的是直接点击连接
+- 输入您的命令，您可以完全访问该特定容器的终端（这不会影响您 HA 系统的其他部分）
 
-管理 Docker 从未如此简单。Portainer 提供了 Docker 的详细概述，并允许您管理容器、镜像、网络和卷。
+# 对您系统的影响
+- 安装或运行 Portainer 不会对系统产生影响
+- 手动安装自定义容器将使您的 HA 状态修改为不支持/不健康状态。您将无法升级 Home Assistant 或升级您可能拥有的任何插件。停止此自定义容器将重置为正常状态
 
-## 警告 1
+# 提示和技巧
 
-Portainer 插件功能强大，几乎可以让您访问整个系统。虽然该插件是在考虑安全性的情况下精心创建和维护的，但在错误或缺乏经验的操作下，它可能会损坏您的系统。
+## 重置数据库
+只需在您的插件选项中更改密码，数据库将被重置
 
-## 警告 2
+## 60秒超时
+该插件包含一个非常长的超时。然而，如果您使用其他代理层，例如插件 nginx 代理管理器，它将默认为 60 秒的超时。您需要调整代理层以增加超时。详情请见 : https://github.com/portainer/portainer/issues/2953#issuecomment-1235795256
 
-Portainer 插件旨在用于调试 Home Assistant 及其容器。它并不是为了管理或部署您的自定义软件或第三方容器而设计的。
+## 进一步参考
+- 这是使用它的完整指南 : https://codeopolis.com/posts/beginners-guide-to-portainer/
+- HA 社区论坛关于 Portainer 的旧页面 : https://community.home-assistant.io/t/home-assistant-community-add-on-portainer
 
-**Home Assistant 不支持在 Home Assistant OS 或监督安装类型上运行第三方容器。** 忽视这一点将导致您的系统不被支持！
-
-## 安装
-
-要安装此插件，您首先需要进入您的个人资料，并开启“高级模式”。完成后，返回到 Home Assistant 插件，并搜索“Portainer”并像其他插件一样进行安装。
-
-要使用此插件，您需要禁用此插件上的保护模式。没有此模式，该插件无法访问 Docker。
-
-1. 在主管插件商店中搜索“Portainer”插件并安装。
-1. 将“保护模式”开关设置为关闭。
-1. 启动“Portainer”插件。
-1. 检查“Portainer”插件的日志以查看一切是否正常。
-
-## 配置
-
-**注意**：_记得在更改配置后重启插件。_
-
-示例插件配置：
-
-```yaml
-log_level: info
-agent_secret: password
-```
-
-**注意**：_这只是一个示例，不要复制和粘贴！创建您自己的！_
-
-### 选项：`log_level`
-
-`log_level` 选项控制插件的日志输出级别，可以更改为更多或更少的详细信息，这在处理未知问题时可能会很有用。可能的值包括：
-
-- `trace`：显示每个细节，如所有调用的内部函数。
-- `debug`：显示详细的调试信息。
-- `info`：正常（通常）有趣的事件。
-- `warning`：并非错误的异常情况。
-- `error`：不需要立即采取行动的运行时错误。
-- `fatal`：出现严重问题。插件变得不可用。
-
-请注意，每个级别自动包括来自更严重级别的日志消息，例如，`debug` 还会显示 `info` 消息。默认情况下，`log_level` 设置为 `info`，这是推荐的设置，除非您在故障排除。
-
-### 选项：`agent_secret`
-
-设置共享代理秘密的选项。也必须在远程代理中作为环境变量设置。
-
-## 更新日志与版本
-
-此存储库使用 [GitHub 的发行版][releases] 功能维护变更日志。
-
-发行版基于 [语义版本控制][semver]，并使用格式 `MAJOR.MINOR.PATCH`。简而言之，版本将根据以下情况递增：
-
-- `MAJOR`：不兼容或重大更改。
-- `MINOR`：向后兼容的新功能和增强。
-- `PATCH`：向后兼容的错误修复和包更新。
-
-## 支持
-
-有问题吗？
-
-您有几种方式可以得到答案：
-
-- [Home Assistant Community Add-ons Discord 聊天服务器][discord] 以获取插件支持和功能请求。
-- [Home Assistant Discord 聊天服务器][discord-ha] 以进行一般 Home Assistant 讨论和提问。
-- Home Assistant [社区论坛][forum]。
-- 加入 [Reddit 子版块][reddit] 在 [/r/homeassistant][reddit]。
-
-您也可以在这里 [打开一个问题][issue] GitHub。
-
-## 作者与贡献者
-
-此存储库的最初设置由 [Franck Nijhof][frenck] 完成。
-
-要查看所有作者和贡献者的完整列表，请查看 [贡献者页面][contributors]。
-
-## 许可证
-
-MIT 许可证
-
-版权所有 (c) 2018-2021 Franck Nijhof
-
-特此授予任何获取本软件及相关文档文件（“软件”）副本的人无条件使用本软件的许可，包括但不限于使用、复制、修改、合并、出版、分发、再许可和/或销售本软件副本的权利，以及允许提供本软件的人这样做，遵循以下条件：
-
-上述版权声明和本许可声明应包含在本软件的所有副本或实质性部分中。
-
-本软件按“原样”提供，不附有任何形式的保证，无论是明确的还是隐含的，包括但不限于对适销性、特定用途适用性和不侵权的保证。在任何情况下，作者或版权所有者都不对因使用本软件或涉及本软件的其他交易而引起的任何索赔、损害或其他责任承担责任，无论是在合同、侵权或其他方面。
-
-[contributors]: https://github.com/hassio-addons/addon-portainer/graphs/contributors
-[discord-ha]: https://discord.gg/c5DvZ4e
-[discord]: https://discord.me/hassioaddons
-[forum]: https://community.home-assistant.io/t/home-assistant-community-add-on-portainer/68836?u=frenck
-[frenck]: https://github.com/frenck
-[issue]: https://github.com/hassio-addons/addon-portainer/issues
-[reddit]: https://reddit.com/r/homeassistant
-[releases]: https://github.com/hassio-addons/addon-portainer/releases
-[semver]: http://semver.org/spec/v2.0.0.htm
+[repository-badge]: https://img.shields.io/badge/Add%20repository%20to%20my-Home%20Assistant-41BDF5?logo=home-assistant&style=for-the-badge
+[repository-url]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons

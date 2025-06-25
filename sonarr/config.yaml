@@ -1,7 +1,7 @@
 name: Sonarr
-version: 0.3.3
+version: 0.3.4
 slug: sonarr
-description: 新组用户和BitTorrent用户的智能PVR。
+description: 新组用户和比特币用户的智能PVR
 url: https://ghfast.top/github.com/hassio-addons/addon-sonarr/tree/main/README.md
 codenotary: codenotary@frenck.dev
 webui: http://[HOST]:[PORT:8989]

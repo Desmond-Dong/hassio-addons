@@ -30,9 +30,6 @@ change_folders() {
 
 		# Adapt sync.conf
 		for FILE in "$ORIGINALLOCATION/sync.conf" "$CONFIGLOCATION/sync.conf" "/defaults/sync.conf"; do
-			if [ "$TYPE" = "config_location" ]; then
-				[ -f "$FILE" ] && jq --arg variable "$CONFIGLOCATION" '.storage_path = $variable' "$FILE" | sponge "$FILE"
-			fi
 			if [ "$TYPE" = "data_location" ]; then
 				[ -f "$FILE" ] && jq --arg variable "$CONFIGLOCATION" '.directory_root = $variable' "$FILE" | sponge "$FILE"
 			fi
@@ -67,24 +64,23 @@ change_folders() {
 ########################
 
 # Adapt files
-change_folders "$(bashio::config 'config_location')" "/share/resiliosync_config" "config_location"
 change_folders "$(bashio::config 'data_location')" "/share/resiliosync" "data_location"
 change_folders "$(bashio::config 'downloads_location')" "/share/resiliosync_downloads" "downloads_location"
 
-if [[ ! -e "$(bashio::config 'config_location')"/sync.conf ]]; then
-	cp /defaults/sync.conf "$(bashio::config 'config_location')"/sync.conf
+# Ensure configuration is in /config
+if [[ ! -e /config/sync.conf ]]; then
+	cp /defaults/sync.conf /config/sync.conf
 fi
+jq '.storage_path = "/config"' /config/sync.conf | sponge /config/sync.conf
+chown -R "$PUID":"$PGID" /config
+chmod -R 777 /config
 
 # Add directories to dir_whitelist if missing
 DIRS_TO_ADD=("/backup" "/media" "/share" "/addons")
-for CONFIG_FILE in "$(bashio::config 'config_location')/sync.conf" "/defaults/sync.conf"; do
-	if [ -f "$CONFIG_FILE" ]; then
-		echo "Checking dir_whitelist in $CONFIG_FILE"
-		for DIR in "${DIRS_TO_ADD[@]}"; do
-			if ! jq -e ".webui.dir_whitelist | index(\"$DIR\")" "$CONFIG_FILE" >/dev/null; then
-				echo "Adding $DIR to dir_whitelist"
-				jq ".webui.dir_whitelist += [\"$DIR\"]" "$CONFIG_FILE" | sponge "$CONFIG_FILE"
-			fi
-		done
+echo "Checking dir_whitelist in /config/sync.json"
+for DIR in "${DIRS_TO_ADD[@]}"; do
+	if ! jq -e ".webui.dir_whitelist | index(\"$DIR\")" /config/sync.json >/dev/null; then
+		echo "Adding $DIR to dir_whitelist"
+		jq ".webui.dir_whitelist += [\"$DIR\"]" /config/sync.json | sponge /config/sync.json
 	fi
 done

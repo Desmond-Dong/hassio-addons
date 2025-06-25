@@ -1,4 +1,4 @@
-# Home Assistant 插件：Samba 共享
+# Home Assistant 附加组件：Samba 共享
 
 通过 Windows 文件共享在网络上共享您的配置。
 
@@ -6,8 +6,8 @@
 
 ## 关于
 
-此插件允许您在网络上启用跨不同操作系统的文件共享。
-它可以让您使用 Windows 和 macOS 设备访问您的配置文件。
+这个附加组件允许您在网络上启用不同操作系统之间的文件共享。
+它使您可以在 Windows 和 macOS 设备上访问您的配置文件。
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

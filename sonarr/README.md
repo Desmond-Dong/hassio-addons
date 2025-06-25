@@ -4,11 +4,11 @@
 
 [![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-适用于新闻组和 bittorrent 用户的智能 PVR。
+智能的 PVR 适用于新闻组和 Bittorrent 用户。
 
 ## 关于
 
-[Sonarr] 是一款针对 Usenet 和 BitTorrent 用户的 PVR。它可以监控多个 RSS 源，以获取您最喜欢节目的新剧集，并会自动抓取、分类和重命名这些剧集。当有更高质量的文件格式可用时，它还可以配置为自动升级已经下载的文件的质量。
+[Sonarr] 是一个针对 Usenet 和 BitTorrent 用户的 PVR。它可以监控多个 RSS 源，以获取您喜欢的节目的新剧集，并会抓取、分类和重命名它们。它还可以配置为自动升级已下载文件的质量，当更好的格式可用时。
 
 [Sonarr]: https://sonarr.tv/
 
@@ -18,5 +18,5 @@
 [forum]: https://community.home-assistant.io/t/?u=frenck
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
-[release-shield]: https://img.shields.io/badge/version-v0.3.3-blue.svg
-[release]: https://github.com/hassio-addons/addon-sonarr/tree/v0.3.3
+[release-shield]: https://img.shields.io/badge/version-v0.3.4-blue.svg
+[release]: https://github.com/hassio-addons/addon-sonarr/tree/v0.3.4
