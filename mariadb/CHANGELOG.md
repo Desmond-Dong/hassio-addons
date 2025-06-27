@@ -1,5 +1,5 @@
 ## What’s changed
 
-## 🐛 Bug fixes
+## ⬆️ Dependency updates
 
-- Make backup scripts executable @erik73 ([#14](https://github.com/erik73/addon-mariadb/pull/14))
+- ⬆️ Update ghcr.io/erik73/base Docker tag to v5.0.1 @[renovate[bot]](https://github.com/apps/renovate) ([#15](https://github.com/erik73/addon-mariadb/pull/15))

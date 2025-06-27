@@ -1,7 +1,7 @@
 name: Lidarr
-version: 0.10.0
+version: 0.11.0
 slug: lidarr
-description: 看起来和闻起来都像Sonarr但是为音乐而制作的。
+description: 看起来和闻起来都像Sonarr，但它是为音乐设计的。
 url: https://ghfast.top/github.com/hassio-addons/addon-lidarr/tree/main/README.md
 codenotary: codenotary@frenck.dev
 webui: http://[HOST]:[PORT:8686]

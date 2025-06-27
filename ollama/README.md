@@ -1,23 +1,23 @@
-# Ollama 插件用于家庭助理
+# Ollama Addon for Home Assistant
 
-请注意，此插件通过 CPU 加速或实验性 Nvidia GPU 支持运行（如果对您有效，请反馈！）。ROCm 的支持仍在待定中。
+Please note that this addon runs with CPU acceleration or experimental Nvidia GPU Support (please report if it works for you!). For ROCm the support is still pending.
 
-## 模型目录
+## Model Directory
 
-所有下载的模型默认存储在 `/share/ollama`。出于历史原因，您也可以将其配置为 `/config/ollama`。请确保您有足够的可用空间。
+All downloaded models are stored `/share/ollama` by default. For historic reasons you can also configure it for `/config/ollama`. Please make sure that you have sufficient space available.
 
-## Ollama 集成
+## Ollama Integration
 
-要下载任何模型，可以使用 Ollama 的 API 或与家庭助理集成 [Ollama](https://www.home-assistant.io/integrations/ollama/)：
+To download any models either use the API of Ollama or integrate with the Home Assistant Integration [Ollama](https://www.home-assistant.io/integrations/ollama/):
 
-[![添加 Ollama 集成](https://my.home-assistant.io/badges/brand.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=ollama)
+[![Add Ollama Integration](https://my.home-assistant.io/badges/brand.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=ollama)
 
-使用以下数据：
+Use the following data:
 
 - URL: `http://76e18fb5-ollama:11434`
 
-如果您想更改模型，请删除集成（而不是插件！）并重新启动集成的配置过程。
+If you want to change the model, delete the integration (not the addon!) and restart the process for the configuration of the integration.
 
-## 关于 UI 链接的说明
+## Note on the UI Link
 
-UI 链接仅用于检查 Ollama 的 API 是否可用。官方镜像中不包含聊天功能。
+The UI Link is only there to check if the API of ollama is available. There is no chat functionality included in the official image of ollama.

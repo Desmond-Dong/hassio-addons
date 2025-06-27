@@ -1,7 +1,7 @@
 name: Mailserver
-version: 4.0.4
+version: 4.2.0
 slug: mailserver
-description: Home Assistant中的Postfix和Dovecot邮件服务器，带有Postfix Admin Web界面。
+description: Postfix和Dovecot邮件服务器，用于Home Assistant，带有Postfix Admin Web界面。
   web interface
 url: https://ghfast.top/github.com/erik73/hassio-addons
 arch:
@@ -22,11 +22,13 @@ ports:
   465/tcp: 465
   587/tcp: 587
   993/tcp: 993
+  4190/tcp: 4190
 ports_description:
   25/tcp: SMTP
   465/tcp: SMTP
   587/tcp: SMTP
   993/tcp: IMAPS
+  4190/tcp: ManageSieve
 hassio_api: true
 options:
   my_hostname: mydomain.no-ip.com
@@ -47,4 +49,5 @@ schema:
   smtp_relayhost_credentials: str?
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   message_size_limit: int
+  mynetworks: str?
 image: ghcr.nju.edu.cn/erik73/mailserver/{arch}

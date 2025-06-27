@@ -4,11 +4,11 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "一套工具，适用于第五版龙与地下城的玩家和地牢主。",
+  "description": "一套工具为第五版龙与地下城的玩家和地牢主提供。",
   "environment": {},
   "map": [],
   "image": "ghcr.nju.edu.cn/5etools-mirror-3/5etools-src",
-  "version": "2.9.1",
+  "version": "2.10.0",
   "name": "5etools",
   "options": {},
   "ports": {

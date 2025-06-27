@@ -1,10 +1,9 @@
 name: MyIP
-version: "v5.0.2"
+version: "v5.0.3"
 upstream: latest
 slug: myip
-description: >- 
-  最好的IP工具箱。轻松检查您的IP地址、IP地理位置、检测DNS泄漏、检查WebRTC连接、速度测试、ping测试、MTR测试、检查网站可用性、whois搜索等！
-
+description: 最佳IP工具箱。轻松检查您的IP地址、IP地理位置、检测DNS泄漏、检查WebRTC连接、速度测试、ping测试、MTR测试、检查网站可用性、whois搜索等！
+  The best IP Toolbox. Easy to check what's your IPs, IP geolocation, check for DNS leaks, examine WebRTC connections, speed test, ping test, MTR test, check website availability, whois search and more!
 arch:
   - amd64
   - aarch64
