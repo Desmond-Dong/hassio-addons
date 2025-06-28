@@ -4,11 +4,14 @@
 
 [![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-书籍管理和自动化（针对电子书的 Sonarr）。
+Book Manager and Automation (Sonarr for Ebooks).
 
-## 关于
+## About
 
-[Readarr] 是一个针对 Usenet 和 BitTorrent 用户的电子书和有声书收藏管理器。它可以监控您喜爱的作者的新书的多个 RSS 源，并抓取、排序和重命名它们。请注意，只支持给定书籍的一种类型。
+[Readarr] is an ebook and audiobook collection manager for Usenet and BitTorrent
+users. It can monitor multiple RSS feeds for new books from your favorite
+authors and will grab, sort, and rename them. Note that only one type of a
+given book is supported.
 
 [Readarr]: https://readarr.com
 
@@ -18,5 +21,5 @@
 [forum]: https://community.home-assistant.io/t/?u=frenck
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
-[release-shield]: https://img.shields.io/badge/version-v0.3.1-blue.svg
-[release]: https://github.com/hassio-addons/addon-readarr/tree/v0.3.1
+[release-shield]: https://img.shields.io/badge/version-v0.4.0-blue.svg
+[release]: https://github.com/hassio-addons/addon-readarr/tree/v0.4.0

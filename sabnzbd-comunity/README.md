@@ -1,14 +1,16 @@
-# Home Assistant 社区附加组件: SABnzbd
+# Home Assistant Community Add-on: SABnzbd
 
-[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
+[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-免费且易于使用的二进制新闻阅读器。
+Free and easy binary newsreader.
 
-## 关于
+## About
 
-[SABnzbd] 是一个多平台的二进制新闻组下载器。该程序在后台运行，简化了从 [Usenet] 下载、验证和提取文件的过程。
+[SABnzbd] is a multi-platform binary newsgroup downloader. The program works in
+the background and simplifies the downloading verifying and extracting of files
+from [Usenet].
 
 [SABnzbd]: https://sabnzbd.org/
 [Usenet]: http://en.wikipedia.org/wiki/Usenet
@@ -19,5 +21,5 @@
 [forum]: https://community.home-assistant.io/t/?u=frenck
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
-[release-shield]: https://img.shields.io/badge/version-v0.4.1-blue.svg
-[release]: https://github.com/hassio-addons/addon-sabnzbd/tree/v0.4.1
+[release-shield]: https://img.shields.io/badge/version-v0.5.0-blue.svg
+[release]: https://github.com/hassio-addons/addon-sabnzbd/tree/v0.5.0

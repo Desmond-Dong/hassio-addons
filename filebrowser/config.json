@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "文件浏览器在指定的目录内提供了一个文件管理界面，可以用来上传、删除、预览、重命名和编辑您的文件。",
+  "description": "文件浏览器在指定的目录中提供了一个文件管理界面，可以用于上传、删除、预览、重命名和编辑您的文件。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -129,5 +129,5 @@
   "slug": "filebrowser",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "2.33.0"
+  "version": "2.33.10"
 }

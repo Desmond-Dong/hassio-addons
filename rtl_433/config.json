@@ -1,10 +1,9 @@
 {
   "name": "rtl_433",
-  "image": "ghcr.nju.edu.cn/pbkhrv/rtl_433-hass-addons-rtl_433-{arch}",
-  "version": "0.6.0",
+  "version": "67.24.10.1",
   "slug": "rtl433",
   "description": "通过SDR接收器使用rtl_433接收无线传感器数据。",
-  "url": "https://ghfast.top/github.com/pbkhrv/rtl_433-hass-addons/tree/main/rtl_433",
+  "url": "https://ghfast.top/github.com/koying/ha-addons/tree/main/rtl_433",
   "arch": [
     "armhf",
     "armv7",

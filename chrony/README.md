@@ -1,17 +1,17 @@
-# Home Assistant 社区附加组件：chrony
+# Home Assistant Community Add-on: chrony
 
-[![发布][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
+[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-[![请我喝杯咖啡][buymeacoffee-shield]][buymeacoffee]
+[![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
 
-chrony NTP 服务器。
+chrony NTP Server.
 
-## 关于
+## About
 
-一个可以被本地网络上所有主机访问的 NTP 服务器，适用于设置
-在有限互联网访问的设备上的时间（例如相机）。
+An NTP server accesible by all hosts on the local network, useful for setting
+time on devices with controlled internet access (such as cameras).
 
 [buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
 [buymeacoffee]: https://www.buymeacoffee.com/sinclairpaul
@@ -21,5 +21,5 @@ chrony NTP 服务器。
 [forum]: https://community.home-assistant.io/?u=frenck
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[release-shield]: https://img.shields.io/badge/version-v5.1.0-blue.svg
-[release]: https://github.com/hassio-addons/addon-chrony/tree/v5.1.0
+[release-shield]: https://img.shields.io/badge/version-v5.2.0-blue.svg
+[release]: https://github.com/hassio-addons/addon-chrony/tree/v5.2.0

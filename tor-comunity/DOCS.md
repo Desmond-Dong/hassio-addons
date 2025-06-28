@@ -1,33 +1,45 @@
-# Home Assistant 社区附加组件：Tor
+# Home Assistant Community Add-on: Tor
 
-此 Tor 附加组件允许您通过 [Tor 的隐藏服务][tor-hidden-service] 功能将您的 Home Assistant 实例作为 Onion 站点进行访问。启用此功能后，您不需要打开防火墙端口或设置 HTTPS 来实现安全的远程访问。
+This Tor add-on allows you to access you Home Assistant instance as an Onion site,
+trough [Tor's Hidden Service][tor-hidden-service] feature. With this feature
+enabled, you do not need to open your firewall ports or setup HTTPS to enable
+secure remote access.
 
-如果您想要实现以下目标，这将非常有用：
+This is useful if you want to have:
 
-- 远程访问您的 Home Assistant 实例，而无需打开防火墙端口或设置 VPN。
-- 不想或不知道如何获取 SSL/TLS 证书和 HTTPS 配置。
-- 想要阻止攻击者访问/扫描您的端口和服务器。
-- 想要阻止任何人知道您的家庭 IP 地址并查看您与 Home Assistant 的流量。
+- Access your Home Assistant instance remotely without opening a firewall port
+  or setting up a VPN.
+- Don’t want to or know how to get an SSL/TLS certificate and HTTPS
+  configuration setup.
+- Want to block attackers from even being able to access/scan your port and
+  server at all.
+- Want to block anyone from knowing your home IP address and seeing your
+  traffic to your Home Assistant.
 
-该附加组件还提供了通过 Tor 网络打开 SOCKS 代理的可能性。允许您通过 Home Assistant 安装从任何支持 SOCKS 的应用程序访问 Tor。
+The add-on also offers the possibility to open a Sock proxy into the
+Tor network. Allowing you to access Tor from any of your (SOCKS supporting)
+applications through your Home Assistant installation.
 
-## 安装
+## Installation
 
-此附加组件的安装非常简单，与安装其他 Home Assistant 附加组件没有区别。
+The installation of this add-on is pretty straightforward and not different in
+comparison to installing any other Home Assistant add-on.
 
-1. 点击下方的 Home Assistant 按钮，以在您的 Home Assistant 实例中打开附加组件。
+1. Click the Home Assistant My button below to open the add-on on your Home
+   Assistant instance.
 
-   [![在您的 Home Assistant 实例中打开此附加组件][addon-badge]][addon]
+   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
 
-1. 点击“安装”按钮以安装附加组件。
-1. 启动 “Tor” 附加组件。
-1. 检查 “Tor” 附加组件的日志以查看一切是否正常。日志还将显示您的 Tor .onion 地址。
+1. Click the "Install" button to install the add-on.
+1. Start the "Tor" add-on
+1. Check the logs of the "Tor" add-on to see if everything went well. The log
+   will also display your Tor .onion address.
 
-## 配置
+## Configuration
 
-**注意**：_更改配置时，请记得重启附加组件。_
+**Note**: _Remember to restart the add-on when the configuration is changed._
 
-示例附加组件配置：
+Example add-on configuration:
 
 ```yaml
 log_level: info
@@ -43,60 +55,91 @@ ports:
 bridges: []
 ```
 
-**注意**：_这只是一个示例，不要复制粘贴！创建您自己的配置！_
+**Note**: _This is just an example, don't copy and past it! Create your own!_
 
-### 选项：`log_level`
+### Option: `log_level`
 
-`log_level` 选项控制附加组件的日志输出级别，可以更改为更详细或更简洁，这在您处理未知问题时可能会有用。可能的值包括：
+The `log_level` option controls the level of log output by the addon and can
+be changed to be more or less verbose, which might be useful when you are
+dealing with an unknown issue. Possible values are:
 
-- `trace`：显示每一个细节，如所有调用的内部函数。
-- `debug`：显示详细的调试信息。
-- `info`：通常是感兴趣的正常事件。
-- `warning`：不是错误的异常情况。
-- `error`：不需要立即处理的运行时错误。
-- `fatal`：发生了严重错误，附加组件变得不可用。
+- `trace`: Show every detail, like all called internal functions.
+- `debug`: Shows detailed debug information.
+- `info`: Normal (usually) interesting events.
+- `warning`: Exceptional occurrences that are not errors.
+- `error`: Runtime errors that do not require immediate action.
+- `fatal`: Something went terribly wrong. Add-on becomes unusable.
 
-请注意，每个级别自动包括更严重级别的日志消息，例如，`debug` 还会显示 `info` 消息。默认情况下，`log_level` 设置为 `info`，这是推荐的设置，除非您正在进行故障排除。
+Please note that each level automatically includes log messages from a
+more severe level, e.g., `debug` also shows `info` messages. By default,
+the `log_level` is set to `info`, which is the recommended setting unless
+you are troubleshooting.
 
-这些日志级别也会影响 Tor 程序的日志级别。
+These log level also affects the log levels of the Tor program.
 
-### 选项：`socks`
+### Option: `socks`
 
-将此选项设置为 `true` 会打开端口 `9050` 以侦听来自 SOCKS 程序的连接。启用此功能允许您使用网络上的其他应用程序访问 Tor 网络。
+Setting this option to `true` opens port `9050` to listen for connections from
+SOCKS-speaking applications. Enabling this feature allows you to use other
+applications on your network to use the Tor network.
 
-**注意**：_SOCKS 协议是未加密的（如我们所用）且未经验证，因此以这种方式暴露可能会泄露您的信息给任何监视您网络的人，并允许任何人将您的计算机用作开放代理。_
+**Note**: _The SOCKS protocol is unencrypted and (as we use it) unauthenticated,
+so exposing it in this way could leak your information to anybody watching your
+network, and allow anybody to use your computer as an open proxy._
 
-### 选项：`http_tunnel`
+### Option: `http_tunnel`
 
-将此选项设置为 `true` 会打开端口 `9080` 以侦听来自 HTTP 程序的连接。启用此功能允许您使用网络上的其他应用程序通过 HTTP 代理访问 Tor 网络。
+Setting this option to `true` opens port `9080` to listen for connections from
+HTTP-speaking applications. Enabling this feature allows you to use other
+applications on your network to access the Tor network via the HTTP proxy.
 
-### 选项：`hidden_services`
+### Option: `hidden_services`
 
-`hidden_services` 选项允许您在此附加组件中启用 [Tor 的隐藏服务][tor-hidden-service] 功能。您可以提供 Web 服务器、SSH 服务器等，而不向用户透露您的 IP 地址。实际上，由于您不会使用任何公共地址，您可以在防火墙后面运行隐藏服务。
+The `hidden_services` options allows you to enable
+[Tor's Hidden Service][tor-hidden-service] feature in this add-on. You can offer
+a web server, SSH server, etc., without revealing your IP address to its users.
+In fact, because you don not use any public address, you can run a hidden
+service from behind your firewall.
 
-### 选项：`stealth`
+### Option: `stealth`
 
-上面的“stealth”条目确保通过 Tor 与您的 Home Assistant 实例之间的流量甚至对 Tor 网络中的其他节点是隐藏的。
+The “stealth” entry above ensures traffic to and from your Home Assistant
+instance over Tor is hidden even from other nodes on the Tor network.
 
-使用传统的隐藏服务，隐藏服务器在 Tor 网络中发布如何开始与其通信的信息（而不是其实际位置）。Tor 使用复杂的中继节点链接设置进行双向路由匿名化；服务器和客户端对端点位置一无所知。客户端向网络询问如何找到具有此信息的隐藏服务。
+Using a traditional Hidden Service, a hidden server publishes in the Tor network
+how to begin communication with it (not its real location). Tor uses a complex
+middle nodes link setup for bidirectional route anonymization; the server and
+client knows nothing about end point's location. A client asks the network how
+to reach a Hidden Service with this info.
 
-此选项将 Tor 隐藏服务置于授权客户端模式。隐藏服务器发布加密指令以开始通信，具有正确密钥的客户端可以解密此信息。如果您是授权客户端，则只有在拥有此密钥的情况下才能找到隐藏服务路径，并尝试建立连接。
+This option put the Tor Hidden Service in the authorize client mode. The
+hidden server publishes encrypted instructions on how to begin the
+communication, a client with the right key can decipher this info.
+If you are an authorized client, you only can locate the Hidden Service path
+and then try to establish a connection if you have this key.
 
-启用 `stealth` 可以防止 DDoS，因为如果客户端没有密钥，则无法找到通往服务器的路径。但是，它确实需要对客户端进行配置。
+Enabling `stealth` can prevent a DDOS because if the client does not have the
+key, it can not find the path to the server. It does, however, require
+configuration of the client as well.
 
-### 选项：`client_names`
+### Option: `client_names`
 
-启用 `stealth` 选项后，此选项是必需的。
+This option is required as soon as you enable the `stealth` option.
 
-只有此处列出的客户端被授权访问隐藏服务。有效的客户端名称长度为1到16个字符，并且只能使用字符`A-Za-z0-9+-_`（没有空格）。如果设置了此选项，则没有授权的客户端将无法访问隐藏服务。
+Only clients that are listed here are authorized to access the hidden service.
+Valid client names are 1 to 16 characters long and only use characters in
+`A-Za-z0-9+-_` (no spaces). If this option is set, the hidden service is not
+accessible for clients without authorization anymore.
 
-客户端需要在其配置文件中使用 HidServAuth 放置此授权数据。
+Clients need to put this authorization data in their configuration file using
+HidServAuth.
 
-### 选项：`ports`
+### Option: `ports`
 
-配置通过 Tor 隐藏服务发布的主机和端口。您可以列出多个主机和端口以进行发布。
+Configures hosts and ports to publish via a Tor Hidden Service.
+You can list multiple hosts and ports to publish.
 
-例如：
+For example:
 
 ```yaml
 ports:
@@ -104,7 +147,7 @@ ports:
   - 22
 ```
 
-此配置的接受语法为：
+The accepted syntaxs of this configuration is:
 
 - hostname:local_port:published_port `"homeassistant:8123:8080"`
 - local_ip:local_port:published_port `"192.168.1.60:8123:8080"`
@@ -112,23 +155,25 @@ ports:
 - local_port:published_port `"8123:8080"`
 - local_port `"8123"`
 
-如果您未定义发布的端口，则将使用本地端口。如果未定义主机名或 IP 地址，则将使用 `homeassistant`。
+If you do not define a published port, the local port will be used.
+If you do not define a hostname or IP adress `homeassistant` will be used.
 
-### 选项：`bridges`
+### Option: `bridges`
 
-> 确保选项值清晰，以避免意外使用传输插件和桥接。
+> Ensure the option value is clear to avoid unintended use of transport plugins and bridges.
 
-桥接是 Tor 中继，帮助您绕过审查制度。通过受支持的传输插件提供对桥接的访问：
+Bridges are Tor relays that help you circumvent censorship.
+Access to bridges is provided by supported transport plugins:
 
 #### OBFS
 
-由于桥接地址不是公开的，您需要自己请求它们。您有几个选项：
+Because bridge addresses are not public, you will need to request them yourself. You have a few options:
 
-- 访问 [Tor][tor-bridges-obfs4] 项目并按照说明进行操作，或
-- 从 Gmail 或 Riseup 邮件地址发送电子邮件至 `bridges@torproject.org`
-- 在 Telegram 上向 @GetBridgesBot 发送消息。点击“开始”或在聊天中输入 /start 或 /bridges。
+- Visit [Tor][tor-bridges-obfs4] project and follow the instructions, or
+- Email `bridges@torproject.org` from a Gmail, or Riseup email address
+- Send a message to @GetBridgesBot on Telegram. Tap on 'Start' or write /start or /bridges in the chat.
 
-例如：
+For example:
 
 ```yaml
 bridges:
@@ -140,9 +185,9 @@ bridges:
 
 #### Webtunnel
 
-访问 [Tor][tor-bridges-webtunnel] 项目并按照说明进行操作
+Visit [Tor][tor-bridges-webtunnel] project and follow the instructions
 
-例如：
+For example:
 
 ```yaml
 bridges:
@@ -155,7 +200,7 @@ bridges:
 
 #### Snowflake
 
-什么是 [snowflake][what-is-snowflake]，示例：
+What is [snowflake][what-is-snowflake], example:
 
 ```yaml
 bridges:
@@ -169,69 +214,102 @@ bridges:
     utls-imitate=hellorandomizedalpn
 ```
 
-## Tor 客户端访问设置
+## Tor client access setup
 
-使用此附加组件，您可以通过 Tor 从笔记本电脑或移动设备访问您的 Home Assistant 实例，使用 Tor 浏览器和其他软件。
+Using this add-on, you can access your Home Assistant instance over Tor from
+your laptop or mobile device, using Tor Browser and other software.
 
-然而，启用 `stealth` 选项后，客户端需要额外的配置才能连接。
+However, with the `stealth` option enabled, the client would need extra
+configuration to be able to connect.
 
-将身份验证 cookie 添加到笔记本电脑或移动设备上的 `torrc` 客户端配置。它看起来像这样：
+Add the authentication cookie to your `torrc` client configuration on your
+laptop or mobile device. It would look like this:
 
 ```bash
 HidServAuth abcdef1234567890.onion adEG02FAsdq/GAFeNSeLvc haremote1
 ```
 
-在 Windows、Mac 或 Linux 上的 Tor 浏览器中，您可以在这里找到 torrc 文件：
-`<tor 浏览器安装目录>/Browser/TorBrowser/tor/ssl/torrc`
+For Tor Browser on Windows, Mac or Linux, you can find the torrc file here:
+`<tor browser install directory>/Browser/TorBrowser/tor/ssl/torrc`
 
-添加条目后，重启浏览器，然后浏览到 ".onion" 站点地址以连接到您的 Home Assistant 实例。
+Once you have added the entry, restart the browser, and then browse to the
+"dot onion" site address to connect to your Home Assistant instance.
 
-对于 [Orbot: Tor on Android][orbot]，在 **Orbot** -> **菜单** -> **设置** 中添加到“Torrc 自定义配置”条目。重启 Orbot，然后使用 [Orfox 浏览器应用][orfox]，浏览到 ".onion" 站点名称以访问您的 Home Assistant 实例。您还可以使用 Orbot 的 VPN 模式，以便从设备上的任何应用程序（例如 Tasker 或 Owntracks）启用 Tor 访问。
+For [Orbot: Tor on Android][orbot], add it in **Orbot** -> **Menu**
+-> **Settings** to the "Torrc Custom Config" entry. Restart Orbot, and then
+use the [Orfox browser app][orfox], and browse to the "dot onion" site name to
+access your Home Assistant instance. You can also use Orbot's VPN mode,
+to enable Tor access from any application on your device,
+such as Tasker or Owntracks.
 
-根据我们的了解，目前没有支持 `stealth` 功能的 iOS 应用程序。
+To our knowledge, there are currently no iOS apps available supporting the
+stealth feature.
 
-您可以使用标准的 Firefox 浏览器访问 .onion 域，但需要在 FireFox 设置中启用此功能。在 Firefox 中，在地址栏中输入 "about:config"，点击“我接受风险”以打开高级设置。搜索“onion”找到“network.dns.blockDotOnion”设置，并切换设置以使其设置为“false”。现在您应该能够访问 .onion 站点。
+You can use the standard FireFox browser to access .onion domains, but you need
+to enable this in FireFix settings. In FireFox, type "about:config" in the
+address bar and click 'I accept the risk' to open the advanced settings.
+Search for "onion" to find the setting "network.dns.blockDotOnion" and toggle
+the setting so that it is set to "false". Now you should be able to access
+.onion sites.
 
-## 更新日志与版本
+## Changelog & Releases
 
-该存储库通过 [GitHub 的发布][releases] 功能保留更新日志。
+This repository keeps a change log using [GitHub's releases][releases]
+functionality.
 
-版本基于 [语义版本控制][semver]，并使用 `MAJOR.MINOR.PATCH` 格式。简而言之，版本将根据以下因素递增：
+Releases are based on [Semantic Versioning][semver], and use the format
+of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
+based on the following:
 
-- `MAJOR`：不兼容或重大更改。
-- `MINOR`：向后兼容的新功能和增强。
-- `PATCH`：向后兼容的错误修复和包更新。
+- `MAJOR`: Incompatible or major changes.
+- `MINOR`: Backwards-compatible new features and enhancements.
+- `PATCH`: Backwards-compatible bugfixes and package updates.
 
-## 支持
+## Support
 
-有问题吗？
+Got questions?
 
-您有多种方式可以获得答案：
+You have several options to get them answered:
 
-- [Home Assistant Community Add-ons Discord 聊天服务器][discord] 以获得附加组件支持和功能请求。
-- [Home Assistant Discord 聊天服务器][discord-ha] 以进行一般的 Home Assistant 讨论和问题。
-- Home Assistant [社区论坛][forum]。
-- 加入 [Reddit 论坛][reddit] 在 [/r/homeassistant][reddit]
+- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
+  support and feature requests.
+- The [Home Assistant Discord chat server][discord-ha] for general Home
+  Assistant discussions and questions.
+- The Home Assistant [Community Forum][forum].
+- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
 
-您也可以 [在这里提交问题][issue] 到 GitHub。
+You could also [open an issue here][issue] GitHub.
 
-## 作者与贡献者
+## Authors & contributors
 
-该存储库的最初设置由 [Franck Nijhof][frenck] 完成。
+The original setup of this repository is by [Franck Nijhof][frenck].
 
-有关所有作者和贡献者的完整列表，请查看 [贡献者页面][contributors]。
+For a full list of all authors and contributors,
+check [the contributor's page][contributors].
 
-## 许可证
+## License
 
-MIT 许可证
+MIT License
 
-版权所有 (c) 2017-2025 Franck Nijhof
+Copyright (c) 2017-2025 Franck Nijhof
 
-特此免费授予任何获得本软件及其相关文档文件（“软件”）副本的人，不受限制地处理该软件，包括但不限于使用、复制、修改、合并、发布、分发、再许可和/或出售软件的副本，并允许向其提供软件的人这样做，前提是满足以下条件：
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-上述版权声明和本许可声明应包含在所有副本或软件的实质性部分中。
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-软件按“原样”提供，不提供任何种类的保证，明示或暗示，包括但不限于对适销性、适合特定用途和不侵权的保证。在任何情况下，作者或版权持有人均不对因使用该软件或其他交易引起的任何索赔、损害或其他责任负责，无论是在合同、侵权或其他方面。
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_tor&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository

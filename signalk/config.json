@@ -6,7 +6,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "一个用于船只的信号K中央服务器的实现。",
+  "description": "一个用于船只的Signal K中央服务器的实现。",
   "devices": [
     "/dev/can0",
     "/dev/can1",
@@ -54,6 +54,6 @@
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
   "usb": true,
-  "version": "2.14.0",
+  "version": "2.14.4-2",
   "webui": "http://[HOST]:[PORT:3000]"
 }

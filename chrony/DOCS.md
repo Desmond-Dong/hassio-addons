@@ -1,24 +1,28 @@
-# Home Assistant 社区附加组件: chrony
+# Home Assistant Community Add-on: chrony
 
-一个可被本地网络上所有主机访问的 NTP 服务器，方便为具有受控互联网访问的设备（如摄像头）设置时间。该附加组件还可以用来设置系统时钟。
+An NTP server accessible by all hosts on the local network, useful for setting
+time on devices with controlled internet access (such as cameras).
+The addon can also be used to set the system clock.
 
-## 安装
+## Installation
 
-安装这个附加组件非常简单，与安装其他 Home Assistant 附加组件没有区别。
+The installation of this add-on is pretty straightforward and not different in
+comparison to installing any other Home Assistant add-on.
 
-1. 点击下面的 Home Assistant My 按钮以在你的 Home Assistant 实例中打开该附加组件。
+1. Click the Home Assistant My button below to open the add-on on your Home
+   Assistant instance.
 
-   [![在你的 Home Assistant 实例中打开该附加组件。][addon-badge]][addon]
+   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
 
-1. 点击“安装”按钮以安装该附加组件。
-1. 启动“chrony”附加组件
-1. 检查“chrony”附加组件的日志以查看一切是否正常。
+1. Click the "Install" button to install the add-on.
+1. Start the "chrony" add-on
+1. Check the logs of the "chrony" add-on to see if everything went well.
 
-## 配置
+## Configuration
 
-**注意**: _记得在更改配置后重启附加组件。_
+**Note**: _Remember to restart the add-on when the configuration is changed._
 
-附加组件配置示例：
+Example add-on configuration:
 
 ```yaml
 set_system_clock: true
@@ -29,82 +33,110 @@ ntp_server:
   - briareus.schulte.org
 ```
 
-**注意**: _这只是一个示例，请勿直接复制粘贴！请创建你自己的！_
+**Note**: _This is just an example, don't copy and paste it! Create your own!_
 
-### 选项: `log_level`
+### Option: `log_level`
 
-`log_level` 选项控制附加组件的日志输出级别，可以更改为更详细或更简洁的输出，当处理未知问题时，这可能会很有用。可能的值包括：
+The `log_level` option controls the level of log output by the addon and can
+be changed to be more or less verbose, which might be useful when you are
+dealing with an unknown issue. Possible values are:
 
-- `trace`: 显示每个细节，例如所有调用的内部函数。
-- `debug`: 显示详细的调试信息。
-- `info`: 正常（通常）有趣的事件。
-- `warning`: 不是错误的特殊情况。
-- `error`: 不需要立即处理的运行时错误。
-- `fatal`: 出现了严重错误。附加组件变得不可用。
+- `trace`: Show every detail, like all called internal functions.
+- `debug`: Shows detailed debug information.
+- `info`: Normal (usually) interesting events.
+- `warning`: Exceptional occurrences that are not errors.
+- `error`: Runtime errors that do not require immediate action.
+- `fatal`: Something went terribly wrong. Add-on becomes unusable.
 
-请注意，每个级别会自动包含更严重级别的日志消息，例如，`debug` 也会显示 `info` 消息。默认情况下，`log_level` 设置为 `info`，这是推荐的设置，除非你正在进行故障排除。
+Please note that each level automatically includes log messages from a
+more severe level, e.g., `debug` also shows `info` messages. By default,
+the `log_level` is set to `info`, which is the recommended setting unless
+you are troubleshooting.
 
-### 选项: `set_system_clock`
+### Option: `set_system_clock`
 
-`set_system_clock` 选项配置 chrony 设置本地系统时钟。对于某些系统，使用不同的机制设置系统时间可能更可取。
+The `set_system_clock` option configures chrony to set the local system clock.
+For some systems it may be preferable to use a different mechanism for
+setting the system time.
 
-### 选项: `mode`
+### Option: `mode`
 
-`mode` 选项配置 chrony 使用 `pool` 或 `server` 模式。这些选项为：
+The `mode` option configures chrony to use either `pool` or `server` mode.
+These options are:
 
-- `pool`: 引用如 pool.ntp.org 的服务器池（推荐）。
-- `server`: 引用特定名称或地址的列表。
+- `pool`: References a pool of servers such as pool.ntp.org (Recommended).
+- `server`: References a list of specific names or addresses.
 
-根据模式来使用 `ntp_pool` 或 `ntp_server` 选项。
+Based on the mode the `ntp_pool` or `ntp_server` option will be used.
 
-### 选项: `ntp_pool`
+### Option: `ntp_pool`
 
-由池模式使用，配置要使用的池名称，应该是一个具有多个条目的 DNS 记录。应用程序将选择要引用的记录。
+Used by pool mode and configures the pool name to be used, should be a DNS
+record with multiple entries. The application will select which to reference.
 
-### 选项: `ntp_server`
+### Option: `ntp_server`
 
-由服务器模式使用，是一个时间源服务器名称或 IP 地址的数组。应用程序将选择要引用的记录。
+Used by server mode, an array of server names or IP Addresses used as the
+time source. The application will select which to reference.
 
-## 更新日志与发布
+## Changelog & Releases
 
-该存储库使用 [GitHub 的 releases][releases] 功能保持变更日志。
+This repository keeps a change log using [GitHub's releases][releases]
+functionality.
 
-发布基于 [语义化版本控制][semver]，并使用 `MAJOR.MINOR.PATCH` 的格式。简而言之，版本将根据以下内容进行递增：
+Releases are based on [Semantic Versioning][semver], and use the format
+of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
+based on the following:
 
-- `MAJOR`: 不兼容或重大更改。
-- `MINOR`: 向后兼容的新功能和增强。
-- `PATCH`: 向后兼容的错误修复和包更新。
+- `MAJOR`: Incompatible or major changes.
+- `MINOR`: Backwards-compatible new features and enhancements.
+- `PATCH`: Backwards-compatible bugfixes and package updates.
 
-## 支持
+## Support
 
-有问题？
+Got questions?
 
-你有几个选项可以获取答案：
+You have several options to get them answered:
 
-- [Home Assistant 社区附加组件 Discord 聊天服务器][discord] 以获取附加组件支持和功能请求。
-- [Home Assistant Discord 聊天服务器][discord-ha] 以获取一般的 Home Assistant 讨论和问题。
-- Home Assistant [社区论坛][forum]。
-- 加入 [/r/homeassistant][reddit] 的 [Reddit 社区][reddit]。
+- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
+  support and feature requests.
+- The [Home Assistant Discord chat server][discord-ha] for general Home
+  Assistant discussions and questions.
+- The Home Assistant [Community Forum][forum].
+- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
 
-你也可以在这里 [提交问题][issue] GitHub。
+You could also [open an issue here][issue] GitHub.
 
-## 作者与贡献者
+## Authors & contributors
 
-该存储库的最初设置由 [Paul Sinclair][sinclairpaul] 完成。
+The original setup of this repository is by [Paul Sinclair][sinclairpaul].
 
-有关所有作者和贡献者的完整列表，请查看 [贡献者页面][contributors]。
+For a full list of all authors and contributors,
+check [the contributor's page][contributors].
 
-## 许可证
+## License
 
-MIT 许可证
+MIT License
 
-版权所有 (c) 2019-2025 Paul Sinclair
+Copyright (c) 2019-2025 Paul Sinclair
 
-特此免费授予任何获得本软件及相关文档文件（“软件”）副本的人，无限制地处理该软件，包括使用、复制、修改、合并、出版、分发、再许可和/或出售该软件副本的权利，并允许向该软件被提供的人这么做，前提是符合以下条件：
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-上述版权声明和本许可声明应包含在所有副本或软件的所有重要部分中。
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-该软件按“原样”提供，不提供任何种类的保证，无论是明示或暗示，包括但不限于对适销性、特定用途的适合性和不侵权的保证。在任何情况下，作者或版权持有人均不对因使用该软件或与该软件相关的使用或其他交易而引起的任何索赔、损害或其他责任承担责任，无论是在合同、侵权或其他诉讼中。
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_chrony&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository

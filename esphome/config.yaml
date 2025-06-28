@@ -32,7 +32,7 @@ init: false
 startup: services
 name: ESPHome Device Builder
 panel_title: ESPHome Builder
-version: 2025.6.1
+version: 2025.6.2
 slug: esphome
 description: 使用ESPHome构建自己的智能家居设备，无需编程经验。
   required

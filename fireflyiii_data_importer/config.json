@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "火萤III（独立插件）数据导入器",
+  "description": "火萤III数据导入器（独立插件）",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -107,6 +107,6 @@
   "slug": "fireflyiii_data_importer",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "20250617.1",
+  "version": "20250627.1",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]"
 }

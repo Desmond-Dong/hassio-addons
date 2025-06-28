@@ -1,3 +1,3 @@
-# 家庭助手插件：Immich Power Tools
+# Home assistant add-on: Immich Power Tools
 
 https://immichframe.online/

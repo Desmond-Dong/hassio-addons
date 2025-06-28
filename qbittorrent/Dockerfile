@@ -16,7 +16,7 @@
 
 ARG BUILD_FROM
 ARG BUILD_VERSION
-ARG BUILD_UPSTREAM="5.1.0"
+ARG BUILD_UPSTREAM="5.1.1"
 FROM ${BUILD_FROM}
 
 ##################
@@ -73,10 +73,7 @@ ENV PYTHONUNBUFFERED=1
 RUN \
     apk add --no-cache git && \
     git clone --branch master https://ghfast.top/github.com/StuffAnThings/qbit_manage.git /qbit_manage && \
-    sed -i "s/\(qbittorrent-api\)==2025.4.1/\1/" /qbit_manage/requirements.txt && \
-    \
-    # Clean dependencies
-    sed -i "s/\\(qbittorrent-api\\)==2023.10.54/\\1/" /qbit_manage/requirements.txt && \
+    sed -i "/qbittorrent-api/d" /qbit_manage/pyproject.toml && \
     \
     # Install dependencies
     ## Allow python specific arch
@@ -86,7 +83,8 @@ RUN \
     if test "${BUILD_ARCH}" != "*amd64*"; then apk add --no-cache python3-dev; else apk add --no-cache python3; fi && \
     ln -sf python3 /usr/bin/python && \
     apk add --no-cache py3-pip gcc musl-dev && \
-    pip3 install --break-system-packages --no-cache-dir --ignore-installed --upgrade --requirement /qbit_manage/requirements.txt
+    cd /qbit_manage && \
+    pip3 install --break-system-packages --user .
 
 ##################
 # 3 Install apps #

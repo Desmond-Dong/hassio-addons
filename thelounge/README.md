@@ -6,13 +6,15 @@
 
 [![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
 
-一个自托管的网页IRC客户端。
+A self-hosted web IRC client.
 
-## 关于
+## About
 
-一个自托管的网页IRC客户端，具有现代且简洁的界面，支持主题、推送通知、链接预览、文件上传等功能。全面支持跨平台和移动设备友好。
+A self-hosted web IRC client that uses a modern and sleek interface with
+ support for theming, push notifications, link previews, file uploads and
+ more. Fully cross-platform and mobile friendly.
 
-![截图][screenshot]
+![Screenshot][screenshot]
 
 
 [buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
@@ -27,7 +29,7 @@
 [midnight-theme]: https://raw.githubusercontent.com/timmo001/thelounge/master/docs/resources/midnight-theme.png
 [more-info-light]: https://raw.githubusercontent.com/timmo001/thelounge/master/docs/resources/more-info-light.png
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[release-shield]: https://img.shields.io/badge/version-v0.20.0-blue.svg
-[release]: https://github.com/hassio-addons/addon-thelounge/tree/v0.20.0
+[release-shield]: https://img.shields.io/badge/version-v0.21.0-blue.svg
+[release]: https://github.com/hassio-addons/addon-thelounge/tree/v0.21.0
 [screenshot]: https://raw.githubusercontent.com/hassio-addons/addon-thelounge/master/images/screenshot.png
 [thelounge]: https://github.com/timmo001/thelounge

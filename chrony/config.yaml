@@ -1,7 +1,7 @@
 name: chrony
-version: 5.1.0
+version: 5.2.0
 slug: chrony
-description: 一个本地NTP（网络时间协议）服务器用于摄像机等设备。
+description: 一个本地NTP（网络时间协议）服务器，用于摄像头等设备。
 url: https://ghfast.top/github.com/hassio-addons/addon-chrony
 codenotary: codenotary@frenck.dev
 startup: system

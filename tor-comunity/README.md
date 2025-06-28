@@ -1,27 +1,36 @@
-# Home Assistant 社区插件: Tor
+# Home Assistant Community Add-on: Tor
 
-[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
+[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-[![通过 GitHub Sponsors 支持 Frenck][github-sponsors-shield]][github-sponsors]
+[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
 
-[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
+[![Support Frenck on Patreon][patreon-shield]][patreon]
 
-保护您的隐私并通过 Tor 访问 Home Assistant。
+Protect your privacy and access Home Assistant via Tor.
 
-## 关于
+## About
 
-这个 Tor 插件允许您通过 [Tor 隐藏服务][tor-hidden-service] 功能将您的 Home Assistant 实例作为 Onion 网站进行访问。启用此功能后，您无需打开防火墙端口或设置 HTTPS 来启用安全的远程访问。
+This Tor add-on allows you to access you Home Assistant instance as an Onion site,
+trough [Tor's Hidden Service][tor-hidden-service] feature. With this feature
+enabled, you do not need to open your firewall ports or setup HTTPS to enable
+secure remote access.
 
-如果您想要实现以下功能，这将非常有用：
+This is useful if you want to have:
 
-- 远程访问您的 Home Assistant 实例，而无需打开防火墙端口或设置 VPN。
-- 不想或不知道如何获取 SSL/TLS 证书和 HTTPS 配置。
-- 想要阻止攻击者访问/扫描您的端口和服务器。
-- 想要阻止任何人知道您的家庭 IP 地址并查看您与 Home Assistant 之间的流量。
+- Access your Home Assistant instance remotely without opening a firewall port
+  or setting up a VPN.
+- Don’t want to or know how to get an SSL/TLS certificate and HTTPS
+  configuration setup.
+- Want to block attackers from even being able to access/scan your port and
+  server at all.
+- Want to block anyone from knowing your home IP address and seeing your
+  traffic to your Home Assistant.
 
-该插件还提供了打开一个 SOCKS 代理到 Tor 网络的可能性。允许您通过 Home Assistant 安装从任何支持 SOCKS 的应用程序访问 Tor。
+The add-on also offers the possibility to open a Sock proxy into the
+Tor network. Allowing you to access Tor from any of your (SOCKS supporting)
+applications through your Home Assistant installation.
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
@@ -33,6 +42,6 @@
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
 [patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[release-shield]: https://img.shields.io/badge/version-v6.0.3-blue.svg
-[release]: https://github.com/hassio-addons/addon-tor/tree/v6.0.3
+[release-shield]: https://img.shields.io/badge/version-v6.1.0-blue.svg
+[release]: https://github.com/hassio-addons/addon-tor/tree/v6.1.0
 [tor-hidden-service]: https://www.torproject.org/docs/hidden-services.html.en

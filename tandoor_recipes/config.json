@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "食谱管理器。",
+  "description": "食谱管理器",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -117,6 +117,6 @@
   "slug": "tandoor_recipes",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "1.5.34",
+  "version": "1.5.35",
   "webui": "http://[HOST]:[PORT:8080]"
 }

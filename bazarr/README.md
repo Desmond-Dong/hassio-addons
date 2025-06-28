@@ -1,14 +1,15 @@
-# Home Assistant 社区附加组件：Bazarr
+# Home Assistant Community Add-on: Bazarr
 
 [![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
 [![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-下载和管理 Sonarr 和 Radarr 的字幕。
+Download and manage subtitles for Sonarr and Radarr.
 
-## 关于
+## About
 
-[Bazarr] 是一个与 [Sonarr] 和 [Radarr] 配合使用的应用程序，基于您的要求管理和下载字幕。
+[Bazarr] is a companion application to [Sonarr] and [Radarr] that manages and
+downloads subtitles based on your requirements.
 
 [Bazarr]: https://www.bazarr.media/
 [Sonarr]: https://sonarr.tv/
@@ -20,5 +21,5 @@
 [forum]: https://community.home-assistant.io/t/?u=frenck
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
-[release-shield]: https://img.shields.io/badge/version-v0.4.1-blue.svg
-[release]: https://github.com/hassio-addons/addon-bazarr/tree/v0.4.1
+[release-shield]: https://img.shields.io/badge/version-v0.5.0-blue.svg
+[release]: https://github.com/hassio-addons/addon-bazarr/tree/v0.5.0
