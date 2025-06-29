@@ -1,5 +1,5 @@
 # Start of Selection
-FROM docker.1ms.run/library/python:3.13.1-alpine3.21
+FROM docker.1ms.run/library/python:3.13.5-alpine3.22
 
 # 设置时区为上海
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
