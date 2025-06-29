@@ -21,13 +21,95 @@ mqtt_topic = options.get("mqtt_topic", "EZVIZ")
 mqtt_username = options.get("mqtt_username", "user")
 mqtt_password = options.get("mqtt_password", "passwd")
 
+# Home Assistant Discovery configuration
+def publish_ha_discovery(device_id):
+    # Battery Sensor Discovery
+    sensor_name = f"{device_id} Battery Sensor"
+    state_topic = f"{mqtt_topic}/{device_id}/ys.devicestatus/reported/powerRemaining"
+    availability_topic = f"{mqtt_topic}/{device_id}/status"
+    unique_id = f"ezviz_battery_sensor_{device_id}"
+    discovery_topic = f"homeassistant/sensor/{device_id}_battery/config"
+    payload = {
+        "name": sensor_name,
+        "state_topic": state_topic,
+        "unit_of_measurement": "%",
+        "value_template": "{{ value | int }}",
+        "device_class": "battery",
+        "unique_id": unique_id,
+        "availability_topic": availability_topic,
+        "payload_available": "online",
+        "payload_not_available": "offline",
+        "device": {
+            "identifiers": [device_id],
+            "name": f"EZVIZ {device_id}",
+            "manufacturer": "EZVIZ"
+        }
+    }
+    mqtt_client.publish(discovery_topic, json.dumps(payload), retain=True)
+    log.info("Published Home Assistant discovery config to topic: %s", discovery_topic)
+
+    # Doorbell Charging Status Discovery (for any device_id)
+    charging_discovery_topic = f"homeassistant/sensor/{device_id}_charging_status/config"
+    charging_payload = {
+        "name": "Doorbell Charging Status",
+        "state_topic": f"{mqtt_topic}/{device_id}/ys.devicestatus/reported/powerType",
+        "unique_id": f"doorbell_charging_status_{device_id}",
+        "value_template": "{% if value == '0' %}Charging{% elif value == '1' %}On Battery{% else %}Unknown{% endif %}",
+        "icon": "mdi:battery-charging",
+        "device": {
+            "identifiers": [device_id],
+            "manufacturer": "EZVIZ",
+            "model": "Doorbell",
+            "name": f"EZVIZ {device_id}",
+        }
+    }
+    mqtt_client.publish(charging_discovery_topic, json.dumps(charging_payload), retain=True)
+    log.info("Published Doorbell Charging Status discovery config to topic: %s", charging_discovery_topic)
+
+    # Alarm Time Discovery (device_id variable)
+    alarm_time_discovery_topic = f"homeassistant/sensor/{device_id}_alarm_time/config"
+    alarm_time_payload = {
+        "name": "Alarm Time",
+        "unique_id": f"alarm_time_{device_id}",
+        "state_topic": f"{mqtt_topic}/{device_id}/ys.alarm/alarmTime",
+        "value_template": "{{ value | as_timestamp | timestamp_local }}",
+        "device_class": "timestamp",
+        "icon": "mdi:alarm-light",
+        "device": {
+            "identifiers": [device_id],
+            "manufacturer": "EZVIZ",
+            "model": "Doorbell",
+            "name": f"EZVIZ {device_id}",
+        }
+    }
+    mqtt_client.publish(alarm_time_discovery_topic, json.dumps(alarm_time_payload), retain=True)
+    log.info("Published Alarm Time discovery config to topic: %s", alarm_time_discovery_topic)
+
+    # Calling Time Discovery (device_id variable)
+    calling_time_discovery_topic = f"homeassistant/sensor/{device_id}_calling_time/config"
+    calling_time_payload = {
+        "name": "Calling Time",
+        "unique_id": f"calling_time_{device_id}",
+        "state_topic": f"{mqtt_topic}/{device_id}/ys.calling/timestamp",
+        "value_template": "{{ value | as_timestamp | timestamp_local }}",
+        "device_class": "timestamp",
+        "icon": "mdi:phone",
+        "device": {
+            "identifiers": [device_id],
+            "manufacturer": "EZVIZ",
+            "model": "Doorbell",
+            "name": f"EZVIZ {device_id}",
+        }
+    }
+    mqtt_client.publish(calling_time_discovery_topic, json.dumps(calling_time_payload), retain=True)
+    log.info("Published Calling Time discovery config to topic: %s", calling_time_discovery_topic)
+
 # MQTT callbacks
 def on_connect(client, userdata, flags, rc, properties=None):
     log.info("Connected to MQTT broker with result code: %s", rc)
 
 def on_publish(client, userdata, mid, *args, **kwargs):
     log.info("on_publish called with mid: %s, args: %s, kwargs: %s", mid, args, kwargs)
-
 
 # Initialize MQTT client with versioned callback API
 mqtt_client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
@@ -85,10 +167,16 @@ class RequestHandler(BaseHTTPRequestHandler):
             base_topic = f"{mqtt_topic}/{device_id}/{message_type}"
             log.info("Constructed base MQTT topic: %s", base_topic)
 
+            # Home Assistant discovery: 只在首次收到该device_id时推送discovery配置
+            # 这里简单处理：每次都推送一次（可根据实际需求优化为只推送一次）
+            if device_id != "unknown":
+                publish_ha_discovery(device_id)
+
             # Iterate over the body data and publish to MQTT
             body_data = receive_message.get('body', {})
             for key, value in body_data.items():
                 publish_json(mqtt_client, base_topic, key, value)
+
 
         except Exception as e:
             log.error("Error processing message: %s", e)
