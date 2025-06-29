@@ -26,7 +26,6 @@ def publish_ha_discovery(device_id):
     # Battery Sensor Discovery
     sensor_name = f"{device_id} Battery Sensor"
     state_topic = f"{mqtt_topic}/{device_id}/ys.devicestatus/reported/powerRemaining"
-    availability_topic = f"{mqtt_topic}/{device_id}/status"
     unique_id = f"ezviz_battery_sensor_{device_id}"
     discovery_topic = f"homeassistant/sensor/{device_id}_battery/config"
     payload = {
