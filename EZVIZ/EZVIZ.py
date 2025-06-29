@@ -24,23 +24,18 @@ mqtt_password = options.get("mqtt_password", "passwd")
 # Home Assistant Discovery configuration
 def publish_ha_discovery(device_id):
     # Battery Sensor Discovery
-    sensor_name = f"{device_id} Battery Sensor"
-    state_topic = f"{mqtt_topic}/{device_id}/ys.devicestatus/reported/powerRemaining"
-
-    unique_id = f"ezviz_battery_sensor_{device_id}"
     discovery_topic = f"homeassistant/sensor/{device_id}_battery/config"
     payload = {
-        "name": sensor_name,
-        "state_topic": state_topic,
+        "name": "Doorbell Battery Level",
+        "state_topic": f"{mqtt_topic}/{device_id}/ys.devicestatus/reported/powerRemaining",
         "unit_of_measurement": "%",
         "value_template": "{{ value | int }}",
         "device_class": "battery",
-        "unique_id": unique_id,
-        "payload_available": "online",
-        "payload_not_available": "offline",
+        "unique_id": f"ezviz_battery_sensor_{device_id}",
         "device": {
             "identifiers": [device_id],
             "name": f"EZVIZ {device_id}",
+            "manufacturer": "EZVIZ",
             "manufacturer": "EZVIZ"
         }
     }
