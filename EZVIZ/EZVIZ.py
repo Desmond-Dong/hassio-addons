@@ -156,7 +156,7 @@ mqtt_client.loop_start()
 def publish_json(client, base_topic, key, value, retain=True):
     if isinstance(value, dict):
         for sub_key, sub_value in value.items():
-            if sub_value.startswith("https"):
+            if str(sub_value).startswith("https"):
                 try:
                     response = requests.get(sub_value)
                     response.raise_for_status()
