@@ -1,6 +1,6 @@
 {
   "name": "EZVIZ Cloud Signaling Receiver",
-  "version": "v1.0.8",  # Updated version
+  "version": "v1.0.9",  # Updated version
   "slug": "ezviz-cloud-receiver",
   "codenotary": "djhhui@gmail.com",
   "description": "这是萤石云信令接收服务器，负责处理来自萤石云的信令消息。",
