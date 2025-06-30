@@ -165,10 +165,11 @@ def publish_json(client, base_topic, key, value, retain=True):
                         ),
                         "Accept": "*/*",
                     }
-                    response = requests.get(sub_value, headers=headers, timeout=10, stream=True, allow_redirects=True)
-                    #response.raise_for_status()
-                    img_data = response.raw.read()
-                    encoded_content = base64.b64encode(img_data).decode('utf-8')
+                    session = requests.Session()
+                    session.headers.update(headers)
+                    response = session.get(sub_value, headers=headers, timeout=10)
+                    response.raise_for_status()
+                    encoded_content = base64.b64encode(response.content).decode('utf-8')
                     sub_value = value[sub_key] = encoded_content
                     log.info("Fetched and base64-encoded content from URL: %s", sub_value[:60] if isinstance(sub_value, str) else str(sub_value))
                 except Exception as e:
