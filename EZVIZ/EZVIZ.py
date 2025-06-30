@@ -1,6 +1,8 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 import logging
+import base64
+import requests
 import paho.mqtt.client as mqtt
 
 logging.basicConfig(level=logging.INFO)
@@ -35,7 +37,6 @@ def publish_ha_discovery(device_id):
         "device": {
             "identifiers": [device_id],
             "name": f"EZVIZ {device_id}",
-            "manufacturer": "EZVIZ",
             "manufacturer": "EZVIZ"
         }
     }
@@ -98,6 +99,44 @@ def publish_ha_discovery(device_id):
     mqtt_client.publish(calling_time_discovery_topic, json.dumps(calling_time_payload), retain=True)
     log.info("Published Calling Time discovery config to topic: %s", calling_time_discovery_topic)
 
+    # EZVIZ 报警图片 Discovery 
+
+    alarm_picture_discovery_topic = f"homeassistant/camera/{device_id}_alarm_picture/config"
+    alarm_picture_payload = {
+        "name": "Alarm Picture",
+        "unique_id": "alarm_picture_{device_id}",
+        "topic": f"{mqtt_topic}/{device_id}/ys.alarm/pictureList/0/url",
+        "image_encoding": "b64",
+        "device_class": "camera",
+        "device": {
+            "identifiers": [device_id],
+            "manufacturer": "EZVIZ",
+            "model": "Doorbell",
+            "name": f"EZVIZ {device_id}",
+            }
+        }
+    mqtt_client.publish(alarm_picture_discovery_topic, json.dumps(alarm_picture_payload), retain=True)
+    log.info("Published EZVIZ Alarm Picture discovery config to topic: %s", alarm_picture_discovery_topic)
+
+    # EZVIZ Calling Picture Discovery 
+
+    calling_picture_discovery_topic = f"homeassistant/camera/{device_id}_calling_picture/config"
+    calling_picture_payload = {
+        "name": "Calling Picture",
+        "unique_id": "calling_picture_{device_id}",
+        "topic": f"{mqtt_topic}/{device_id}/ys.calling/coverUrl/url",
+        "image_encoding": "b64",
+        "device_class": "camera",
+        "device": {
+            "identifiers": [device_id],
+            "manufacturer": "EZVIZ",
+            "model": "Doorbell",
+            "name": f"EZVIZ {device_id}",
+            }
+        }
+    mqtt_client.publish(calling_picture_discovery_topic, json.dumps(calling_picture_payload), retain=True)
+    log.info("Published Calling Picture discovery config to topic: %s", calling_picture_discovery_topic)
+
 # MQTT callbacks
 def on_connect(client, userdata, flags, rc, properties=None):
     log.info("Connected to MQTT broker with result code: %s", rc)
@@ -117,6 +156,18 @@ mqtt_client.loop_start()
 def publish_json(client, base_topic, key, value, retain=True):
     if isinstance(value, dict):
         for sub_key, sub_value in value.items():
+            if sub_key == "url" and sub_value.startswith("https"):
+                # 通过request读取sub_value的链接，并把这个链接的内容用base64编码，重新赋值给sub_value
+                try:
+                    response = requests.get(sub_value)
+                    response.raise_for_status()
+                    encoded_content = base64.b64encode(response.content).decode('utf-8')
+                    sub_value = encoded_content
+                    log.info("Fetched and base64-encoded content from URL: %s", sub_value)
+                except Exception as e:
+                    log.error("Failed to fetch or encode URL %s: %s", sub_value, e)
+                    
+                continue
 
             log.info("Publishing key: %s, sub_key: %s, sub_value: %s to MQTT", key, sub_key, sub_value)
             publish_json(client, base_topic, f"{key}/{sub_key}", sub_value, retain)
