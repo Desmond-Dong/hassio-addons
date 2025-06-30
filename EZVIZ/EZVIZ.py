@@ -117,6 +117,8 @@ mqtt_client.loop_start()
 def publish_json(client, base_topic, key, value, retain=True):
     if isinstance(value, dict):
         for sub_key, sub_value in value.items():
+
+            log.info("Publishing key: %s, sub_key: %s, sub_value: %s to MQTT", key, sub_key, sub_value)
             publish_json(client, base_topic, f"{key}/{sub_key}", sub_value, retain)
     elif isinstance(value, list):
         if not value:  # If the list is empty
@@ -132,6 +134,7 @@ def publish_json(client, base_topic, key, value, retain=True):
     else:
         topic = f"{base_topic}/{key}"
         payload = str(value)  # Convert value to string
+        log.info("Publishing to topic: %s with payload: %s", topic, payload)
         result, mid = client.publish(topic, payload, retain=retain)
         if result == mqtt.MQTT_ERR_SUCCESS:
             log.info("Published to topic: %s with payload: %s", topic, payload)
@@ -169,6 +172,7 @@ class RequestHandler(BaseHTTPRequestHandler):
             # Iterate over the body data and publish to MQTT
             body_data = receive_message.get('body', {})
             for key, value in body_data.items():
+                log.info("Publishing key: %s, value: %s to MQTT", key, value)
                 publish_json(mqtt_client, base_topic, key, value)
 
 
