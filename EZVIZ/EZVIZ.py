@@ -227,12 +227,12 @@ class RequestHandler(BaseHTTPRequestHandler):
 
         except Exception as e:
             log.error("Error processing message: %s", e)
-            self.send_response(500)  # Internal server error
-            self.send_header('Content-type', 'application/json')
-            self.end_headers()
-            error_response = json.dumps({"error": "Internal Server Error", "message": str(e)})
-            self.wfile.write(error_response.encode('utf-8'))
-            return
+        #    self.send_response(500)  # Internal server error
+        #    self.send_header('Content-type', 'application/json')
+        #    self.end_headers()
+        #    error_response = json.dumps({"error": "Internal Server Error", "message": str(e)})
+        #    self.wfile.write(error_response.encode('utf-8'))
+        #    return
 
         # Respond to the client
         message_id = receive_message.get('header', {}).get('messageId', '')
