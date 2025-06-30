@@ -1,96 +1,102 @@
-# Home Assistant 插件: Piper
+# Home Assistant Add-on: Piper
 
-## 安装
+## Installation
 
-按照以下步骤在您的系统上安装插件：
+Follow these steps to get the add-on installed on your system:
 
-1. 在 Home Assistant 前端中导航到 **设置** -> **附加组件** -> **附加组件商店**。
-2. 找到 "Piper" 附加组件并点击它。
-3. 点击 "安装" 按钮。
+1. Navigate in your Home Assistant frontend to **Settings** -> **Add-ons** -> **Add-on store**.
+2. Find the "Piper" add-on and click it.
+3. Click on the "INSTALL" button.
 
-## 如何使用
+## How to use
 
-安装并运行此插件后，它将被 Home Assistant 的 Wyoming 集成自动发现。要完成设置，请点击以下我的按钮：
+After this add-on is installed and running, it will be automatically discovered
+by the Wyoming integration in Home Assistant. To finish the setup,
+click the following my button:
 
-[![打开您的 Home Assistant 实例并开始设置新集成。](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=wyoming)
+[![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=wyoming)
 
-另外，您也可以手动安装 Wyoming 集成，详见[Wyoming 集成文档](https://www.home-assistant.io/integrations/wyoming/)。
+Alternatively, you can install the Wyoming integration manually, see the
+[Wyoming integration documentation](https://www.home-assistant.io/integrations/wyoming/)
+for more information.
 
-## 配置
+## Configuration
 
-### 选项: `voice`
+### Option: `voice`
 
-[收听语音样本](https://rhasspy.github.io/piper-samples/)
+[Listen to voice samples](https://rhasspy.github.io/piper-samples/)
 
-要使用的 Piper 语音名称，例如 `en_US-lessac-medium`（默认）。语音模型会自动从 https://huggingface.co/rhasspy/piper-voices/tree/v1.0.0 下载。
+Name of the Piper voice to use, such as `en_US-lessac-medium` (the default).
+Voice models are automatically downloaded from https://huggingface.co/rhasspy/piper-voices/tree/v1.0.0
 
-语音的命名遵循以下方案: `<语言>_<地区>-<名称>-<质量>` `<名称>` 部分来自于用于训练语音的数据集或提供的发言者名称。
+Voices are named according to the following scheme: `<language>_<REGION>-<name>-<quality>`
+The `<name>` portion comes from the dataset used to train the voice or the speaker's name if it was provided.
 
-语音的质量分为 4 个不同级别：
+A voice's quality comes in 4 different levels:
 
-- `x_low` - 16Khz，最小/最快
-- `low` - 16Khz，快
-- `medium` - 22.05Khz，较慢但音质更好
-- `high` - 22.05Khz，最慢但音质最佳
+- `x_low` - 16Khz, smallest/fastest
+- `low` - 16Khz, fast
+- `medium` - 22.05Khz, slower but better sounding
+- `high` - 22.05Khz, slowest but best sounding
 
-在 Raspberry Pi 4 上，最多可以以可用的速度运行到 `medium` 模型。如果音质不是优先考虑的因素，请优先选择 `low` 或 `x-low` 语音，因为它们的速度明显快于 `medium`。
+On a Raspberry Pi 4, up to the `medium` models will run with usable speed. If audio quality is not a priority, prefer the `low` or `x-low` voices as they will be noticeably faster than `medium`.
 
-### 选项: `speaker`
+### Option: `speaker`
 
-如果语音支持多个扬声器，则使用扬声器编号，例如 [`en-us-libritts-high`](https://rhasspy.github.io/piper-samples/#en-us-libritts-high)。
+Speaker number to use if the voice supports multiple speakers, such as [`en-us-libritts-high`](https://rhasspy.github.io/piper-samples/#en-us-libritts-high).
 
-默认情况下，将使用第一个扬声器（扬声器 0）。
+By default, the first speaker (speaker 0) will be used.
 
-### 选项: `length_scale`
+### Option: `length_scale`
 
-加快或减慢语音。值为 1.0 表示使用语音的默认说话速度，< 1.0 表示更快，> 1.0 表示更慢。
+Speeds up or slows down the voice. A value of 1.0 means to use the voice's default speaking rate, with < 1.0 being faster and > 1.0 being slower.
 
-### 选项: `noise_scale`
+### Option: `noise_scale`
 
-通过在音频生成过程中添加噪声来控制音频的可变性。效果很大程度上取决于声音本身，但一般来说，值为 0 会去除可变性，值大于 1 会开始降低音频质量。
+Controls the variability of audio by adding noise during audio generation. The effect highly depends on the voice itself, but in general a value of 0 removes variability and values above 1 will start to degrade audio.
 
-### 选项: `noise_w`
+### Option: `noise_w`
 
-控制说话节奏的可变性（音素宽度）。效果很大程度上取决于声音本身，但一般来说，值为 0 去除可变性，值大于 1 会产生明显的口吃和停顿。
+Controls the variability of speaking cadence (phoneme widths). The effect highly depends on the voice itself, but in general a value of 0 removes variability and values above 1 produce extreme stutters and pauses.
 
-### 选项: `max_piper_procs`
+### Option: `max_piper_procs`
 
-同时运行的 Piper 进程数量（默认值为 1）。每个 Piper 进程将一个语音模型加载到 RAM 中，因此同时使用多个语音需要：
+Number of Piper processes to run simultaneously (default is 1). Each Piper process loads a single voice model into RAM, so using multiple voices at the same time requires:
 
-- 在使用语音时启动/停止 Piper 进程，或
-- 运行更多 Piper 进程
+- Starting/stopping Piper processes as voices are used, or
+- Running more Piper processes
 
-此附加组件将为每个请求的语音启动一个 Piper 进程，最多达到 `max_piper_procs`。之后，将停止最近未使用的语音。
-如果您需要快速切换多个语音，请增大 `max_piper_procs`，但请注意，这将增加附加组件的 RAM 使用量。
+This add-on will start a Piper process for each requested voice up to `max_piper_procs`. After that, the least recently used voice will be stopped.
+Increase `max_piper_procs` if you need to quickly switch between multiple voices, but beware that this will increase RAM usage by the add-on.
 
-### 选项: `update_voices`
+### Option: `update_voices`
 
-每次附加组件启动时自动下载新语音的列表。您还必须在 Home Assistant 中重新加载 Piper 的 Wyoming 集成以查看新语音。
+Download the list of new voices automatically every time the add-on starts. You must also reload the Wyoming integration for Piper in Home Assistant to see new voices.
 
-### 选项: `streaming`
+### Option: `streaming`
 
-启用流媒体音频支持。这将在句子边界处将文本分开，并在生成音频时进行流式传输。要求至少 HA 2025.7。
+Enable support for streaming audio. This breaks apart text at sentence boundaries and streams the audio as its being produced. Requires at least HA 2025.7.
 
-### 选项: `debug_logging`
+### Option: `debug_logging`
 
-向附加组件的日志打印 DEBUG 级别消息。
+Print DEBUG level messages to the add-on's log.
 
-## 自定义语音
+## Custom Voices
 
-将自定义语音文件添加到 `/share/piper` 目录。每个自定义语音必须包括一个模型文件 (`<voice>.onnx`) 和配置文件 (`<voice>.onnx.json`)。
-有关如何训练和导出自定义语音的详细信息，请参见[训练指南](https://github.com/rhasspy/piper/blob/master/TRAINING.md)。
+Add custom voice files to the `/share/piper` directory. Each custom voice must include a model file (`<voice>.onnx`) and config file (`<voice>.onnx.json`).
+See the [training guide](https://github.com/rhasspy/piper/blob/master/TRAINING.md) for details on how to train and export a custom voice.
 
-## 支持
+## Support
 
-有问题吗？
+Got questions?
 
-您有几个选项可以得到解答：
+You have several options to get them answered:
 
-- [Home Assistant Discord 聊天服务器][discord]。
-- Home Assistant [社区论坛][forum]。
-- 加入 [Reddit 子版块][reddit] 在 [/r/homeassistant][reddit]。
+- The [Home Assistant Discord Chat Server][discord].
+- The Home Assistant [Community Forum][forum].
+- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
 
-如果您发现了一个错误，请 [在我们的 GitHub 上打开问题][issue]。
+In case you've found an bug, please [open an issue on our GitHub][issue].
 
 [discord]: https://discord.gg/c5DvZ4e
 [forum]: https://community.home-assistant.io

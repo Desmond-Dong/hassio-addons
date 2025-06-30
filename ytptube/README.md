@@ -1,61 +1,62 @@
-# 家庭助理插件：ytptube
+# Home assistant add-on: ytptube
 
-用于 yt-dlp 的 Web GUI，支持播放列表和频道 (https://github.com/arabcoders/ytptube)。
+Web GUI for yt-dlp with playlist & channel support (https://github.com/arabcoders/ytptube).
 
-_感谢所有给我仓库点星的人！要点星，请点击下面的图片，然后它会在右上角显示。谢谢！_
+
+_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## 关于
+## About
 
-此插件基于 [docker 镜像](https://github.com/arabcoders/ytptube)。
+This addon is based on the [docker image](https://github.com/arabcoders/ytptube).
 
-# YTPTube 功能。
+# YTPTube Features.
 
-* 支持多重下载。
-* 随机美丽背景。`可以禁用或更换源`。
-* 可以处理直播。
-* 调度程序可以在指定时间自动排队下载频道或播放列表。
-* 根据选定事件向目标发送通知。
-* 支持每个链接的 `cli 选项` 和 `cookies`。
-* 通过逗号分隔的多个 URL 排队。
-* 预设系统以重用常用的 yt-dlp 选项。
-* 简单的文件浏览器。`默认禁用`。
-* 内置视频播放器**支持外部字幕的侧车**。
-* 新的 `POST /api/history` 端点允许同时发送一个或多个链接。
-* 新的 `GET /api/history/add?url=http://..` 端点允许通过 GET 请求添加单个项目。
-* 现代前端 UI。
-* SQLite 作为数据库后端。
-* 支持基本身份验证。
-* 支持 curl_cffi，详见 [yt-dlp 文档](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#impersonation)。
-* 为非技术用户提供基本模式的 WebUI，隐藏大多数正常功能。
-* 容器中捆绑的工具：curl-cffi、ffmpeg、ffprobe、aria2、rtmpdump、mkvtoolsnix、mp4box。
-* 自动即将到来的直播重新排队。
-* 根据自定义定义的条件应用 `yt-dlp` 选项。
-* 自定义浏览器扩展、书签和 iOS 快捷方式，将链接发送到 YTPTube 实例。
+* Multi-downloads support.
+* Random beautiful background. `can be disabled or source changed`.
+* Can handle live streams.
+* Scheduler to queue channels or playlists to be downloaded automatically at a specified time.
+* Send notification to targets based on selected events. 
+* Support per link `cli options` & `cookies`.
+* Queue multiple URLs separated by comma.
+* Presets system to re-use frequently used yt-dlp options.
+* Simple file browser. `Disabled by default`.
+* A built in video player **with support for sidecar external subtitles**.
+* New `POST /api/history` endpoint that allow one or multiple links to be sent at the same time.
+* New `GET /api/history/add?url=http://..` endpoint that allow to add single item via GET request.
+* Modern frontend UI.
+* SQLite as database backend.
+* Basic authentication support.
+* Support for curl_cffi, see [yt-dlp documentation](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#impersonation)
+* Support basic mode for WebUI for non-technical users, which hides most of the normal features from view.
+* Bundled tools in container: curl-cffi, ffmpeg, ffprobe, aria2, rtmpdump, mkvtoolsnix, mp4box.
+* Automatic upcoming live stream re-queue.
+* Apply `yt-dlp` options per custom defined conditions.
+* Custom browser extensions, bookmarklets and iOS shortcuts to send links to YTPTube instance.
 
-## 安装
+## Installation
 
-安装此插件需要一些额外的步骤。
+The installation of this add-on has a few extra steps.
 
-1. [将我的 Hass.io 插件库][repository] 添加到您的 Hass.io 实例。
-1. 安装此插件。
-1. 点击 `保存` 按钮以保存您的配置。
-1. 下载目录默认为 /share/ytptube，可以更改为 share 中的任何内容。
-1. 启动插件。它将失败。
-1. 通过 SSH 进入家庭助理并输入 `chown hassio /addon_configs/2effc9b9_ytptube`。
-1. 再次启动插件。它将失败。
-1. 再次通过 SSH 进入家庭助理并输入 `chown hassio /share/ytptube` 或您更改的下载目录。
-1. 启动插件。
-1. 检查插件的日志以查看是否一切正常。
-1. 通过 <your-ip>:port 打开 WebUI。Ingress 无法使用。
+1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
+1. Install this add-on.
+1. Click the `Save` button to store your configuration.
+1. Download directory defaults to /share/ytptube, can be changed to anything in share
+1. Start the add-on. It will fail
+1. ssh into home assistant and type `chown hassio /addon_configs/2effc9b9_ytptube`
+1. Start the add-on. It will fail
+1. ssh again into home assistant and type `chown hassio /share/ytptube` or the download directory if you changed it
+1. Start the add-on
+1. Check the logs of the add-on to see if everything went well.
+1. Open WebUI via <your-ip>:port. Ingress does not work
 
-## 配置
+## Configuration
 
 ```
-port : 8081 # 您想运行的端口。
+port : 8081 #port you want to run on.
 ```
 
-Webui 可以在 `<your-ip>:port` 找到。
+Webui can be found at `<your-ip>:port`.
 
 [repository]: https://github.com/jdeath/homeassistant-addons

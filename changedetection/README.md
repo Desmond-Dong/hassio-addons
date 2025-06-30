@@ -1,71 +1,73 @@
-# 家庭助手附加组件：Changedetection.io
+# Home assistant add-on: Changedetection.io
 
-**最优秀且最简单的自托管免费开源网站更改检测追踪、监控和通知服务。 Visualping、Watchtower等的替代品。旨在简化 – 主要目标是简单监控哪些网站存在文本更改，且是免费的。免费开源网页更改检测**
+**The best and simplest self-hosted free open source website change detection tracking, monitoring and notification service. An alternative to Visualping, Watchtower etc. Designed for simplicity - the main goal is to simply monitor which websites had a text change for free. Free Open source web page change detection**
 
-#### 示例用例
+#### Example use cases
 
-- 产品和服务的价格变动
-- _缺货通知_ 和 _恢复库存通知_
-- 政府部门更新（更改通常只在他们的网站上）
-- 新软件发布、当你不在他们的邮件列表中时的安全公告。
-- 节日的变更
-- 房地产列表变更
-- 知道你最喜欢的威士忌打折的时机，或其他特别交易在任何人之前宣布
-- 政府网站的COVID相关新闻
-- 大学/组织的网站新闻
-- 检测并监控JSON API响应的变化
-- JSON API监控和警报
-- 法律及其他文件的更改
-- 当网站上出现文本时通过通知触发API调用
-- 使用JSON过滤器和JSON通知连接API
-- 根据网页内容的更改创建RSS源
-- 监控HTML源代码以检测意外更改，加强你的PCI合规性
-- 你有一个非常敏感的URL列表需要监视，而你不想使用付费替代方案。（记住，_你_才是产品）
+- Products and services have a change in pricing
+- _Out of stock notification_ and _Back In stock notification_
+- Governmental department updates (changes are often only on their websites)
+- New software releases, security advisories when you're not on their mailing list.
+- Festivals with changes
+- Realestate listing changes
+- Know when your favourite whiskey is on sale, or other special deals are announced before anyone else
+- COVID related news from government websites
+- University/organisation news from their website
+- Detect and monitor changes in JSON API responses 
+- JSON API monitoring and alerting
+- Changes in legal and other documents
+- Trigger API calls via notifications when text appears on a website
+- Glue together APIs using the JSON filter and JSON notifications
+- Create RSS feeds based on changes in web content
+- Monitor HTML source code for unexpected changes, strengthen your PCI compliance
+- You have a very sensitive list of URLs to watch and you do _not_ want to use the paid alternatives. (Remember, _you_ are the product)
 
-_需要一个实际支持Javascript的Chrome运行器吗？我们支持通过WebDriver和Playwright获取！</a>_
+_Need an actual Chrome runner with Javascript support? We support fetching via WebDriver and Playwright!</a>_
 
-#### 主要特点
+#### Key Features
 
-- 大量触发器过滤器，例如“根据文本触发”、“按选择器移除文本”、“忽略文本”、“提取文本”，也可使用正则表达式！
-- 使用xPath和CSS选择器针对元素，轻松监控复杂的JSON，使用JsonPath规则
-- 在快速的非JS和Chrome JS基础的“提取器”之间切换
-- 轻松指定网站检查的频率
-- 提取文本前执行JS（适用于登录，见用户界面示例！）
-- 覆盖请求头，指定`POST`或`GET`及其他方法
-- 使用“视觉选择器”帮助定位特定元素
+- Lots of trigger filters, such as "Trigger on text", "Remove text by selector", "Ignore text", "Extract text", also using regular-expressions!
+- Target elements with xPath and CSS Selectors, Easily monitor complex JSON with JsonPath rules
+- Switch between fast non-JS and Chrome JS based "fetchers"
+- Easily specify how often a site should be checked
+- Execute JS before extracting text (Good for logging in, see examples in the UI!)
+- Override Request Headers, Specify `POST` or `GET` and other methods
+- Use the "Visual Selector" to help target specific elements
 
-_感谢每一个给我的仓库点星的人！要点星请点击下面的图片，然后它将位于右上方。谢谢！_
+_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## 主要特点
+## Key Features
 
 
-## 安装
+## Installation
 
-该附加组件的安装相当简单，与安装任何其他Hass.io附加组件没有区别。
+The installation of this add-on is pretty straightforward and not different in
+comparison to installing any other Hass.io add-on.
 
-1. [将我的Hass.io附加组件库][repository]添加到你的Hass.io实例。
-2. 安装此附加组件。
-3. 转到ip:port。Ingress有些有效，但页面无法正确渲染。
+1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
+1. Install this add-on.
+1. Go to ip:port . Ingress sorta works, but page does not render correctly
 
 
-## 如何使用启用Playwright JS的提取器替代内置的纯文本/HTTP客户端
+## How to use Playwright JS enabled fetcher instead of built in Plaintext/HTTP Client
 
-Changedetection.io附加组件本身只能使用内置的纯文本/HTTP客户端获取网站。
+The Changedetection.io addon by itself can only fetch websites using a built in Plaintext/HTTP Client.
 
-许多现代网页使用JavaScript填充内容，它们更动态，有时需要真正的Chrome浏览器来获取内容，尽管许多可能在内置的“提取器”下工作。
+Many modern web pages use JavaScript to fill-in the content, they are more dynamic and sometimes need a real chrome browser for fetching the content, although many may work with the built in 'fetcher'
 
-你可以配置Changedetection.io使用Playwright提取器获取页面，否则它将使用纯非JS内置浏览器进行获取。使用Playwright提取器提供完整的Changedetection.io功能，包括获取内容的JS浏览器步骤和视觉过滤器选择器。
+You can configure Changedetection.io to fetch pages using the Playwright fetcher, otherwise it will fetch using a plain non-JS built in browser. Using the Playwright fetcher offers the full Changedetection.io functionality, incl. JS Browser steps to fetch content and Visual Filter Selector.
 
-要使用Playwright提取器，Changedetection.io附加组件需要与由alexbelgium制作的Browserless Chrome附加组件协作。
+To use the Playwright fetcher, Changedetection.io addon needs to team up with the Browserless Chrome addon made by alexbelgium.
 
-要安装Browserless Chrome附加组件，在Homeassistant中添加alexbelgium/hassio-addons库（https://github.com/alexbelgium/hassio-addons/）。从Homeassistant界面安装并启动附加组件。要使用Playwright提取器，只需在添加要监控的新站点时在“请求”选项卡中勾选“Playwright Chromium/Javascript”，或将其设置为所有监控站点的系统标准，前往Changedetection.io附加组件的Web界面 > 设置 > 获取，然后选择“Playwright Chromium/Javascript”。
+To Install the Browserless Chrome addon, add the alexbelgium/hassio-addons repository (https://github.com/alexbelgium/hassio-addons/) in Homeassistant. Install and start the addon from the Homeassistant Interface. To use the Playwright fetcher simply check "Playwright Chromium/Javascript" it in the "Request" tab when adding a new site to be monitored or to set it as system standard for all monitored Sites, go to the Webinterface of your Changedetection.io addon > Settings > Fetching and select "Playwright Chromium/Javascript".
 
-关于Browserless Chrome附加组件的更多信息： https://github.com/alexbelgium/hassio-addons/tree/master/browserless_chrome
+More on Browserless Chrome addon: https://github.com/alexbelgium/hassio-addons/tree/master/browserless_chrome
 
-两个附加组件需要运行在同一台机器上。在Raspberry Pi 4B上测试，使用Home Assistant 2023.5.3/Supervisor 2023.04.1/操作系统10.1，但应该适用于任何其他版本和amd64设备。
+Both addons need to run on the same machine. Tested on Home Assistant 2023.5.3/Supervisor 2023.04.1/Operating System 10.1 on a Raspberry Pi 4B, but should work with any other Version and with amd64 devices as well.
 
-注意：Browserless Chrome附加组件在获取网站时非常消耗资源，包括RAM和CPU。在RPi 4B上运行良好，但可能在旧设备上较慢。最大同时获取限制为1。
+Note: Browserless Chrome addon is quite ressource hungry when fetching websites, bot in terms of RAM and CPU. Works fine on RPi 4B, may be slow on older devices. Maximum simultaneous fetches are limited to 1.
+
 
 [repository]: https://github.com/jdeath/homeassistant-addons
