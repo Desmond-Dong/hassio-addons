@@ -162,7 +162,7 @@ def publish_json(client, base_topic, key, value, retain=True):
                     response = requests.get(sub_value)
                     response.raise_for_status()
                     encoded_content = base64.b64encode(response.content).decode('utf-8')
-                    sub_value = encoded_content
+                    sub_value = value[sub_key] = encoded_content
                     log.info("Fetched and base64-encoded content from URL: %s", sub_value)
                 except Exception as e:
                     log.error("Failed to fetch or encode URL %s: %s", sub_value, e)
