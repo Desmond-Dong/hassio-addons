@@ -162,10 +162,10 @@ def publish_json(client, base_topic, key, value, retain=True):
                     response.raise_for_status()
                     encoded_content = base64.b64encode(response.content).decode('utf-8')
                     sub_value = value[sub_key] = encoded_content
-                    log.info("Fetched and base64-encoded content from URL: %s", sub_value[:60])
+                    log.info("Fetched and base64-encoded content from URL: %s", sub_value[:60] if isinstance(sub_value, str) else str(sub_value))
                 except Exception as e:
                     log.error("Failed to fetch or encode URL %s: %s", sub_value, e)
-            log.info("Publishing key: %s, sub_key: %s, sub_value: %s to MQTT", key, sub_key, sub_value[:60])
+            log.info("Publishing key: %s, sub_key: %s, sub_value: %s to MQTT", key, sub_key, sub_value[:60] if isinstance(sub_value, str) else str(sub_value))
             publish_json(client, base_topic, f"{key}/{sub_key}", sub_value, retain)
     elif isinstance(value, list):
         if not value:  # If the list is empty
@@ -183,10 +183,10 @@ def publish_json(client, base_topic, key, value, retain=True):
     else:
         topic = f"{base_topic}/{key}"
         payload = str(value)  # Convert value to string
-        log.info("Publishing to topic: %s with payload: %s", topic, payload[:60])
+        log.info("Publishing to topic: %s with payload: %s", topic, payload[:60] if isinstance(payload, str) else str(payload))
         result, mid = client.publish(topic, payload, retain=retain)
         if result == mqtt.MQTT_ERR_SUCCESS:
-            log.info("Published to topic: %s with payload: %s", topic, payload[:60])
+            log.info("Published to topic: %s with payload: %s", topic, payload[:60] if isinstance(payload, str) else str(payload))
         else:
             log.error("Failed to publish to topic: %s", topic)
 
@@ -227,12 +227,12 @@ class RequestHandler(BaseHTTPRequestHandler):
 
         except Exception as e:
             log.error("Error processing message: %s", e)
-        #    self.send_response(500)  # Internal server error
-        #    self.send_header('Content-type', 'application/json')
-        #    self.end_headers()
-        #    error_response = json.dumps({"error": "Internal Server Error", "message": str(e)})
-        #    self.wfile.write(error_response.encode('utf-8'))
-        #    return
+            self.send_response(500)  # Internal server error
+            self.send_header('Content-type', 'application/json')
+            self.end_headers()
+            error_response = json.dumps({"error": "Internal Server Error", "message": str(e)})
+            self.wfile.write(error_response.encode('utf-8'))
+            return
 
         # Respond to the client
         message_id = receive_message.get('header', {}).get('messageId', '')
