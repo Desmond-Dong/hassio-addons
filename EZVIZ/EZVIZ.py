@@ -25,6 +25,9 @@ mqtt_password = options.get("mqtt_password", "passwd")
 
 # Home Assistant Discovery configuration
 def publish_ha_discovery(device_id):
+#    devType_topic = f"{mqtt_topic}/{device_id}/ys.onoffline/devType"
+#    model = mqtt.client.subscribe(devType_topic).payload.decode("utf-8").strip()
+
     # Battery Sensor Discovery
     discovery_topic = f"homeassistant/sensor/{device_id}_battery/config"
     payload = {
@@ -42,6 +45,63 @@ def publish_ha_discovery(device_id):
     }
     mqtt_client.publish(discovery_topic, json.dumps(payload), retain=True)
     log.info("Published Home Assistant discovery config to topic: %s", discovery_topic)
+
+    # WiFi Signal Strength Sensor Discovery
+    wifi_signal_discovery_topic = f"homeassistant/sensor/{device_id}_wifi_signal/config"
+    wifi_signal_payload = {
+        "name": "EZVIZ WiFi Signal",
+        "unique_id": f"wifi_signal_{device_id}",
+        "state_topic": f"{mqtt_topic}/{device_id}/ys.devicestatus/reported/signal",
+        "unit_of_measurement": "%",
+        "device_class": "signal_strength",
+        "value_template": "{{ value | replace('%', '') | int }}",
+        "device": {
+            "identifiers": [device_id],
+            "name": f"EZVIZ {device_id}",
+            "model": "Doorbell",
+            "manufacturer": "EZVIZ"
+        }
+    }
+    mqtt_client.publish(wifi_signal_discovery_topic, json.dumps(wifi_signal_payload), retain=True)
+    log.info("Published EZVIZ WiFi Signal discovery config to topic: %s", wifi_signal_discovery_topic)
+
+    # SD Card Health Sensor Discovery (only for BC7285245)
+    sd_health_discovery_topic = f"homeassistant/sensor/{device_id}_sd_health/config"
+    sd_health_payload = {
+            "name": "EZVIZ SD healthLevel",
+            "unique_id": f"sd_health_{device_id}",
+            "icon": "mdi:sd",
+            "state_topic": f"{mqtt_topic}/{device_id}/ys.devicestatus/reported/healthLevel",
+            "unit_of_measurement": "%",
+            "value_template": "{{ value | int }}",
+            "device": {
+                "identifiers": [device_id],
+                "name": f"EZVIZ {device_id}",
+                "manufacturer": "EZVIZ",
+                "model": "Doorbell"
+            }
+        }
+    mqtt_client.publish(sd_health_discovery_topic, json.dumps(sd_health_payload), retain=True)
+    log.info("Published EZVIZ SD healthLevel discovery config to topic: %s", sd_health_discovery_topic)
+
+    # SD Card Capacity Sensor Discovery (only for BC7285245)
+    sd_capacity_discovery_topic = f"homeassistant/sensor/{device_id}_sd_capacity/config"
+    sd_capacity_payload = {
+            "name": "EZVIZ SD Capacity",
+            "unique_id": f"sd_capacity_{device_id}",
+            "icon": "mdi:sd",
+            "state_topic": f"{mqtt_topic}/{device_id}/ys.devicestatus/reported/capacity",
+            "unit_of_measurement": "MB",
+            "value_template": "{{ value | int }}",
+            "device": {
+                "identifiers": [device_id],
+                "name": f"EZVIZ {device_id}",
+                "manufacturer": "EZVIZ",
+                "model": "Doorbell"
+            }
+        }
+    mqtt_client.publish(sd_capacity_discovery_topic, json.dumps(sd_capacity_payload), retain=True)
+    log.info("Published EZVIZ SD capacity discovery config to topic: %s", sd_capacity_discovery_topic)
 
     # Doorbell Charging Status Discovery (for any device_id)
     charging_discovery_topic = f"homeassistant/sensor/{device_id}_charging_status/config"
@@ -100,11 +160,10 @@ def publish_ha_discovery(device_id):
     log.info("Published Calling Time discovery config to topic: %s", calling_time_discovery_topic)
 
     # EZVIZ 报警图片 Discovery 
-
     alarm_picture_discovery_topic = f"homeassistant/camera/{device_id}_alarm_picture/config"
     alarm_picture_payload = {
         "name": "Alarm Picture",
-        "unique_id": "alarm_picture_{device_id}",
+        "unique_id": f"alarm_picture_{device_id}",
         "topic": f"{mqtt_topic}/{device_id}/ys.alarm/pictureList/0/url",
         "image_encoding": "b64",
         "device_class": "camera",
@@ -113,8 +172,8 @@ def publish_ha_discovery(device_id):
             "manufacturer": "EZVIZ",
             "model": "Doorbell",
             "name": f"EZVIZ {device_id}",
-            }
         }
+    }
     mqtt_client.publish(alarm_picture_discovery_topic, json.dumps(alarm_picture_payload), retain=True)
     log.info("Published EZVIZ Alarm Picture discovery config to topic: %s", alarm_picture_discovery_topic)
 
