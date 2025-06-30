@@ -179,6 +179,7 @@ def publish_json(client, base_topic, key, value, retain=True):
                 log.error("Failed to publish to topic: %s", topic)
         else:
             for index, item in enumerate(value):
+                log.info("Publishing key: %s, index: %s, item: %s to MQTT", key, index, item)
                 if index == "url" and item.startswith("https"):
                 # 通过request读取item的链接，并把这个链接的内容用base64编码，重新赋值给item
                     try:
