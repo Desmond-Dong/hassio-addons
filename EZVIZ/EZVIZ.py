@@ -162,11 +162,10 @@ def publish_json(client, base_topic, key, value, retain=True):
                     response = requests.get(sub_value)
                     response.raise_for_status()
                     encoded_content = base64.b64encode(response.content).decode('utf-8')
-                    value[sub_key] = encoded_content
+                    sub_value = encoded_content
                     log.info("Fetched and base64-encoded content from URL: %s", sub_value)
                 except Exception as e:
                     log.error("Failed to fetch or encode URL %s: %s", sub_value, e)
-                continue
 
             log.info("Publishing key: %s, sub_key: %s, sub_value: %s to MQTT", key, sub_key, sub_value)
             publish_json(client, base_topic, f"{key}/{sub_key}", sub_value, retain)
