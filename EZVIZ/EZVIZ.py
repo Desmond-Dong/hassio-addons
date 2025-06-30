@@ -158,7 +158,10 @@ def publish_json(client, base_topic, key, value, retain=True):
         for sub_key, sub_value in value.items():
             if "url" in value and isinstance(value["url"], str) and value["url"].startswith("https"):
                 try:
-                    response = requests.get(sub_value)
+                    headers = {
+                                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+                            }
+                    response = requests.get(sub_value, headers=headers, allow_redirects=True)
                     response.raise_for_status()
                     encoded_content = base64.b64encode(response.content).decode('utf-8')
                     sub_value = value[sub_key] = encoded_content
