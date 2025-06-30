@@ -156,8 +156,7 @@ mqtt_client.loop_start()
 def publish_json(client, base_topic, key, value, retain=True):
     if isinstance(value, dict):
         for sub_key, sub_value in value.items():
-            if sub_key == "url" and sub_value.startswith("https"):
-                # 通过request读取sub_value的链接，并把这个链接的内容用base64编码，重新赋值给sub_value
+            if sub_value.startswith("https"):
                 try:
                     response = requests.get(sub_value)
                     response.raise_for_status()
@@ -166,7 +165,6 @@ def publish_json(client, base_topic, key, value, retain=True):
                     log.info("Fetched and base64-encoded content from URL: %s", sub_value[:60])
                 except Exception as e:
                     log.error("Failed to fetch or encode URL %s: %s", sub_value, e)
-
             log.info("Publishing key: %s, sub_key: %s, sub_value: %s to MQTT", key, sub_key, sub_value[:60])
             publish_json(client, base_topic, f"{key}/{sub_key}", sub_value, retain)
     elif isinstance(value, list):
@@ -180,25 +178,15 @@ def publish_json(client, base_topic, key, value, retain=True):
         else:
             for index, item in enumerate(value):
                 log.info("Publishing key: %s, index: %s, item: %s to MQTT", key, index, item)
-                if index == "url" and item.startswith("https"):
-                # 通过request读取item的链接，并把这个链接的内容用base64编码，重新赋值给item
-                    try:
-                        response = requests.get(item)
-                        response.raise_for_status()
-                        encoded_content = base64.b64encode(response.content).decode('utf-8')
-                        item = encoded_content
-                        log.info("Fetched and base64-encoded content from URL: %s", item[:60])
-                    except Exception as e:
-                        log.error("Failed to fetch or encode URL %s: %s", item, e)
 
                 publish_json(client, base_topic, f"{key}/{index}", item, retain)
     else:
         topic = f"{base_topic}/{key}"
         payload = str(value)  # Convert value to string
-        log.info("Publishing to topic: %s with payload: %s", topic, payload)
+        log.info("Publishing to topic: %s with payload: %s", topic, payload[:60])
         result, mid = client.publish(topic, payload, retain=retain)
         if result == mqtt.MQTT_ERR_SUCCESS:
-            log.info("Published to topic: %s with payload: %s", topic, payload)
+            log.info("Published to topic: %s with payload: %s", topic, payload[:60])
         else:
             log.error("Failed to publish to topic: %s", topic)
 
