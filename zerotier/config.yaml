@@ -1,7 +1,7 @@
 name: ZeroTier One
-version: 0.20.0
+version: 0.21.0
 slug: zerotier
-description: 彻底简化您的网络，使用一个在所有地方都相同工作的虚拟网络层。
+description: 彻底简化您的网络，使用一个在所有地方都相同的虚拟网络层。
   works the same everywhere
 url: https://ghfast.top/github.com/hassio-addons/addon-zerotier
 codenotary: codenotary@frenck.dev

@@ -1,21 +1,24 @@
-# Home Assistant 社区附加组件：Bookstack
+# Home Assistant Community Add-on: Bookstack
 
-BookStack 是一个简单、自托管、易于使用的信息组织和存储平台。请支持该软件的开发者，[Bookstack].
+BookStack is a simple, self-hosted, easy-to-use platform for organising and
+storing information. Please support the developers of this software at
+[Bookstack].
 
-## 安装
+## Installation
 
-该附加组件的安装非常简单，与安装任何其他 Home Assistant 附加组件没有不同。
+The installation of this add-on is pretty straightforward and not different in
+comparison to installing any other Home Assistant add-on.
 
-1. 在附加组件商店中搜索 "bookstack" 附加组件并安装它。
-1. 启动 "bookstack" 附加组件
-1. 检查 "bookstack" 附加组件的日志，以查看一切是否顺利。
-1. 默认登录信息是 admin@admin.com/password。
+1. Search for the "bookstack" add-on in the add-on store and install it.
+1. Start the "bookstack" add-on
+1. Check the logs of the "bookstack" add-on to see if everything went well.
+1. Default login information is admin@admin.com/password.
 
-## 配置
+## Configuration
 
-**注意**：_在更改配置时，请记得重启附加组件。_
+**Note**: _Remember to restart the add-on when the configuration is changed._
 
-附加组件配置示例：
+Example add-on configuration:
 
 ```yaml
 log_level: info
@@ -27,131 +30,165 @@ envvars:
     value: bookstack_session
 ```
 
-**注意**：_这只是一个示例，不要复制粘贴！请创建您自己的！_
+**Note**: _This is just an example, don't copy and paste it! Create your own!_
 
-### 选项： `log_level`
+### Option: `log_level`
 
-`log_level` 选项控制附加组件的日志输出级别，可以更改为更详细或更简洁，这在处理未知问题时可能会有用。可能的值包括：
+The `log_level` option controls the level of log output by the addon and can
+be changed to be more or less verbose, which might be useful when you are
+dealing with an unknown issue. Possible values are:
 
-- `trace`: 显示每一个细节，比如所有调用的内部函数。
-- `debug`: 显示详细的调试信息。
-- `info`: 正常（通常）有趣的事件。
-- `warning`: 不是错误的异常情况。
-- `error`: 运行时错误，不需要立即采取措施。
-- `fatal`: 出现严重错误，附加组件变得不可用。
+- `trace`: Show every detail, like all called internal functions.
+- `debug`: Shows detailed debug information.
+- `info`: Normal (usually) interesting events.
+- `warning`: Exceptional occurrences that are not errors.
+- `error`: Runtime errors that do not require immediate action.
+- `fatal`: Something went terribly wrong. Add-on becomes unusable.
 
-请注意，每个级别自动包括来自更严重级别的日志消息，例如，`debug` 还会显示 `info` 消息。默认情况下，`log_level` 设置为 `info`，这是推荐的设置，除非您在进行故障排除。
+Please note that each level automatically includes log messages from a
+more severe level, e.g., `debug` also shows `info` messages. By default,
+the `log_level` is set to `info`, which is the recommended setting unless
+you are troubleshooting.
 
-### 选项： `ssl`
+### Option: `ssl`
 
-在 Bookstack 面板的 Web 界面上启用/禁用 SSL（HTTPS）。设置为 `true` 以启用，设置为 `false` 则禁用。
+Enables/Disables SSL (HTTPS) on the web interface of Bookstack
+Panel. Set it `true` to enable it, `false` otherwise.
 
-### 选项： `certfile`
+### Option: `certfile`
 
-用于 SSL 的证书文件。
+The certificate file to use for SSL.
 
-**注意**：_该文件必须存储在 `/ssl/`，这是默认位置_
+**Note**: _The file MUST be stored in `/ssl/`, which is the default_
 
-### 选项： `keyfile`
+### Option: `keyfile`
 
-用于 SSL 的私钥文件。
+The private key file to use for SSL.
 
-**注意**：_该文件必须存储在 `/ssl/`，这是默认位置_
+**Note**: _The file MUST be stored in `/ssl/`, which is the default_
 
-### 选项： `remote_mysql_host`
+### Option: `remote_mysql_host`
 
-如果使用外部数据库，MYSQL/MariaDB 数据库的主机名/地址。
+If using an external database, the hostname/address for the MYSQL/MariaDB
+database.
 
-### 选项： `remote_mysql_database`
+### Option: `remote_mysql_database`
 
-仅在使用远程 MYSQL 数据库时适用，数据库的名称。
+Only applies if a remote MYSQL database is used, the name of the database.
 
-### 选项： `remote_mysql_username`
+### Option: `remote_mysql_username`
 
-仅在使用远程 MYSQL 数据库时适用，具有权限的用户名。
+Only applies if a remote MYSQL database is used, the username with permissions.
 
-### 选项： `remote_mysql_password`
+### Option: `remote_mysql_password`
 
-仅在使用远程 MYSQL 数据库时适用，上述用户的密码。
+Only applies if a remote MYSQL database is used, the password of the above user.
 
-### 选项： `remote_mysql_port`
+### Option: `remote_mysql_port`
 
-仅在使用远程 MYSQL 数据库时适用，数据库服务器监听的端口。
+Only applies if a remote MYSQL database is used, the port that the database
+server is listening on.
 
-### 选项： `show_appkey`
+### Option: `show_appkey`
 
-如果设置为 `true`，将在附加组件日志中显示当前配置的 appkey。这应该在还原时记录下来。
+If set to `true`, will show the currently configured appkey in the addon logs.
+This should be recorded in case of a restore.
 
-### 选项： `appkey`
+### Option: `appkey`
 
-允许用户定义 appkey，以便于从其他系统还原。如果设置，将在第一次运行时自动从配置中删除。
+Allows the appkey to be defined by the user, in case of restoring from another
+system. Will automatically be removed from config on first run if set.
 
-### 选项： `envvars`
+### Option: `envvars`
 
-这允许设置环境变量以控制 Bookstack 配置，具体文档请见：
+This allows the setting of Environment Variables to control Bookstack
+configuration as documented at:
 
 <https://www.bookstackapp.com/docs/>
 
-**注意**：_更改这些选项可能会对您的实例造成问题。请自行承担风险！_
+**Note**: _Changing these options can possibly cause issues with you instance.
+USE AT YOUR OWN RISK!_
 
-这些选项对大小写敏感，特定配置设置的任何项将优先于其他。
+These are case sensitive and any items set by specific configuration will take
+precedence.
 
-#### 子选项： `name`
+#### Sub-option: `name`
 
-要设置的环境变量的名称。
+The name of the environment variable to set.
 
-#### 子选项： `value`
+#### Sub-option: `value`
 
-要设置的环境变量的值。
+The value of the environment variable to set.
 
-## 数据库使用
+## Database usage
 
-默认情况下，Bookstack 会自动使用和配置 Home Assistant 的 MariaDB 附加组件，该附加组件应在启动前安装，您可以在配置中更改，以使用外部 MySql/MariaDB 数据库。请注意，两种选项之间没有简单的升级路径。
+By default, Bookstack will automatically use and configure the Home Assistant
+MariaDB addon which should be installed prior to startup, this can be changed
+within the configuration to use an external MySql/MariaDB Database. Please note
+that there is no easy upgrade path between the two options.
 
-## 已知问题和限制
+## Known issues and limitations
 
-- 由于应用程序存储图像文件的方式，Ingress 将无法正常工作。
+- Ingress will not function due to the way the application stores image files.
 
-## 更新日志与发布
+## Changelog & Releases
 
-该仓库使用 [GitHub 的发布][releases] 功能保留变更日志。
+This repository keeps a change log using [GitHub's releases][releases]
+functionality.
 
-发布基于 [语义版本控制][semver]，并使用 `MAJOR.MINOR.PATCH` 的格式。简而言之，版本将根据以下内容进行递增：
+Releases are based on [Semantic Versioning][semver], and use the format
+of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
+based on the following:
 
-- `MAJOR`：不兼容或重大更改。
-- `MINOR`：向后兼容的新功能和增强功能。
-- `PATCH`：向后兼容的错误修复和软件包更新。
+- `MAJOR`: Incompatible or major changes.
+- `MINOR`: Backwards-compatible new features and enhancements.
+- `PATCH`: Backwards-compatible bugfixes and package updates.
 
-## 支持
+## Support
 
-有问题吗？
+Got questions?
 
-您有几种选择可以获得答案：
+You have several options to get them answered:
 
-- Home Assistant 社区附加组件 Discord 聊天服务器 [discord] 用于附加组件支持和功能请求。
-- Home Assistant Discord 聊天服务器 [discord-ha] 用于一般 Home Assistant 讨论和问题。
-- Home Assistant [社区论坛][forum]。
-- 加入 [Reddit 子版块][reddit] 的 [/r/homeassistant][reddit]
+- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
+  support and feature requests.
+- The [Home Assistant Discord chat server][discord-ha] for general Home
+  Assistant discussions and questions.
+- The Home Assistant [Community Forum][forum].
+- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
 
-您还可以在 [这里打开问题][issue] GitHub。
+You could also [open an issue here][issue] GitHub.
 
-## 作者与贡献者
+## Authors & contributors
 
-该仓库的原始设置由 [Paul Sinclair][sinclairpaul] 创建。
+The original setup of this repository is by [Paul Sinclair][sinclairpaul].
 
-要查看所有作者和贡献者的完整列表，请查看 [贡献者页面][contributors]。
+For a full list of all authors and contributors,
+check [the contributor's page][contributors].
 
-## 许可证
+## License
 
-MIT 许可证
+MIT License
 
-版权 (c) 2019-2025 Paul Sinclair
+Copyright (c) 2019-2025 Paul Sinclair
 
-特此免费授予获得此软件及相关文档文件（“软件”）副本的任何人，无限制地处理软件，包括但不限于使用、复制、修改、合并、出版、分发、再许可和/或销售软件的副本，并允许提供软件的人员这样做，遵循以下条件：
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-上述版权声明和本许可声明应包含在所有副本或软件的实质性部分中。
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-该软件是“按原样”提供的，不提供任何形式的担保，明示或暗示，包括但不限于适销性、适合特定目的和非侵权的担保。在任何情况下，作者或版权持有人均不对任何索赔、损害或其他责任负责，无论是在合同、侵权或其他方面，均由于、因或与软件或使用或其他交易的关系而引起。
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 [bookstack]: https://www.bookstackapp.com/
 [contributors]: https://github.com/hassio-addons/addon-bookstack/graphs/contributors

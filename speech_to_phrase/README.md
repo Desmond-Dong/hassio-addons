@@ -1,15 +1,15 @@
-# Home Assistant 插件：语音到短语
+# Home Assistant Add-on: Speech to phrase
 
-![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield]
+![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield]
 
-一个快速且本地的语音转文本系统，可以根据您家中物品的名称进行个性化设置。
-[语音到短语](https://github.com/OHF-voice/speech-to-phrase) 针对低端硬件进行了优化，例如 Raspberry Pi 4 和 Home Assistant Green。
+A fast and local speech-to-text system that is personalized with the names of things in your home.
+[Speech-to-phrase](https://github.com/OHF-voice/speech-to-phrase) is targeted at lower-end hardware, such as the Raspberry Pi 4 and Home Assistant Green.
 
-有关可用语音命令，请参见 [文档](http://github.com/OHF-voice/speech-to-phrase)。
+See the [documentation](http://github.com/OHF-voice/speech-to-phrase) for available voice commands.
 
-建立在 [声音之年](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/) 之上。
+Built on top of the [Year of Voice](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/).
 
-需要 Home Assistant 2023.11 或更高版本。
+Requires Home Assistant 2023.11 or later.
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
