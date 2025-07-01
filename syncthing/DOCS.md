@@ -1,6 +1,6 @@
 ## Configuration
 
-Configuration is done via [Syncthing's web UI](/hassio/ingress/243ffc37_syncthing) (embedded into Home Assistant). First start the add-on from the [*Info* tab](/hassio/addon/243ffc37_syncthing/info) and then click `OPEN WEB UI`.
+Configuration is done via [Syncthing's web UI](/hassio/68413af6_syncthing/ingress) (embedded into Home Assistant). First start the add-on from the [*Info* tab](/hassio/addon/68413af6_syncthing/info) and then click `OPEN WEB UI`.
 
 After starting up, Syncthing displays a notice (in a yellow box at the top) saying
 
@@ -12,7 +12,7 @@ This can safely be ignored since it [does not apply to this add-on](https://gith
 
 If you want to monitor the Syncthing add-on via Home Assistant's [**Syncthing** integration](https://www.home-assistant.io/integrations/syncthing/), you need to expose Syncthing's web UI to the (local) network rather than only to the [Home Assistant Supervisor](https://developers.home-assistant.io/docs/supervisor).
 
-To do so, go to the add-on's [*Configuration* tab](/hassio/addon/243ffc37_syncthing/config), toggle `Show disabled ports` and enter a port number in the field labelled *Web frontend (not needed with Ingress)* (`8384`, as per the default, is fine). Click `SAVE`, switch to the [*Info* tab](/hassio/addon/243ffc37_syncthing/info) and click `RESTART`.
+To do so, go to the add-on's [*Configuration* tab](/hassio/addon/68413af6_syncthing/config), toggle `Show disabled ports` and enter a port number in the field labelled *Web frontend (not needed with Ingress)* (`8384`, as per the default, is fine). Click `SAVE`, switch to the [*Info* tab](/hassio/addon/68413af6_syncthing/info) and click `RESTART`.
 
 To finish the setup, follow the sections [*Prerequisites*](https://www.home-assistant.io/integrations/syncthing/#prerequisites) and [*Configuration*](https://www.home-assistant.io/integrations/syncthing/#configuration) from the integration's documentation.
 
@@ -39,7 +39,7 @@ Only the above directories are mapped into the add-on container. If you put sync
 Furthermore, note that
 
 - a backup of the Syncthing add-on will include its `/data` directory where its internal state is stored. This folder can take up several GiB of data.
-- a [*full* Home Assistant backup](https://www.home-assistant.io/common-tasks/os/#backups) will include the `/addons`, `/config`, `/media`, `/share` and`/ssl` directories and their contents. Create a *partial* backup to specifically exclude any of them.
+- a [*full* Home Assistant backup](https://www.home-assistant.io/common-tasks/os/#backup) will include the `/addons`, `/config`, `/media`, `/share` and`/ssl` directories and their contents. Create a *partial* backup to specifically exclude any of them.
 - syncing the `/backup` directory (preferably in [send only mode](https://docs.syncthing.net/users/foldertypes.html#send-only-folder)) is a simple way to automatically backup the Home Assistant backups to any of your other Syncthing devices. 😉
 - syncing data to memory cards (eMMC, SD, etc.) might be a bad idea due to rapid wearout, or even impossible to begin with if the synced data is too large. This problem can be remedied either
   - by [configuring Home Assistant to use an external data disk](https://www.home-assistant.io/common-tasks/os/#using-external-data-disk), or

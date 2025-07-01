@@ -1,31 +1,34 @@
-# Home Assistant 社区插件: TasmoAdmin
+# Home Assistant Community Add-on: TasmoAdmin
 
-TasmoAdmin（前称 SonWEB）是一个管理 Sonoff-Tasmota 刷写设备的管理网页接口，能够集中管理所有设备。
-它的一些功能包括：
+TasmoAdmin (formerly known as SonWEB) is an administrative web interface to
+manage all your Sonoff-Tasmota flashed devices centrally.
+Some of its features:
 
-- 自动扫描您的网络并添加设备
-- 快速轻松查看所有设备的状态
-- 从一个地方配置所有设备
-- 一次性向一个或多个设备发送固件更新
-- 可以为您自动下载最新的固件
+- Scans your networks and adds your devices automatically
+- See the status of all your devices quick and easy
+- Configure all your devices from a single place
+- Send out firmware updates over the air to one or more your devices at once
+- Can automatically download the latest firmware for you
 
-## 安装
+## Installation
 
-此插件的安装相当简单，与安装其他 Home Assistant 插件没有区别。
+The installation of this add-on is pretty straightforward and not different in
+comparison to installing any other Home Assistant add-on.
 
-1. 点击下方的 Home Assistant 我的按钮，打开您 Home Assistant 实例中的插件。
+1. Click the Home Assistant My button below to open the add-on on your Home
+   Assistant instance.
 
-   [![在您的 Home Assistant 实例中打开此插件。][addon-badge]][addon]
+   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
 
-2. 点击“安装”按钮以安装插件。
-3. 启动“TasmoAdmin”插件。
-4. 检查“TasmoAdmin”插件的日志以确认一切正常。
+1. Click the "Install" button to install the add-on.
+1. Start the "TasmoAdmin" add-on.
+1. Check the logs of the “TasmoAdmin” add-on to see if everything went well.
 
-## 配置
+## Configuration
 
-**注意**: _记得在更改配置后重启插件。_
+**Note**: _Remember to restart the add-on when the configuration is changed._
 
-示例插件配置：
+Example add-on configuration:
 
 ```yaml
 log_level: info
@@ -34,79 +37,103 @@ certfile: fullchain.pem
 keyfile: privkey.pem
 ```
 
-**注意**: _这只是一个示例，请勿复制和粘贴！请创建您自己的配置！_
+**Note**: _This is just an example, don't copy and past it! Create your own!_
 
-### 选项: `log_level`
+### Option: `log_level`
 
-`log_level` 选项控制插件的日志输出级别，可以根据需要更改为更多或更少的详细信息，这在处理未知问题时可能会很有用。可用值包括：
+The `log_level` option controls the level of log output by the addon and can
+be changed to be more or less verbose, which might be useful when you are
+dealing with an unknown issue. Possible values are:
 
-- `trace`: 显示每个细节，如所有调用的内部函数。
-- `debug`: 显示详细的调试信息。
-- `info`: 正常（通常）有趣的事件。
-- `warning`: 不是错误的特殊情况。
-- `error`: 不需要立即采取行动的运行时错误。
-- `fatal`: 出现了严重问题，插件变得不可用。
+- `trace`: Show every detail, like all called internal functions.
+- `debug`: Shows detailed debug information.
+- `info`: Normal (usually) interesting events.
+- `warning`: Exceptional occurrences that are not errors.
+- `error`: Runtime errors that do not require immediate action.
+- `fatal`: Something went terribly wrong. Add-on becomes unusable.
 
-请注意，每个级别会自动包括更严重级别的日志消息，例如，`debug` 也会显示 `info` 消息。默认情况下，`log_level` 设置为 `info`，这是推荐的设置，除非您正在排查故障。
+Please note that each level automatically includes log messages from a
+more severe level, e.g., `debug` also shows `info` messages. By default,
+the `log_level` is set to `info`, which is the recommended setting unless
+you are troubleshooting.
 
-### 选项: `ssl`
+### Option: `ssl`
 
-启用/禁用 TasmoAdmin 面板的 SSL（HTTPS）。设置为 `true` 启用，设置为 `false` 禁用。
+Enables/Disables SSL (HTTPS) on the web interface of TasmoAdmin
+Panel. Set it `true` to enable it, `false` otherwise.
 
-**注意**: Tasmota 不支持通过 SSL 进行 OTA 更新。
+**Note** Tasmota does not support OTA via SSL
 
-### 选项: `certfile`
+### Option: `certfile`
 
-用于 SSL 的证书文件。
+The certificate file to use for SSL.
 
-**注意**: _文件必须存储在 `/ssl/` 目录下，这是默认路径。_
+**Note**: _The file MUST be stored in `/ssl/`, which is the default_
 
-### 选项: `keyfile`
+### Option: `keyfile`
 
-用于 SSL 的私钥文件。
+The private key file to use for SSL.
 
-**注意**: _文件必须存储在 `/ssl/` 目录下，这是默认路径。_
+**Note**: _The file MUST be stored in `/ssl/`, which is the default_
 
-## 更新日志及版本
+## Changelog & Releases
 
-该存储库使用 [GitHub 的版本][releases] 功能保持变更日志。
+This repository keeps a change log using [GitHub's releases][releases]
+functionality.
 
-版本基于 [语义版本控制][semver]，格式为 `MAJOR.MINOR.PATCH`。简而言之，版本将根据以下规则递增：
+Releases are based on [Semantic Versioning][semver], and use the format
+of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
+based on the following:
 
-- `MAJOR`: 不兼容或重大更改。
-- `MINOR`: 向后兼容的新功能和增强功能。
-- `PATCH`: 向后兼容的修复和包更新。
+- `MAJOR`: Incompatible or major changes.
+- `MINOR`: Backwards-compatible new features and enhancements.
+- `PATCH`: Backwards-compatible bugfixes and package updates.
 
-## 支持
+## Support
 
-有问题吗？
+Got questions?
 
-您可以通过以下几种方式获得解答：
+You have several options to get them answered:
 
-- [Home Assistant 社区插件 Discord 聊天服务器][discord] 获取插件支持和功能请求。
-- [Home Assistant Discord 聊天服务器][discord-ha] 进行一般的 Home Assistant 讨论和提问。
-- Home Assistant [社区论坛][forum]。
-- 加入 [Reddit 社区][reddit] 在 [/r/homeassistant][reddit]。
+- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
+  support and feature requests.
+- The [Home Assistant Discord chat server][discord-ha] for general Home
+  Assistant discussions and questions.
+- The Home Assistant [Community Forum][forum].
+- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
 
-您也可以在这里 [提交问题][issue] 到 GitHub。
+You could also [open an issue here][issue] GitHub.
 
-## 作者及贡献者
+## Authors & contributors
 
-该存储库的最初设置者是 [Franck Nijhof][frenck]。
+The original setup of this repository is by [Franck Nijhof][frenck].
 
-有关所有作者和贡献者的完整列表，请查看 [贡献者页面][contributors]。
+For a full list of all authors and contributors,
+check [the contributor's page][contributors].
 
-## 许可
+## License
 
-MIT 许可
+MIT License
 
-版权所有 (c) 2018-2025 Franck Nijhof
+Copyright (c) 2018-2025 Franck Nijhof
 
-特此免费授权任何获取本软件及相关文档文件（“软件”）副本的人，不受限制地处理本软件，包括但不限于使用、复制、修改、合并、出版、分发、再授权和/或出售软件副本的权利，并允许被授予本软件的人这样做，附带以下条件：
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-上述版权声明和本许可证声明应包含在本软件的所有副本或重要部分中。
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-本软件是“按原样”提供的，不提供任何类型的担保，无论是明示或暗示，包括但不限于对适销性、特定用途适用性和不侵权的担保。在任何情况下，作者或版权持有人对于因使用本软件或与本软件的使用或其他交易相关的任何索赔、损害或其他责任不承担任何责任，无论是在合同诉讼、侵权或其他方面。
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_sonweb&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository

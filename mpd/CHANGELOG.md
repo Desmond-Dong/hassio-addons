@@ -2,4 +2,4 @@
 
 ### ⬆️ Dependency updates
 
-- ⬆️ Bump to alpine 3.21 and mpd 0.23.16 @mrueg ([#9](https://github.com/Poeschl-HomeAssistant-Addons/mpd/pull/9))
+- ⬆️ Bump mpd to 0.24.4, alpine base to 3.22 @mrueg ([#12](https://github.com/Poeschl-HomeAssistant-Addons/mpd/pull/12))

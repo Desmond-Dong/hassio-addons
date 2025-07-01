@@ -1,27 +1,28 @@
 # Home Assistant Community Add-on: TasmoAdmin
 
-[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
+[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-[![通过 GitHub Sponsors 赞助 Frenck][github-sponsors-shield]][github-sponsors]
+[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
 
-[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
+[![Support Frenck on Patreon][patreon-shield]][patreon]
 
-集中管理您所有的 Sonoff-Tasmota 设备。
+Centrally manage all your Sonoff-Tasmota devices.
 
-## 关于
+## About
 
-TasmoAdmin（前称 SonWEB）是一个管理网页界面，用于集中管理您所有的 Sonoff-Tasmota 刷写设备。
-它的一些功能包括：
+TasmoAdmin (formerly known as SonWEB) is an administrative web interface to
+manage all your Sonoff-Tasmota flashed devices centrally.
+Some of its features:
 
-- 扫描您的网络并自动添加您的设备
-- 快速轻松查看您所有设备的状态
-- 从一个地方配置您所有的设备
-- 通过无线方式一次性向一个或多个设备发送固件更新
-- 可以为您自动下载最新的固件
+- Scans your networks and adds your devices automatically
+- See the status off all your devices quick and easy
+- Configure all your devices from a single place
+- Send out firmware updates over the air to one or more your devices at once
+- Can automatically download the latest firmware for you
 
-![TasmoAdmin 截图][screenshot]
+![TasmoAdmin screenshot][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
@@ -33,6 +34,6 @@ TasmoAdmin（前称 SonWEB）是一个管理网页界面，用于集中管理您
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
 [patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
-[release-shield]: https://img.shields.io/badge/version-v0.31.5-blue.svg
-[release]: https://github.com/hassio-addons/addon-tasmoadmin/tree/v0.31.5
+[release-shield]: https://img.shields.io/badge/version-v0.32.0-blue.svg
+[release]: https://github.com/hassio-addons/addon-tasmoadmin/tree/v0.32.0
 [screenshot]: https://github.com/hassio-addons/addon-tasmoadmin/raw/main/images/screenshot.png

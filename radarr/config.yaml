@@ -1,5 +1,5 @@
 name: Radarr
-version: 0.24.0
+version: 0.25.0
 slug: radarr
 description: Usenet和torrent用户的电影组织者/管理员。
 url: https://ghfast.top/github.com/hassio-addons/addon-radarr/tree/main/README.md
