@@ -3,7 +3,7 @@
     "amd64"
   ],
   "boot": "auto",
-  "description": "三叶草笔记是一款注重构建大型个人知识库的层次化笔记应用程序。",
+  "description": "Trilium Notes 是一个层次化的笔记应用程序，专注于构建大型个人知识库。",
   "environment": {
     "TRILIUM_DATA_DIR": "/share/trillium"
   },
@@ -21,9 +21,9 @@
   "schema": {},
   "slug": "trilium",
   "startup": "services",
-  "upstream": "0.95.0",
+  "upstream": "0.96.0",
   "url": "https://ghfast.top/github.com/jdeath/homeassistant-addons",
-  "version": "0.95.0",
+  "version": "0.96.0",
   "ingress": true,
   "ingress_port": 8080,
   "image": "zadam/trilium",

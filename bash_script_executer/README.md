@@ -1,32 +1,32 @@
-# Home Assistant Community Add-on: Bash 脚本执行器
-![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield] ![支持 armhf 架构][armhf-shield] ![支持 armv7 架构][armv7-shield] ![支持 i386 架构][i386-shield]
-![项目维护][maintenance-shield]
+# Home Assistant Community Add-on: Bash Script Executer
+![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
+![Project Maintenance][maintenance-shield]
 
-Homeassistant OS 的 Bash 脚本执行器
+Bash Script Executer for Homeassistant OS
 
-## 关于
+## About
 
-这是一个简单的 Docker 镜像，用于执行个人脚本。我需要这个的原因是，HA OS 安装的功能有限（例如没有 curl、sed 等），这个插件解决了这个问题。<br />
-您可以使用此插件运行多达三个不同的脚本。<br />
-这个 Docker 镜像包含：busybox-extras curl grep coreutils sed xmlstarlet
+This is a simple Docker Image to execute personal scripts. The reason I am needing this, is that the HA OS has limited features installed (for example no curl, sed etc) and this Addon fixes that issue.<br />
+You can run up to three different scripts with this addon.<br />
+This docker image comes with: busybox-extras curl grep coreutils sed xmlstarlet
 
-## 安装
+## Installation
 
 [![FaserF Homeassistant Addons](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FFaserF%2Fhassio-addons)
 <br />
-这个插件的安装相当简单，与安装任何其他自定义 Home Assistant 插件没有不同。<br />
-只需点击上面的链接或将我的仓库添加到 hassio 附加组件库中： <https://github.com/FaserF/hassio-addons>
+The installation of this add-on is pretty straightforward and not different in comparison to installing any other custom Home Assistant add-on.<br />
+Just click the link above or add my repo to the hassio addons repositorys: <https://github.com/FaserF/hassio-addons>
 
-将您的脚本放在 /share/ 文件夹中的某个地方。其他文件夹对该插件不可见。<br />
-您的脚本示例文件可能在： /share/scripts/script.sh
+Put your scripts somewhere in the /share/ folder. Other folders are not visible to this addon.<br />
+Example File where your script could be: /share/scripts/script.sh
 
-## 配置
+## Configuration
 
-**我建议禁用此插件的“开机启动”和 HA 的看门狗选项！**<br />
+**I am recommending to disable "Start on boot" and the Watchdog option from HA for this addon!**<br />
 
-**注意**：_更改配置时，请记得重新启动该插件。_
+**Note**: _Remember to restart the add-on when the configuration is changed._
 
-示例插件配置：
+Example add-on configuration:
 
 ```yaml
 script_path: /share/scripts/script.sh
@@ -43,31 +43,31 @@ script3_argument2:
 script3_argument3:
 ```
 
-**注意**：_这只是一个示例，不要直接复制粘贴！请创建您自己的！_
+**Note**: _This is just an example, don't copy and paste it! Create your own!_
 
-### 选项： `script_path`
+### Option: `script_path`
 
-此选项是必需的。根据您的脚本所在位置更改它，或更改为“false”以留空。
+This option is needed. Change it depending where your script is or change it to "false" to leave it empty.
 
-### 选项： `scriptX_argumentX`
+### Option: `scriptX_argumentX`
 
-此选项是可选的。您可以通过此选项向您的脚本提交多达三个参数。
+This option is optional. You can submit up to three arguments to your script with this option.
 
-### 选项： `script_path2`
+### Option: `script_path2`
 
-此选项是必需的。根据您的脚本所在位置更改它，或更改为“false”以留空。
+This option is needed. Change it depending where your script is or change it to "false" to leave it empty.
 
-### 选项： `script_path3`
+### Option: `script_path3`
 
-此选项是必需的。根据您的脚本所在位置更改它，或更改为“false”以留空。
+This option is needed. Change it depending where your script is or change it to "false" to leave it empty.
 
-## Cron 支持 - 按时间运行脚本
+## Cron Support - running scripts by time
 
-我没有在此插件中实现 Cron，因为您可以通过 Homeassistant 自动化定期运行您的脚本。
-示例自动化：<br />
+I havent implemented Cron in this addon, as you can run your scripts periodically by an Homeassistant automation.
+Example Automation: <br />
 
 ```yaml
-  - alias: "使用插件 Bash 脚本执行器运行 Bash 脚本"
+  - alias: "Run Bash Script with Addon Bash Script Executer"
     trigger:
       - platform: time
         at: '00:02:00'
@@ -80,28 +80,40 @@ script3_argument3:
           addon: 605cee21_bashscriptexecuter
 ```
 
-## 支持
+## Support
 
-有问题或疑问吗？
+Got questions or problems?
 
-您可以 [在这里打开一个问题][issue] GitHub。
-请记住，此软件仅在 Raspberry Pi 4 上的 armv7 上经过测试。我为我的个人脚本制作了这个插件。
+You can [open an issue here][issue] GitHub.
+Please keep in mind, that this software is only tested on armv7 running on a Raspberry Pi 4. And that I have made this addon for my personal scripts.
 
-## 作者与贡献者
+## Authors & contributors
 
-该 hassio 插件由 [FaserF] 提供。
+The hassio addon is brought to you by [FaserF].
 
-## 许可证
+## License
 
-MIT 许可证
+MIT License
 
-版权所有 (c) 2025 FaserF
+Copyright (c) 2025 FaserF
 
-特此授予任何获得本软件及相关文档文件（“软件”）副本的人免费使用该软件的权利，处理该软件而不受限制，包括但不限于使用、复制、修改、合并、发布、分发、再许可和/或销售该软件副本的权利，并允许向其提供该软件的人这样做，遵循以下条件：
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-上述版权声明和本许可声明应包含在所有副本或软件的实质部分中。
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-本软件是按“原样”提供的，不附有任何形式的担保，明示或暗示，包括但不限于对适销性、特定用途的适用性和非侵权的担保。在任何情况下，作者或版权持有人均不对因使用本软件或与本软件或其他交易相关的使用产生的任何索赔、损害或其他责任负责，无论是合同、侵权或其他行为。
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg

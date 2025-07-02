@@ -1,71 +1,83 @@
 # Home Assistant Community Add-on: pterodactyl Wings (Daemon)
-![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield]
-![项目维护][maintenance-shield]
+![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield]
+![Project Maintenance][maintenance-shield]
 
-pterodactyl Wings (Daemon) 游戏服务器 for Homeassistant OS
+pterodactyl Wings (Daemon) Gameserver for Homeassistant OS
 
-![Ingress 支持](../_images/pterodactyl/ingress.png)
+![Ingress Support](../_images/pterodactyl/ingress.png)
 
-## 关于
+## About
 
-Pterodactyl® 是一个免费的开源游戏服务器管理面板，使用 PHP、React 和 Go 构建。考虑到安全性，Pterodactyl 在隔离的 Docker 容器中运行所有游戏服务器，同时为最终用户提供美观且直观的用户界面。<br />
-不要再将就了。让游戏服务器成为您平台上的一流公民。
+Pterodactyl® is a free, open-source game server management panel built with PHP, React, and Go. Designed with security in mind, Pterodactyl runs all game servers in isolated Docker containers while exposing a beautiful and intuitive UI to end users.<br />
+Stop settling for less. Make game servers a first class citizen on your platform.
 
-## 安装
+## Installation
 
 [![FaserF Homeassistant Addons](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FFaserF%2Fhassio-addons)
 <br />
-此附加组件的安装非常简单，与安装其他自定义 Home Assistant 附加组件没有区别。<br />
-只需点击上面的链接或将我的仓库添加到 hassio 附加组件库中： <https://github.com/FaserF/hassio-addons>
+The installation of this add-on is pretty straightforward and not different in comparison to installing any other custom Home Assistant add-on.<br />
+Just click the link above or add my repo to the hassio addons repositorys: <https://github.com/FaserF/hassio-addons>
 
-在安装这个之前，需要安装 MariaDB 集成！
+The MariaDB Integration is needed before installing this one!
 
-## 配置
+## Configuration
 
-**注意**：_更改配置后，请记得重启附加组件。_
+**Note**: _Remember to restart the add-on when the configuration is changed._
 
-附加组件配置示例：
+Example add-on configuration:
 
 ```yaml
 config_file: /share/path/to/config.yml
 ```
 <br />
 
-**注意**：_这只是一个示例，不要复制粘贴！请创建您自己的！_
+**Note**: _This is just an example, don't copy and paste it! Create your own!_
 
-### 选项： `config_file`
+### Option: `config_file`
 
-此选项是必需的。指向您的 config.yml 文件的路径。
+This option is required. The path to your config.yml file.
 
-**注意**：_该文件必须存储在 `/share/` 文件夹内的某个地方_
+**Note**: _The file MUST be stored somewhere within the `/share/` folder_
 
 ## Ingress
 
-此附加组件将支持 Homeassistant Ingress。目前仍在开发中！
+This addon will support Homeassistant Ingress. Until now it is work in progress!
 
-## 支持
+## Support
 
-有问题或疑问？
+Got questions or problems?
 
-您可以在 [这里打开问题][issue] GitHub。
-请记住，此软件仅在 Raspberry Pi 4 上的 armv7 环境中测试。
+You can [open an issue here][issue] GitHub.
+Please keep in mind, that this software is only tested on armv7 running on a Raspberry Pi 4.
 
-## 作者与贡献者
+## Authors & contributors
 
-原始程序来自 pterodactyl 项目。有关更多信息，请访问此页面： <https://pterodactyl.io/>
-该 hassio 附加组件由 [FaserF] 提供。
+The original program is from the pterodactyl Project. For more informatios please visit this page: <https://pterodactyl.io/>
+The hassio addon is brought to you by [FaserF].
 
-## 许可证
+## License
 
-MIT 许可证
+MIT License
 
-版权 (c) 2019-2025 FaserF & pterodactyl 项目
+Copyright (c) 2019-2025 FaserF & pterodactyl Project
 
-特此免费授予任何获得本软件及相关文档文件（以下称"软件"）副本的人，无限制地处理软件，包括但不限于使用、复制、修改、合并、发布、分发、再授权和/或销售软件副本，以及允许提供软件的人这样做，前提是遵守以下条件：
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-上述版权声明和本许可声明应包含在所有软件的副本或实质性部分中。
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-该软件按“原样”提供，不提供任何类型的保证，无论是明示或暗示，包括但不限于对适销性、特定用途适用性和非侵权的保证。在任何情况下，作者或版权持有人都不对因使用软件或与软件相关的其他交易而引起的任何索赔、损害或其他责任承担责任，无论是在合约诉讼、侵权诉讼或其他方面。
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg

@@ -1,30 +1,31 @@
-# Home Assistant 社区附加组件: 示例
+# Home Assistant Community Add-on: Example
 
-[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
+[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-[![通过 GitHub Sponsors 赞助 Frenck][github-sponsors-shield]][github-sponsors]
+[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
 
-[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
+[![Support Frenck on Patreon][patreon-shield]][patreon]
 
-这是一个由社区 Home Assistant 附加组件提供的示例附加组件。
+Example add-on by Community Home Assistant add-ons.
 
-## 关于
+## About
 
-这是一个 Home Assistant 的示例附加组件。启动时，它每 5 秒显示一个随机的名言。
+This is an example add-on for Home Assistant. When started, it displays a
+random quote every 5 seconds.
 
-它展示了多个功能和结构，比如：
+It shows off several features and structures like:
 
-- 完整的 GitHub 仓库。
-- 一般的 Dockerfile 结构和设置。
-- 使用 `config.yaml` 和 `build.yaml` 文件。
-- 一般的 Shell 脚本结构 (`run.sh`)。
-- 使用 CodeClimate 进行质量保证。
-- 使用 GitLab 进行持续集成和部署。
-- 使用社区 Home Assistant 附加组件的构建环境。
-- 在我们的基础镜像中小幅使用 Bash 函数库。
-- 使用 Docker 标签模式。
+- Full blown GitHub repository.
+- General Dockerfile structure and setup.
+- The use of the `config.yaml` and `build.yaml` files.
+- General shell scripting structure (`run.sh`).
+- Quality assurance using CodeClimate.
+- Continuous integration and deployment using GitLab.
+- Usage of the Community Home Assistant Add-ons build environment.
+- Small use of the Bash function library in our base images.
+- The use of Docker label schema.
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
@@ -36,5 +37,5 @@
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
 [patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[release-shield]: https://img.shields.io/badge/version-v10.1.0-blue.svg
-[release]: https://github.com/hassio-addons/addon-example/tree/v10.1.0
+[release-shield]: https://img.shields.io/badge/version-v11.0.0-blue.svg
+[release]: https://github.com/hassio-addons/addon-example/tree/v11.0.0

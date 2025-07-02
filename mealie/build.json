@@ -1,7 +1,7 @@
 {
   "build_from": {
-    "aarch64": "docker.1ms.run/hkotel/mealie:latest",
-    "amd64": "docker.1ms.run/hkotel/mealie:latest"
+    "aarch64": "hkotel/mealie:latest",
+    "amd64": "hkotel/mealie:latest"
   },
   "codenotary": {
     "signer": "alexandrep.github@gmail.com"

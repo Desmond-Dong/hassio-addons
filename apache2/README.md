@@ -1,146 +1,146 @@
 # Apache2 Webserver Add-on for Home Assistant OS
-![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield] ![支持 armhf 架构][armhf-shield] ![支持 armv7 架构][armv7-shield] ![支持 i386 架构][i386-shield]
-![项目维护][maintenance-shield]
+![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
+![Project Maintenance][maintenance-shield]
 
-![Ingress 支持](../_images/apache2/ingress.png)
+![Ingress Support](../_images/apache2/ingress.png)
 
-为 Home Assistant OS 提供的轻量级 Apache2 网页服务器附加组件，支持可选的 PHP 8 和 MariaDB。
+A lightweight Apache2 webserver add-on for Home Assistant OS, with optional PHP 8 and MariaDB support.
 
-此附加组件允许您提供静态或动态网站，运行基于 PHP 的应用程序，或通过网页界面暴露内部服务。提供多种版本以适应不同的需求和用例。
+This add-on allows you to serve static or dynamic websites, run PHP-based applications, or expose internal services via a web interface. Multiple versions are available to fit different needs and use cases.
 
 ---
 
-## 📋 目录
+## 📋 Table of Contents
 
-- [关于](#关于)
-- [版本](#版本)
-- [安装](#安装)
-- [配置](#配置)
-- [认证](#认证)
+- [About](#about)
+- [Versions](#versions)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Authentication](#authentication)
 - [Ingress](#ingress)
-- [MariaDB 使用](#mariadb-使用)
-- [限制](#限制)
-- [支持](#支持)
-- [许可证](#许可证)
+- [MariaDB Usage](#mariadb-usage)
+- [Limitations](#limitations)
+- [Support](#support)
+- [License](#license)
 
 ---
 
-## 📖 关于
+## 📖 About
 
-此附加组件提供 [Apache HTTP Server](https://httpd.apache.org/) 用于 Home Assistant OS。它支持：
+This add-on provides the [Apache HTTP Server](https://httpd.apache.org/) for Home Assistant OS. It supports:
 
-- 托管静态 HTML/CSS/JS 网站
-- 运行 PHP 应用程序（如仪表板、工具）
-- 可选的 MariaDB 集成（如用于 WordPress、phpMyAdmin）
+- Hosting static HTML/CSS/JS websites
+- Running PHP applications (e.g. dashboards, tools)
+- Optional MariaDB integration (e.g. for WordPress, phpMyAdmin)
 
-Apache HTTP Server 是由 Apache 软件基金会维护的开源网页服务器软件。
-
----
-
-## 🧰 版本
-
-| 版本 | 特性 |
-|------|------|
-| [完整版本](https://github.com/FaserF/hassio-addons/tree/master/apache2) | Apache2、PHP 8.4（附带常用扩展）、MariaDB 客户端、ffmpeg、Mosquitto |
-| [最小版本](https://github.com/FaserF/hassio-addons/tree/master/apache2-minimal) | 仅 Apache2 |
-| [最小 + MariaDB](https://github.com/FaserF/hassio-addons/tree/master/apache2-minimal-mariadb) | Apache2、MariaDB 客户端、附带基本模块的 PHP |
+The Apache HTTP Server is an open-source web server software maintained by the Apache Software Foundation.
 
 ---
 
-## 🚀 安装
+## 🧰 Versions
 
-1. 将仓库添加到 Home Assistant:
-   [![添加仓库](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FFaserF%2Fhassio-addons)
-
-2. 通过 Supervisor 安装 `Apache2` 附加组件。
-
-3. 将您的网站文件放置在 document_root 中（默认：`/share/htdocs`）。
-   示例：`/share/htdocs/index.html`
-
-4. 启动附加组件并通过 Ingress 或外部端口访问您的网站。
+| Version                                                                                          | Features                                                                     |
+|--------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
+| [Full](https://github.com/FaserF/hassio-addons/tree/master/apache2)                              | Apache2, PHP 8.4 (with common extensions), MariaDB client, ffmpeg, Mosquitto |
+| [Minimal](https://github.com/FaserF/hassio-addons/tree/master/apache2-minimal)                   | Apache2 only                                                                 |
+| [Minimal + MariaDB](https://github.com/FaserF/hassio-addons/tree/master/apache2-minimal-mariadb) | Apache2, MariaDB client, PHP with basic modules                              |
 
 ---
 
-## ⚙️ 配置
+## 🚀 Installation
+
+1. Add the repository to Home Assistant:
+   [![Add Repository](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FFaserF%2Fhassio-addons)
+
+2. Install the `Apache2` add-on via Supervisor.
+
+3. Place your website files in document_root (Default: `/share/htdocs`).
+   Example: `/share/htdocs/index.html`
+
+4. Start the add-on and access your site via Ingress or external port.
+
+---
+
+## ⚙️ Configuration
 
 ```yaml
-document_root: /share/htdocs               # 必填项
-php_ini: default                           # "default"、"get_file" 或路径
-default_conf: default                      # Apache 默认配置
-default_ssl_conf: default                  # Apache SSL 配置
-website_name: mydomain.local               # 如果 ssl 为 true 则必填
-username: apache                           # 可选，修改文件所有权
-password: mySecretPassword                 # 可选，用于内部文件访问
-ssl: true                                  # 启用 HTTPS
-certfile: fullchain.pem                    # 如果 ssl 为 true 则必填
-keyfile: privkey.pem                       # 如果 ssl 为 true 则必填
-init_commands:                             # 可选启动命令
+document_root: /share/htdocs               # Required
+php_ini: default                           # "default", "get_file" or path
+default_conf: default                      # Apache default config
+default_ssl_conf: default                  # Apache SSL config
+website_name: mydomain.local               # Required if ssl is true
+username: apache                           # Optional, changes file ownership
+password: mySecretPassword                 # Optional, for internal file access
+ssl: true                                  # Enable HTTPS
+certfile: fullchain.pem                    # Required if ssl is true
+keyfile: privkey.pem                       # Required if ssl is true
+init_commands:                             # Optional startup commands
   - apk add imagemagick
 ```
 
-您可以使用 `get_file` 从 `/share` 提取自己的配置文件和 PHP.ini。
+You can create your own configuration files and PHP.ini using `get_file` to pull them from `/share`.
 
-### 选项: `document_root`
+### Option: `document_root`
 
-此选项是必需的。根据您在 Home Assistant 安装中的根网页文件夹位置进行更改。
+This option is needed. Change it depending where your root webfolder is on your homeassistant installation.
 
-注意：必须位于 /share 或 /media 文件夹中！其他文件夹对该附加组件不可见。
+Note: it has to be somewhere in the /share or /media folder! Other folders are not visible to this addon.
 
-### 选项: `php_ini`
+### Option: `php_ini`
 
-您可以选择以下选项：
+You can choose between the following options:
 
-default → 使用内置的 PHP 8.4 配置文件（推荐）
+default → Uses the built-in PHP 8.4 configuration file (recommended)
 
-get_file → 将默认 PHP 8.4 `php.ini` 复制到 `/share/apache2addon_php.ini`
+get_file → Copies the default PHP 8.4 `php.ini` to `/share/apache2addon_php.ini`
 
-path/to/your/new/php.ini -> 请根据您的自定义 php.ini 文件的位置更改路径，如：/share/apache2/php.ini
+path/to/your/new/php.ini -> Please change the location depending where your custom php.ini file is, f.e.: /share/apache2/php.ini
 
-### 选项: `default_conf` & `default_ssl_conf`
+### Option: `default_conf` & `default_ssl_conf`
 
-您可以选择以下选项：
+You can choose between the following options:
 
-default -> 使用默认的 apache2 附加组件文件
+default -> the default apache2 addon file will be used
 
-get_config -> 将默认 apache2 附加组件配置文件的副本获取到您的 /share 文件夹中。
+get_config -> Get a copy of the default apache2 addon config file to your /share folder.
 
-path/to/your/new/apache2.conf -> 请根据您的自定义 000-default.conf / 000-default-le-ssl.conf 文件的位置更改路径，如：/share/apache2/000-default.conf <br />
-更多信息： <https://cwiki.apache.org/confluence/display/HTTPD/ExampleVhosts><br /> <br />
-请注意，如果您使用自定义 apache2 配置文件并且收到任何 apache2 错误，我将不提供任何支持！
+path/to/your/new/apache2.conf -> Please change the location depending where your custom 000-default.conf / 000-default-le-ssl.conf file is, f.e.: /share/apache2/000-default.conf <br />
+More Information: <https://cwiki.apache.org/confluence/display/HTTPD/ExampleVhosts><br /> <br />
+Please note, that I wont give any support if you are using custom apache2 config files and are receiving any apache2 errors!
 
-### 选项: `website_name`
+### Option: `website_name`
 
-如果您启用了 ssl 为 true，则此选项是必需的。如果不使用 SSL，只需在此处放入任何内容，因为无关紧要。
+This option is needed, if you enable ssl to true. If you are not using SSL put anything in here, as it doesn’t matter.
 
-### 选项: `username`
+### Option: `username`
 
-此选项是可选的。该用户用于访问网页文件（而非网站本身）。它将把所有网页文件的所有者从 "root" 更改为此新所有者。
+This option is optional. This user is for accessing web files (NOT the website itself). It will change the owner of all web files from "root" to this new owner.
 
-这不用于网站的认证。如果您想要此功能，请查看 [网站认证](#网站认证)
+This is NOT used for Authentication for your website. If you want this have a look at [Authentication for your website](#Authentication-for-your-website)
 
-### 选项: `password`
+### Option: `password`
 
-此选项是可选的。一些自托管网站需要认证密码以访问 docker 镜像中的文件。#50
+This option is optional. Some self hosted web sites require an Authentication password to access files within the docker image. #50
 
-这不用于网站的认证。如果您想要此功能，请查看 [网站认证](#网站认证)
+This is NOT used for Authentication for your website. If you want this have a look at [Authentication for your website](#Authentication-for-your-website)
 
-### 选项: `ssl`
+### Option: `ssl`
 
-启用/禁用网页界面的 SSL (HTTPS)。
+Enables/Disables SSL (HTTPS) on the web interface.
 
-如果您需要自签名证书，请查看我的 openssl 附加组件： <https://github.com/FaserF/hassio-addons/tree/master/openssl>
+If you need a self-signed certificate, have a look at my openssl addon: <https://github.com/FaserF/hassio-addons/tree/master/openssl>
 
-**注意**： _文件必须存储在 `/ssl/` 中，这是默认的_
+**Note**: _The files MUST be stored in `/ssl/`, which is the default_
 
-### 选项: `init_commands`
+### Option: `init_commands`
 
-此选项是可选的。如果您需要某些特殊的软件包或命令，可以使用此选项进行安装/使用。 #124
+This option is optional. If you need some special packages or commands, you can use this option to install/use them. #124
 
-如果您遇到任何问题，请在提交错误报告之前删除此选项！
+If you are encountering any issues, please remove this option before submitting a bug report!
 
-### 配置示例
+### Config example
 
-推荐的附加组件配置示例：
+Recommended Example add-on configuration:
 
 ```yaml
 document_root: /share/htdocs
@@ -155,19 +155,19 @@ keyfile: privkey.pem
 
 ---
 
-## 🔐 认证
+## 🔐 Authentication
 
-`username` 和 `password` 字段用于保护 `/share/apache` 目录中的文件（例如，配置或日志）。它们**不**用于实际托管的网页。
+The `username` and `password` fields are used to protect files in the `/share/apache` directory (e.g. configuration or logs). They are **not** used for the actual hosted web pages.
 
-要保护网页内容，请使用 `.htaccess` 和 `.htpasswd` 文件。
+To protect web content, use `.htaccess` and `.htpasswd` files.
 
-### 示例：创建 `.htpasswd`
+### Example: Create `.htpasswd`
 
 ```bash
 htpasswd -c /share/htdocs/.htpasswd myuser
 ```
 
-然后在您的 `.htaccess` 文件中引用它，如下所示：
+Then reference it in your `.htaccess` file like this:
 
 ```
 AuthType Basic
@@ -180,24 +180,24 @@ Require valid-user
 
 ## 🧩 Ingress
 
-该附加组件支持 ingress（通过 Home Assistant UI 访问）。但是，请注意：
+The add-on supports ingress (access via Home Assistant UI). However, note:
 
-- 基本 HTML 页面可以完美工作。
-- 使用完整认证、重定向链或 WebSockets 的复杂应用程序在 ingress 中可能无法很好工作。
-- 为了最佳兼容性，建议通过本地 IP 和暴露端口访问。
+- Basic HTML pages work perfectly.
+- Complex apps using full authentication, redirect chains, or WebSockets may not work well in ingress.
+- For best compatibility, access via local IP and exposed port is recommended.
 
 ---
 
-## 🐬 MariaDB 使用
+## 🐬 MariaDB Usage
 
-如果您想将 PHP 应用程序（如 WordPress 或 phpMyAdmin）连接到官方 MariaDB 附加组件：
+If you want to connect your PHP application (e.g. WordPress or phpMyAdmin) to the official MariaDB add-on:
 
-- 使用 `core-mariadb` 作为主机名。
-- 端口： `3306`
-- 用户名/密码：使用 Home Assistant 的 MariaDB 凭据
-- 数据库名称：`homeassistant`（默认）
+- Use `core-mariadb` as the host name.
+- Port: `3306`
+- Username/Password: Use Home Assistant MariaDB credentials
+- Database name: `homeassistant` (by default)
 
-在 PHP 中的示例配置：
+Example config in PHP:
 
 ```php
 $mysqli = new mysqli("core-mariadb", "user", "pass", "homeassistant");
@@ -205,32 +205,44 @@ $mysqli = new mysqli("core-mariadb", "user", "pass", "homeassistant");
 
 ---
 
-## ⚠️ 限制
+## ⚠️ Limitations
 
-- ✅ 仅在 amd64 上测试过（其他架构可能有效，但未测试）
-- ⚠️ 单位 PHP 支持仅在 **完整** 版本中
-- 🔒 SSL 需要在 `/ssl/` 中有效的证书
-- 🌐 不建议在没有额外加固的情况下直接暴露于互联网
-- 🧩 WordPress 兼容性有限 — 请考虑 [专用 WordPress 附加组件](https://github.com/FaserF/hassio-addons/pull/202)
+- ✅ Only tested on amd64 (other architectures may work, but are untested)
+- ⚠️ PHP support only in the **Full** version
+- 🔒 SSL requires valid certificates in `/ssl/`
+- 🌐 Not recommended to expose directly to the internet without additional hardening
+- 🧩 WordPress compatibility is limited — please consider [dedicated WordPress add-ons](https://github.com/FaserF/hassio-addons/pull/202)
 
 ---
 
-## 🙋 支持
+## 🙋 Support
 
-如果您遇到问题或有功能请求，请在 GitHub 上打开一个问题：
+Please open an issue on GitHub if you experience problems or have feature requests:
 👉 [GitHub Issues](https://github.com/FaserF/hassio-addons/issues)
 
 ---
 
-## 📝 许可证
+## 📝 License
 
-该项目根据 MIT 许可证授权。
+This project is licensed under the MIT License.
 
-特此免费授权任何获得本软件及相关文档文件（“软件”）副本的人，不受限制地处理该软件，包括但不限于使用、复制、修改、合并、出版、分发、再许可证和/或出售该软件的副本，并允许向其提供软件的人这样做，前提是以下条件：
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-相应的版权声明和本许可声明应包含在所有副本或实质性部分的软件中。
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-该软件是“按原样”提供的，不提供任何种类的保证，无论是明示或暗示，包括但不限于对适销性、特定用途的适用性和非侵权的保证。在任何情况下，作者或版权持有人均不对因使用或其他交易而引起的任何索赔、损害或其他责任（无论是在合同、侵权或其他方面）承担责任。
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg

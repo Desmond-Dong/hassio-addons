@@ -1,5 +1,5 @@
 name: pterodactyl Panel Gameserver - BETA
-version: 0.7.6
+version: 0.8.0
 slug: pterodactyl_panel
 description: 开源游戏服务器 - 目前尚未完全运行。
 url: https://ghfast.top/github.com/FaserF/hassio-addons/tree/master/pterodactyl-panel

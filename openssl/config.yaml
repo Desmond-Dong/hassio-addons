@@ -1,5 +1,5 @@
 name: OpenSSL
-version: 1.6.6
+version: 1.7.0
 slug: openssl
 description: 生成自签名证书
 url: https://ghfast.top/github.com/FaserF/hassio-addons/tree/master/openssl

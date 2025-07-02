@@ -1,6 +1,6 @@
 {
   "name": "Zigbee2MQTT",
-  "version": "2.4.0-1",
+  "version": "2.5.0-1",
   "slug": "zigbee2mqtt",
   "description": "使用您的ZigBee设备而不需要供应商的桥或网关。",
   "breaking_versions": [

@@ -1,101 +1,130 @@
-# Home Assistant 社区插件：示例
+# Home Assistant Community Add-on: Example
 
-这是一个 Home Assistant 的示例插件。启动时，它每 5 秒显示一个随机名言。
+This is an example add-on for Home Assistant. When started, it displays a
+random quote every 5 seconds.
 
-它展示了几个特性和结构，例如：
+It shows off several features and structures like:
 
-- 完整的 GitHub 仓库。
-- 一般的 Dockerfile 结构和设置。
-- 使用 `config.yaml` 和 `build.yaml` 文件。
-- 一般的 Shell 脚本结构 (`run.sh`)。
-- 使用 CodeClimate 进行质量保证。
-- 使用 GitLab 进行持续集成和部署。
-- 使用社区 Home Assistant 插件构建环境。
-- 在我们的基础镜像中小规模使用 Bash 函数库。
-- 使用 Docker 标签架构。
+- Full blown GitHub repository.
+- General Dockerfile structure and setup.
+- The use of the `config.yaml` and `build.yaml` files.
+- General shell scripting structure (`run.sh`).
+- Quality assurance using CodeClimate.
+- Continuous integration and deployment using GitLab.
+- Usage of the Community Home Assistant Add-ons build environment.
+- Small use of the Bash function library in our base images.
+- The use of Docker label schema.
 
-## 安装
+## Installation
 
-这个插件的安装非常简单，与安装任何其他 Home Assistant 插件没有区别。
+The installation of this add-on is pretty straightforward and not different in
+comparison to installing any other Home Assistant add-on.
 
-1. 点击下面的 Home Assistant 我的按钮，在你的 Home Assistant 实例中打开插件。
+1. Click the Home Assistant My button below to open the add-on on your Home
+   Assistant instance.
 
-   [![在您的 Home Assistant 实例中打开此插件。][addon-badge]][addon]
+   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
 
-1. 点击“安装”按钮以安装插件。
-1. 启动“示例”插件。
-1. 检查“示例”插件的日志，查看其运行情况。
+1. Click the "Install" button to install the add-on.
+1. Start the "Example" add-on.
+1. Check the logs of the "Example" add-on to see it in action.
 
-## 配置
+## Configuration
 
-尽管该插件只是一个示例插件，它确实有一些配置选项可以让你玩耍。
+Eventought this add-on is just an example add-on, it does come with some
+configuration options to play around with.
 
-**注意**：_更改配置后，请记得重启插件。_
+**Note**: _Remember to restart the add-on when the configuration is changed._
 
-示例插件配置：
+Example add-on configuration:
 
 ```yaml
 log_level: info
 seconds_between_quotes: 5
 ```
 
-### 选项：`log_level`
+### Option: `log_level`
 
-`log_level` 选项控制插件的日志输出级别，可以更改为更详细或更简略，这在处理未知问题时可能会很有用。可能的值有：
+The `log_level` option controls the level of log output by the add-on and can
+be changed to be more or less verbose, which might be useful when you are
+dealing with an unknown issue. Possible values are:
 
-- `trace`：显示每个细节，如所有被调用的内部函数。
-- `debug`：显示详细的调试信息。
-- `info`：正常（通常）有趣的事件。
-- `warning`：不属于错误的例外情况。
-- `error`：不需要立即处理的运行时错误。
-- `fatal`：某些事情出了严重的问题。插件变得不可用。
+- `trace`: Show every detail, like all called internal functions.
+- `debug`: Shows detailed debug information.
+- `info`: Normal (usually) interesting events.
+- `warning`: Exceptional occurrences that are not errors.
+- `error`: Runtime errors that do not require immediate action.
+- `fatal`: Something went terribly wrong. Add-on becomes unusable.
 
-请注意，每个级别自动包含来自更高严重性级别的日志消息，例如，`debug` 还会显示 `info` 消息。默认情况下，`log_level` 设置为 `info`，这是推荐的设置，除非你在进行故障排除。
+Please note that each level automatically includes log messages from a
+more severe level, e.g., `debug` also shows `info` messages. By default,
+the `log_level` is set to `info`, which is the recommended setting unless
+you are troubleshooting.
 
-### 选项：`seconds_between_quotes`
+### Option: `seconds_between_quotes`
 
-设置每个引号输出之间的秒数。值必须在 `1` 到 `120` 秒之间。默认值设置为 `5` 秒。
+Sets the number of seconds between the output of each quote. The value
+must be between `1` and `120` seconds. This value is set to `5` seconds by
+default.
 
-## 更新日志与发布
+## Changelog & Releases
 
-这个仓库使用 [GitHub 的发布][releases] 功能保持更改日志。
+This repository keeps a change log using [GitHub's releases][releases]
+functionality.
 
-发布基于 [语义版本控制][semver]，采用 `MAJOR.MINOR.PATCH` 格式。简而言之，版本将根据以下内容进行递增：
+Releases are based on [Semantic Versioning][semver], and use the format
+of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
+based on the following:
 
-- `MAJOR`：不兼容或重大更改。
-- `MINOR`：向后兼容的新功能和增强。
-- `PATCH`：向后兼容的错误修复和包更新。
+- `MAJOR`: Incompatible or major changes.
+- `MINOR`: Backwards-compatible new features and enhancements.
+- `PATCH`: Backwards-compatible bugfixes and package updates.
 
-## 支持
+## Support
 
-有问题吗？
+Got questions?
 
-你有几种方式可以获得答案：
+You have several options to get them answered:
 
-- [Home Assistant 社区插件 Discord 聊天服务器][discord] 进行插件支持和功能请求。
-- [Home Assistant Discord 聊天服务器][discord-ha] 进行一般 Home Assistant 讨论和问题。
-- Home Assistant [社区论坛][forum]。
-- 加入 [/r/homeassistant][reddit] 的 [Reddit 子版块][reddit]。
+- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
+  support and feature requests.
+- The [Home Assistant Discord chat server][discord-ha] for general Home
+  Assistant discussions and questions.
+- The Home Assistant [Community Forum][forum].
+- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
 
-你也可以在这里 [提交问题][issue] 到 GitHub。
+You could also [open an issue here][issue] GitHub.
 
-## 作者与贡献者
+## Authors & contributors
 
-该仓库的初始设置由 [Franck Nijhof][frenck] 完成。
+The original setup of this repository is by [Franck Nijhof][frenck].
 
-有关所有作者和贡献者的完整列表，请查看 [贡献者页面][contributors]。
+For a full list of all authors and contributors,
+check [the contributor's page][contributors].
 
-## 许可证
+## License
 
-MIT 许可证
+MIT License
 
-版权所有 (c) 2017-2025 Franck Nijhof
+Copyright (c) 2017-2025 Franck Nijhof
 
-特此免费授权给任何获取本软件及相关文档文件（以下简称“软件”）的人，允许在不受限制的情况下处理该软件，包括但不限于使用、复制、修改、合并、发布、分发、再授权和/或销售该软件的副本，并允许提供软件的人这样做，遵守以下条件：
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-上述版权声明和本许可声明应包含在所有副本或软件的实质性部分中。
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-该软件按“现状”提供，不附有任何种类的保证，无论是明示或暗示的，包括但不限于对适销性、特定用途适用性和不侵权的保证。在任何情况下，作者或版权持有人均不对因使用该软件或软件的其他交易而产生的任何索赔、损害或其他责任负责，无论是在合同、侵权或其他方面。
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_example&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository

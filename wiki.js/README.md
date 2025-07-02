@@ -1,28 +1,28 @@
 # Home Assistant Community Add-on: Wiki.js
-![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield] ![支持 armhf 架构][armhf-shield] ![支持 armv7 架构][armv7-shield]
-![项目维护][maintenance-shield]
+![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield]
+![Project Maintenance][maintenance-shield]
 
-Wiki.js 适用于 Homeassistant OS
+Wiki.js for Homeassistant OS
 
-## 关于
+## About
 
-功能强大且可扩展的开源 Wiki 软件。
-通过 Wiki.js 美丽直观的界面，使编写文档成为一种乐趣！
+The most powerful and extensible open source Wiki software.
+Make documentation a joy to write using Wiki.js's beautiful and intuitive interface!
 
-## 安装
+## Installation
 
-[![FaserF Homeassistant 插件](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FFaserF%2Fhassio-addons)
+[![FaserF Homeassistant Addons](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FFaserF%2Fhassio-addons)
 <br />
-该插件的安装相当简单，与安装其他自定义 Home Assistant 插件没有区别。<br />
-只需点击上面的链接或将我的仓库添加到 hassio 插件库中：<https://github.com/FaserF/hassio-addons>
+The installation of this add-on is pretty straightforward and not different in comparison to installing any other custom Home Assistant add-on.<br />
+Just click the link above or add my repo to the hassio addons repositorys: <https://github.com/FaserF/hassio-addons>
 
-请确保 MariaDB 插件已经安装！
+Please ensure that the MariaDB Addon is installed!
 
-## 配置
+## Configuration
 
-**注意**：_更改配置后，请记得重启插件。_
+**Note**: _Remember to restart the add-on when the configuration is changed._
 
-插件配置示例：
+Example add-on configuration:
 
 ```yaml
 ssl: true
@@ -30,47 +30,59 @@ certfile: fullchain.pem
 keyfile: privkey.pem
 ```
 
-**注意**：_这只是一个示例，请勿复制粘贴！创建您自己的！_
+**Note**: _This is just an example, don't copy and paste it! Create your own!_
 
-### 选项：`ssl`
+### Option: `ssl`
 
-在 web 界面上启用/禁用 SSL (HTTPS)。设置为 `true` 以启用，设置为 `false` 则禁用。
+Enables/Disables SSL (HTTPS) on the web interface. Set it `true` to enable it, `false` otherwise.
 
-如果您需要自签名证书，请查看我的 openssl 插件：<https://github.com/FaserF/hassio-addons/tree/master/openssl>
+If you need a self-signed certificate, have a look at my openssl addon: <https://github.com/FaserF/hassio-addons/tree/master/openssl>
 
-**注意**：_文件必须存储在 `/ssl/` 中，这是默认位置_
+**Note**: _The files MUST be stored in `/ssl/`, which is the default_
 
-### 选项：`reset_database`
+### Option: `reset_database`
 
-启用此选项以重置 pterodactyl 的数据库文件。请注意，此操作无法撤消！请谨慎使用。
+Enables it to reset the database files for pterodactyl. Please not this action can not be undone! Use it with care.
 
 ## Ingress
 
-该插件目前不完全支持 ingress！希望这很快会实现。
+This addon currently does not fully support ingress! Hopefully that will come soon.
 
-## 支持
+## Support
 
-有问题或疑问？
+Got questions or problems?
 
-您可以在此处 [提交问题][issue] 到 GitHub。
-请记住，该软件仅在运行于 Raspberry Pi 4 的 armv7 上进行了测试。
+You can [open an issue here][issue] GitHub.
+Please keep in mind, that this software is only tested on armv7 running on a Raspberry Pi 4.
 
-## 作者与贡献者
+## Authors & contributors
 
-原始程序来自 Requarks 团队 [NGPixel][NGPixel]。有关更多信息，请访问此页面：<https://github.com/Requarks/wiki>
-hassio 插件由 [FaserF] 带给您。
+The original program is from the Requarks Team [NGPixel][NGPixel]. For more informations, please visit this page: <https://github.com/Requarks/wiki>
+The hassio addon is brought to you by [FaserF].
 
-## 许可证
+## License
 
-MIT 许可证
+MIT License
 
-版权所有 (c) 2023 FaserF & Requarks
+Copyright (c) 2025 FaserF & Requarks
 
-特此免费授予任何获得本软件及相关文档文件（“软件”）副本的人，不受限制地处理软件，包括但不限于使用、复制、修改、合并、发布、分发、再授权和/或出售软件副本的权利，并允许提供软件的人员这样做，遵循以下条件：
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-上述版权声明和此许可声明应包含在软件的所有副本或重要部分中。
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-该软件按“原样”提供，不作任何种类的保证，无论是明示或暗示，包括但不限于对适销性、特定用途的适用性和不侵权的保证。在任何情况下，作者或版权持有人均不对因使用或其他交易而产生的任何索赔、损害或其他责任承担责任，无论是因合同、侵权或其他原因。
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg

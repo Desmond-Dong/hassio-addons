@@ -1,16 +1,16 @@
-# Home Assistant社区附加组件：SQLite Web
+# Home Assistant Community Add-on: SQLite Web
 
-[![Release][release-shield]][release] ![项目状态][project-stage-shield] ![项目维护][maintenance-shield]
+[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-从您的网络浏览器中探索您的Home Assistant数据库！
+Explore your Home-Assistant database from your web browser!
 
-## 关于
+## About
 
-这使您能够轻松浏览存储在数据库中的所有表和内容。
+This enables you to easily explore all tables and content that is saved in your database.
 
-![SQLite Web 截图][screenshot]
+![SQLite Web screenshot][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/330944238910963714.svg
 [discord]: https://discord.gg/c5DvZ4e
@@ -18,6 +18,6 @@
 [forum]: https://community.home-assistant.io/t/home-assistant-community-add-on-sqlite-web/68912?u=frenck
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
-[release-shield]: https://img.shields.io/badge/version-v4.3.1-blue.svg
-[release]: https://github.com/hassio-addons/addon-sqlite-web/tree/v4.3.1
+[release-shield]: https://img.shields.io/badge/version-v4.4.0-blue.svg
+[release]: https://github.com/hassio-addons/addon-sqlite-web/tree/v4.4.0
 [screenshot]: https://github.com/hassio-addons/addon-sqlite-web/raw/main/images/sample-view.png

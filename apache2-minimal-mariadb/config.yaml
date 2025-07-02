@@ -1,5 +1,5 @@
 name: Apache2 Minimal with MariaDB Client
-version: 2.13.2
+version: 2.14.0
 slug: apache2-minimal-mariadb
 description: 开源Web服务器，带有MariaDB客户端和一些PHP模块。
 url: https://ghfast.top/github.com/FaserF/hassio-addons/tree/master/apache2-minimal-mariadb

@@ -24,15 +24,16 @@ ENV SUB_PATH=$SUB_PATH
 ENV MEALIE_VERSION="v2.8.0"
 
 # Clone the Mealie repository to get the frontend source code
-# hadolint ignore=DL3003
 WORKDIR /frontend
-RUN mkdir tempdir && cd tempdir && git clone --branch "$MEALIE_VERSION" https://ghfast.top/github.com/mealie-recipes/mealie.git . && \
+# hadolint ignore=DL3003
+RUN mkdir -p /frontend/tempdir && cd /frontend/tempdir || true && \
+    git clone --branch "$MEALIE_VERSION" https://ghfast.top/github.com/mealie-recipes/mealie.git . && \
     cp -rf frontend/* /frontend && cd /frontend && rm -r tempdir && \
     yarn install --prefer-offline --frozen-lockfile --non-interactive --production=false --network-timeout 1000000 && \
     yarn generate
 
 # Stage 2: Build the Final Image
-FROM docker.1ms.run/hkotel/mealie:latest
+FROM hkotel/mealie:latest
 
 # Copy the rebuilt frontend files into the final image
 WORKDIR /mealie
@@ -48,7 +49,7 @@ ENV S6_CMD_WAIT_FOR_SERVICES=1 \
     S6_SERVICES_GRACETIME=0
 
 # Correct data path
-# hadolint ignore=DL4006
+# hadolint ignore=DL4006,DL3003
 RUN \
     # Copy frontend
     cd /opt/mealie/lib/python*/site-packages/mealie && \
