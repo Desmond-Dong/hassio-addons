@@ -27,8 +27,9 @@ jobs:
         run: |
           sudo apt-get install jq -y
           npm install -g ai-markdown-translator
-        #  sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
-        #  sudo chmod +x /usr/bin/yq
+          wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
+          chmod +x /usr/bin/yq
+          yq
           
 
       - name: downloading addons
