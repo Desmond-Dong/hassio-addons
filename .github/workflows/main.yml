@@ -247,8 +247,7 @@ jobs:
                 jq --arg description "$translated_description" '.description = $description' "$file" > temp.json && mv temp.json "$file"
               
               elif file -b --mime-type "$file" | grep -q "yaml"; then
-                description=~/bin/yq '.description' $file
-        
+                description=$(~/bin/yq '.description' "$file")
                 translated_description=$(curl -s --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
                   --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
                   --header 'Content-Type: application/json' \
