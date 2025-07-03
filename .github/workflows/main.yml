@@ -210,7 +210,7 @@ jobs:
         run: |
                   
                   find ./addons -type f \( -name "README.md" -o -name "DOCS.md" \) -print0 | xargs -0 -P 5 -I {} sh -c '
-                    timeout 90s ai-markdown-translator -i "{}" -o "{}" -l "Chinese" --openai-url "https://open.bigmodel.cn/api/paas/v4/" --api-key "${{ secrets.ZHIPUAI_KEY }}" --model "glm-4-flash-250414" || echo "{} translation failed or timed out."
+                    timeout 90s ai-markdown-translator -i "{}" -o "{}" -l "Chinese" --openai-url "https://open.bigmodel.cn/api/paas/v4/chat/completions" --api-key "${{ secrets.ZHIPUAI_KEY }}" --model "glm-4-flash-250414" || echo "{} translation failed or timed out."
                   '
 
 
@@ -229,7 +229,7 @@ jobs:
                   --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
                   --header 'Content-Type: application/json' \
                   --data "{
-                    \"model\": \"glm-4v-flash\",
+                    \"model\": \"glm-4-flash-250414\",
                     \"messages\": [
                       {
                           \"role\": \"system\",
@@ -253,7 +253,7 @@ jobs:
                   --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
                   --header 'Content-Type: application/json' \
                   --data "{
-                    \"model\": \"glm-4v-flash\",
+                    \"model\": \"glm-4-flash-250414\",
                     \"messages\": [
                       {
                           \"role\": \"system\",
