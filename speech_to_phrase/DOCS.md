@@ -1,67 +1,67 @@
-# Home Assistant Add-on: Speech to phrase
+# Home Assistant 插件：语音短语
 
-## Installation
+## 安装
 
-Follow these steps to get the add-on installed on your system:
+按照以下步骤将插件安装到您的系统上：
 
-1. Navigate in your Home Assistant frontend to **Settings** -> **Add-ons** -> **Add-on store**.
-2. Find the "Speech to phrase" add-on and click it.
-3. Click on the "INSTALL" button.
+1. 在 Home Assistant 前端导航到 **设置** -> **插件** -> **插件商店**。
+2. 找到 "语音短语" 插件并点击它。
+3. 点击 "安装" 按钮。
 
-## How to use
+## 使用方法
 
-After this add-on is installed and running, it should automatically train itself based on your [exposed][] entities, areas, floors, and [sentence triggers][sentence trigger].
-The add-on will automatically re-train if necessary.
+安装并运行此插件后，它将根据您的 [暴露][] 实体、区域、楼层和 [句子触发器][sentence trigger] 自动进行自我训练。
+插件将在必要时自动重新训练。
 
-The add-on will be automatically discovered by the Wyoming integration in Home Assistant. To finish the setup, click the following my button:
+插件将自动被 Home Assistant 中的 Wyoming 集成发现。要完成设置，请点击以下我的按钮：
 
-[![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=wyoming)
+[![打开您的 Home Assistant 实例并开始设置新的集成。](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=wyoming)
 
-Alternatively, you can install the Wyoming integration manually, see the
-[Wyoming integration documentation](https://www.home-assistant.io/integrations/wyoming/)
-for more information.
+或者，您可以手动安装 Wyoming 集成，请参阅
+[Wyoming 集成文档](https://www.home-assistant.io/integrations/wyoming/)
+以获取更多信息。
 
-### Voice commands
+### 语音命令
 
-See [available voice commands](https://github.com/OHF-Voice/speech-to-phrase/blob/main/SENTENCES.md)
+查看 [可用的语音命令](https://github.com/OHF-Voice/speech-to-phrase/blob/main/SENTENCES.md)
 
-### Custom sentences
+### 自定义句子
 
-You can add [custom sentences][] to `/share/speech-to-phrase/custom_sentences/<language>/sentences.yaml` where `<language>` is:
+您可以添加 [自定义句子][] 到 `/share/speech-to-phrase/custom_sentences/<语言>/sentences.yaml`，其中 `<语言>` 是：
 
-* `ca` - Catalan
-* `cs` - Czech
-* `de` - German
-* `el` - Greek
-* `en` - English
-* `es` - Spanish
-* `eu` - Basque
-* `fa` - Persian/Farsi
-* `fi` - Finnish
-* `fr` - French
-* `hi` - Hindi
-* `it` - Italian
-* `mn` - Mongolian
-* `nl` - Dutch
-* `pl` - Polish
-* `pt_PT` - Portuguese
-* `ro` - Romanian
-* `ru` - Russian
-* `sl` - Slovenian
-* `sw` - Swahili
-* `tr` - Turkish
+* `ca` - 加泰罗尼亚语
+* `cs` - 捷克语
+* `de` - 德语
+* `el` - 希腊语
+* `en` - 英语
+* `es` - 西班牙语
+* `eu` - 巴斯克语
+* `fa` - 波斯语/法尔斯语
+* `fi` - 芬兰语
+* `fr` - 法语
+* `hi` - 印地语
+* `it` - 意大利语
+* `mn` - 蒙古语
+* `nl` - 荷兰语
+* `pl` - 波兰语
+* `pt_PT` - 葡萄牙语
+* `ro` - 罗马尼亚语
+* `ru` - 俄语
+* `sl` - 斯洛文尼亚语
+* `sw` - 斯瓦希里语
+* `tr` - 土耳其语
 
-## Support
+## 支持
 
-Got questions?
+有问题吗？
 
-You have several options to get them answered:
+您有几个选项来获得答案：
 
-- The [Home Assistant Discord Chat Server][discord].
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant Discord 聊天服务器][discord]。
+- Home Assistant [社区论坛][forum]。
+- 加入 [Reddit 子版块][reddit] 在 [/r/homeassistant][reddit]
 
-In case you've found an bug, please [open an issue on our GitHub][issue].
+如果您发现了一个错误，请 [在我们的 GitHub 上打开一个问题][issue]。
 
 [discord]: https://discord.gg/c5DvZ4e
 [forum]: https://community.home-assistant.io

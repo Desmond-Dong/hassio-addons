@@ -2,8 +2,8 @@
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/zigbee2mqtt/zigbee2mqtt-amd64.svg?style=flat-square&logo=docker)](https://cloud.docker.com/u/dwelch2101/repository/docker/zigbee2mqtt/zigbee2mqtt-amd64)
 
-Allows you to use your Zigbee devices **without** the vendors bridge or gateway.
+允许您**无需**设备供应商的桥接器或网关来使用您的Zigbee设备。
 
-It bridges events and allows you to control your Zigbee devices via MQTT. In this way you can integrate your Zigbee devices with whatever smart home infrastructure you are using.
+它桥接事件，并允许您通过MQTT控制您的Zigbee设备。通过这种方式，您可以将您的Zigbee设备与您正在使用的任何智能家居基础设施集成。
 
-See Documentation tab for more details.
+有关更多详细信息，请查看文档选项卡。

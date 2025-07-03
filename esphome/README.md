@@ -1,35 +1,31 @@
-# ESPHome Device Builder
+# ESPHome 设备构建器
 
 [![ESPHome logo][logo]][website]
 
 [![GitHub stars][github-stars-shield]][repository]
 [![Discord][discord-shield]][discord]
 
-## About
+## 关于
 
-This add-on allows you to write configurations and turn your microcontrollers
-into smart home devices directly through Home Assistant **with no programming experience required**.
-All you need to do is write YAML configuration files; the rest (over-the-air updates, compiling) is all
-handled by ESPHome.
+这个插件允许您编写配置，并通过 Home Assistant 将您的微控制器直接转换为智能家居设备，**无需编程经验**。
+您需要做的只是在配置文件中编写 YAML 配置文件；其余的（空中更新、编译）都是由 ESPHome 处理。
 
 <p align="center">
-<img title="ESPHome Device Builder screenshot" src="https://github.com/esphome/home-assistant-addon/raw/main/esphome/images/screenshot.png" width="700px"></img>
+<img title="ESPHome Device Builder 截图" src="https://github.com/esphome/home-assistant-addon/raw/main/esphome/images/screenshot.png" width="700px"></img>
 </p>
 
-[View the ESPHome documentation][website]
+[查看 ESPHome 文档][website]
 
-## Example
+## 示例
 
-With ESPHome, you can go from a few lines of YAML straight to a custom-made
-firmware. For example, to include a [DHT22][dht22]
-temperature and humidity sensor, you just need to include 8 lines of YAML
-in your configuration file:
+使用 ESPHome，您可以从几行 YAML 直接转换到定制固件。例如，要包含一个 [DHT22][dht22]
+温度和湿度传感器，您只需要在您的配置文件中包含 8 行 YAML：
 
-<img title="ESPHome DHT configuration example" src="https://github.com/esphome/home-assistant-addon/raw/main/esphome/images/dht-example.png" width="500px"></img>
+<img title="ESPHome DHT 配置示例" src="https://github.com/esphome/home-assistant-addon/raw/main/esphome/images/dht-example.png" width="500px"></img>
 
-Then just click UPLOAD and the sensor will magically appear in Home Assistant:
+然后只需点击上传，传感器就会神奇地出现在 Home Assistant 中：
 
-<img title="ESPHome Home Assistant discovery" src="https://github.com/esphome/home-assistant-addon/raw/main/esphome/images/temperature-humidity.png" width="600px"></img>
+<img title="ESPHome Home Assistant 发现" src="https://github.com/esphome/home-assistant-addon/raw/main/esphome/images/temperature-humidity.png" width="600px"></img>
 
 [discord]: https://discord.gg/KhAMKrd
 [repository]: https://github.com/esphome/esphome

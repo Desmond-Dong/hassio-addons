@@ -1,135 +1,75 @@
-# Home Assistant Community Add-on: phpMyAdmin
+# Home Assistant Add-on: phpMyAdmin
 
-phpMyAdmin is a database administration tool for MySQL & MariaDB. Frequently
-used operations (managing databases, tables, columns, relations, indexes,
-users, permissions, etc) can be performed via the user interface,
-while you still have the ability to directly execute any SQL statement.
+phpMyAdmin 是一个用于 MySQL & MariaDB 的数据库管理工具。经常使用的操作（管理数据库、表格、列、关系、索引、用户、权限等）可以通过用户界面执行，同时您仍然可以直接执行任何 SQL 语句。
 
-This add-on was specifically designed to manage the official Home Assistant
-MariaDB add-on.
+此 add-on 特别设计用于管理官方 Home Assistant MariaDB add-on。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
+按照以下步骤在您的系统上安装 add-on：
 
-1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.
+添加仓库 `https://github.com/erik73/hassio-addons`。
+找到 "phpMyAdmin" add-on 并点击它。
+点击 "INSTALL" 按钮。
 
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
+## 配置
 
-1. Click the "Install" button to install the add-on.
-1. Start the "phpMyAdmin" add-on.
-1. Enjoy the add-on!
+**注意**：_更改配置时，请记住重新启动 add-on。_
 
-## Configuration
-
-**Note**: _Remember to restart the add-on when the configuration is changed._
-
-Example add-on configuration:
+示例 add-on 配置：
 
 ```yaml
 log_level: info
 ```
 
-**Note**: _This is just an example, don't copy and paste it! Create your own!_
+**注意**：_这只是一个示例，不要复制粘贴它！创建您自己的！_
 
-### Option: `upload_limit`
+### 选项：`upload_limit`
 
-By default, the size limit for uploads (for operations such as imports) is set to
-64MB. This can be increased with this option, for example, `100` would be 100MB.
+默认情况下，上传的大小限制（用于导入等操作）设置为 64MB。此选项可以增加，例如，`100` 将是 100MB。
 
-### Option: `log_level`
+### 选项：`log_level`
 
-The `log_level` option controls the level of log output by the addon and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
+`log_level` 选项控制 add-on 的日志输出级别，可以更改为更详细或更简洁，这在处理未知问题时可能很有用。可能的值有：
 
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`: Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
+- `trace`：显示每个细节，例如所有调用的内部函数。
+- `debug`：显示详细的调试信息。
+- `info`：正常（通常）有趣的事件。
+- `warning`：非异常的异常情况。
+- `error`：不需要立即采取行动的运行时错误。
+- `fatal`：发生了严重错误。Add-on 变得无法使用。
 
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
+请注意，每个级别自动包含更严重级别的日志消息，例如，`debug` 也显示 `info` 消息。默认情况下，`log_level` 设置为 `info`，除非您正在排错，否则这是推荐设置。
 
-## Known issues and limitations
+## 已知问题和限制
 
-- This add-on needs the core MariaDB add-on version 2.0 or higher.
-- This add-on is created to allow management of the official Home assistant
-  MariaDB add-on. It cannot connect to other MySQL or MariaDB servers.
+- 此 add-on 需要 core MariaDB add-on 版本 2.0 或更高版本。
+- 此 add-on 创建用于管理官方 Home assistant MariaDB add-on。它无法连接到其他 MySQL 或 MariaDB 服务器。
 
-## Changelog & Releases
+## 更改日志与发布
 
-This repository keeps a change log using [GitHub's releases][releases]
-functionality.
+此仓库使用 [GitHub 的发布][releases] 功能维护更改日志。
 
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
+发布基于 [语义版本控制][semver]，并使用 `MAJOR.MINOR.PATCH` 格式。简而言之，版本将根据以下内容进行增量：
 
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
+- `MAJOR`：不兼容或重大更改。
+- `MINOR`：向后兼容的新功能和增强功能。
+- `PATCH`：向后兼容的 bug 修复和软件包更新。
 
-## Support
+## 支持
 
-Got questions?
+有问题？
 
-You have several options to get them answered:
-
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
-
-You could also [open an issue here][issue] GitHub.
-
-## Authors & contributors
-
-The original setup of this repository is by [Franck Nijhof][frenck].
-
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
-
-## License
-
-MIT License
-
-Copyright (c) 2021-2025 Franck Nijhof
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+您可以在此处 [打开问题][issue] GitHub。
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
-[addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_phpmyadmin&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository
-[contributors]: https://github.com/hassio-addons/addon-phpmyadmin/graphs/contributors
+[addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_phpmyadmin&repository_url=https%3A%2F%2Fgithub.com%2Ferik73%2Frepository
+[contributors]: https://github.com/erik73/addon-phpmyadmin/graphs/contributors
 [discord-ha]: https://discord.gg/c5DvZ4e
 [discord]: https://discord.me/hassioaddons
 [forum]: https://community.home-assistant.io/t/home-assistant-community-add-on-phpmyadmin/171729?u=frenck
 [frenck]: https://github.com/frenck
-[issue]: https://github.com/hassio-addons/addon-phpmyadmin/issues
+[issue]: https://github.com/erik73/addon-phpmyadmin/issues
 [reddit]: https://reddit.com/r/homeassistant
-[releases]: https://github.com/hassio-addons/addon-phpmyadmin/releases
+[releases]: https://github.com/erik73/addon-phpmyadmin/releases
 [semver]: https://semver.org/spec/v2.0.0.html

@@ -1,8 +1,8 @@
 ---
-version: 1.4.0
+version: 1.4.1
 slug: speech-to-phrase
 name: Speech-to-Phrase
-description: 快速且个性化的本地语音转文本
+description: 快速定制的本地语音转文本
 url: http://github.com/OHF-voice/speech-to-phrase
 arch:
   - amd64
