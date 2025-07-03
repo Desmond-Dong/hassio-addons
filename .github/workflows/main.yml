@@ -210,7 +210,7 @@ jobs:
         run: |
                   
                   find ./addons -type f \( -name "README.md" -o -name "DOCS.md" \) -print0 | xargs -0 -P 5 -I {} sh -c '
-                    timeout 90s ai-markdown-translator -i "{}" -o "{}" -l "Chinese" --openai-url "https://free.v36.cm" --api-key "sk-RAtilFmZ7FZhulUvA145E50b64B34f32B10a6631625e2e05" --model "gpt-3.5-turbo" || echo "{} translation failed or timed out."
+                    timeout 90s ai-markdown-translator -i "{}" -o "{}" -l "Chinese" --openai-url "https://open.bigmodel.cn/api/paas/v4/" --api-key "${{ secrets.ZHIPUAI_KEY }}" --model "glm-4-flash-250414" || echo "{} translation failed or timed out."
                   '
 
 
