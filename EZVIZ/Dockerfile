@@ -10,6 +10,7 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && pip install --no-cache-dir paho-mqtt requests
 
 ENV PATH="/opt/venv/bin:$PATH"
+ENV LANG=C.UTF-8
 COPY EZVIZ.py /EZVIZ.py
 #WORKDIR /opt/venv
 
