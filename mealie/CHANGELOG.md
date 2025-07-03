@@ -1,3 +1,7 @@
+## v2.8.0-5 (03-07-2025)
+- Minor bugs fixed
+## v2.8.0-4 (03-07-2025)
+- Minor bugs fixed
 ## v2.8.0-2 (02-07-2025)
 - Try to fix config.yaml : https://github.com/alexbelgium/hassio-addons/issues/1933
 
