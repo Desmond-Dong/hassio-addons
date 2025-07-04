@@ -4,6 +4,7 @@ import logging
 import base64
 import requests
 import paho.mqtt.client as mqtt
+import subprocess
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
@@ -230,7 +231,7 @@ def publish_json(client, base_topic, key, value, retain=True):
                     if response.status_code in (301, 302):
                         location = response.headers.get("Location")
                         log.info("Redirected to: %s", location)
-                        response = session.get(f"{location}", timeout=10,  allow_redirects=False)
+                        response.content = subprocess.check_output(["curl", "-sL", location])
                     #response.raise_for_status()
                     encoded_content = base64.b64encode(response.content).decode('utf-8')
                     sub_value = value[sub_key] = encoded_content
