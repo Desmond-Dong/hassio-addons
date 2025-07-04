@@ -4,12 +4,12 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "思源是一款以隐私优先的个人知识管理系统，支持细粒度块级引用和Markdown所见即所得。",
+  "description": "SiYuan 是一个注重隐私的个人知识管理系统，支持细粒度的块级引用和 Markdown WYSIWYG。",
   "environment": {},
   "map": [
     "addon_config:rw"
   ],
-  "version": "v3.1.32",
+  "version": "v3.2.0",
   "name": "siyuan",
   "ports": {
     "6806/tcp": "6806"
@@ -25,7 +25,7 @@
   },
   "slug": "siyuan",
   "startup": "services",
-  "upstream": "v3.1.32",
+  "upstream": "v3.2.0",
   "url": "https://ghfast.top/github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:6806]",
   "ingress": false,

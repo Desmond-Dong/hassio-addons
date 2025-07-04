@@ -1,7 +1,7 @@
 name: Node-RED
-version: 19.0.2
+version: 20.0.0
 slug: nodered
-description: 物联网的基于流的编程
+description: Flow-based programming for the Internet of Things
 url: https://ghfast.top/github.com/hassio-addons/addon-node-red
 codenotary: codenotary@frenck.dev
 ingress: true
