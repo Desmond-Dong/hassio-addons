@@ -1,7 +1,7 @@
 name: Music Assistant Server (beta)
-version: 2.6.0b13
+version: 2.6.0b14
 slug: music_assistant_beta
-description: 音乐助理的beta版本。如果你想要跟上最新的功能和改进，并且不介意进行一些beta测试，请安装此版本。在Discord上关注我们以报告和讨论反馈！
+description: BETA version of Music Assistant. Install this version if you want to
   keep up with the latest and greatest and don't mind some beta testing. Follow us
   on discord to report and discuss feedback!
 url: https://music-assistant.io

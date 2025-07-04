@@ -1,80 +1,59 @@
 # Home Assistant Community Add-on: Advanced SSH & Web Terminal
 
-This add-on allows you to log in to your Home Assistant instance using
-SSH or a Web Terminal, giving you to access your folders and
-also includes a command-line tool to do things like restart, update,
-and check your instance.
+这个插件允许您使用 SSH 或 Web Terminal 登录到您的 Home Assistant 实例，从而访问您的文件夹，并且还包含一个命令行工具，用于执行重启、更新和检查实例等操作。
 
-This is an enhanced version of the provided
-[SSH add-on by Home Assistant][hass-ssh] and focuses on security,
-usability, flexibility and also provides access using a web interface.
+这是 Home Assistant 提供的 [SSH 插件][hass-ssh] 的增强版本，重点关注安全性、可用性、灵活性，并提供使用 Web 界面进行访问。
 
-## WARNING
+## 注意
 
-The advanced SSH & Web Terminal add-on is very powerful and gives you access
-to almost all tools and hardware of your system.
+高级 SSH & Web Terminal 插件非常强大，可以访问您系统中的几乎所有工具和硬件。
 
-While this add-on is created and maintained with care and with security in mind,
-in the wrong or inexperienced hands, it could damage your system.
+虽然这个插件是经过精心创建和维护的，并且考虑了安全性，但在错误或不熟悉的情况下，它可能会损坏您的系统。
 
-## Features
+## 功能
 
-This add-on, of course, provides an SSH server, based on [OpenSSH][openssh] and
-a web-based Terminal (which can be included in your Home Assistant frontend) as
-well. Additionally, it comes out of the box with the following:
+这个插件当然提供了基于 [OpenSSH][openssh] 的 SSH 服务器和基于 Web 的 Terminal（可以包含在您的 Home Assistant 前端），此外，它还包含以下功能：
 
-- Access your command line right from the Home Assistant frontend!
-- A secure default configuration of SSH:
-  - Only allows login by the configured user, even if more users are created.
-  - Only uses known secure ciphers and algorithms.
-  - Limits login attempts to hold off brute-force attacks better.
-  - Many more security tweaks, _this addon passes all [ssh-audit] checks
-    without warnings!_
-    ![Result of SSH-Audit][ssh-audit-image]
-- Comes with an SSH compatibility mode option to allow older clients to connect.
-- Support for Mosh allowing roaming and supports intermittent connectivity.
-- SFTP support is disabled by default but is user configurable.
-- Compatible if Home Assistant was installed via the generic Linux installer.
-- Username is configurable, so `root` is no longer mandatory.
-- Persists custom SSH client settings & keys between add-on restarts
-- Log levels for allowing you to triage issues easier.
-- Hardware access to your audio, uart/serial devices and GPIO pins.
-- Runs with more privileges, allowing you to debug and test more situations.
-- Has access to the dbus of the host system.
-- Has the option to access the Docker instance running on the host system.
-- Runs on host level network, allowing you to open ports or run little daemons.
-- Have custom Alpine packages installed on start. This allows you to install
-  your favorite tools, which will be available every single time you log in.
-- Execute custom commands on add-on start so that you can customize the
-  shell to your likings.
-- [ZSH][zsh] as its default shell. Easier to use for the beginner, more advanced
-  for the more experienced user. It even comes preloaded with
-  ["Oh My ZSH"][ohmyzsh], with some plugins enabled as well.
-- Contains a sensible set of tools right out of the box: curl, Wget, RSync, GIT,
-  Nmap, Mosquitto client, MariaDB/MySQL client, Awake (“wake on LAN”), Nano,
-  Vim, tmux, and a bunch commonly used networking tools.
+- 直接从 Home Assistant 前端访问命令行！
+- SSH 的安全默认配置：
+  - 仅允许使用配置的用户登录，即使创建了更多用户。
+  - 仅使用已知的加密方法和算法。
+  - 限制登录尝试次数，以更好地防止暴力攻击。
+- 提供 SSH 兼容模式选项，允许旧客户端连接。
+- 支持 Mosh，允许漫游并支持间歇性连接。
+- 默认情况下禁用 SFTP 支持，但用户可以配置。
+- 如果 Home Assistant 通过通用 Linux 安装程序安装，则兼容。
+- 用户名是可配置的，因此不再强制要求为 `root`。
+- 在插件重启之间持久化自定义 SSH 客户端设置和密钥
+- 日志级别，以便更容易地排查问题。
+- 对音频、uart/串行设备和 GPIO 引脚的硬件访问。
+- 以更高的权限运行，允许您调试和测试更多情况。
+- 可以访问主机系统的 dbus。
+- 有选项可以访问主机系统上运行的 Docker 实例。
+- 在主机级别的网络上运行，允许您打开端口或运行小型的守护进程。
+- 在启动时安装自定义的 Alpine 软件包。这允许您安装您喜欢的工具，这些工具每次登录时都可用。
+- 在插件启动时执行自定义命令，以便您可以根据自己的喜好自定义 shell。
+- [ZSH][zsh] 作为其默认 shell。对初学者来说更容易使用，对有经验的用户来说更高级。它甚至预装了 ["Oh My ZSH"][ohmysh]，并启用了一些插件。
+- 包含一套合理的工具，如 curl、Wget、RSync、GIT、Nmap、Mosquitto 客户端、MariaDB/MySQL 客户端、Awake（“唤醒局域网”）、Nano、Vim、tmux 以及一些常用的网络工具。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
+这个插件的安装非常简单，与安装任何其他 Home Assistant 插件没有区别。
 
-1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.
+1. 点击下面的 Home Assistant 我的按钮，在您的 Home Assistant 实例上打开插件。
 
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
+   ![在您的 Home Assistant 实例中打开此插件][addon-badge]][ addon ]
 
-1. Click the "Install" button to install the add-on.
-1. Configure the `username` and `password`/`authorized_keys` options.
-1. Start the "Advanced SSH & Web Terminal" add-on.
-1. Check the logs of the "Advanced SSH & Web Terminal" add-on to see if everything
-   went well.
+1. 点击“安装”按钮以安装插件。
+1. 配置 `username` 和 `password`/`authorized_keys` 选项。
+1. 启动“高级 SSH & Web Terminal”插件。
+1. 检查“高级 SSH & Web Terminal”插件的日志，看看是否一切顺利。
 
-## Configuration
+## 配置
 
-**Note**: _Remember to restart the add-on when the configuration is changed._
+**注意**：_更改配置时，请记得重启插件。_
 
-SSH add-on configuration:
+SSH 插件配置：
 
 ```yaml
 log_level: info
@@ -96,219 +75,145 @@ init_commands:
   - ls -la
 ```
 
-**Note**: _This is just an example, don't copy and paste it! Create your own!_
+**注意**：_这只是个示例，不要复制粘贴！自己创建！_
 
-### Option: `log_level`
+### 选项：`log_level`
 
-The `log_level` option controls the level of log output by the addon and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
+`log_level` 选项控制插件的日志输出级别，可以更详细或更简洁，这在处理未知问题时可能很有用。可能的值是：
 
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`: Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
+- `trace`：显示所有细节，例如所有调用的内部函数。
+- `debug`：显示详细的调试信息。
+- `info`：正常（通常）有趣的事件。
+- `warning`：非错误的异常情况。
+- `error`：不需要立即处理的运行时错误。
+- `fatal`：出现了严重错误。插件变得无法使用。
 
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
+请注意，每个级别自动包含更严重级别的日志消息，例如，`debug` 也显示 `info` 消息。默认情况下，`log_level` 设置为 `info`，这是推荐设置，除非您正在排查问题。
 
-Using `trace` or `debug` log levels puts the SSH and Terminal daemons into
-debug mode. While SSH is running in debug mode, it will be only able to
-accept one single connection at the time.
+使用 `trace` 或 `debug` 日志级别会将 SSH 和 Terminal 守护进程置于调试模式。在 SSH 运行在调试模式下时，它将只能接受一个连接。
 
-### Option group `ssh`
+### 选项组 `ssh`
 
 ---
 
-The following options are for the option group: `ssh`. These settings
-only apply to the SSH daemon.
+以下选项属于 `ssh` 选项组。这些设置仅适用于 SSH 守护进程。
 
-#### Option `ssh`: `username`
+#### 选项 `ssh`：`username`
 
-This option allows you to change to username the use when you log in via SSH.
-It is only utilized for the authentication; you will be the `root` user after
-you have authenticated. Using `root` as the username is possible, but not
-recommended. Usernames will be converted to lower case as per recommended
-practises.
+此选项允许您更改使用 SSH 登录时的用户名。它仅用于身份验证；您在通过身份验证后将作为 `root` 用户。使用 `root` 作为用户名是可能的，但不推荐。用户名将按推荐实践转换为小写。
 
-**Note**: _Due to limitations, you will need to set this option to `root` in
-order to be able to enable the SFTP capabilities._
+**注意**：_由于限制，您需要将此选项设置为 `root` 才能启用 SFTP 功能。_
 
-#### Option `ssh`: `password`
+#### 选项 `ssh`：`password`
 
-Sets the password to log in with. Leaving it empty would disable the possibility
-to authenticate with a password. We would highly recommend not to use this
-option from a security point of view.
+设置登录密码。如果为空，将禁用使用密码进行身份验证的可能性。从安全角度来看，我们强烈建议不要使用此选项。
 
-#### Option `ssh` `authorized_keys`
+#### 选项 `ssh` `authorized_keys`
 
-Add one or more public keys to your SSH server to use with authentication.
-This is the recommended over setting a password.
+向您的 SSH 服务器添加一个或多个公钥用于身份验证。这是推荐的选项，而不是设置密码。
 
-Please take a look at the awesome [documentation created by GitHub][github-ssh]
-about using public/private key pairs and how to create them.
+请查看 GitHub 创建的令人惊叹的 [文档][github-ssh]，了解如何使用公钥/私钥对以及如何创建它们。
 
-**Note**: _Please ensure the keys are specified as a list by pasting within the
-`[]` comma delimited._
+**注意**：_请确保将密钥指定为列表，在 `[]` 中以逗号分隔粘贴。_
 
-#### Option `ssh`: `sftp`
+#### 选项 `ssh`：`sftp`
 
-When set to `true` the addon will enable SFTP support on the SSH daemon.
-Please only enable it when you plan on using it.
+设置为 `true` 时，插件将在 SSH 守护进程上启用 SFTP 支持。请仅在计划使用它时启用它。
 
-**Note**: _Due to limitations, you will need to set the username to `root` in
-order to be able to enable the SFTP capabilities._
+**注意**：_由于限制，您需要将用户名设置为 `root` 才能启用 SFTP 功能。_
 
-#### Option `ssh`: `compatibility_mode`
+#### 选项 `ssh`：`compatibility_mode`
 
-This SSH add-on focuses on security and has therefore only enabled known
-secure encryption methods. However, some older clients do not support these.
-Setting this option to `true` will enable the original default set of methods,
-allowing those clients to connect.
+此 SSH 插件专注于安全性，因此仅启用了已知的安全加密方法。然而，一些旧客户端不支持这些方法。将此选项设置为 `true` 将启用原始默认方法集，允许这些客户端连接。
 
-**Note**: _Enabling this option, lowers the security of your SSH server!_
+**注意**：_启用此选项将降低您的 SSH 服务器的安全性！_
 
-#### Option `ssh`: `allow_agent_forwarding`
+#### 选项 `ssh`：`allow_agent_forwarding`
 
-Specifies whether ssh-agent forwarding is permitted or not.
+指定是否允许 ssh-agent 前向。
 
-**Note**: _Enabling this option, lowers the security of your SSH server!
-Nevertheless, this warning is debatable._
+**注意**：_启用此选项将降低您的 SSH 服务器的安全性！尽管如此，这个警告是有争议的。_
 
-#### Option `ssh`: `allow_remote_port_forwarding`
+#### 选项 `ssh`：`allow_remote_port_forwarding`
 
-Specifies whether remote hosts are allowed to connect to ports forwarded
-for the client.
+指定是否允许远程主机连接到为客户端转发的端口。
 
-**Note**: _Enabling this affects all remote forwardings, so think carefully
-before doing this._
+**注意**：_启用此选项会影响所有远程转发，因此请仔细考虑后再做。_
 
-#### Option `ssh`: `allow_tcp_forwarding`
+#### 选项 `ssh`：`allow_tcp_forwarding`
 
-Specifies whether TCP forwarding is permitted or not.
+指定是否允许 TCP 转发。
 
-**Note**: _Enabling this option, lowers the security of your SSH server!
-Nevertheless, this warning is debatable._
+**注意**：_启用此选项将降低您的 SSH 服务器的安全性！尽管如此，这个警告是有争议的。_
 
-### Shared settings
+### 共享设置
 
 ---
 
-The following options are shared between both the SSH and the Web Terminal.
+以下选项在 SSH 和 Web Terminal 之间共享。
 
-#### Option: `zsh`
+#### 选项：`zsh`
 
-The add-on has ZSH pre-installed and configured as the default shell.
-However, ZSH might not be your preferred choice. By setting this option to
-`false`, you will disable ZSH and the add-on will fallback to Bash instead.
+插件预装并配置了 ZSH 作为默认 shell。但是，ZSH 可能不是您的首选选项。将此选项设置为 `false`，将禁用 ZSH，插件将回退到 Bash。
 
-#### Option: `share_sessions`
+#### 选项：`share_sessions`
 
-By default, the terminal session between the web client and SSH is shared.
-This allows you to pick up where you left your terminal from either of those.
+默认情况下，Web 客户端和 SSH 之间的终端会话是共享的。这允许您从这两个位置继续您之前离开的终端。
 
-This option allows you to disable this behavior by setting it to `false`, which
-effectively sets SSH to behave as it used to be.
+此选项允许您通过将其设置为 `false` 来禁用此行为，这实际上将 SSH 设置为像以前一样运行。
 
-#### Option: `packages`
+#### 选项：`packages`
 
-Allows you to specify additional [Alpine packages][alpine-packages] to be
-installed in your shell environment (e.g., Python, Joe, Irssi).
+允许您指定要安装在您的 shell 环境中的附加 [Alpine 软件包](https://pkgs.alpinelinux.org/packages)（例如 Python、Joe、Irssi）。
 
-**Note**: _Adding many packages will result in a longer start-up
-time for the add-on._
+**注意**：_添加许多软件包将导致插件启动时间更长。_
 
-#### Option: `init_commands`
+#### 选项：`init_commands`
 
-Customize your shell environment even more with the `init_commands` option.
-Add one or more shell commands to the list, and they will be executed every
-single time this add-on starts.
+使用 `init_commands` 选项可以进一步自定义您的 shell 环境。将一个或多个 shell 命令添加到列表中，它们将在每次插件启动时执行。
 
-## Known issues and limitations
+## 已知问题和限制
 
-- When SFTP is enabled, the username MUST be set to `root`.
-- If you want to use rsync for file transfer, the username MUST be set to
-  `root`.
+- 当 SFTP 启用时，用户名必须设置为 `root`。
+- 如果您想使用 rsync 进行文件传输，用户名必须设置为 `root`。
 
-## Changelog & Releases
+## 更改日志与发布
 
-This repository keeps a change log using [GitHub's releases][releases]
-functionality.
+此存储库使用 GitHub 的 [发布功能][releases] 维护更改日志。
 
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
+发布基于 [语义版本控制][semver]，并使用 `MAJOR.MINOR.PATCH` 格式。简而言之，版本将根据以下情况增加：
 
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
+- `MAJOR`：不兼容或主要更改。
+- `MINOR`：向后兼容的新功能和增强。
+- `PATCH`：向后兼容的错误修复和软件包更新。
 
-## Support
+## 支持
 
-Got questions?
+有问题？
 
-You have several options to get them answered:
+您有几个选项可以回答它们：
 
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant Community Add-ons Discord 服务器][discord] 用于插件支持和功能请求。
+- [Home Assistant Discord 服务器][discord-ha] 用于一般 Home Assistant 讨论和问题。
+- Home Assistant [社区论坛][forum]。
+- 加入 [Reddit 子版块][reddit] 在 [/r/homeassistant][reddit]
 
-You could also [open an issue here][issue] GitHub.
+您也可以在 GitHub 上 [打开一个问题][issue]。
 
-## Authors & contributors
+## 作者与贡献者
 
-The original setup of this repository is by [Franck Nijhof][frenck].
+此存储库的原始设置由 [Franck Nijhof][frenck] 完成。
 
-For a full list of all authors and contributors,
-check [the contributors page][contributors].
+有关所有作者和贡献者的完整列表，请查看 [贡献者页面][contributors]。
 
-## License
+## 许可证
 
-MIT License
+MIT 许可证
 
-Copyright (c) 2017-2025 Franck Nijhof
+版权所有 (c) 2017-2025 Franck Nijhof
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+特此免费授予任何获得此软件及其相关文档文件（“软件”）副本的人，在软件中不受限制地处理的权利，包括但不限于使用、复制、修改、合并、发布、分发、再许可和/或销售软件副本的权利，并允许获得软件的人这样做，但需遵守以下条件：
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+上述版权声明和本许可声明应包含在软件的所有副本或重要部分中。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-[addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
-[addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_ssh&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository
-[alpine-packages]: https://pkgs.alpinelinux.org/packages
-[contributors]: https://github.com/hassio-addons/addon-ssh/graphs/contributors
-[discord-ha]: https://discord.gg/c5DvZ4e
-[discord]: https://discord.me/hassioaddons
-[forum]: https://community.home-assistant.io/t/community-hass-io-add-on-ssh-web-terminal/33820?u=frenck
-[frenck]: https://github.com/frenck
-[github-ssh]: https://help.github.com/articles/connecting-to-github-with-ssh/
-[hass-ssh]: https://github.com/home-assistant/addons/tree/master/ssh
-[issue]: https://github.com/hassio-addons/addon-ssh/issues
-[ohmyzsh]: http://ohmyz.sh/
-[openssh]: https://www.openssh.com/
-[reddit]: https://reddit.com/r/homeassistant
-[releases]: https://github.com/hassio-addons/addon-ssh/releases
-[semver]: https://semver.org/spec/v2.0.0.html
-[ssh-audit-image]: https://github.com/hassio-addons/addon-ssh/raw/main/images/ssh-audit.png
-[ssh-audit]: https://github.com/jtesta/ssh-audit
-[zsh]: https://en.wikipedia.org/wiki/Z_shell
+软件按“原样”提供，不提供任何形式的保证，无论是明示还是暗示，包括但不限于对适销性、特定用途适用性和非侵权的保证。在任何情况下，作者或版权持有人均不对任何索赔、损害或其他责任承担责任，无论是因合同、侵权或其他行为引起的，均由软件或其使用或其他交易引起。
