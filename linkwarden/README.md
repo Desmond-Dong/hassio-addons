@@ -1,4 +1,3 @@
-
 # Home assistant add-on: linkwarden
 
 [![Donate][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
@@ -15,77 +14,77 @@
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有给我的仓库星标的人！要星标它，请点击下面的图片，然后它会在右上角。谢谢！_
 
 [![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
 ![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/linkwarden/stats.png)
 
-## About
+## 关于
 
 ---
 
-[linkwarden](https://linkwarden.app/) is a collaborative bookmark manager to collect, organize, and preserve webpages and articles.
-This addon is based on their docker image.
+[linkwarden](https://linkwarden.app/) 是一个协作书签管理器，用于收集、组织和保存网页和文章。
+这个插件基于他们的 docker 镜像。
 
-## Configuration
+## 配置
 
-Install, then start the addon a first time
-Webui can be found at <http://homeassistant:3000>.
-You'll need to create a new user at startup.
+安装并首次启动插件后
+Webui 可以在 <http://homeassistant:3000> 找到。
+你需要在启动时创建一个新用户。
 
-Options can be configured through two ways :
+选项可以通过两种方式配置：
 
-- Addon options
+- 插件选项
 
 ```yaml
-"NEXTAUTH_SECRET": mandatory, must be filled at start
-"NEXTAUTH_URL": optional, only if linkwarden is kept externally
-"NEXT_PUBLIC_DISABLE_REGISTRATION": If set to true, registration will be disabled.
-"NEXT_PUBLIC_CREDENTIALS_ENABLED": If set to true, users will be able to login with username and password.
-"STORAGE_FOLDER": optional, is /config/library by default
-"DATABASE_URL": optional, if kept blank an internal database will be used. If an external database is used, modify according to this design postgresql://postgres:homeassistant@localhost:5432/linkwarden
-"NEXT_PUBLIC_AUTHENTIK_ENABLED": If set to true, Authentik will be enabled and you'll need to define the variables below.
-"AUTHENTIK_CUSTOM_NAME": Optionally set a custom provider name. (name on the button)
-"AUTHENTIK_ISSUER": This is the "OpenID Configuration Issuer" shown in the Provider Overview. Note that you must delete the "/" at the end of the URL. Should look like: `https://authentik.my-doma.in/application/o/linkwarden`
-"AUTHENTIK_CLIENT_ID": Client ID copied from the Provider Overview screen in Authentik
-"AUTHENTIK_CLIENT_SECRET": Client Secret copied from the Provider Overview screen in Authentik
+"NEXTAUTH_SECRET": 必填，必须在启动时填写
+"NEXTAUTH_URL": 可选，仅当 linkwarden 保持外部时使用
+"NEXT_PUBLIC_DISABLE_REGISTRATION": 如果设置为 true，注册将被禁用。
+"NEXT_PUBLIC_CREDENTIALS_ENABLED": 如果设置为 true，用户将能够使用用户名和密码登录。
+"STORAGE_FOLDER": 可选，默认为 /config/library
+"DATABASE_URL": 可选，如果保持空白将使用内部数据库。如果使用外部数据库，请根据此设计修改 postgresql://postgres:homeassistant@localhost:5432/linkwarden
+"NEXT_PUBLIC_AUTHENTIK_ENABLED": 如果设置为 true，Authentik 将被启用，你需要定义以下变量。
+"AUTHENTIK_CUSTOM_NAME": 可选地设置一个自定义提供者名称。（按钮上的名称）
+"AUTHENTIK_ISSUER": 这是“OpenID 配置发布者”中显示的提供者概览。注意，你必须删除 URL 结尾的“/”。应该看起来像： `https://authentik.my-doma.in/application/o/linkwarden`
+"AUTHENTIK_CLIENT_ID": 从 Authentik 提供者概览屏幕复制的客户端 ID
+"AUTHENTIK_CLIENT_SECRET": 从 Authentik 提供者概览屏幕复制的客户端密钥
 ```
 
 - Config.yaml
-All other options can be configured using the config.yaml file found in /config/db21ed7f_filebrowser/config.yaml using the Filebrowser addon.
+所有其他选项可以使用 Filebrowser 插件在 /config/db21ed7f_filebrowser/config.yaml 中配置。
 
-The complete list of options can be seen here : https://docs.linkwarden.app/self-hosting/environment-variables
+完整的选项列表可以在这里查看：https://docs.linkwarden.app/self-hosting/environment-variables
 
-## Installation
+## 安装
 
 ---
 
-The installation of this add-on is pretty straightforward and not different in comparison to installing any other add-on.
+这个插件的安装非常简单，与安装任何其他插件没有区别。
 
-1. Add my add-ons repository to your home assistant instance (in supervisor addons store at top right, or click button below if you have configured my HA)
-   [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Set the add-on options to your preferences
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Open the webUI and adapt the software options
+1. 将我的插件仓库添加到你的 home assistant 实例中（在 supervisor 插件商店的右上角，或者如果你已经配置了我的 HA，点击下面的按钮）
+   [![打开你的 Home Assistant 实例并显示带有特定仓库 URL 预填的添加插件仓库对话框。](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
+1. 安装这个插件。
+1. 点击 `Save` 按钮保存你的配置。
+1. 设置插件的选项以符合你的偏好。
+1. 启动插件。
+1. 检查插件的日志以查看是否一切正常。
+1. 打开 WebUI 并调整软件选项
 
-## Integration with Authentik
+## 与 Authentik 集成
 
-Follow the instruction from the Linkwarden docs page. https://docs.linkwarden.app/self-hosting/sso-oauth#authentik
+遵循 Linkwarden 文档页面上的说明。 https://docs.linkwarden.app/self-hosting/sso-oauth#authentik
 
 
 
-## Common issues
+## 常见问题
 
 <details>
 
 
-## Support
+## 支持
 
-Create an issue on github, or ask on the [home assistant thread](https://community.home-assistant.io/t/home-assistant-addon-linkwarden/279247)
+在 github 上创建一个问题，或者在 [home assistant 论坛](https://community.home-assistant.io/t/home-assistant-addon-linkwarden/279247) 上提问
 
 ---
 

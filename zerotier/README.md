@@ -8,19 +8,13 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-Radically simplify your network with a virtual networking layer that works
-the same everywhere.
+通过一个虚拟网络层，极大地简化您的网络，该层在所有地方都工作相同。
 
-## About
+## 关于
 
-ZeroTier delivers the capabilities of VPNs, SDN, and SD-WAN with a single
-system. Manage all your connected resources across both local and wide area
-networks as if the whole world is a single data center.
+ZeroTier 通过单一系统提供 VPN、SDN 和 SD-WAN 的功能。管理您所有连接的资源，无论是在本地还是广域网络上，就像整个世界是一个单一的数据中心一样。
 
-People use ZeroTier to seamlessly connect laptops, desktops, phones,
-embedded devices, cloud resources, and apps any way they want anywhere they go.
-It transforms the entire world into a single data center, to which you
-can now add your Home Assistant instance using this add-on.
+人们使用 ZeroTier 无缝连接笔记本电脑、台式机、手机、嵌入式设备、云资源和应用程序，无论他们想去哪里。它将整个世界变成了一个单一的数据中心，您现在可以使用此插件添加您的 Home Assistant 实例。
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
@@ -32,5 +26,5 @@ can now add your Home Assistant instance using this add-on.
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
 [patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
-[release-shield]: https://img.shields.io/badge/version-v0.21.0-blue.svg
-[release]: https://github.com/hassio-addons/addon-zerotier/tree/v0.21.0
+[release-shield]: https://img.shields.io/badge/version-v0.22.0-blue.svg
+[release]: https://github.com/hassio-addons/addon-zerotier/tree/v0.22.0

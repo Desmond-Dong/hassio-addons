@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "协作书签管理器用于收集、组织和保存网页和文章。",
+  "description": "协作书签管理器，用于收集、组织和保存网页和文章",
   "environment": {
     "AUTHENTIK_CLIENT_ID": "CLIENT_ID",
     "AUTHENTIK_CLIENT_SECRET": "CLIENT_SECRET",
@@ -46,6 +46,6 @@
   },
   "slug": "linkwarden",
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/linkwarden",
-  "version": "2.11.1",
+  "version": "2.11.2",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:3000]"
 }

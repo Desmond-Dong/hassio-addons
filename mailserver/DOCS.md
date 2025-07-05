@@ -7,13 +7,13 @@ Postfix/Dovecot mailserver with Postfixadmin web interface...
 
 ## About
 
-Important: This addon requires that the MariaDB add-on is installed and running!
+Important: This add-on requires that the MariaDB add-on is installed and running!
 
 This add-on is experimental, and provides a mailserver for your domain.
 It is also possible to configure additional email domains and accounts in the
 Postfix Admin web interface.
 
-The following ports are used by this addon:
+The following ports are used by this add-on:
 
 smtp: port 25, 465 and 587
 imap(s): 993
@@ -21,7 +21,7 @@ managesieve: 4190
 (ManageSieve enables users to create their own Sieve scripts with a
 mail client that supports the Sieve protocol)
 
-Is is possible to change these in the Network section of the configuration.
+Is it possible to change these in the Network section of the configuration.
 
 A note on port 465: While it was once the standard for secure SMTP submissions,
 it has been superseded by port 587. Although port 465 is still supported by some
@@ -40,7 +40,7 @@ will also have to be forwarded.
 The default setup will use self signed certificates created by Dovecot during
 the initial setup. It is OK for testing, but "real" certificates should be used.
 
-The config option "letsencrypt_certs" will, is set to "true", use the
+The config option "letsencrypt_certs" will, if set to "true", use the
 fullchain.pem and privkey.pem in the /ssl directory in Home Assistant.
 
 ## Installation
@@ -79,7 +79,7 @@ Please note: During the startup of the add-on, a database is created in the
 MariaDB add-on. There is currently not possible to change user name or
 domain_name after the database is created. The password can be changed.
 The only way to change user and domain name is to drop the Postfix Admin
-datbase and restart the add-on.
+database and restart the add-on.
 Use the phpMyadmin add-on to drop the database.
 
 ### Option: `my_hostname` (required)

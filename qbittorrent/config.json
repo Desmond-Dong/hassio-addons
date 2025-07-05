@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "BitTorrent客户端，可选VPN。",
+  "description": "带可选VPN的BitTorrent客户端",
   "devices": [
     "/dev/net/tun",
     "/dev/dri",
@@ -148,5 +148,5 @@
   "slug": "qbittorrent",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "5.1.1"
+  "version": "5.1.2"
 }

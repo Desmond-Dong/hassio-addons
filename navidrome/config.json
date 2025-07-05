@@ -7,7 +7,7 @@
     "**/cache/**"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Navidrome for Home Assistant（纳维德罗姆为家庭助理）",
+  "description": "Navidrome for Home Assistant",
   "image": "ghcr.nju.edu.cn/alexbelgium/navidrome-{arch}",
   "init": false,
   "map": [
@@ -59,6 +59,6 @@
   "slug": "navidrome",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/navidrome",
-  "version": "0.56.1",
+  "version": "0.57.0",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:4533]"
 }

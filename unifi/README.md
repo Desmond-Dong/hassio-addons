@@ -8,15 +8,15 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-UniFi网络应用程序允许您使用Web浏览器管理您的UniFi网络。
+UniFi Network Application 允许您使用网络浏览器管理您的 UniFi 网络。
 
 ## 关于
 
-此插件运行Ubiquiti Networks的UniFi网络应用程序软件，它允许您通过Web浏览器管理您的UniFi网络。该插件提供了一键安装和运行解决方案，使Home Assistant用户能够轻松地启动、运行和更新他们的网络。
+此插件运行 Ubiquiti Networks 的 UniFi Network Application 软件，该软件允许您通过网络浏览器管理您的 UniFi 网络。该插件为 Home Assistant 提供了一键安装和运行解决方案，使用户能够轻松地让他们的网络启动、运行和更新。
 
-此插件支持所有Home Assistant支持的架构，包括Raspberry Pi。
+此插件支持 Home Assistant 支持的所有架构，包括 Raspberry Pi。
 
-![UniFi网络应用程序][screenshot]
+![UniFi Network Application][screenshot]
 
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
@@ -29,6 +29,6 @@ UniFi网络应用程序允许您使用Web浏览器管理您的UniFi网络。
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
 [patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[release-shield]: https://img.shields.io/badge/version-v4.1.0-blue.svg
-[release]: https://github.com/hassio-addons/addon-unifi/tree/v4.1.0
+[release-shield]: https://img.shields.io/badge/version-v4.1.1-blue.svg
+[release]: https://github.com/hassio-addons/addon-unifi/tree/v4.1.1
 [screenshot]: https://github.com/hassio-addons/addon-unifi/raw/main/images/screenshot.jpg

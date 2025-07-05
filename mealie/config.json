@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Mealie 是一个自托管的食谱管理和餐食计划工具，使用 Vue 构建。",
+  "description": "Mealie是一个基于Vue构建的自托管食谱管理和餐食规划工具。",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -119,5 +119,5 @@
   "slug": "mealie",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "v2.8.0-6"
+  "version": "v2.8.0-7"
 }

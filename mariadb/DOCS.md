@@ -1,4 +1,4 @@
-# Home Assistant Add-on: MariaDB
+# Home Assistant Add-on: "Unofficial" MariaDB
 
 ## 安装
 
@@ -17,7 +17,7 @@
 
 ## 插件配置
 
-MariaDB 服务器插件可以根据您的喜好进行调整。本节将描述每个插件配置选项。
+MariaDB 服务器插件可以根据您的喜好进行调整。本节描述了每个插件配置选项。
 
 示例插件配置：
 
@@ -44,7 +44,7 @@ rights:
 
 ### 选项：`logins` (必需)
 
-此部分定义 MariaDB 中的用户创建定义。[创建用户][createuser] 文档。
+本节定义了 MariaDB 中的创建用户定义。[创建用户][createuser] 文档。
 
 ### 选项：`logins.username` (必需)
 
@@ -56,7 +56,7 @@ rights:
 
 ### 选项：`rights` (必需)
 
-此部分授予 MariaDB 中的用户权限。[授权][grant] 文档。
+本节授予 MariaDB 中的用户权限。[授权][grant] 文档。
 
 ### 选项：`rights.username` (必需)
 
@@ -68,7 +68,7 @@ rights:
 
 ### 选项：`rights.privileges` (可选)
 
-要授予此用户的权限列表，例如 `SELECT` 和 `CREATE`。[授权][grant]。如果省略，将授予用户 `ALL PRIVILEGES`。不建议限制 Home Assistant 使用的用户权限，但如果您希望允许其他应用程序查看 recorder 数据，则应创建一个仅具有数据库只读权限的用户。
+授予此用户的权限列表，例如 `SELECT` 和 `CREATE`，来自 [授权][grant]。如果省略，将授予用户 `ALL PRIVILEGES`。不建议限制 Home Assistant 使用用户的权限，但如果您想允许其他应用程序查看 recorder 数据，应该创建一个仅限于数据库只读访问权限的用户。
 
 ### 选项：`mariadb_server_args` (可选)
 
@@ -91,23 +91,12 @@ recorder:
 
 有问题？
 
-您有几个选项来获得答案：
+您可以在这里 [打开问题][issue] GitHub。
 
-- [Home Assistant Discord 聊天服务器][discord]。
-- Home Assistant [社区论坛][forum]。
-- 加入 [/r/homeassistant][reddit] 的 [Reddit 子版块][reddit]。
-
-如果您发现了一个错误，请 [在我们的 GitHub 上打开一个问题][issue]。
-
-[createuser]: https://mariadb.com/kb/en/create-user/
-[username]: https://mariadb.com/kb/en/create-user/#user-name-component
-[hostname]: https://mariadb.com/kb/en/create-user/#host-name-component
-[grant]: https://mariadb.com/kb/en/grant/
-[migration-issues]: https://github.com/home-assistant/core/issues/125339
-[mariadb-ha-recorder]: https://www.home-assistant.io/integrations/recorder/
-[discord]: https://discord.gg/c5DvZ4e
-[forum]: https://community.home-assistant.io
+[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
+[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
+[armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
+[armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
-[issue]: https://github.com/home-assistant/addons/issues
-[reddit]: https://reddit.com/r/homeassistant
-[repository]: https://github.com/hassio-addons/repository
+[issue]: https://github.com/erik73/addon-mariadb/issues
+[repository]: https://github.com/erik73/hassio-addons

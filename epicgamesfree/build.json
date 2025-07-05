@@ -1,7 +1,7 @@
 {
   "build_from": {
-    "aarch64": "docker.1ms.run/charlocharlie/epicgames-freegames:latest",
-    "amd64": "docker.1ms.run/charlocharlie/epicgames-freegames:latest"
+    "aarch64": "charlocharlie/epicgames-freegames:latest",
+    "amd64": "charlocharlie/epicgames-freegames:latest"
   },
   "codenotary": {
     "signer": "alexandrep.github@gmail.com"

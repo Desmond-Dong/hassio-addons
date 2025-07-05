@@ -8,21 +8,15 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-A secure and fast FTP server for Home Assistant
+一个安全快速的FTP服务器，用于Home Assistant
 
-## About
+## 关于
 
-The FTP protocol might be come in handy sometimes. While old,
-it still has its use. For example, most IP Cameras still support the upload
-of images or videos via FTP.
+FTP协议有时可能会派上用场。虽然它已经比较老旧，但仍然有其用途。例如，大多数IP摄像头仍然支持通过FTP上传图像或视频。
 
-This add-on provides an FTP Server for Hass.io in a reasonably secure manner.
-While FTP is not entirely secure by its (unencrypted) nature, this add-on
-supports FTP over SSL (FTPS) and jails (chroot) the virtual users in their
-home directories.
+这个插件以相对安全的方式为Hass.io提供FTP服务器。虽然FTP由于其（未加密）的性质并不完全安全，但这个插件支持FTP over SSL（FTPS）并将在其主目录中为虚拟用户进行jails（chroot）。
 
-Of course, if you'd really want to, you could also use this add-on to again
-access to your Home Assistant configuration via FTP.
+当然，如果你真的想要，你也可以使用这个插件通过FTP再次访问你的Home Assistant配置。
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
@@ -34,5 +28,5 @@ access to your Home Assistant configuration via FTP.
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
 [patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[release-shield]: https://img.shields.io/badge/version-v5.3.1-blue.svg
-[release]: https://github.com/hassio-addons/addon-ftp/tree/v5.3.1
+[release-shield]: https://img.shields.io/badge/version-v5.3.2-blue.svg
+[release]: https://github.com/hassio-addons/addon-ftp/tree/v5.3.2

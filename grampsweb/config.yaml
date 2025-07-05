@@ -2,7 +2,7 @@ arch:
   - aarch64
   - amd64
 codenotary: alexandrep.github@gmail.com
-description: 开源在线家谱系统
+description: Open Source Online Genealogy System
 devices:
   - "/dev/dri"
   - "/dev/dri/card0"
@@ -108,5 +108,5 @@ services:
 slug: grampsweb
 tmpfs: true
 url: https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/grampsweb
-version: "25.6.0"
+version: "25.7.0"
 webui: "[PROTO:ssl]://[HOST]:[PORT:5001]"

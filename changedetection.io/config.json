@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "网页监控、通知和变更检测。",
+  "description": "网页监控、通知和变更检测",
   "environment": {
     "LC_ALL": "en_US.UTF-8",
     "TIMEOUT": "60000"
@@ -36,6 +36,6 @@
   "slug": "changedetection.io",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/changedetection.io",
-  "version": "0.50.4",
+  "version": "0.50.5",
   "webui": "http://[HOST]:[PORT:5000]"
 }

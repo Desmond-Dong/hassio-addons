@@ -3,7 +3,7 @@
 [![Donate][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
 [![Donate][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
 
-![Version](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fqbittorrent%2Fconfig.json)
+![Version](https://img.shields.io/badge/dynamic/json?label=版本&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fqbittorrent%2Fconfig.json)
 ![Ingress](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fqbittorrent%2Fconfig.json)
 ![Arch](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fqbittorrent%2Fconfig.json)
 
@@ -14,84 +14,84 @@
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有给我的仓库点赞的人！要给仓库点赞，请点击下面的图片，然后它就会出现在右上角。谢谢！_
 
 [![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
-![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/qbittorrent/stats.png)
+![下载趋势](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/qbittorrent/stats.png)
 
-## About
-
----
-
-[Qbittorrent](https://github.com/qbittorrent/qBittorrent) is a cross-platform free and open-source BitTorrent client.
-This addon is based on the docker image from [linuxserver.io](https://www.linuxserver.io/).
-
-This addons has several configurable options :
-
-- allowing to mount local external drive, or smb share from the addon
-- [alternative webUI](https://github.com/qbittorrent/qBittorrent/wiki/List-of-known-alternate-WebUIs)
-- usage of ssl
-- ingress
-- optional openvpn support
-- allow setting specific DNS servers
-
-## Configuration
+## 关于
 
 ---
 
-Webui can be found at <http://homeassistant:8080>, or in your sidebar using Ingress.
-The default username/password : described in the startup log.
-Configurations can be done through the app webUI, except for the following options
+[Qbittorrent](https://github.com/qbittorrent/qBittorrent) 是一个跨平台的免费开源 BitTorrent 客户端。
+这个插件基于 [linuxserver.io](https://www.linuxserver.io/) 的 docker 镜像。
 
-Network disk is mounted to /mnt/share name
+这个插件有几个可配置的选项：
 
-You need to map the exposed port in your router if you want the best speed and connectivity.
+- 允许挂载本地外部驱动器，或从插件中挂载 SMB 共享
+- [替代 WebUI](https://github.com/qbittorrent/qBittorrent/wiki/List-of-known-alternate-WebUIs)
+- 使用 SSL
+- Ingress
+- 可选的 OpenVPN 支持
+- 允许设置特定的 DNS 服务器
+
+## 配置
+
+---
+
+WebUI 可以在 <http://homeassistant:8080> 找到，或使用 Ingress 在侧边栏中找到。
+默认的用户名/密码：在启动日志中描述。
+配置可以通过 WebUI 应用进行，以下选项除外
+
+网络磁盘挂载到 /mnt/share 名称
+
+如果您想要最佳速度和连接性，您需要在路由器上映射暴露的端口。
 
 ```yaml
 PGID: user
 GPID: user
 ssl: true/false
-certfile: fullchain.pem #ssl certificate, must be located in /ssl
-keyfile: privkey.pem #sslkeyfile, must be located in /ssl
-whitelist: "localhost,192.168.0.0/16" # Type `null` to disable. List ip subnets that won't need a password (optional)
-customUI: selection from list # alternative webUI can be set here. Latest version set at each addon start. Select 'custom' to fill it yourself in the webui
-DNS_servers: 8.8.8.8,1.1.1.1 # Keep blank to use router’s DNS, or set custom DNS to avoid spamming in case of local DNS ad-remover
-SavePath: "/share/qbittorrent" # Define the download directory
-localdisks: sda1 #put the hardware name of your drive to mount separated by commas, or its label. ex. sda1, sdb1, MYNAS...
-networkdisks: "//SERVER/SHARE" # optional, list of smb servers to mount, separated by commas
-cifsusername: "username" # optional, smb username, same for all smb shares
-cifspassword: "password" # optional, smb password
-cifsdomain: "domain" # optional, allow setting the domain for the smb share
-openvpn_enabled: true/false # is openvpn required to start qbittorrent
-openvpn_config": For example "config.ovpn" # name of the file located in /config/openvpn. If empty, a random one will be used
+certfile: fullchain.pem #ssl 证书，必须位于 /ssl
+keyfile: privkey.pem #sslkeyfile，必须位于 /ssl
+whitelist: "localhost,192.168.0.0/16" # 输入 `null` 以禁用。列出不需要密码的 IP 子网（可选）
+customUI: 从列表中选择 # 可以在这里设置替代 WebUI。最新版本在每个插件启动时设置。选择 'custom' 以在 WebUI 中自行填写
+DNS_servers: 8.8.8.8,1.1.1.1 # 保持空白以使用路由器的 DNS，或设置自定义 DNS 以避免在本地 DNS 广告拦截器的情况下进行垃圾邮件
+SavePath: "/share/qbittorrent" # 定义下载目录
+localdisks: sda1 # 将您的驱动器的硬件名称添加到这里以挂载，用逗号分隔，或其标签。例如。sda1, sdb1, MYNAS...
+networkdisks: "//SERVER/SHARE" # 可选，列出要挂载的 SMB 服务器，用逗号分隔
+cifsusername: "username" # 可选，SMB 用户名，所有 SMB 共享相同
+cifspassword: "password" # 可选，SMB 密码
+cifsdomain: "domain" # 可选，允许设置 SMB 共享的域
+openvpn_enabled: true/false # 是否需要 OpenVPN 才能启动 qBittorrent
+openvpn_config": 例如 "config.ovpn" # 位于 /config/openvpn 中的文件名称。如果为空，将使用随机文件
 openvpn_username": USERNAME
 openvpn_password: YOURPASSWORD
-openvpn_alt_mode: bind at container level and not app level
-run_duration: 12h #for how long should the addon run. Must be formatted as number + time unit (ex : 5s, or 2m, or 12h, or 5d...)
-silent: true #suppresses debug messages
+openvpn_alt_mode: 在容器级别而不是应用级别绑定
+run_duration: 12h # 插件应运行多长时间。必须格式化为数字 + 时间单位（例如：5s，或 2m，或 12h，或 5d...)
+silent: true #抑制调试消息
 ```
 
-## Installation
+## 安装
 
 ---
 
-The installation of this add-on is pretty straightforward and not different in comparison to installing any other add-on.
+这个插件的安装非常简单，与安装任何其他插件没有什么不同。
 
-1. Add my add-ons repository to your home assistant instance (in supervisor addons store at top right, or click button below if you have configured my HA)
-   [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Set the add-on options to your preferences
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Open the webUI and adapt the software options
+1. 将我的插件仓库添加到您的 home assistant 实例（在 supervisor 插件商店右上角，或如果您已经配置了我的 HA，请点击下面的按钮）
+   [![打开您的 Home Assistant 实例并显示添加插件仓库对话框，并预填特定的仓库 URL。](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
+1. 安装这个插件。
+1. 点击 `保存` 按钮以保存您的配置。
+1. 设置插件选项以符合您的偏好
+1. 启动插件。
+1. 检查插件的日志以查看是否一切正常。
+1. 打开 WebUI 并调整软件选项
 
-## Integration with HA
+## 与 HA 集成
 
-Use the [qBittorrent integration](https://www.home-assistant.io/integrations/qbittorrent/)
+使用 [qBittorrent 集成](https://www.home-assistant.io/integrations/qbittorrent/)
 
-You can use the following snippets to check and set the alternate speeds (the HA integration above is not needed for this)
+您可以使用以下片段来检查和设置替代速度（上述 HA 集成不需要这个）
 
 ```bash
 shell_command:
@@ -102,21 +102,21 @@ sensor:
     command: curl https://<YOUR HA IP>:8081/api/v2/transfer/speedLimitsMode -k
 ```
 
-If you're not using the SSL option, you can skip the -k parameter and use http instead of https in the URL
+如果您不使用 SSL 选项，可以跳过 -k 参数，并在 URL 中使用 http 而不是 https
 
-These lines will expose a `sensor.get_torrent_speed` that updates every 60 seconds and returns 1 if the alternate speed mode is enabled, 0 otherwise, and a `shell_command.toggle_torrent_speed` that you can call as a Service in your automations
+这些行将暴露一个 `sensor.get_torrent_speed`，每 60 秒更新一次，如果替代速度模式已启用则返回 1，否则返回 0，以及一个 `shell_command.toggle_torrent_speed`，您可以在自动化中作为服务调用
 
-## Common issues
+## 常见问题
 
 <details>
-  <summary>### ipv6 issues with openvpn (@happycoo)</summary>
-Add this code to your .ovpn config
+  <summary>### ipv6 与 openvpn 的问题 (@happycoo)</summary>
+将此代码添加到您的 .ovpn 配置中
 
 ```bash
-# don't route lan through vpn
+# 不要通过 VPN 路由 lan
 route 192.168.1.0 255.255.255.0 net_gateway
 
-# deactivate ipv6
+# 停用 ipv6
 pull-filter ignore "dhcp-option DNS6"
 pull-filter ignore "tun-ipv6"
 pull-filter ignore "ifconfig-ipv6"
@@ -124,11 +124,11 @@ pull-filter ignore "ifconfig-ipv6"
 </details>
 
 <details>
-  <summary>### Monitored folders (@FaliseDotCom)</summary>
+  <summary>### 监控文件夹 (@FaliseDotCom)</summary>
 
-- go to config\addons_config\qBittorrent
-- find (or create) the file watched_folders.json
-- paste or adjust to the following:
+- 进入 config\addons_config\qBittorrent
+- 查找（或创建）文件 watched_folders.json
+- 粘贴或调整到以下内容：
 
 ```json
 {
@@ -157,41 +157,41 @@ pull-filter ignore "ifconfig-ipv6"
 </details>
 
 <details>
-  <summary>### nginx error code (@Nanianmichaels)</summary>
+  <summary>### nginx 错误代码 (@Nanianmichaels)</summary>
 
-> [cont-init.d] 30-nginx.sh: executing...
-> [cont-init.d] 30-nginx.sh: exited 1.
+> [cont-init.d] 30-nginx.sh: 执行...
+> [cont-init.d] 30-nginx.sh: 退出 1.
 
-Wait a couple minutes and restart addon, it could be a temporary unavailability of github
+等待几分钟并重新启动插件，这可能是 github 暂时的不可用
 
-### Local mount with invalid argument (@antonio1475)
+### 使用无效参数进行本地挂载 (@antonio1475)
 
-> [cont-init.d] 00-local_mounts.sh: executing...
-> Local Disks mounting...
-> mount: mounting /dev/sda1 on /mnt/sda1 failed: Invalid argument
-> [19:19:44] FATAL: Unable to mount local drives! Please check the name.
-> [cont-init.d] 00-local_mounts.sh: exited 0.
+> [cont-init.d] 00-local_mounts.sh: 执行...
+> Local Disks 挂载...
+> mount: 挂载 /dev/sda1 到 /mnt/sda1 失败：无效参数
+> [19:19:44] FATAL: 无法挂载本地驱动器！请检查名称。
+> [cont-init.d] 00-local_mounts.sh: 退出 0。
 
-Try to mount by putting the partition label in the "localdisks" options instead of the hardware name
+尝试通过在 "localdisks" 选项中添加分区标签而不是硬件名称来挂载
 </details>
 
 <details>
-  <summary>### Loss of metadata fetching with openvpn after several days (@almico)</summary>
+  <summary>### 使用 openvpn 后几天元数据获取丢失 (@almico)</summary>
 
-Add `ping-restart 60` to your config.ovpn
+在 config.ovpn 中添加 `ping-restart 60`
 </details>
 
 <details>
-  <summary>### Downloads info are empty on small scale window (@aviadlevy)</summary>
+  <summary>### 在小规模窗口中下载信息为空 (@aviadlevy)</summary>
 
-When my window size width is lower than 960 pixels my downloads are empty.
-Solution is to reset the Vuetorrent settings.
+当我的窗口宽度小于 960 像素时，我的下载为空。
+解决方案是重置 Vuetorrent 设置。
 </details>
 
-## Support
+## 支持
 
-Create an issue on github, or ask on the [home assistant thread](https://community.home-assistant.io/t/home-assistant-addon-qbittorrent/279247)
+在 github 上创建问题，或在 [home assistant 论坛](https://community.home-assistant.io/t/home-assistant-addon-qbittorrent/279247) 上提问
 
 ---
 
-![illustration](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/qbittorrent/illustration.png)
+![插图](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/qbittorrent/illustration.png)

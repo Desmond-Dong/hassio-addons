@@ -1,7 +1,7 @@
 name: Plex Media Server
-version: 3.6.4
+version: 3.6.5
 slug: plex
-description: 录制媒体、直播电视、在线新闻和播客已准备好进行流媒体播放。
+description: Recorded media, live TV, online news, and podcasts ready to stream.
 url: https://ghfast.top/github.com/hassio-addons/addon-plex
 codenotary: codenotary@frenck.dev
 webui: http://[HOST]:[PORT:32400]/web
@@ -46,6 +46,8 @@ backup_exclude:
 - '**/Plex Media Server/Logs/**'
 - '**/Plex Media Server/Crash Reports/**'
 - '**/Plex Media Server/Diagnostics/**'
+- '**/Plex Media Server/Media/**'
+- '**/Plex Media Server/Metadata/**'
 options:
   claim_code: ''
 schema:
