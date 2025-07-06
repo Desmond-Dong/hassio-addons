@@ -12,15 +12,15 @@
 
 ## 关于
 
-这个插件使您能够轻松地将传入连接转发到任何地方，
-包括免费的 SSL，而无需了解太多关于 Nginx
-或 Let’s Encrypt 的信息。
+此插件使您能够轻松地将传入连接转发到任何地方，
+包括免费的 SSL，而无需深入了解 Nginx
+或 Let’s Encrypt。
 
-将您的域名转发到您的 Home Assistant、插件或在家中或任何其他地方的网站，
-直接从一个简单而强大的界面进行操作。
+将您的域名转发到您的 Home Assistant、插件或在家中或任何其他地方运行的网站，
+直接从简单而强大的界面进行操作。
 
-想要用用户名/密码保护网站？当然可以！
-启用身份验证并创建一个可以访问特定应用程序的用户名/密码列表。
+想要用用户名/密码保护网站？没问题，它也能做到！
+启用身份验证并创建一个可以访问该特定应用程序的用户名/密码列表。
 
 对于高级用户，您可以通过提供额外的 Nginx 指令来自定义 Nginx 代理管理器中每个主机的行为。
 
@@ -36,6 +36,6 @@
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
 [patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
-[release-shield]: https://img.shields.io/badge/version-v2.0.0-blue.svg
-[release]: https://github.com/hassio-addons/addon-nginx-proxy-manager/tree/v2.0.0
+[release-shield]: https://img.shields.io/badge/version-v2.1.0-blue.svg
+[release]: https://github.com/hassio-addons/addon-nginx-proxy-manager/tree/v2.1.0
 [screenshot]: https://github.com/hassio-addons/addon-nginx-proxy-manager/raw/main/images/screenshot.gif
