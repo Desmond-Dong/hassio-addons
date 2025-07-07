@@ -3,7 +3,7 @@
 [![Donate][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
 [![Donate][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
 
-![Version](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fflexget%2Fconfig.json)
+![Version](https://img.shields.io/badge/dynamic/json?label=版本&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fflexget%2Fconfig.json)
 ![Ingress](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fflexget%2Fconfig.json)
 ![Arch](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fflexget%2Fconfig.json)
 
@@ -14,32 +14,32 @@
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有给我的仓库点赞的人！要点赞，请点击下面的图片，然后它会在右上角。谢谢！_
 
 [![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
 ![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/flexget/stats.png)
 
-## About
+## 关于
 
-FlexGet is a multipurpose automation tool for all of your media. See https://flexget.com/
+FlexGet 是一个用于所有媒体的多功能自动化工具。查看 https://flexget.com/
 
-Default password is 'homeassistant123' , or can be set from the addons options
+默认密码是 'homeassistant123'，或者可以从插件选项中设置
 
-## Requirements
+## 要求
 
-## Config
+## 配置
 
-    "PUID": custom user (default root)
-    "PGID": custom user (default root)
-    "WebuiPass": webui password définition
-    "FG_PLUGINS": Plugins addition
-    "FG_LOG_LEVEL": Log level (critical|error|warning|info|verbose|debug|trace)
+    "PUID": 自定义用户（默认 root）
+    "PGID": 自定义用户（默认 root）
+    "WebuiPass": Web UI 密码定义
+    "FG_PLUGINS": 插件添加
+    "FG_LOG_LEVEL": 日志级别（critical|error|warning|info|verbose|debug|trace）
 
-## Start
+## 启动
 
-- Start the addon. Wait a while and check the log for any errors.
+- 启动插件。稍等片刻并检查日志以查找任何错误。
 
-## Troubleshooting
+## 故障排除
 
-If you have in issue with your installation, please be sure to checkout github.
+如果您在安装中遇到问题，请确保查看 GitHub。

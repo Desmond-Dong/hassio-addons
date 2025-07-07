@@ -3,7 +3,7 @@
 [![Donate][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
 [![Donate][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
 
-![Version](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fnzbget%2Fconfig.json)
+![Version](https://img.shields.io/badge/dynamic/json?label=版本&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fnzbget%2Fconfig.json)
 ![Ingress](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fnzbget%2Fconfig.json)
 ![Arch](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fnzbget%2Fconfig.json)
 
@@ -14,51 +14,51 @@
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢大家给我的仓库加星！要加星请点击下面的图片，然后它会在右上角。谢谢！_
 
 [![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
 ![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/nzbget/stats.png)
 
-## About
+## 关于
 
-[nzbget](http://nzbget.net/) is a usenet downloader, written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources.
-This addon is based on the docker image https://github.com/linuxserver/docker-nzbget
+[nzbget](http://nzbget.net/) 是一个基于usenet的下载工具，用C++编写，旨在通过使用极少的系统资源来实现最大下载速度。
+这个插件基于docker镜像 https://github.com/linuxserver/docker-nzbget
 
-## Configuration
+## 配置
 
-Webui can be found at <http://homeassistant:PORT>.
-The default username/password : login:nzbget, password:tegbzn6789
-Configurations can be done through the app webUI, except for the following options
+Webui 可以在 <http://homeassistant:PORT> 找到。
+默认的用户名/密码：登录:nzbget，密码:tegbzn6789
+配置可以通过应用WebUI进行，除了以下选项
 
 ```yaml
 PGID: user
 GPID: user
 TZ: timezone
-localdisks: sda1 #put the hardware name of your drive to mount separated by commas, or its label. ex. sda1, sdb1, MYNAS...
-networkdisks: "//SERVER/SHARE" # optional, list of smb servers to mount, separated by commas
-cifsusername: "username" # optional, smb username, same for all smb shares
-cifspassword: "password" # optional, smb password
+localdisks: sda1 # 将你的驱动硬件名称用逗号分隔，或其标签。例如。 sda1, sdb1, MYNAS...
+networkdisks: "//SERVER/SHARE" # 可选，要挂载的smb服务器列表，用逗号分隔
+cifsusername: "username" # 可选，smb用户名，所有smb共享相同
+cifspassword: "password" # 可选，smb密码
 ```
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in comparison to installing any other add-on.
+这个插件的安装非常简单，与其他插件的安装方式没有区别。
 
-1. Add my add-ons repository to your home assistant instance (in supervisor addons store at top right, or click button below if you have configured my HA)
-   [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Set the add-on options to your preferences
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Open the webUI and adapt the software options
+1. 将我的插件仓库添加到你的home assistant实例中（在supervisor插件商店的右上角，或者如果你已经配置了我的HA，点击下面的按钮）
+   [![打开你的Home Assistant实例并显示一个带有特定仓库URL预填的添加插件仓库对话框。](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
+1. 安装这个插件。
+1. 点击 `保存` 按钮保存你的配置。
+1. 设置插件的选项以符合你的偏好
+1. 启动插件。
+1. 检查插件的日志以查看一切是否正常。
+1. 打开WebUI并调整软件选项
 
-## Support
+## 支持
 
-Create an issue on github
+在github上创建问题
 
-## Illustration
+## 插图
 
 ![illustration](https://nzbget.com/img/slider/artistdetails.png)
 

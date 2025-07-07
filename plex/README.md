@@ -1,18 +1,18 @@
-# Home Assistant Community Add-on: Plex 媒体服务器
+# Home Assistant Community Add-on: Plex Media Server
 
-[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
+[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-[![通过 GitHub 赞助支持 Frenck][github-sponsors-shield]][github-sponsors]
+[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
 
-[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
+[![Support Frenck on Patreon][patreon-shield]][patreon]
 
-您录制的媒体、直播电视、在线新闻和播客，精美地组织并准备好进行流媒体播放。
+您的录制媒体、直播电视、在线新闻和播客，整齐美观，随时可流媒体播放。
 
 ## 关于
 
-Plex 插件将您的最爱媒体集中在一个地方，使其美观且易于享受。该插件提供的 Plex 媒体服务器，将您的个人视频、音乐和照片收藏进行组织，并将其串流到您所有的设备上。
+plex插件将您喜爱的媒体集中在一个地方，使其既美观又易于享受。此插件提供的Plex Media Server，整理您的个人视频、音乐和照片收藏，并将其流式传输到所有您的设备。
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
@@ -24,5 +24,5 @@ Plex 插件将您的最爱媒体集中在一个地方，使其美观且易于享
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
 [patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[release-shield]: https://img.shields.io/badge/version-v3.6.4-blue.svg
-[release]: https://github.com/hassio-addons/addon-plex/tree/v3.6.4
+[release-shield]: https://img.shields.io/badge/version-v3.6.5-blue.svg
+[release]: https://github.com/hassio-addons/addon-plex/tree/v3.6.5

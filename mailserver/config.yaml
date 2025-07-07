@@ -1,7 +1,7 @@
 name: Mailserver
-version: 4.2.1
+version: 4.2.2
 slug: mailserver
-description: Home Assistant的Postfix和Dovecot邮件服务器，带有Postfix Admin Web界面。
+description: Postfix and Dovecot mail server for Home Assistant, with Postfix Admin
   web interface
 url: https://ghfast.top/github.com/erik73/hassio-addons
 arch:

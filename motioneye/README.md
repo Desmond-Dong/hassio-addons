@@ -1,31 +1,31 @@
-# Home Assistant 社区附加组件: motionEye
+# Home Assistant Community Add-on: motionEye
 
-[![Release][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
+[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-[![通过 GitHub Sponsors 支持 Frenck][github-sponsors-shield]][github-sponsors]
+[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
 
-[![在 Patreon 上支持 Frenck][patreon-shield]][patreon]
+[![Support Frenck on Patreon][patreon-shield]][patreon]
 
-简单、优雅且功能丰富的 CCTV/NVR 用于您的摄像头。
+一个简单、优雅且功能丰富的CCTV/NVR系统，适用于您的摄像机。
 
 ## 关于
 
-motionEye 是流行的摄像头软件 motion 的前端。这个附加组件提供了两者，使您可以将摄像头添加到您的 Hass.io 设置中。
+motionEye是名为motion的摄像机软件的流行前端。这个插件提供了这两种功能，允许您将您的摄像机添加到您的Hass.io设置中。
 
-motionEye 是开源的 CCTV 和 NVR，优雅且易于使用。它可以用作婴儿监视器、建筑工地监控器、商店摄像头 DVR、花园安全等。
+motionEye是一个开源的CCTV和NVR系统，既优雅又非常易于使用。它可以作为婴儿监视器、建筑工地蒙太奇查看器、商店摄像机DVR、花园安全系统，以及更多用途。
 
-motionEye 的一些酷功能：
+motionEye的一些酷炫功能：
 
-- 支持大量摄像头，包括 IP 摄像头。
-- 通过将多个 motionEye 实例连接在一起，添加多个摄像头。
-  例如，通过在您的网络中使用 Pi Zero + Pi 摄像头上的 MotionEyeOS。
-- 支持将录制内容上传到 Google Drive 和 Dropbox。
-- 运动检测，包括电子邮件通知和调度。
+- 支持大量摄像机，包括IP摄像机。
+- 通过将多个motionEye实例连接在一起来添加多个摄像机。
+  例如，在您的网络中使用Pi Zero + Pi摄像机上的MotionEyeOS。
+- 支持将录像上传到Google Drive和Dropbox。
+- 运动检测，包括电子邮件通知和计划。
 - 可以连续录制、运动录制或延时录制，并具有保留设置。
 
-![motionEye 截图][screenshot]
+![motionEye截图][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
@@ -37,6 +37,6 @@ motionEye 的一些酷功能：
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
 [patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
-[release-shield]: https://img.shields.io/badge/version-v0.22.1-blue.svg
-[release]: https://github.com/hassio-addons/addon-motioneye/tree/v0.22.1
+[release-shield]: https://img.shields.io/badge/version-v0.22.2-blue.svg
+[release]: https://github.com/hassio-addons/addon-motioneye/tree/v0.22.2
 [screenshot]: https://github.com/hassio-addons/addon-motioneye/raw/main/images/screenshot.png

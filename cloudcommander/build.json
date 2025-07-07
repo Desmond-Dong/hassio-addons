@@ -1,7 +1,7 @@
 {
   "build_from": {
-    "aarch64": "docker.1ms.run/coderaiser/cloudcmd:latest",
-    "amd64": "docker.1ms.run/coderaiser/cloudcmd:latest"
+    "aarch64": "coderaiser/cloudcmd:latest",
+    "amd64": "coderaiser/cloudcmd:latest"
   },
   "codenotary": {
     "signer": "alexandrep.github@gmail.com"

@@ -22,58 +22,57 @@ _Thanks to everyone having starred my repo! To star it click on the image below,
 
 ## About
 
-["Firefly III"](https://www.firefly-iii.org) is a (self-hosted) manager for your personal finances. It can help you keep track of your expenses and income, so you can spend less and save more. The data importer is built to help you import transactions into Firefly III. It is separated from Firefly III for security and maintenance reasons.
+["Firefly III"](https://www.firefly-iii.org) 是一个（自托管）个人财务管理工具。它可以帮助您跟踪支出和收入，以便您减少开支并增加储蓄。数据导入器旨在帮助您将交易导入 Firefly III。出于安全和维护的原因，它与 Firefly III 分开。
 
-This addon is based on the docker image https://hub.docker.com/r/fireflyiii/data-importer
+此插件基于 Docker 镜像 https://hub.docker.com/r/fireflyiii/data-importer
 
 ## Configuration
 
-Read official documentation for information how to set the variables: https://docs.firefly-iii.org/data-importer.
+阅读官方文档以了解如何设置变量：https://docs.firefly-iii.org/data-importer。
 
-Configurations can be added in the /addon_configs/xxx-fireflyiii_data_importer/configurations folder according to :https://docs.firefly-iii.org/data-importer/help/config/
+配置可以添加在 /addon_configs/xxx-fireflyiii_data_importer/configurations 文件夹中，根据：https://docs.firefly-iii.org/data-importer/help/config/。
 
-An auto import can be made by adding files in /addon_configs/xxx-fireflyiii_data_importer/import_files according to : https://docs.firefly-iii.org/data-importer/usage/command_line/
+通过在 /addon_configs/xxx-fireflyiii_data_importer/import_files 中添加文件，可以进行自动导入，根据：https://docs.firefly-iii.org/data-importer/usage/command_line/。
 
-Options can be configured through two ways :
+选项可以通过两种方式配置：
 
-- Addon options
+- 插件选项
 
 ```yaml
-"CONFIG_LOCATION": location of the config.yaml # Sets the location of the config.yaml (see below)
-"FIREFLY_III_ACCESS_TOKEN": required to access Firefly
-"FIREFLY_III_CLIENT_ID": alternative way to access Firefly
-"FIREFLY_III_URL": your url, either local (docker IP), or external (public IP)
-"NORDIGEN_ID": your Nordigen Client ID
-"NORDIGEN_KEY": your Nordigen Client Secret
-"SPECTRE_APP_ID": your Spectre / Salt Edge Client ID
-"SPECTRE_SECRET": your Spectre / Salt Edge Client secret
-"Updates": hourly|daily|weekly # Sets an automatic upload of files set in /config/addons_config/fireflyiii_data_importer/import_files
-"silent": true # suppresses debug messages
+"CONFIG_LOCATION": config.yaml 的位置 # 设置 config.yaml 的位置（见下文）
+"FIREFLY_III_ACCESS_TOKEN": 访问 Firefly 所需的令牌
+"FIREFLY_III_CLIENT_ID": 访问 Firefly 的另一种方式
+"FIREFLY_III_URL": 您的 URL，可以是本地（Docker IP），也可以是外部（公网 IP）
+"NORDIGEN_ID": 您的 Nordigen 客户端 ID
+"NORDIGEN_KEY": 您的 Nordigen 客户端密钥
+"SPECTRE_APP_ID": 您的 Spectre / Salt Edge 客户端 ID
+"SPECTRE_SECRET": 您的 Spectre / Salt Edge 客户端密钥
+"Updates": 每小时|每天|每周 # 设置在 /config/addons_config/fireflyiii_data_importer/import_files 中设置的文件的自动上传
+"silent": true # 抑制调试消息
 ```
 
-- Config.yaml (advanced usage)
+- Config.yaml（高级用法）
 
-Additional variables can be set as ENV variables by adding them in the config.yaml in the location defined in your addon options according to this guide : https://github.com/alexbelgium/hassio-addons/wiki/Add%E2%80%90ons-feature-:-add-env-variables
+通过在 config.yaml 中添加它们，可以按此指南将附加变量设置为 ENV 变量：https://github.com/alexbelgium/hassio-addons/wiki/Add%E2%80%90ons-feature-:-add-env-variables
 
-
-The complete list of ENV variables can be seen here : https://github.com/firefly-iii/data-importer/blob/main/.env.example
+ENV 变量的完整列表可以在此处查看：https://github.com/firefly-iii/data-importer/blob/main/.env.example
 
 ## Installation
 
-The installation of this add-on is pretty straightforward and not different in comparison to installing any other add-on.
+此插件的安装非常简单，与其他插件的安装没有区别。
 
-1. Add my add-ons repository to your home assistant instance (in supervisor addons store at top right, or click button below if you have configured my HA)
-   [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Set the add-on options to your preferences
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Open the webUI and adapt the software options
+1. 将我的插件仓库添加到您的 Home Assistant 实例中（在 supervisor 插件商店的右上角，或点击下方按钮，如果您已配置我的 HA）
+   [![打开您的 Home Assistant 实例并显示带有特定仓库 URL 预填的添加插件仓库对话框。](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
+1. 安装此插件。
+1. 点击 `Save` 按钮保存您的配置。
+1. 设置插件选项以符合您的偏好。
+1. 启动插件。
+1. 检查插件的日志，查看是否一切正常。
+1. 打开 WebUI 并调整软件选项
 
 ## Support
 
-Create an issue on github
+在 github 上创建问题
 
 ## Illustration
 

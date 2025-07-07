@@ -1,7 +1,7 @@
 name: motionEye
-version: 0.22.1
+version: 0.22.2
 slug: motioneye
-description: 简单、优雅且功能丰富的闭路电视/网络视频录像机（CCTV/NVR）供您的摄像机使用。
+description: Simple, elegant and feature-rich CCTV/NVR for your cameras
 url: https://ghfast.top/github.com/hassio-addons/addon-motioneye
 codenotary: codenotary@frenck.dev
 ingress: true
