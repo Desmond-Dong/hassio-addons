@@ -1,170 +1,130 @@
-# Home Assistant Community Add-on: Z-Wave JS UI
+# Home Assistant 社区插件：Z-Wave JS UI
 
-The Z-Wave JS UI add-on provides an additional control panel, allowing you
-to configure every aspect of your Z-Wave network. It provides a decoupled
-gateway which can communicate using Z-Wave JS WebSockets (used by the
-Home Assistant Z-Wave JS integration) and MQTT (even simultaneously).
+Z-Wave JS UI 插件提供了一个额外的控制面板，允许您配置 Z-Wave 网络的各个方面。它提供了一个解耦的网关，可以使用 Z-Wave JS WebSockets（Home Assistant Z-Wave JS 集成使用）和 MQTT（甚至可以同时使用）进行通信。
 
-Some advantages and use-cases:
+一些优点和使用场景：
 
-- Compatible with the Home Assistant Z-Wave JS integration.
-- Your Z-Wave network will keep running between Home Assistant restarts.
-- You can directly use things like Node-RED with your Z-Wave network, while
-  it is available for Home Assistant at the same time.
-- Allow [ESPHome.io][esphome] based ESP devices to directly respond or work
-  with your Z-Wave network.
-- Pre-configures itself with the Mosquitto add-on when found.
+- 与 Home Assistant Z-Wave JS 集成兼容。
+- 在 Home Assistant 重启期间，您的 Z-Wave 网络将保持运行。
+- 您可以直接使用 Node-RED 等工具与您的 Z-Wave 网络进行交互，同时它仍然可以在 Home Assistant 中使用。
+- 允许基于 [ESPHome.io][esphome] 的 ESP 设备直接响应或与您的 Z-Wave 网络工作。
+- 在找到 Mosquitto 插件时，它会自动进行预配置。
 
-This add-on uses the [Z-Wave JS UI][zwave-js-ui] software.
+此插件使用 [Z-Wave JS UI][zwave-js-ui] 软件。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
+此插件的安装非常直接，与安装任何其他 Home Assistant 插件没有区别。
 
-1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.
+1. 点击下面的 Home Assistant 我的按钮，在您的 Home Assistant 实例中打开该插件。
 
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
+   [![在您的 Home Assistant 实例中打开此插件。][addon-badge]][addon]
 
-1. Click the "Install" button to install the add-on.
-1. Check the logs of the "Z-Wave JS UI" add-on to see if everything went
-   well.
-1. Click the "OPEN WEB UI" button.
-1. Enjoy the add-on!
+1. 点击“安装”按钮以安装插件。
+1. 检查“Z-Wave JS UI”插件的日志，以查看是否一切顺利。
+1. 点击“打开 Web UI”按钮。
+1. 享受插件！
 
-**NOTE**: The upstream project has documentation on using the software itself:
+**注意**：上游项目提供了使用该软件的文档：
 <https://zwave-js.github.io/zwave-js-ui/#/>
 
-## Setting up the Home Assistant Z-Wave JS integration
+## 设置 Home Assistant Z-Wave JS 集成
 
-By default the Home Assistant Z-Wave JS integration will try to set up the
-official "Z-Wave JS" add-on from the official add-on store.
+默认情况下，Home Assistant Z-Wave JS 集成将尝试从官方插件商店设置官方的“Z-Wave JS”插件。
 
-However, this add-on will provide an add-on UI and has the ability to
-send/receive data over MQTT as well. So, if that is your thing, this
-add-on might be for you.
+然而，此插件提供了一个插件 UI，并且具有通过 MQTT 发送/接收数据的能力。所以，如果那是您的需求，这个插件可能适合您。
 
-After starting the add-on successfully, it is time to hook it up with
-Home Assistant.
+在成功启动插件后，是时候将其与 Home Assistant 连接了。
 
-To do this:
+为此：
 
-1. Open the Z-Wave JS UI control panel by clicking the "OPEN WEB UI"
-   button on the add-on page in the Supervisor.
-1. In the control panel, go to "Settings" in the menu and click on the "Zwave"
-   bar that shows up on the right.
-1. Enter the following information:
-   - Serial Port (e.g., `/dev/serial/by-id/usb-0658_0200_if00`)
-   - Network Key (e.g., `2232666D100F795E5BB17F0A1BB7A146`)
+1. 通过点击 Supervisor 中的插件页面上的“打开 Web UI”按钮，打开 Z-Wave JS UI 控制面板。
+2. 在控制面板中，在菜单中转到“设置”，并点击出现的右侧的“Zwave”条。
+3. 输入以下信息：
+   - 串口（例如：`/dev/serial/by-id/usb-0658_0200_if00`）
+   - 网络密钥（例如：`2232666D100F795E5BB17F0A1BB7A146`）
 
-Now click the "SAVE" button and navigate to the "Control Panel" in the menu.
-If you had devices paired already, you should see the showing up slowly.
+点击“保存”按钮，然后导航到菜单中的“控制面板”。如果您已经配对了设备，您应该会看到它们慢慢出现。
 
-Now it is time to set up Home Assistant:
+现在，是时候设置 Home Assistant 了：
 
-1. Go to the Settings panel and click "Devices & Services".
-1. In the bottom right, click "+ Add Integration".
-1. Select the "Z-Wave" integration from the list.
-1. A dialog box will show, asking to use the add-on:
-   - **UNCHECK** that box, it will install the official add-on.
-   - Again, the official add-on is recommended, so...
-1. In the next dialog it will ask for the server. Enter:
+1. 转到设置面板并点击“设备和服务”。
+2. 在右下角，点击“+ 添加集成”。
+3. 从列表中选择“Z-Wave”集成。
+4. 将会显示一个对话框，询问是否使用插件：
+   - **取消选中**该框，它将安装官方插件。
+   - 再次，官方插件是推荐的，所以...
+5. 在下一个对话框中，它将询问服务器。输入：
    `ws://a0d7b954-zwavejs2mqtt:3000`
-1. Confirm and done!
+6. 确认并完成！
 
-## Configuration
+## 配置
 
-**Note**: _Remember to restart the add-on when the configuration is changed._
+**注意**：_更改配置时请重启插件。_
 
-Example add-on configuration:
+示例插件配置：
 
 ```yaml
 log_level: info
 ```
 
-### Option: `log_level`
+### 选项：`log_level`
 
-The `log_level` option controls the level of log output by the addon and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
+`log_level` 选项控制插件的日志输出级别，可以更改为更详细或更简洁，这在处理未知问题时可能很有用。可能的值有：
 
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`: Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
+- `trace`：显示每个细节，例如所有调用的内部函数。
+- `debug`：显示详细的调试信息。
+- `info`：常规（通常）有趣的事件。
+- `warning`：非错误性的异常情况。
+- `error`：不需要立即处理的运行时错误。
+- `fatal`：出现了严重问题。插件变得无法使用。
 
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
+请注意，每个级别会自动包含更严重级别的日志消息，例如，`debug` 也会显示 `info` 消息。默认情况下，`log_level` 设置为 `info`，这是推荐的设置，除非您正在排除故障。
 
-## Known issues and limitations
+## 已知问题和限制
 
-- Z-Wave JS UI supports Home Assistant Discovery over MQTT. It is
-  **STRONGLY** recommended **NOT** to use that option. Use the Z-Wave JS
-  integration as documented above instead.
+- Z-Wave JS UI 支持 Home Assistant 通过 MQTT 进行发现。强烈建议**不要**使用该选项。使用上面文档中提到的 Z-Wave JS 集成。
 
-## Changelog & Releases
+## 更改日志和发布
 
-This repository keeps a change log using [GitHub's releases][releases]
-functionality.
+此存储库使用 [GitHub 的发布][releases] 功能来维护更改日志。
 
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
+发布基于 [语义版本控制][semver]，并使用 `MAJOR.MINOR.PATCH` 格式。简而言之，版本将根据以下情况增加：
 
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
+- `MAJOR`：不兼容或重大更改。
+- `MINOR`：向后兼容的新功能和增强。
+- `PATCH`：向后兼容的补丁和包更新。
 
-## Support
+## 支持
 
-Got questions?
+有问题？
 
-You have several options to get them answered:
+您有几个选项来获得答案：
 
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- [Home Assistant 社区插件 Discord 服务器][discord]用于插件支持和功能请求。
+- [Home Assistant Discord 服务器][discord-ha]用于一般 Home Assistant 讨论和问题。
+- Home Assistant [社区论坛][forum]。
+- 加入 [Reddit 子版块][reddit] 在 [/r/homeassistant][reddit]
 
-You could also [open an issue here][issue] GitHub.
+您也可以在 GitHub 上[打开问题][issue]。
 
-## Authors & contributors
+## 作者和贡献者
 
-The original setup of this repository is by [Franck Nijhof][frenck].
+此存储库的原始设置由 [Franck Nijhof][frenck] 完成。
 
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
+有关所有作者和贡献者的完整列表，请查看 [贡献者页面][contributors]。
 
-## License
+## 许可证
 
-MIT License
+MIT 许可证
 
-Copyright (c) 2021 - 2025 Franck Nijhof
+版权所有 (c) 2021 - 2025 Franck Nijhof
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+特此免费授予任何获得此软件及其相关文档文件（“软件”）副本的人，在软件中不受限制地处理的权利，包括但不限于使用、复制、修改、合并、发布、分发、再许可和/或销售软件副本的权利，并允许提供软件的人进行这些操作，但须遵守以下条件：
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+上述版权声明和本许可声明应包含在软件的所有副本或重要部分的软件中。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+软件按“原样”提供，不提供任何明示或暗示的保证，包括但不限于对适销性、特定用途适用性和非侵权性的保证。在任何情况下，作者或版权持有人均不对任何索赔、损害赔偿或其他责任负责，无论是由合同、侵权或其他行为引起的，均与软件或软件的使用或其他交易有关。
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_zwavejs2mqtt&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository
