@@ -155,9 +155,9 @@ jobs:
           sed -i 's/^slug: assist_microphone$/slug: assist_microphone_rhasspy/' addons/hassio-addons-master/assist_microphone_rhasspy/config.yaml
           sed -i 's/^name: Assist Microphone$/name: Assist Microphone Rhasspy/' addons/hassio-addons-master/assist_microphone_rhasspy/config.yaml
 
-          sed -i 's/^slug: esphome$/slug: ihost-esphome/' /addons/hassio-ihost-addon-master/hassio-ihost-esphome/config.yaml
-          sed -i 's/^slug: matter_server$/slug: ihost-matter_server/' /addons/hassio-ihost-addon-master/hassio-ihost-matter-server/config.yaml
-          sed -i 's/^slug: nodered$/slug: ihost-nodered/' /addons/hassio-ihost-addon-master/hassio-ihost-node-red/config.yaml
+          sed -i 's/^slug: esphome$/slug: ihost-esphome/' addons/hassio-ihost-addon-master/hassio-ihost-esphome/config.yaml
+          sed -i 's/^slug: matter_server$/slug: ihost-matter_server/' addons/hassio-ihost-addon-master/hassio-ihost-matter-server/config.yaml
+          sed -i 's/^slug: nodered$/slug: ihost-nodered/' addons/hassio-ihost-addon-master/hassio-ihost-node-red/config.yaml
           
 
 
