@@ -72,6 +72,8 @@ Excellent third-party libraries:
 - 🛠️ [**SimpleScheduler Addons**](https://github.com/arthurdent75/SimpleScheduler): Addons by SimpleScheduler
 - 🏠 [**Hikvision Addons**](https://github.com/pergolafabio/Hikvision-Addons): Addons by Hikvision
 - 🛠️ [**Ollama Addons**](https://github.com/SirUli/homeassistant-ollama-addon): Addons by Ollama
+- 🏠 [**iHost Open Source Addons**](https://github.com/iHost-Open-Source-Project/hassio-ihost-addon): Addons from the iHost Open Source Project
+
 
 
 

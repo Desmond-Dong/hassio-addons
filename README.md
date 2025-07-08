@@ -81,6 +81,8 @@
 - 🛠️ [**SimpleScheduler Addons**](https://github.com/arthurdent75/SimpleScheduler): SimpleScheduler 的加载项
 - 🏠 [**Hikvision Addons**](https://github.com/pergolafabio/Hikvision-Addons): Hikvision 的加载项
 - 🛠️ [**Ollama Addons**](https://github.com/SirUli/homeassistant-ollama-addon): Ollama 的加载项
+- 🏠 [**iHost Open Source Addons**](https://github.com/iHost-Open-Source-Project/hassio-ihost-addon): iHost 开源项目的加载项
+
 
 
 
