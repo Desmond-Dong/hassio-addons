@@ -1,0 +1,64 @@
+{
+  "name": "Matter Bridge for iHost",
+  "version": "1.1.0",
+  "slug": "ihost_matter_bridge",
+  "description": "Matter Bridge 插件将 Home Assistant 设备暴露为支持 Matter 的设备，使其能够与 Matter 平台（如 Apple Home、Google Home 和 Amazon Alexa）集成。",
+  "url": "https://ghfast.top/github.com/iHost-Open-Source-Project/hassio-ihost-addon/tree/master/hassio-ihost-matter-bridge-addon",
+  "startup": "application",
+  "boot": "auto",
+  "arch": [
+    "armv7"
+  ],
+  "init": false,
+  "panel_icon": "mdi:alpha-m-circle",
+  "panel_title": "Matter Bridge for iHost",
+  "ingress": true,
+  "ingress_port": 3030,
+  "ingress_stream": true,
+  "host_network": true,
+  "homeassistant_api": true,
+  "hassio_role": "admin",
+  "hassio_api": true,
+  "privileged": [
+    "SYS_ADMIN",
+    "SYS_MODULE",
+    "SYS_NICE",
+    "SYS_PTRACE",
+    "SYS_RAWIO",
+    "SYS_RESOURCE",
+    "SYS_TIME"
+  ],
+  "services": [
+    "mqtt:need"
+  ],
+  "map": [
+    {
+      "type": "addon_config",
+      "read_only": false,
+      "path": "/matter-bridge-data"
+    },
+    {
+      "type": "homeassistant_config",
+      "read_only": false,
+      "path": "/config"
+    }
+  ],
+  "options": {
+    "log_level": "Info",
+    "mqtt": {}
+  },
+  "schema": {
+    "log_level": "list(None|Info|Debug)?",
+    "mqtt": {
+      "server": "str?",
+      "username": "str?",
+      "password": "str?"
+    }
+  },
+  "image": "ghcr.nju.edu.cn/ihost-open-source-project/hassio-ihost-matter-bridge-{arch}",
+  "devices": [
+    "/dev/teepriv0",
+    "/dev/tee0",
+    "/dev/vendor_storage"
+  ]
+}
