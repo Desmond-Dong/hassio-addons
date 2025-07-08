@@ -199,6 +199,9 @@ jobs:
                 current_version=$(extract_version "$current_path")
                 if [[ "$latest_version" != "$current_version" ]]; then
                   echo "Version mismatch in $repo_name ($(basename "$sub_dir")): $latest_version - $current_version" # 只输出版本不一致的插件
+                  if $current_version == "dev";then 
+                    rm -rf "$sub_dir"
+                  fi
                 else
                   # echo "Version match in $repo_name ($(basename "$sub_dir")): $latest_version, Deleting $sub_dir"
                   rm -rf "$sub_dir"
