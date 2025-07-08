@@ -164,6 +164,9 @@ jobs:
           rm -rf addons/hassio-addons-master/plex
           rm -rf addons/hassio-addons-master/addon-plex
           rm -rf addons/repository-master/whisparr
+          rm -rf addons/hassio-addons-master/binance-trading-bot
+          rm -rf addons/homeassistant-addons-main/ladder
+          rm -rf addons/hassio-addons-master/zzz_archived_*
 
 
       - name: Check and clean up addons
