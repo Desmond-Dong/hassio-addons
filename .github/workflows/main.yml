@@ -80,6 +80,7 @@ jobs:
             ["ollama"]="SirUli/homeassistant-ollama-addon:main"
             ["SimpleScheduler"]="arthurdent75/SimpleScheduler:master"
             ["Hikvision"]="pergolafabio/Hikvision-Addons:main"
+            ["ihost"]="iHost-Open-Source-Project/hassio-ihost-addon:main"
           )
 
 
