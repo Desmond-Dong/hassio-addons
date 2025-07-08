@@ -1,6 +1,0 @@
----
-configuration:
-  mqtt:
-    name: MQTT
-    description: >-
-      For the MQTT service configuration, you can customize the "server", "username", and "password" settings.
