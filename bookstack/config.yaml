@@ -1,7 +1,7 @@
 name: Bookstack
-version: 3.1.0
+version: 3.1.1
 slug: bookstack
-description: 简单免费的wiki软件
+description: Simple & Free Wiki Software
 url: https://ghfast.top/github.com/hassio-addons/addon-bookstack
 codenotary: codenotary@frenck.dev
 webui: '[PROTO:ssl]://[HOST]:[PORT:80]'
