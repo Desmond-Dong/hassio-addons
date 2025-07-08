@@ -229,30 +229,9 @@ jobs:
                   echo "No description found in $file (JSON), skipping..."
                   continue
                 fi
-        
-                translated_description=$(curl -s --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
-                  --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
-                  --header 'Content-Type: application/json' \
-                  --data "{
-                    \"model\": \"glm-4-flash-250414\",
-                    \"messages\": [
-                      {
-                          \"role\": \"system\",
-                          \"content\": \"你是一个翻译程序，只将给你的内容翻译成中文，不需要任何其它多余解释以及回答，仅输出原文一致的翻译内容，每一次对话，你只输出一行内容\" 
-                      },
-                      {
-                        \"role\": \"user\",
-                        \"content\": \"翻译：$description\"
-                      }
-                    ]
-                  }" | jq -r '.choices[0].message.content')
-        
-                echo "Translated description for $file (JSON): $translated_description"
-        
-                jq --arg description "$translated_description" '.description = $description' "$file" > temp.json && mv temp.json "$file"
-              
               elif file -b --mime-type "$file" | grep -q "yaml"; then
                 description=$(~/bin/yq '.description' "$file")
+              fi
                 translated_description=$(curl -s --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
                   --header "Authorization: Bearer ${{ secrets.ZHIPUAI_KEY }}" \
                   --header 'Content-Type: application/json' \
@@ -269,15 +248,14 @@ jobs:
                       }
                     ]
                   }" | jq -r '.choices[0].message.content')
-        
-                echo "Translated description for $file (yaml): $translated_description"
-                if [ -z "$translated_description" ] || [ "$translated_description" == null ]; then
-                    safe_description="未翻译成功"
-                else
-                    safe_description=$(printf "%q" "$translated_description")
+           
+                if file -b --mime-type "$file" | grep -q "json"; then
+                  echo "Translated description for $file (JSON) : $translated_description"
+                  jq --arg description "$translated_description" '.description = $description' "$file" > temp.json && mv temp.json "$file"
+                elif file -b --mime-type "$file" | grep -q "yaml"; then
+                  echo "Translated description for $file (YAML) : $translated_description"
+                  ~/bin/yq -i '.description = "$translated_description"' "$file"
                 fi
-                ~/bin/yq -i '.description = "$safe_description"' "$file"
-              fi
             } || {
               echo "Error processing $file, skipping..."
               continue
