@@ -6,14 +6,13 @@
 
 [![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
 
-Bookstack: Simple & Free Wiki Software.
+Bookstack: 简单且免费的维基软件。
 
-## About
+## 关于
 
-BookStack is a simple, self-hosted, easy-to-use platform for organising and
-storing information.
+BookStack 是一个简单、自托管、易于使用的平台，用于组织和存储信息。
 
-![Bookstack screenshot][screenshot]
+![Bookstack 截图][screenshot]
 
 [buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
 [buymeacoffee]: https://www.buymeacoffee.com/sinclairpaul
@@ -23,6 +22,6 @@ storing information.
 [forum]: https://community.home-assistant.io/?u=frenck
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[release-shield]: https://img.shields.io/badge/version-v3.1.0-blue.svg
-[release]: https://github.com/hassio-addons/addon-bookstack/tree/v3.1.0
+[release-shield]: https://img.shields.io/badge/version-v3.1.1-blue.svg
+[release]: https://github.com/hassio-addons/addon-bookstack/tree/v3.1.1
 [screenshot]: https://github.com/hassio-addons/addon-bookstack/raw/main/images/screenshot.png

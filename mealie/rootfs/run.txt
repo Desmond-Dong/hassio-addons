@@ -17,19 +17,13 @@ for SCRIPTS in /etc/cont-init.d/*; do
     chmod a+x "$SCRIPTS"
     # Change shebang if no s6 supervision
     sed -i 's|/usr/bin/with-contenv bashio|/usr/bin/env bashio|g' "$SCRIPTS"
+    sed -i "/exit 0/d" "$SCRIPTS"
     . "$SCRIPTS" || echo -e "\033[0;31mError\033[0m : $SCRIPTS exiting $?"
     rm "$SCRIPTS"
 done
 
-####################
-# Export variables #
-####################
-
-bashio::log.info "Exporting variables"
-for k in $(bashio::jq "/data/options.json" 'keys | .[]'); do
-    bashio::log.blue "$k"="$(bashio::config "$k")"
-    export "$k"="$(bashio::config "$k")"
-done
+rm /.env || true
+rm /env.py || true
 
 ####################
 # MIGRATE DATA DIR #
