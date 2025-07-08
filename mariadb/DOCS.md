@@ -1,4 +1,4 @@
-# Home Assistant Add-on: "Unofficial" MariaDB
+# Home Assistant Add-on: MariaDB
 
 ## 安装
 
@@ -10,7 +10,7 @@
 
 ## 如何使用
 
-1. 将 `logins` -> `password` 字段设置为强且唯一的值。
+1. 将 `logins` -> `password` 字段设置为强而独特的值。
 2. 启动插件。
 3. 检查插件日志输出以查看结果。
 4. 将 `recorder` 集成添加到您的 Home Assistant 配置中。
@@ -52,11 +52,11 @@ rights:
 
 ### 选项：`logins.password`（必需）
 
-用户登录密码。这应该是强且唯一的。
+用户登录密码。这应该是强而独特的。
 
 ### 选项：`rights`（必需）
 
-此部分授予用户在 MariaDB 中的权限。[授予权限][grant] 文档。
+此部分授予 MariaDB 中的用户权限。[授予权限][grant] 文档。
 
 ### 选项：`rights.username`（必需）
 
@@ -68,11 +68,11 @@ rights:
 
 ### 选项：`rights.privileges`（可选）
 
-授予此用户的权限列表，例如 `SELECT` 和 `CREATE`，参考 [授予权限][grant]。如果省略，将授予用户 `ALL PRIVILEGES`。不建议限制 Home Assistant 使用的用户的权限，但如果您希望允许其他应用程序查看 recorder 数据，应创建一个仅具有数据库只读访问权限的用户。
+授予此用户的权限列表，如 `SELECT` 和 `CREATE`，从 [授予权限][grant]。如果省略，将授予用户 `ALL PRIVILEGES`。不建议限制 Home Assistant 使用用户的权限，但如果您希望允许其他应用程序查看 recorder 数据，应创建一个仅具有数据库只读访问权限的用户。
 
 ### 选项：`mariadb_server_args`（可选）
 
-一些用户在 Home Assistant 大型数据库模式更新时遇到了 [错误][migration-issues]。如果可用，定义推荐参数可能会有所帮助。
+一些用户在 Home Assistant 大型数据库架构更新过程中遇到了 [错误][migration-issues]。如果内存可用，定义推荐参数可能会有所帮助。
 
 示例：`--innodb_buffer_pool_size=512M`
 
@@ -91,12 +91,23 @@ recorder:
 
 有问题？
 
-您可以在 GitHub 上 [打开一个问题][issue]。
+您有几个选项来获得答案：
 
-[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
-[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
-[armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
+- [Home Assistant Discord 聊天服务器][discord]。
+- Home Assistant [社区论坛][forum]。
+- 加入 [Reddit 子版块][reddit] 在 [/r/homeassistant][reddit]。
+
+如果您发现了一个错误，请 [在我们的 GitHub 上打开一个问题][issue]。
+
+[createuser]: https://mariadb.com/kb/en/create-user/
+[username]: https://mariadb.com/kb/en/create-user/#user-name-component
+[hostname]: https://mariadb.com/kb/en/create-user/#host-name-component
+[grant]: https://mariadb.com/kb/en/grant/
+[migration-issues]: https://github.com/home-assistant/core/issues/125339
+[mariadb-ha-recorder]: https://www.home-assistant.io/integrations/recorder/
+[discord]: https://discord.gg/c5DvZ4e
+[forum]: https://community.home-assistant.io
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
-[issue]: https://github.com/erik73/addon-mariadb/issues
-[repository]: https://github.com/erik73/hassio-addons
+[issue]: https://github.com/home-assistant/addons/issues
+[reddit]: https://reddit.com/r/homeassistant
+[repository]: https://github.com/hassio-addons/repository
