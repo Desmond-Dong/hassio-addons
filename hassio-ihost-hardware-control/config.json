@@ -1,0 +1,48 @@
+{
+  "name": "iHost Hardware Control",
+  "version": "1.1.2",
+  "slug": "ihost_hardware_control",
+  "description": "在HA over iHost项目中，iHost硬件控制插件用于管理设备上的物理按钮和指示灯。它将这些组件注册为Home Assistant中的实体，允许用户直接在HA中配置自动化规则，以实现更灵活的硬件交互控制。",
+  "uart": true,
+  "udev": true,
+  "url": "https://ghfast.top/github.com/iHost-Open-Source-Project/hassio-ihost-addon/tree/master/hassio-ihost-hardware-control",
+  "startup": "application",
+  "boot": "auto",
+  "arch": [
+    "armv7"
+  ],
+  "services": [
+    "mqtt:need"
+  ],
+  "map": [
+    "data:rw",
+    "config:rw",
+    {
+      "type": "share",
+      "read_only": false
+    },
+    {
+      "type": "homeassistant_config",
+      "read_only": false,
+      "path": "/config"
+    }
+  ],
+  "options": {
+    "data_path": "/config/iHost-Hardware-Control",
+    "mqtt": {}
+  },
+  "schema": {
+    "data_path": "str",
+    "mqtt": {
+      "server": "str?",
+      "username": "str?",
+      "password": "str?"
+    }
+  },
+  "hassio_role": "manager",
+  "hassio_api": true,
+  "image": "ghcr.nju.edu.cn/ihost-open-source-project/hassio-ihost-addon-{arch}",
+  "devices": [
+    "/dev/ttyS3"
+  ]
+}
