@@ -138,32 +138,29 @@ jobs:
           mv addons/hassio-addons-master/sonarr addons/hassio-addons-master/sonarr_nas
 
           mv addons/repository-master/ssh addons/repository-master/ssh2
-          sed -i 's/^slug: ssh$/slug: ssh2/' addons/repository-master/ssh2/config.yaml
+          ~/bin/yq eval '.slug = "ssh2"' -i addons/repository-master/ssh2/config.yaml
+
           mv addons/repository-master/overseerr addons/repository-master/overseerr-comunity
-          sed -i 's/^slug: overseerr$/slug: overseerr-0/' addons/repository-master/overseerr-comunity/config.yaml
+          ~/bin/yq eval '.slug = "overseerr-0"' -i addons/repository-master/overseerr-comunity/config.yaml
+
           mv addons/repository-master/prowlarr addons/repository-master/prowlarr-comunity
-          sed -i 's/^slug: prowlarr$/slug: prowlarr-0/' addons/repository-master/prowlarr-comunity/config.yaml
+          ~/bin/yq eval '.slug = "prowlarr-0"' -i addons/repository-master/prowlarr-comunity/config.yaml
+
           mv addons/repository-master/sabnzbd addons/repository-master/sabnzbd-comunity
-          sed -i 's/^slug: sabnzbd$/slug: sabnzbd-0/' addons/repository-master/sabnzbd-comunity/config.yaml
+          ~/bin/yq eval '.slug = "sabnzbd-0"' -i addons/repository-master/sabnzbd-comunity/config.yaml
+
           mv addons/repository-master/tor addons/repository-master/tor-comunity
-          sed -i 's/^slug: tor$/slug: tor-0/' addons/repository-master/tor-comunity/config.yaml
+          ~/bin/yq eval '.slug = "tor-0"' -i addons/repository-master/tor-comunity/config.yaml
 
           mv addons/addons-china/get addons/addons-china/hacs-china
-          sed -i 's/^slug: get$/slug: hacs-china/' addons/addons-china/hacs-china/config.yaml
+          ~/bin/yq eval '.slug = "hacs-china"' -i addons/addons-china/hacs-china/config.yaml
 
           mv addons/hassio-addons-master/assist_microphone addons/hassio-addons-master/assist_microphone_rhasspy
-          sed -i 's/^slug: assist_microphone$/slug: assist_microphone_rhasspy/' addons/hassio-addons-master/assist_microphone_rhasspy/config.yaml
-          sed -i 's/^name: Assist Microphone$/name: Assist Microphone Rhasspy/' addons/hassio-addons-master/assist_microphone_rhasspy/config.yaml
+          ~/bin/yq eval '.slug = "assist_microphone_rhasspy" | .name = "Assist Microphone Rhasspy"' -i addons/hassio-addons-master/assist_microphone_rhasspy/config.yaml
 
-          sed -i 's/^slug: esphome$/slug: ihost-esphome/' addons/hassio-ihost-addon-master/hassio-ihost-esphome/config.yaml
-          sed -i 's/^name: ESPHome Device Builder$/name: ihost-ESPHome Device Builder/' addons/hassio-ihost-addon-master/hassio-ihost-esphome/config.yaml
-
-
-          sed -i 's/^slug: matter_server$/slug: ihost-matter_server/' addons/hassio-ihost-addon-master/hassio-ihost-matter-server/config.yaml
-          sed -i 's/^name: Matter Server$/name: ihost-Matter Server/' addons/hassio-ihost-addon-master/hassio-ihost-matter-server/config.yaml
-
-          sed -i 's/^slug: nodered$/slug: ihost-nodered/' addons/hassio-ihost-addon-master/hassio-ihost-node-red/config.yaml
-          sed -i 's/^name: Node-RED$/name: ihost-Node-RED/' addons/hassio-ihost-addon-master/hassio-ihost-node-red/config.yaml
+          ~/bin/yq eval '.slug = "ihost-esphome" | .name = "ihost-ESPHome Device Builder"' -i addons/hassio-ihost-addon-master/hassio-ihost-esphome/config.yaml
+          ~/bin/yq eval '.slug = "ihost-matter_server" | .name = "ihost-Matter Server"' -i addons/hassio-ihost-addon-master/hassio-ihost-matter-server/config.yaml
+          ~/bin/yq eval '.slug = "ihost-nodered" | .name = "ihost-Node-RED"' -i addons/hassio-ihost-addon-master/hassio-ihost-node-red/config.yaml
           
 
 
