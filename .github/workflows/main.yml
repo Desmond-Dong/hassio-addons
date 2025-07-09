@@ -257,10 +257,10 @@ jobs:
                   }" | jq -r '.choices[0].message.content')
            
                 if file -b --mime-type "$file" | grep -q "json"; then
-                  echo "Translated description for $file (JSON) : $translated_description"
+                  echo "Translated description for $file (JSON) : $description -> $translated_description"
                   jq --arg description "$translated_description" '.description = $description' "$file" > temp.json && mv temp.json "$file"
                 else
-                  echo "Translated description for $file (YAML) : $translated_description"
+                  echo "Translated description for $file (YAML) : $description -> $translated_description"
                   ~/bin/yq -i '.description = "$translated_description"' "$file"
                 fi
             } || {
