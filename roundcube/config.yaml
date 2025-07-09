@@ -1,21 +1,22 @@
 name: Roundcube
-version: 1.0.0
+version: 1.1.1
 slug: roundcube
-description: 圆环邮件客户端
+description: Roundcube webmail client
 url: https://ghfast.top/github.com/erik73/hassio-addons
 arch:
 - aarch64
 - amd64
 - armv7
 init: false
-webui: '[PROTO:ssl]://[HOST]:[PORT:80]'
+ingress: true
+ingress_stream: true
 panel_icon: mdi:email
 map:
 - ssl
 services:
 - mysql:need
 ports:
-  80/tcp: 2665
+  80/tcp: null
 ports_description:
   80/tcp: Roundcube
 hassio_api: true
