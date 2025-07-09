@@ -16,7 +16,7 @@ audio: true
 hassio_api: true
 hassio_role: manager
 host_dbus: true
-image: docker.1ms.run/homeassistant/{arch}-addon-ssh
+image: docker.m.daocloud.io/homeassistant/{arch}-addon-ssh
 ingress: true
 init: false
 map:
