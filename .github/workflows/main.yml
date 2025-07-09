@@ -259,7 +259,7 @@ jobs:
                 if file -b --mime-type "$file" | grep -q "json"; then
                   echo "Translated description for $file (JSON) : $translated_description"
                   jq --arg description "$translated_description" '.description = $description' "$file" > temp.json && mv temp.json "$file"
-                elif file -b --mime-type "$file" | grep -q "yaml"; then
+                else
                   echo "Translated description for $file (YAML) : $translated_description"
                   ~/bin/yq -i '.description = "$translated_description"' "$file"
                 fi
