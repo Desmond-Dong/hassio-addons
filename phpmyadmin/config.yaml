@@ -1,21 +1,21 @@
 name: phpMyAdmin
-version: 1.0.3
+version: 0.12.0
 slug: phpmyadmin
-description: A web interface for the official MariaDB add-on
+description: $translated_description
 url: https://ghfast.top/github.com/hassio-addons/addon-phpmyadmin
 codenotary: codenotary@frenck.dev
 ingress: true
 ingress_stream: true
 panel_icon: mdi:database
 arch:
-- aarch64
-- amd64
-- armv7
+  - aarch64
+  - amd64
+  - armv7
 init: false
 services:
-- mysql:need
+  - mysql:need
 hassio_api: true
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   upload_limit: int?
-image: ghcr.nju.edu.cn/erik73/phpmyadmin/{arch}
+image: ghcr.nju.edu.cn/hassio-addons/phpmyadmin/{arch}
