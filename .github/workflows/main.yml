@@ -236,11 +236,7 @@ jobs:
             {
               if file -b --mime-type "$file" | grep -q "json"; then
                 description=$(jq -r '.description' "$file")
-                if [ "$description" == "null" ]; then
-                  echo "No description found in $file (JSON), skipping..."
-                  continue
-                fi
-              elif file -b --mime-type "$file" | grep -q "yaml"; then
+              else
                 description=$(~/bin/yq '.description' "$file")
               fi
                 translated_description=$(curl -s --location 'https://open.bigmodel.cn/api/paas/v4/chat/completions' \
