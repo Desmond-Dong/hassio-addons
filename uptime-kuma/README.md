@@ -14,7 +14,7 @@
 
 Uptime Kuma 是一个开源监控工具，可以最好地与像 "Uptime Robot" 这样的商业服务的自托管版本进行比较。
 
-它允许您监控 HTTP/S、TCP、DNS 和其他协议的服务，并且可以在发生停机时向您发送通知或触发 Home Assistant 自动化 webhook。
+它使您能够监控 HTTP/S、TCP、DNS 和其他协议下的服务，并且可以在出现停机时向您发送通知或触发 Home Assistant 自动化网络钩子。
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
