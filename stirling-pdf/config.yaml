@@ -1,15 +1,15 @@
 name: "Stirling-PDF"
-version: "0.46.2"
-upstream: "0.46.2"
+version: "1.0.2"
+upstream: "1.0.2"
 slug: stirling-pdf
-description: 一个健壮的本地托管基于网络的PDF处理工具。
-  A robust, locally hosted web-based PDF manipulation tool
+description: >-
+  $translated_description
 arch:
   - amd64
   - aarch64
 url: "https://ghfast.top/github.com/jdeath/homeassistant-addons"
 ports:
-  8080/tcp: 8080 
+  8080/tcp: 8080
 ports_description:
   8080/tcp: "Web Interface"
 map:
@@ -24,4 +24,4 @@ boot: auto
 startup: services
 webui: "[PROTO:ssl]://[HOST]:[PORT:8080]"
 ingress: false
-ingress_port: 8080 
+ingress_port: 8080
