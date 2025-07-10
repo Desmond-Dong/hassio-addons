@@ -1,11 +1,11 @@
 name: Pocket ID
-version: 1.1.6
+version: 1.1.7
 slug: pocket-id
-description: Simple OIDC provider for passkey authentication
+description: $translated_description
 url: https://ghfast.top/github.com/einschmidt/addon-pocket-id
 arch:
-- amd64
-- aarch64
+  - amd64
+  - aarch64
 options:
   log_level: info
   APP_URL: http://localhost
@@ -19,6 +19,6 @@ ports:
   1411/tcp: 1411
 init: false
 map:
-- type: data
-  path: /app/data
+  - type: data
+    path: /app/data
 image: ghcr.nju.edu.cn/einschmidt/pocket-id/{arch}

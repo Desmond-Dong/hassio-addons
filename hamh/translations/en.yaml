@@ -8,10 +8,6 @@ configuration:
     name: Disable log colors
     description: |
       Print the log as plain text without any colors.
-  web_port:
-    name: Web UI Port
-    description: |
-      The port to use for the Web-UI. Default: 8482
   mdns_network_interface:
     name: mDNS Network Interface
     description: |
