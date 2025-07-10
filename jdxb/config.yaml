@@ -5,7 +5,7 @@
   "slug": "jdxb",
   "codenotary": "djhhui@gmail.com",
   "description": "A Home Assistant add-on for jdxb service. 这是一个节点小宝客户端",
-  "arch": ["amd64", "i386", "aarch64", "armv7", "armhf"],
+  "arch": ["amd64", "aarch64"],
   "startup": "services",
   "ingress": true,
   "ingress_port": 9118,
