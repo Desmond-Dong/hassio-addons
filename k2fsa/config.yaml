@@ -10,6 +10,7 @@
   ],
   "init": false,
   "ingress": true,
+    "image": "ghcr.nju.edu.cn/desmond-dong/k2fsa-{arch}",
   "ports": {
     "6006/tcp": 6006,
     "10300/tcp": 10300

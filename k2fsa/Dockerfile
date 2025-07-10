@@ -12,9 +12,9 @@ RUN sed -i 's@/archive.ubuntu.com/@/mirrors.ustc.edu.cn/@g' /etc/apt/sources.lis
     apt update && \
     apt install -y --no-install-recommends wget bzip2 && \
     if [ "$(uname -m)" = "x86_64" ]; then \
-        wget -q -O sherpa-onnx.tar.bz2 https://ghfast.top/github.com/k2-fsa/sherpa-onnx/releases/download/v1.11.5/sherpa-onnx-v1.11.5-linux-x64-static.tar.bz2 --no-check-certificate; \
+        wget -q -O sherpa-onnx.tar.bz2 https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.11.5/sherpa-onnx-v1.11.5-linux-x64-static.tar.bz2 --no-check-certificate; \
     elif [ "$(uname -m)" = "aarch64" ]; then \
-        wget -q -O sherpa-onnx.tar.bz2 https://ghfast.top/github.com/k2-fsa/sherpa-onnx/releases/download/v1.11.5/sherpa-onnx-v1.11.5-linux-aarch64-static.tar.bz2 --no-check-certificate; \
+        wget -q -O sherpa-onnx.tar.bz2 https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.11.5/sherpa-onnx-v1.11.5-linux-aarch64-static.tar.bz2 --no-check-certificate; \
     fi && \
     tar -xjf sherpa-onnx.tar.bz2 --strip-components=1 -C /k2fsa/ && \
     chmod +x /k2fsa/bin/* && \
