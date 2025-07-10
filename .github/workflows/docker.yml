@@ -16,15 +16,15 @@ jobs:
     strategy:
       matrix:
         arch: [amd64, arm64]
-        addon: [k2fsa]  # 多个 addon 可添加
+        addon: [xiaozhi]  # 多个 addon 可添加
 
     permissions:
       contents: read
       packages: write
 
     env:
-      DEFAULT_BUILD_FROM_amd64: amd64-base-debian:bullseye
-      DEFAULT_BUILD_FROM_aarch64: aarch64-base-debian:bullseye
+      DEFAULT_BUILD_FROM_amd64: python:3.13.3-alpine
+      DEFAULT_BUILD_FROM_aarch64: python:3.13.3-alpine
 
     steps:
       - name: Checkout code

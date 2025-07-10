@@ -15,6 +15,7 @@
   "startup": "services",
   "ingress": true,
   "hassio_api": true,
+  "image": "ghcr.nju.edu.cn/desmond-dong/xizozhi-{arch}",
   "hassio_role": "manager",
   "options": {
     "API_ACCESS_TOKEN": "API_ACCESS_TOKEN",
