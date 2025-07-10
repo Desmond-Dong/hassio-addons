@@ -1,0 +1,63 @@
+name: Build and Push to GHCR (Multi-Arch)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'hassio-addons/**'
+      - '.github/workflows/builder.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        arch: [amd64, aarch64]
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install yq for YAML parsing
+        uses: mikefarah/yq@v4
+
+      - name: Get lowercase repo owner
+        run: echo "REPO_OWNER_LC=${GITHUB_REPOSITORY_OWNER,,}" >> $GITHUB_ENV
+
+      - name: Extract BUILD_FROM for ${{ matrix.arch }}
+        id: extract_build_from
+        run: |
+          BUILD_FROM=$(yq e ".build_from.${{ matrix.arch }}" auth/build.yaml)
+          echo "BUILD_FROM=$BUILD_FROM" >> $GITHUB_ENV
+          echo "BUILD_FROM=$BUILD_FROM"
+
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push ${{ matrix.arch }} image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./jdxb
+          file: ./jdxb/Dockerfile
+          platforms: linux/${{ matrix.arch }}
+          push: true
+          tags: ghcr.io/${{ env.REPO_OWNER_LC }}/auth:${{ matrix.arch }}
+          build-args: |
+            BUILD_FROM=${{ env.BUILD_FROM }}
