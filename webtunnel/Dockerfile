@@ -1,5 +1,5 @@
 # 使用指定的基础镜像
-FROM docker.1ms.run/library/alpine:3.21.2
+FROM alpine:3.21.2
 ARG BUILD_ARCH
 # 安装所需软件
 RUN apk add --no-cache wget tar libstdc++ libgcc libc6-compat
