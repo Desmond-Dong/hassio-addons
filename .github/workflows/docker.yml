@@ -39,9 +39,9 @@ jobs:
           else
             # 👇写死默认镜像，也可以按 arch 决定
             if [[ "${{ matrix.arch }}" == "amd64" ]]; then
-              BUILD_FROM="ghcr.io/home-assistant/amd64-base-debian:bullseye"
+              BUILD_FROM="alpine:3.21.3"
             elif [[ "${{ matrix.arch }}" == "arm64" ]]; then
-              BUILD_FROM="ghcr.io/home-assistant/aarch64-base-debian:bullseye"
+              BUILD_FROM="alpine:3.21.3"
             fi
           fi
           echo "BUILD_FROM=$BUILD_FROM" >> $GITHUB_ENV
