@@ -49,7 +49,7 @@ jobs:
           else
             if [[ "${{ matrix.arch }}" == "amd64" ]]; then
               BUILD_FROM="${{ env.DEFAULT_BUILD_FROM_amd64 }}"
-            elif [[ "${{ matrix.arch }}" == "arm64" ]]; then
+            elif [[ "${{ matrix.arch }}" == "aarch64" ]]; then
               BUILD_FROM="${{ env.DEFAULT_BUILD_FROM_arm64 }}"
             fi
           fi
@@ -79,7 +79,7 @@ jobs:
           platforms: linux/${{ matrix.arch }}
           push: true
           tags: |
-            ghcr.io/${{ env.REPO_OWNER_LC }}/${{ matrix.addon }}:${{ matrix.arch }}
+            ghcr.io/${{ env.REPO_OWNER_LC }}/${{ matrix.addon }}-${{ matrix.arch }}:1.1.1
           build-args: |
             BUILD_FROM=${{ env.BUILD_FROM }}
             BUILD_ARCH=${{ matrix.arch }}
