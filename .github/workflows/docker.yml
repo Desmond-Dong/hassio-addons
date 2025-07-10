@@ -47,7 +47,7 @@ jobs:
             BUILD_ARCH="${{ matrix.arch }}"
           fi
 
-          ADDON_DIR="hassio-addons/${{ matrix.addon }}"
+          ADDON_DIR="${{ matrix.addon }}"
           YAML_PATH="${ADDON_DIR}/build.yaml"
           CONFIG_PATH="${ADDON_DIR}/config.json"
 
