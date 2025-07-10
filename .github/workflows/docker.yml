@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         arch: [amd64, arm64]
-        addon: [musicn,webtunnel]  # 多个 addon 可添加
+        addon: [aria2]  # 多个 addon 可添加
 
     permissions:
       contents: read

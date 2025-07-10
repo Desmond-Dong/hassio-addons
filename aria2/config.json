@@ -10,6 +10,7 @@
     "panel_icon": "mdi:download",
     "host_network": true,
     "ingress": true,
+    "image": "ghcr.nju.edu.cn/desmond-dong/aria2-{arch}",
     "ingress_port": 8080,
     "arch": [
         "armhf",
