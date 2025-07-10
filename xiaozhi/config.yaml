@@ -6,10 +6,8 @@
   "url": "https://mp.weixin.qq.com/s/tlGvJSDNNPY_pQ9yr1ZM2A",
   "arch": [
     "amd64",
-    "armhf",
-    "armv7",
-    "aarch64",
-    "i386"
+    "aarch64"
+
   ],
   "init": false,
   "startup": "services",
