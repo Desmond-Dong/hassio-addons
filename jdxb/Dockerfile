@@ -11,17 +11,17 @@ RUN apk add --no-cache wget unzip gcompat
 WORKDIR /tmp
 
 # 根据架构下载对应文件
-RUN echo "$BUILD_ARCH" && \
+RUN echo ">>> BUILD_ARCH is [$BUILD_ARCH]" && \
     case "$BUILD_ARCH" in \
     amd64) wget -O owjdxb.zip https://raw.githubusercontent.com/desmond-dong/hassio-addons/main/jdxb/owjdxb_x86.zip ;; \
-    arm64) wget -O owjdxb.zip https://raw.githubusercontent.com/desmond-dong/hassio-addons/main/jdxb/owjdxb_a64.zip ;; \
-
-    *) echo "Unsupported architecture $BUILD_ARCH" && exit 1 ;; \
+    arm64|aarch64) wget -O owjdxb.zip https://raw.githubusercontent.com/desmond-dong/hassio-addons/main/jdxb/owjdxb_a64.zip ;; \
+    *) echo "❌ Unsupported architecture: [$BUILD_ARCH]" && exit 1 ;; \
     esac && \
     unzip owjdxb.zip && \
     mv owjdxb /owjdxb && \
-    chmod +x "/owjdxb/bin/owjdxb" \
-    && rm -rf /tmp/*
+    chmod +x "/owjdxb/bin/owjdxb" && \
+    rm -rf /tmp/*
+
 
 # 复制并设置 run.sh 脚本
 COPY run.sh /run.sh
