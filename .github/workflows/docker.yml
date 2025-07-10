@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        arch: [amd64, aarch64]
+        arch: [amd64, arm64]
 
     permissions:
       contents: read
@@ -34,7 +34,16 @@ jobs:
       - name: Extract BUILD_FROM for ${{ matrix.arch }}
         id: extract_build_from
         run: |
-          BUILD_FROM=$(yq e ".build_from.${{ matrix.arch }}" auth/build.yaml)
+          if [[ -f "$YAML_PATH" ]]; then
+            BUILD_FROM=$(yq e ".build_from.${{ matrix.arch }}" "$YAML_PATH")
+          else
+            # 👇写死默认镜像，也可以按 arch 决定
+            if [[ "${{ matrix.arch }}" == "amd64" ]]; then
+              BUILD_FROM="ghcr.io/home-assistant/amd64-base-debian:bullseye"
+            elif [[ "${{ matrix.arch }}" == "arm64" ]]; then
+              BUILD_FROM="ghcr.io/home-assistant/aarch64-base-debian:bullseye"
+            fi
+          fi
           echo "BUILD_FROM=$BUILD_FROM" >> $GITHUB_ENV
           echo "BUILD_FROM=$BUILD_FROM"
 
