@@ -7,6 +7,7 @@
   "description": "安全好用的内网穿透软件",
   "arch": ["amd64", "aarch64"],
   "startup": "services",
+   "image": "ghcr.nju.edu.cn/desmond-dong/webtunnel-{arch}",
   "init": false,
   "hassio_role": "manager",
   "panel_icon": "mdi:server-network",
