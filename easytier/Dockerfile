@@ -1,5 +1,5 @@
 # 使用基础镜像
-FROM easytier:v2.3.2
+FROM easytier/easytier:v2.3.2
 
 COPY run.sh /run.sh
 RUN chmod a+x /run.sh

@@ -23,8 +23,8 @@ jobs:
       packages: write
 
     env:
-      DEFAULT_BUILD_FROM_amd64: easytier:v2.3.2
-      DEFAULT_BUILD_FROM_aarch64: easytier:v2.3.2
+      DEFAULT_BUILD_FROM_amd64: easytier/easytier:v2.3.2
+      DEFAULT_BUILD_FROM_aarch64: easytier/easytier:v2.3.2
 
     steps:
       - name: Checkout code
