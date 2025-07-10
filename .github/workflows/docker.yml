@@ -46,7 +46,7 @@ jobs:
             BUILD_ARCH="${{ matrix.arch }}"
           fi
 
-          ADDON_DIR="hassio-addons/${{ matrix.addon }}"
+          ADDON_DIR="${{ matrix.addon }}"
           YAML_PATH="${ADDON_DIR}/build.yaml"
 
           # 2. 提取 BUILD_FROM
@@ -82,8 +82,8 @@ jobs:
       - name: Build and push ${{ matrix.addon }} for ${{ matrix.arch }}
         uses: docker/build-push-action@v5
         with:
-          context: hassio-addons/${{ matrix.addon }}
-          file: hassio-addons/${{ matrix.addon }}/Dockerfile
+          context: ${{ matrix.addon }}
+          file: ${{ matrix.addon }}/Dockerfile
           platforms: linux/${{ matrix.arch }}
           push: true
           tags: |
