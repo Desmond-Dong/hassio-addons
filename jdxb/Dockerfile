@@ -1,5 +1,5 @@
 # 使用指定的基础镜像
-FROM docker.1ms.run/library/alpine:3.21.3
+FROM alpine:3.21.3
 
 # 定义构建参数
 ARG BUILD_ARCH
