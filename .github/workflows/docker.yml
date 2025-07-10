@@ -16,16 +16,15 @@ jobs:
     strategy:
       matrix:
         arch: [amd64, arm64]
-        addon: [jdxb]
+        addon: [jdxb]  # 如果你有多个 Add-on，可添加更多
 
     permissions:
       contents: read
       packages: write
 
     env:
-      # 默认基础镜像（仅当没有 build.yaml 时使用）
       DEFAULT_BUILD_FROM_amd64: alpine:3.21.3
-      DEFAULT_BUILD_FROM_arm64: alpine:3.21.3
+      DEFAULT_BUILD_FROM_aarch64: alpine:3.21.3
 
     steps:
       - name: Checkout code
@@ -37,24 +36,26 @@ jobs:
       - name: Get lowercase repo owner
         run: echo "REPO_OWNER_LC=${GITHUB_REPOSITORY_OWNER,,}" >> $GITHUB_ENV
 
-      - name: Extract BUILD_FROM (fallback if no build.yaml)
+      - name: Extract BUILD_FROM and BUILD_ARCH
         id: extract_build_from
         run: |
+          # 将 arm64 映射为 aarch64（Docker标准名 => HA社区/你的命名）
+          if [[ "${{ matrix.arch }}" == "arm64" ]]; then
+            BUILD_ARCH="aarch64"
+          else
+            BUILD_ARCH="${{ matrix.arch }}"
+          fi
 
-          ADDON_DIR=${{ matrix.addon }}
+          ADDON_DIR=hassio-addons/${{ matrix.addon }}
           YAML_PATH="$ADDON_DIR/build.yaml"
 
           if [[ -f "$YAML_PATH" ]]; then
-            BUILD_FROM=$(yq e ".build_from.${{ matrix.arch }}" "$YAML_PATH")
+            BUILD_FROM=$(yq e ".build_from.${BUILD_ARCH}" "$YAML_PATH")
           else
-            if [[ "${{ matrix.arch }}" == "amd64" ]]; then
-              BUILD_FROM="${{ env.DEFAULT_BUILD_FROM_amd64 }}"
-            elif [[ "${{ matrix.arch }}" == "aarch64" ]]; then
-              BUILD_FROM="${{ env.DEFAULT_BUILD_FROM_arm64 }}"
-            fi
+            BUILD_FROM="${{ env.DEFAULT_BUILD_FROM_${BUILD_ARCH} }}"
           fi
 
-          echo "BUILD_FROM=$BUILD_FROM"
+          echo "BUILD_ARCH=$BUILD_ARCH" >> $GITHUB_ENV
           echo "BUILD_FROM=$BUILD_FROM" >> $GITHUB_ENV
           echo "ADDON_NAME=${{ matrix.addon }}" >> $GITHUB_ENV
 
@@ -74,12 +75,12 @@ jobs:
       - name: Build and push ${{ matrix.addon }} for ${{ matrix.arch }}
         uses: docker/build-push-action@v5
         with:
-          context: ${{ matrix.addon }}
-          file: ${{ matrix.addon }}/Dockerfile
+          context: hassio-addons/${{ matrix.addon }}
+          file: hassio-addons/${{ matrix.addon }}/Dockerfile
           platforms: linux/${{ matrix.arch }}
           push: true
           tags: |
-            ghcr.io/${{ env.REPO_OWNER_LC }}/${{ matrix.addon }}-${{ matrix.arch }}:1.1.1
+            ghcr.io/${{ env.REPO_OWNER_LC }}/${{ matrix.addon }}-${{ env.BUILD_ARCH }}:1.1.1
           build-args: |
             BUILD_FROM=${{ env.BUILD_FROM }}
-            BUILD_ARCH=${{ matrix.arch }}
+            BUILD_ARCH=${{ env.BUILD_ARCH }}
