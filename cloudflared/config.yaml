@@ -1,19 +1,18 @@
 name: Cloudflared
-version: 5.3.4
+version: 5.3.5
 slug: cloudflared
-description: 使用Cloudflare Tunnel远程连接到Home Assistant而不打开任何端口。
-  opening any ports
+description: $translated_description
 url: https://ghfast.top/github.com/brenner-tobias/addon-cloudflared/
 codenotary: dev@brenner.tech
 init: false
 hassio_api: true
 hassio_role: homeassistant
 arch:
-- aarch64
-- amd64
-- armv7
+  - aarch64
+  - amd64
+  - armv7
 map:
-- addon_config:rw
+  - addon_config:rw
 options:
   external_hostname: ''
   additional_hosts: []
@@ -22,9 +21,9 @@ ports:
 schema:
   external_hostname: str?
   additional_hosts:
-  - hostname: str
-    service: str
-    disableChunkedEncoding: bool?
+    - hostname: str
+      service: str
+      disableChunkedEncoding: bool?
   tunnel_name: str?
   catch_all_service: str?
   nginx_proxy_manager: bool?
@@ -32,6 +31,6 @@ schema:
   tunnel_token: str?
   post_quantum: bool?
   run_parameters:
-  - match(^(--edge-bind-address|--edge-ip-version|--grace-period|--ha-connections|--logfile|--loglevel|--pidfile|--protocol|--region|--retries|--tag)=.*$)?
+    - match(^(--edge-bind-address|--edge-ip-version|--grace-period|--ha-connections|--logfile|--loglevel|--pidfile|--protocol|--region|--retries|--tag)=.*$)?
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
 image: ghcr.nju.edu.cn/brenner-tobias/cloudflared/{arch}

@@ -1,8 +1,8 @@
 {
   "name": "Zigbee2MQTT Proxy",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "slug": "zigbee2mqtt_proxy",
-  "description": "代理外部运行的Zigbee2MQTT。",
+  "description": "为外部运行的Zigbee2MQTT提供代理",
   "url": "https://ghfast.top/github.com/zigbee2mqtt/hassio-zigbee2mqtt/tree/master/zigbee2mqtt-proxy",
   "arch": [
     "aarch64",
