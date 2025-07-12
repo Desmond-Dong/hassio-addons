@@ -27,7 +27,7 @@
     "3000/tcp": 3000
   },
   "ports_description": {
-    "3000/tcp": "webui"
+    "3000/tcp": "Webui"
   },
   "schema": {
     "AUTHENTIK_CLIENT_ID": "str?",
@@ -46,6 +46,6 @@
   },
   "slug": "linkwarden",
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/linkwarden",
-  "version": "2.11.2",
+  "version": "2.11.3",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:3000]"
 }

@@ -5,7 +5,7 @@
   ],
   "audio": true,
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "可通过任何现代网页浏览器访问的完整Linux桌面环境",
+  "description": "通过任何现代网页浏览器可访问的完整Linux桌面环境",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -150,6 +150,6 @@
   "tmpfs": true,
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "4.16-r0-ls95",
+  "version": "4.16-r0-ls94",
   "video": true
 }

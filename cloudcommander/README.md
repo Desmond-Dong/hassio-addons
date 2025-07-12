@@ -14,20 +14,20 @@
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_感谢所有将我的仓库标星的人！要标星，请点击下面的图片，然后它将出现在右上角。谢谢！_
+_感谢所有给我的仓库点赞的人！要点赞，请点击下面的图片，然后它将在右上角。谢谢！_
 
 [![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
-![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/cloudcommander/stats.png)
+![下载趋势](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/cloudcommander/stats.png)
 
 ## 关于
 
-[Cloud Commander](https://github.com/coderaiser/cloudcmd) 是一个具有控制台和编辑器的网页文件管理器。
-这个插件基于 [docker 镜像](https://hub.docker.com/r/coderaiser/cloudcmd)。
+[Cloud Commander](https://github.com/coderaiser/cloudcmd) 是一个带有控制台和编辑器的网页文件管理器。
+这个插件基于 [Docker 镜像](https://hub.docker.com/r/coderaiser/cloudcmd)。
 
 ## 配置
 
-Webui 可以在 `<你的 IP>:8000` 找到。
+Webui 可以在 `<你的IP>:8000` 找到。
 
 ```yaml
 localdisks: sda1 #put the hardware name of your drive to mount separated by commas, or its label. ex. sda1, sdb1, MYNAS...
@@ -47,6 +47,6 @@ CUSTOM_OPTIONS: "--name Homeassistant" # custom options from https://cloudcmd.io
 1. 安装这个插件。
 1. 点击 `保存` 按钮以保存你的配置。
 1. 启动插件。
-1. 检查插件的日志，看看是否一切正常。
+1. 检查插件的日志，看看是否一切顺利。
 
 [repository]: https://github.com/alexbelgium/hassio-addons

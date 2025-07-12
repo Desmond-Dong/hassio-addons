@@ -3,7 +3,7 @@
 [![Donate][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
 [![Donate][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
 
-![Version](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Femby%2Fconfig.json)
+![Version](https://img.shields.io/badge/dynamic/json?label=版本&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Femby%2Fconfig.json)
 ![Ingress](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Femby%2Fconfig.json)
 ![Arch](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Femby%2Fconfig.json)
 
@@ -14,22 +14,22 @@
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢大家给我的仓库加星！要加星请点击下面的图片，然后它就会出现在右上角。谢谢！_
 
 [![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
 ![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/emby/stats.png)
 
-## About
+## 关于
 
-[emby](https://emby.media/) organizes video, music, live TV, and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices. This container is packaged as a standalone emby Media Server.
+[emby](https://emby.media/) 整理视频、音乐、直播电视和个人媒体库的照片，并将它们流式传输到智能电视、流媒体盒子和移动设备。这个容器作为独立的 emby 媒体服务器进行包装。
 
-This addon is based on the [docker image](https://github.com/linuxserver/docker-emby) from linuxserver.io.
-Inital addon version : https://github.com/petersendev/hassio-addons
+这个插件基于 linuxserver.io 的 [docker 镜像](https://github.com/linuxserver/docker-emby)。
+初始插件版本：[https://github.com/petersendev/hassio-addons](https://github.com/petersendev/hassio-addons)
 
-## Configuration
+## 配置
 
-Webui can be found at `<your-ip>:8096`, or within Home Assistant through Ingress.
+Webui 可以在 `<你的IP>:8096` 找到，或者通过 Ingress 在 Home Assistant 中找到。
 
 ```yaml
 PGID: user
@@ -43,16 +43,15 @@ cifsdomain: "domain" # optional, allow setting the domain for the smb share
 silent: true #suppresses debug messages
 ```
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+这个插件的安装非常简单，与安装任何其他 Hass.io 插件没有区别。
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Carefully configure the add-on to your preferences, see the official documentation for for that.
+1. [将我的 Hass.io 插件仓库][repository] 添加到你的 Hass.io 实例。
+1. 安装这个插件。
+1. 点击 `保存` 按钮来保存你的配置。
+1. 启动插件。
+1. 检查插件的日志，看看是否一切正常。
+1. 仔细配置插件以符合你的喜好，请查看官方文档以获取相关帮助。
 
 [repository]: https://github.com/alexbelgium/hassio-addons

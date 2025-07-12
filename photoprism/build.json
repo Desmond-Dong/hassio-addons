@@ -1,7 +1,7 @@
 {
   "build_from": {
-    "aarch64": "docker.1ms.run/photoprism/photoprism:latest",
-    "amd64": "docker.1ms.run/photoprism/photoprism:latest"
+    "aarch64": "photoprism/photoprism:latest",
+    "amd64": "photoprism/photoprism:latest"
   },
   "codenotary": {
     "signer": "alexandrep.github@gmail.com"

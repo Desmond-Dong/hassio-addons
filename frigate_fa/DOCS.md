@@ -1,11 +1,11 @@
-You must create a config file as `frigate.yml` in the root of your Home Assistant configuration directory.
+您必须在您的 Home Assistant 配置目录的根目录下创建一个名为 `frigate.yml` 的配置文件。
 
-Frigate brings realtime object detection to any camera video feed supported by ffmpeg. More detailed docs are maintained [here](https://docs.frigate.video).
+Frigate 为任何由 ffmpeg 支持的摄像头视频源提供实时物体检测。更详细的文档维护在 [这里](https://docs.frigate.video)。
 
-## Required Dependencies
+## 必须的依赖项
 
-- MQTT: Frigate communicates via MQTT
+- MQTT: Frigate 通过 MQTT 进行通信
 
-## Support
+## 支持
 
-Please [open an issue](https://github.com/blakeblackshear/frigate/issues/new/choose) if you need support.
+如果您需要支持，请 [打开一个问题](https://github.com/blakeblackshear/frigate/issues/new/choose)。

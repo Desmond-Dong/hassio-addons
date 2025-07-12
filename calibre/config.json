@@ -3,7 +3,7 @@
     "aarch64",
     "amd64"
   ],
-  "description": "null",
+  "description": "电子书管理器",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -123,6 +123,6 @@
   "slug": "calibre",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/calibre",
-  "version": "8.5.0",
+  "version": "8.6.0",
   "video": true
 }

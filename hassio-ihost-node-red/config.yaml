@@ -1,7 +1,7 @@
 name: ihost-Node-RED
-version: 19.0.2
+version: 20.0.0
 slug: ihost-nodered
-description: Flow-based programming for the Internet of Things
+description: $translated_description
 url: https://ghfast.top/github.com/hassio-addons/addon-node-red
 codenotary: codenotary@frenck.dev
 ingress: true

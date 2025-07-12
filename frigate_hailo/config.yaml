@@ -1,11 +1,14 @@
 name: Frigate HailoRT
-version: 0.15.1-h8l
+# TODO: delete this add-on variant after updating to 0.16.0
+version: 0.15.2-h8l
 breaking_versions:
+  - 0.15.2-h8l
+  - 0.15.1-h8l
   - 0.15.0-h8l
 panel_icon: "mdi:cctv"
 panel_title: Frigate
 slug: frigate-hailo
-description: NVR具有实时本地对象检测功能，适用于IP摄像头。
+description: $translated_description
 url: "https://ghfast.top/github.com/blakeblackshear/frigate"
 image: ghcr.nju.edu.cn/blakeblackshear/frigate
 startup: application
@@ -32,7 +35,7 @@ ports_description:
   8555/udp: WebRTC over udp
   8554/tcp: RTSP Restream
   8971/tcp: Authenticated Web interface
-  5000/tcp: Unauthenticated Web interface (Not required for Hass.io Ingress)
+  5000/tcp: Unauthenticated Web interface (not required for Home Assistant Ingress)
   1984/tcp: go2rtc API
 host_network: false
 devices:
@@ -65,3 +68,4 @@ arch:
 map:
   - "media:rw"
   - "config:rw"
+  - "ssl"

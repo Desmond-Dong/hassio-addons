@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "基于服务器的应用程序，用于浏览、组织和分享您的个人照片收藏。",
+  "description": "一个基于服务器的应用程序，用于浏览、组织和共享您的个人照片收藏",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -136,6 +136,6 @@
   "slug": "photoprism",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "ubuntu-2025-04-26",
+  "version": "ubuntu-2025-07-07",
   "video": true
 }
