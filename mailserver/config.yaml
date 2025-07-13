@@ -1,22 +1,21 @@
 name: Mailserver
-version: 4.2.2
+version: 4.2.4
 slug: mailserver
-description: Postfix and Dovecot mail server for Home Assistant, with Postfix Admin
-  web interface
+description: $translated_description
 url: https://ghfast.top/github.com/erik73/hassio-addons
 arch:
-- aarch64
-- amd64
-- armv7
-- i386
+  - aarch64
+  - amd64
+  - armv7
+  - i386
 init: false
 ingress: true
 ingress_stream: true
 panel_icon: mdi:email
 map:
-- ssl
+  - ssl
 services:
-- mysql:need
+  - mysql:need
 ports:
   25/tcp: 25
   465/tcp: 465
