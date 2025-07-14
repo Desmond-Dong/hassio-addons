@@ -1,18 +1,18 @@
 name: Authelia
-version: 0.1.10
+version: 0.1.11
 slug: authelia
-description: 认证和授权服务器
+description: $translated_description
 url: https://ghfast.top/github.com/einschmidt/addon-authelia
 arch:
-- amd64
-- aarch64
+  - amd64
+  - aarch64
 init: false
 ports:
   9091/tcp: 9091
 ports_description:
   9091/tcp: Authelia Web UI and API
 map:
-- addon_config:rw
+  - addon_config:rw
 options:
   domain: example.com
   log_level: info
