@@ -4,19 +4,19 @@
  
 ## About
 
-SONOFF Dongle Flasher 支持在线固件刷新 iHost MG21 芯片和 SONOFF Dongle 系列（ZBDongle-P 和 ZBDongle-E）。
+SONOFF Dongle Flasher 支持iHost MG21芯片和SONOFF Dongle系列（ZBDongle-P和ZBDongle-E）的在线固件刷新。
 
 ## Prerequisites
 
-在使用插件之前，请确保串口未被占用（通常被 Zigbee2MQTT 或 ZHA 等服务占用）。
+在使用插件之前，请确保串口未被使用（它通常被Zigbee2MQTT或ZHA等服务占用）。
 在固件刷新过程中，插件将尝试连接到设备并自动检查串口是否被占用。
 如果被占用，插件将尝试为您停止冲突的服务。
 [操作指南 >](https://github.com/iHost-Open-Source-Project/ha-operating-system?tab=readme-ov-file#readme)
 
 
 ## Installation
-1. 前往插件商店 → 点击右上角的 **更多** 按钮（⋮）→ 选择 **仓库**  
-2. 粘贴以下 URL：  
+1. 前往插件商店 → 点击右上角的**更多**按钮（⋮）→ 选择**仓库**  
+2. 粘贴以下URL：  
    [https://github.com/iHost-Open-Source-Project/hassio-ihost-addon](https://github.com/iHost-Open-Source-Project/hassio-ihost-addon)  
 3. 或者，直接点击下方按钮自动添加：
 
@@ -24,4 +24,4 @@ SONOFF Dongle Flasher 支持在线固件刷新 iHost MG21 芯片和 SONOFF Dongl
 
 ## How to use
 
-有关如何使用 SONOFF Dongle Flasher 插件的详细信息，请参阅“文档”。
+有关如何使用SONOFF Dongle Flasher插件的详细信息，请参阅“文档”。
