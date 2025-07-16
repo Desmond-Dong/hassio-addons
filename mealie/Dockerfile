@@ -15,22 +15,24 @@
 #################
 
 # Stage 1: Build Frontend with SUB_PATH
-FROM node:20-bullseye AS frontend-builder
+FROM node:20 AS frontend-builder
 
 # Set the SUB_PATH environment variable
 ARG SUB_PATH="/mealie/"
 ENV SUB_PATH=$SUB_PATH
 
-ENV MEALIE_VERSION="v3.0.0"
+ENV MEALIE_VERSION="v3.0.1"
 
 # Clone the Mealie repository to get the frontend source code
 WORKDIR /frontend
 # hadolint ignore=DL3003
-RUN mkdir -p /frontend/tempdir && cd /frontend/tempdir || true && \
+RUN mkdir -p /frontend/tempdir && cd /frontend/tempdir && \
     git clone --branch "$MEALIE_VERSION" https://ghfast.top/github.com/mealie-recipes/mealie.git . && \
-    cp -rf frontend/* /frontend && cd /frontend && rm -r tempdir && \
-    yarn install --prefer-offline --frozen-lockfile --non-interactive --production=false --network-timeout 1000000 && \
-    yarn generate
+    cp -rf frontend/* /frontend && cd /frontend && rm -rf tempdir && \
+    yarn install --prefer-offline --frozen-lockfile --non-interactive --production=false --network-timeout 1000000
+
+# Build the frontend
+RUN yarn generate
 
 # Stage 2: Build the Final Image
 FROM hkotel/mealie:latest

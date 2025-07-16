@@ -5,7 +5,7 @@
   ],
   "backup": "cold",
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "带有向量弦支持的PostgreSQL 17。",
+  "description": "Postgres 17 支持VectorChord",
   "environment": {
     "CONFIG_LOCATION": "/config/postgresql.conf",
     "PGDATA": "/config/database"
@@ -39,5 +39,5 @@
   "slug": "postgres_latest",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/postgres",
-  "version": "17.4-9"
+  "version": "17.4-12"
 }

@@ -1,6 +1,6 @@
 {
   "name": "eWeLink-Remote Gateway",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "slug": "ewelink_remote",
   "description": "eWeLink-Remote网关插件支持将eWeLink-Remote子设备R5、R5W、S-Mate、S-Mate2添加到Home Assistant作为自动化触发条件",
   "startup": "application",

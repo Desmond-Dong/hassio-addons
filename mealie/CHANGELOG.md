@@ -1,3 +1,8 @@
+## v3.0.1-5 (15-07-2025)
+
+- Update to latest version from mealie-recipes/mealie (changelog : https://github.com/mealie-recipes/mealie/releases)
+- Fix ingress
+
 ## v3.0.0 (12-07-2025)
 
 - Update to latest version from mealie-recipes/mealie (changelog : https://github.com/mealie-recipes/mealie/releases)

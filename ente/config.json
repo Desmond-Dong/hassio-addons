@@ -1,0 +1,83 @@
+{
+  "arch": [
+    "aarch64",
+    "amd64"
+  ],
+  "description": "自托管、端到端加密的照片和视频存储（Ente 服务器 + MinIO）。",
+  "devices": [
+    "/dev/dri",
+    "/dev/dri/renderD128",
+    "/dev/vchiq",
+    "/dev/video10",
+    "/dev/video11",
+    "/dev/video12"
+  ],
+  "environment": {
+    "ENTE_API_ORIGIN": "http://[HOST]:[PORT:8080]",
+    "MINIO_ROOT_PASSWORD": "minioadmin",
+    "MINIO_ROOT_USER": "minioadmin",
+    "PGID": "0",
+    "PUID": "0",
+    "S3_BUCKET": "ente-media",
+    "S3_ENDPOINT": "http://localhost:3200",
+    "TZ": "Europe/Paris"
+  },
+  "hassio_api": true,
+  "image": "ghcr.nju.edu.cn/alexbelgium/ente-{arch}",
+  "init": false,
+  "map": [
+    "addon_config:rw",
+    "media:rw",
+    "share:rw",
+    "ssl:rw"
+  ],
+  "name": "Ente",
+  "options": {
+    "DB_DATABASE_NAME": "ente_db",
+    "DB_HOSTNAME": "homeassistant.local",
+    "DB_PASSWORD": "ente",
+    "DB_PORT": 5432,
+    "DB_USERNAME": "pguser",
+    "DISABLE_WEB_UI": false,
+    "MINIO_ROOT_PASSWORD": "minioadmin",
+    "MINIO_ROOT_USER": "minioadmin",
+    "S3_BUCKET": "ente-media",
+    "TZ": "Europe/Paris",
+    "USE_EXTERNAL_DB": false
+  },
+  "panel_icon": "mdi:image-multiple",
+  "ports": {
+    "3000/tcp": 8300,
+    "3200/tcp": 8320,
+    "8080/tcp": 8280
+  },
+  "ports_description": {
+    "3000/tcp": "Ente web UI",
+    "3200/tcp": "MinIO S3 endpoint",
+    "8080/tcp": "Ente API (museum)"
+  },
+  "privileged": [
+    "SYS_ADMIN",
+    "DAC_READ_SEARCH"
+  ],
+  "schema": {
+    "DB_DATABASE_NAME": "str?",
+    "DB_HOSTNAME": "str?",
+    "DB_PASSWORD": "str?",
+    "DB_PORT": "int?",
+    "DB_USERNAME": "str?",
+    "DISABLE_WEB_UI": "bool?",
+    "MINIO_ROOT_PASSWORD": "str",
+    "MINIO_ROOT_USER": "str",
+    "S3_BUCKET": "str",
+    "TZ": "str?",
+    "USE_EXTERNAL_DB": "bool?"
+  },
+  "slug": "ente",
+  "startup": "services",
+  "udev": true,
+  "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
+  "version": "1.0.0test3",
+  "video": true,
+  "webui": "http://[HOST]:[PORT:3000]"
+}
