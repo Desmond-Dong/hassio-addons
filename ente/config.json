@@ -3,7 +3,7 @@
     "aarch64",
     "amd64"
   ],
-  "description": "自托管、端到端加密的照片和视频存储（Ente 服务器 + MinIO）。",
+  "description": "自托管，端到端加密的照片和视频存储（Ente服务器 + MinIO）。",
   "devices": [
     "/dev/dri",
     "/dev/dri/renderD128",
@@ -16,6 +16,7 @@
     "ENTE_API_ORIGIN": "http://[HOST]:[PORT:8080]",
     "MINIO_ROOT_PASSWORD": "minioadmin",
     "MINIO_ROOT_USER": "minioadmin",
+    "PGDATA": "/config/postgres",
     "PGID": "0",
     "PUID": "0",
     "S3_BUCKET": "ente-media",
@@ -77,7 +78,7 @@
   "startup": "services",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "1.0.0test3",
+  "version": "1.0.0test10",
   "video": true,
   "webui": "http://[HOST]:[PORT:3000]"
 }

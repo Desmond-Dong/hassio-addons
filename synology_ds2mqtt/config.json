@@ -1,8 +1,8 @@
 {
   "name": "Synology Download Station 2 MQTT",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "slug": "synology_ds2mqtt",
-  "description": "Synology Download Station 2 MQTT 是一个用于将数据从 Synology Download Station 发送到 MQTT 中间件的包装器。",
+  "description": "Synology Download Station 2 MQTT 是一个用于将数据从 Synology Download Station 发送到 MQTT 中继站的封装程序。",
   "arch": [
     "armhf",
     "armv7",
