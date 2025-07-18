@@ -1,15 +1,14 @@
 name: Syncthing
-version: 1.19.7
+version: 1.19.8
 slug: syncthing
-description: Syncthing 是一种去中心化的持续文件同步程序。
-  way
+description: $translated_description
 url: https://ghfast.top/github.com/Poeschl-HomeAssistant-Addons/syncthing
 arch:
-- armhf
-- armv7
-- aarch64
-- amd64
-- i386
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
 homeassistant: 0.115.0
 image: ghcr.nju.edu.cn/poeschl-homeassistant-addons/syncthing-{arch}
 init: false
@@ -26,11 +25,11 @@ ingress_port: 8384
 panel_title: Syncthing
 panel_icon: mdi:sync
 map:
-- addon_config:rw
-- addons:rw
-- all_addon_configs:rw
-- backup:rw
-- homeassistant_config:rw
-- media:rw
-- share:rw
-- ssl:rw
+  - addon_config:rw
+  - addons:rw
+  - all_addon_configs:rw
+  - backup:rw
+  - homeassistant_config:rw
+  - media:rw
+  - share:rw
+  - ssl:rw
