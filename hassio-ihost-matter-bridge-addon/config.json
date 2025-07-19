@@ -1,8 +1,8 @@
 {
   "name": "Matter Bridge for iHost",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "slug": "ihost_matter_bridge",
-  "description": "Matter Bridge插件将Home Assistant设备暴露为Matter设备，使其能够与Matter平台（如Apple Home、Google Home和Amazon Alexa）集成。",
+  "description": "Matter Bridge插件将Home Assistant设备暴露为支持Matter的设备，使它们能够与Apple Home、Google Home和Amazon Alexa等Matter平台集成。",
   "url": "https://ghfast.top/github.com/iHost-Open-Source-Project/hassio-ihost-addon/tree/master/hassio-ihost-matter-bridge-addon",
   "startup": "application",
   "boot": "auto",

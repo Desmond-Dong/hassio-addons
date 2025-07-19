@@ -3,7 +3,7 @@
     "amd64",
     "aarch64"
   ],
-  "description": "客户端远程桌面网关",
+  "description": "无客户端远程桌面网关",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -97,6 +97,6 @@
   "slug": "guacamole",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "1.5.5-bullseye",
+  "version": "1.6.0-bullseye",
   "video": true
 }

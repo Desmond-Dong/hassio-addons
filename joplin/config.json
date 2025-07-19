@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "自托管的开源笔记应用程序。",
+  "description": "自托管开源笔记应用",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -111,6 +111,6 @@
   "slug": "joplin",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "3.3.13",
+  "version": "3.4.1",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:22300]"
 }

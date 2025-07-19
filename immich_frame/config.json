@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "展示您的Immich图库作为数字相框。",
+  "description": "将您的immich画廊展示为数字相框",
   "hassio_api": true,
   "image": "ghcr.nju.edu.cn/alexbelgium/immich_frame-{arch}",
   "init": false,
@@ -25,6 +25,6 @@
   },
   "slug": "immich_frame",
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "1.0.27.2",
+  "version": "1.0.28.0",
   "webui": "http://[HOST]:[PORT:8080]"
 }
