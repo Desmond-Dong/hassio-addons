@@ -67,7 +67,10 @@
     "/dev/nvme1",
     "/dev/nvme2"
   ],
-  "environment": {},
+  "environment": {
+    "PGDATA": "/config/postgres",
+    "GUACAMOLE_HOME": "/config"
+  },
   "image": "ghcr.nju.edu.cn/alexbelgium/guacamole-{arch}",
   "ingress": true,
   "init": false,
@@ -97,6 +100,6 @@
   "slug": "guacamole",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "1.6.0-bullseye",
+  "version": "1.6.0-2_test",
   "video": true
 }
