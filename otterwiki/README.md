@@ -2,15 +2,7 @@
 
 # An Otter Wiki
 
-An Otter Wiki is Python-based software for collaborative content
-management, called a [wiki](https://en.wikipedia.org/wiki/Wiki). The
-content is stored in a git repository, which keeps track of all changes.
-[Markdown](https://daringfireball.net/projects/markdown) is used as
-Markup language. An Otter Wiki is written in [python](https://www.python.org/)
-using the microframework [Flask](http://flask.pocoo.org/).
-[halfmoon](https://www.gethalfmoon.com) is used as CSS framework
-and [CodeMirror](https://codemirror.net/) as editor.
-[Font Awesome Free](https://fontawesome.com/license/free) serves the icons.
+An Otter Wiki is a Python-based software for collaborative content management, called a [wiki](https://en.wikipedia.org/wiki/Wiki). The content is stored in a git repository, which keeps track of all changes. [Markdown](https://daringfireball.net/projects/markdown) is used as the Markup language. An Otter Wiki is written in [python](https://www.python.org/) using the microframework [Flask](http://flask.pocoo.org/). [halfmoon](https://www.gethalfmoon.com) is used as the CSS framework and [CodeMirror](https://codemirror.net/) as the editor. [Font Awesome Free](https://fontawesome.com/license/free) serves the icons.
 
 ## Notable Features
 
@@ -31,12 +23,11 @@ _Thanks to everyone having starred my repo! To star it click on the image below,
 
 ## About
 
-This addon uses the [docker image](https://github.com/redimp/otterwiki).
+This add-on uses the [docker image](https://github.com/redimp/otterwiki).
 
 ## Installation
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+The installation of this add-on is quite straightforward and not different in comparison to installing any other Hass.io add-on.
 
 1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
 1. Install this add-on. 

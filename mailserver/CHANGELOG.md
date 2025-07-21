@@ -1,9 +1,16 @@
 ## What’s changed
 
-## 🐛 Bug fixes
+- It is now possible to use pop3s. It has to be activated in the network section.
 
-- Prevent ignoring errors caused by `;` @RubenNL ([#390](https://github.com/erik73/addon-mail/pull/390))
+## ✨ New features
+
+- Pop3s @erik73 ([#395](https://github.com/erik73/addon-mail/pull/395))
+- Add pop3 service @erik73 ([#396](https://github.com/erik73/addon-mail/pull/396))
+
+## 📚 Documentation
+
+- Update docs @erik73 ([#397](https://github.com/erik73/addon-mail/pull/397))
 
 ## ⬆️ Dependency updates
 
-- ⬆️ Update Postfix to v3.10.3-r0 @[renovate[bot]](https://github.com/apps/renovate) ([#391](https://github.com/erik73/addon-mail/pull/391))
+- ⬆️ Update ghcr.io/erik73/base Docker tag to v5.0.3 @[renovate[bot]](https://github.com/apps/renovate) ([#392](https://github.com/erik73/addon-mail/pull/392))

@@ -1,60 +1,71 @@
-# Home Assistant 添加组件：邮件服务器
+# Home Assistant Add-on: Mailserver
 
-Postfix/Dovecot 邮件服务器，带有 Postfixadmin 网页界面...
+Postfix/Dovecot mailserver with Postfixadmin web interface...
 
-![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield]
-![支持 armv7 架构][armv7-shield] ![支持 i386 架构][i386-shield]
+![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield]
+![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
 
-## 关于
+## About
 
-重要提示：此添加组件要求 MariaDB 添加组件已安装并运行！
+Important: This add-on requires that the MariaDB add-on is installed and running!
 
-此添加组件是实验性的，为您的域名提供邮件服务器。
-也可以在 Postfix Admin 网页界面中配置额外的电子邮件域名和帐户。
+This add-on provides a mailserver for your domain.
+It is also possible to configure additional email domains and accounts in the
+Postfix Admin web interface.
 
-此添加组件使用以下端口：
+The following ports are used by this add-on:
 
-smtp：端口 25、465 和 587
-imap(s)：993
-managesieve：4190
-(ManageSieve 允许用户使用支持 Sieve 协议的邮件客户端创建自己的 Sieve 脚本)
+smtp: port 25, 465 and 587
+imap(s): 993
+pop3(s): 995 (Not enabled by default)
+managesieve: 4190
+(ManageSieve enables users to create their own Sieve scripts with a
+mail client that supports the Sieve protocol)
 
-可以在配置的网络部分更改这些端口。
+Is it possible to change these in the Network section of the configuration.
+To enable pop3s the port has to be activated in the network section.
 
-关于端口 465 的说明：虽然它曾经是安全 SMTP 提交的标准端口，但现在已被端口 587 取代。尽管端口 465 仍然被一些旧电子邮件系统和客户端支持，但大多数现代设置现在使用端口 587，因为它被认为更健壮和灵活。
+A note on port 465: While it was once the standard for secure SMTP submissions,
+it has been superseded by port 587. Although port 465 is still supported by some
+older email systems and clients, most modern setups now use port 587, as it is
+considered more robust and flexible.
 
-如果您勇敢，您可能想将邮件服务器暴露给互联网。
-见下方说明：
+If you are brave, you may want to expose the mail server to Internet.
+See instructions below:
 
-要从互联网接收邮件，必须在您的路由器中为重定向添加 SMTP 端口，端口 465 除外（见上文中关于端口 465 的说明）。
-必须在 DNS 中注册必要的 MX 和 A 记录。
-如果您想能够从您的网络外部检查电子邮件，还需要转发 IMAP 端口。
+To recieve mail from the Internet, the SMTP ports have to be added for redirection
+in your router, except for port 465 (See the note above regarding port 465).
+The necessary MX and A records will have to be registered in DNS.
+If you want to be able to check emails from outside of your network the IMAP port
+will also have to be forwarded.
 
-默认设置将使用 Dovecot 在初始设置期间创建的自签名证书。这对于测试是可以的，但应该使用“真实”证书。
+The default setup will use self signed certificates created by Dovecot during
+the initial setup. It is OK for testing, but "real" certificates should be used.
 
-配置选项 "letsencrypt_certs" 如果设置为 "true"，将使用 Home Assistant 中的 /ssl 目录中的 fullchain.pem 和 privkey.pem。
+The config option "letsencrypt_certs" will, if set to "true", use the
+fullchain.pem and privkey.pem in the /ssl directory in Home Assistant.
 
-## 安装
+## Installation
 
-按照以下步骤将添加组件安装到您的系统上：
+Follow these steps to get the add-on installed on your system:
 
-添加仓库 `https://github.com/erik73/hassio-addons`。
-找到 "邮件服务器" 添加组件并点击它。
-点击 "安装" 按钮。
+Add the repository `https://github.com/erik73/hassio-addons`.
+Find the "Mailserver" add-on and click it.
+Click on the "INSTALL" button.
 
-## 如何使用
+## How to use
 
-### 启动添加组件
+### Starting the add-on
 
-安装后，您将看到一个默认和示例配置。
+After installation you are presented with a default and example configuration.
 
-调整添加组件配置以匹配您的需求。
-通过点击 "保存" 按钮保存添加组件配置。
-启动添加组件。
+Adjust the add-on configuration to match your requirements.
+Save the add-on configuration by clicking the "SAVE" button.
+Start the add-on.
 
-## 配置
+## Configuration
 
-示例配置：
+Example configuration:
 
 ```yaml
 my_hostname: mydomain.no-ip.com
@@ -66,87 +77,105 @@ enable_mailfilter: false
 message_size_limit: 10
 ```
 
-请注意：在启动添加组件时，MariaDB 添加组件中会创建一个数据库。在数据库创建后，目前无法更改用户名或 domain_name。密码可以更改。
-更改用户和域名唯一的方法是删除 Postfix Admin 数据库并重新启动添加组件。
-使用 phpMyadmin 添加组件删除数据库。
+Please note: During the startup of the add-on, a database is created in the
+MariaDB add-on. There is currently not possible to change user name or
+domain_name after the database is created. The password can be changed.
+The only way to change user and domain name is to drop the Postfix Admin
+database and restart the add-on.
+Use the phpMyadmin add-on to drop the database.
 
-### 选项：`my_hostname`（必需）
+### Option: `my_hostname` (required)
 
-您的邮件服务器的主机名。它应与您的 DNS 中的 A 记录相对应。
+The hostname of your mailserver. It should correspond to the A-record you
+have in your DNS.
 
-#### 选项：`domain_name`（必需）
+#### Option: `domain_name` (required)
 
-这是您想要接收邮件的域名的名称。
-可以在 postfixadmin 接口中添加额外的域名。
+This is the name of the domain you want to recieve mail from.
+Additional domains can be added in the postfixadmin-interface.
 
-#### 选项：`admin_user`（必需）
+#### Option: `admin_user` (required)
 
-Postfixadmin 中的管理员用户名。要登录到网页界面，您必须使用 FQDN。例如：admin@mydomain.no-ip.com。
-在当前版本的添加组件中，一旦数据库创建，此选项不能更改。
+The name of the admin user in postfixadmin. To log in to the web interface
+you have to use FQDN. For example: admin@mydomain.no-ip.com.
+In the current version of the add-on, this can not be changed once the database
+is created.
 
-#### 选项：`admin_password`（必需）
+#### Option: `admin_password` (required)
 
-admin_user 的密码。
-此选项可以在初始安装后更改。如果您忘记密码，这是一个方便的功能！
+The password for the admin_user.
+This option can be changed after initial install. A handy feature if you forget
+your password!
 
-#### 选项：`letsencrypt_certs`（必需）
+#### Option: `letsencrypt_certs` (required)
 
-如果您使用 Let’s Encrypt 添加组件或其他方式在您的 HA 实例的 /ssl 文件夹中安装了证书，此选项将使用这些证书为 SMTP 和 IMAP 服务。
+If you use the Let´s Encrypt add-on or by any other means have certs
+installed in the /ssl folder of your HA instance, this options will
+use those certificates for the SMTP and IMAP services.
 
-文件应命名为 fullchain.pem 和 privkey.pem。
+The files should be named fullchain.pem and privkey.pem.
 
-#### 选项：`message_size_limit`（必需）
+#### Option: `message_size_limit` (required)
 
-配置单个消息/邮件的最大大小（MB）。
-大于此大小的消息将被拒绝。
-如果您希望与常见的云邮件提供者具有最佳兼容性，请使用 50 MB。
-默认：10
+Configures the max size of a single message/mail in MB.
+Messages larger than this will get rejected.
+If you want the best compatibility with common cloud mail providers, use 50 MB.
+Default: 10
 
-#### 选项：`enable_mailfilter`（必需）
+#### Option: `enable_mailfilter` (required)
 
-此选项启用了与本仓库中的可选 Mailfilter 添加组件的通信。
-它将启用 Postfix 扫描电子邮件中的垃圾邮件和病毒，并包括可选的 DKIM 签名。为了能够成功地从您的主机发送电子邮件，而不会导致您的发件邮件被拒绝或被归类为垃圾邮件，DKIM 签名是必须的。您还需要配置您的 DNS 服务器以提供 SPF 和 DMARC。
-如果 DKIM、SPF 和 DMARC 听起来太复杂，请使用 smtp_relay 选项。
+This enables communication with the optional Mailfilter add-on in this repository.
+It will enable Postfix to scan emails for SPAM and viruses, and includes optional
+DKIM signing. To be able to successfully send email from your host, without risking
+having your outgoing emails being rejected or classified as spam, DKIM signing
+is a must. You also have to configure your DNS server to provide SPF and DMARC.
+If DKIM, SPF and DMARC sounds too complicated, use the smtp_relay option.
 
-病毒扫描需要大量内存，建议使用 4-8 GB。
-Mailfilter 添加组件默认情况下禁用病毒扫描。
+The virus scanning requires a lot of memory, and 4-8 GB is recommended.
+Virus scanning is disabled by default in the Mailfilter add-on.
 
-#### 选项：`smtp_relayhost`（可选）
+#### Option: `smtp_relayhost` (optional)
 
-使用此可选设置来使用中继服务器发送电子邮件。ISP 常常封锁从您的网络发送的电子邮件。在这种情况下，您可以使用您的 ISP 的 SMTP 中继主机来绕过此限制。
-建议在括号内输入主机名。它禁用了该主机的 MX 查找，并推荐使用。您还可以指定要使用的端口。
-例如：
+Use this optional setting to use a relay server for outgoing emails. ISP:s often
+block outgoing emails from your network. In that case, you can use your
+ISP:s SMTP relay host to bypass this limitation.
+It is good practice to enter the hostname within brackets. It disables MX
+lookups for that host, and is recommended. You can also specify a port to use.
+For example:
 
 ```yaml
 [smtp.relay.com]:587
 ```
 
-上述示例表示使用端口 587 进行提交。
-如果您的 ISP 要求用户名和密码，请使用下面的选项。
+The above example means port 587 is used for submission.
+If your ISP requires a username and password, use the option below.
 
-#### 选项：`smtp_relayhost_credentials`（可选）
+#### Option: `smtp_relayhost_credentials` (optional)
 
-使用此可选设置来使用您指定的中继服务器进行身份验证。
-正确的语法是 username:password，您可以从提供商那里获取这些信息。
-只有在使用您确实需要用户凭证来中继的情况下，才使用此选项。
+Use this optional setting to use authentication with the relay server you specified.
+The correct syntax is username:password and you get this info from your provider.
+Only use this option if you know user credentials are really needed to relay.
 
-#### 选项：`mynetworks`（可选）
+#### Option: `mynetworks` (optional)
 
-如果您想允许特定的网络或 IP 地址通过此服务器中继电子邮件，请使用此可选设置。此选项仅应用于内部网络或主机。在使用它之前，请务必阅读 Postfix 文档，了解设置此选项的安全影响。
+Use this optional setting if you want to allow specific networks or IP
+addresses to relay email through this server. This option should only be
+used for internal networks or hosts. Before using it, be sure to read the Postfix
+documentation to understand the security implications of setting this option.
 
 ```yaml
 192.168.1.0/24 192.168.3.12
 ```
 
-## 支持
+## Support
 
-有问题？
+Got questions?
 
-您可以在此处[打开问题][issue] GitHub。
+You could [open an issue here][issue] GitHub.
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
-[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
-[i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
+[amd64-shield]: https://img.shields.io/bield/amd64-yes-green.svg
+[armv7-shield]: https://img.shields.io/bield/armv7-yes-green.svg
+[i386-shield]: https://img.shields.io/bield/i386-yes-green.svg
 [issue]: https://github.com/erik73/addon-mail/issues
 [repository]: https://github.com/erik73/hassio-addons

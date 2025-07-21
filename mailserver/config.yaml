@@ -1,5 +1,5 @@
 name: Mailserver
-version: 4.2.5
+version: 4.3.0
 slug: mailserver
 description: $translated_description
 url: https://ghfast.top/github.com/erik73/hassio-addons
@@ -21,12 +21,14 @@ ports:
   465/tcp: 465
   587/tcp: 587
   993/tcp: 993
+  995/tcp: null
   4190/tcp: 4190
 ports_description:
   25/tcp: SMTP
   465/tcp: SMTP
   587/tcp: SMTP
   993/tcp: IMAPS
+  995/tcp: POP3S
   4190/tcp: ManageSieve
 hassio_api: true
 options:
