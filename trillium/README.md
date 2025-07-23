@@ -1,27 +1,28 @@
 # Home assistant add-on: Trillium
-Trilium Notes is a hierarchical note-taking application with a focus on building large personal knowledge bases. 
+Trilium Notes is a hierarchical note-taking application with a focus on building large personal knowledge bases.
 
-_Thanks to everyone who has starred my repository! To star it, click on the image below, and it will appear on the top right. Thanks!_
+
+_Thanks to everyone who has starred my repository! To star it, click on the image below, and it will appear in the top right. Thanks!_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
 ## Features
 
-* Notes can be arranged into arbitrarily deep trees. A single note can be placed in multiple places in the tree (see [cloning](https://github.com/zadam/trilium/wiki/Cloning-notes))
-* Rich WYSIWYG note editing, including elements such as tables, images, and [math](https://github.com/zadam/trilium/wiki/Text-notes#math-support) with markdown [autoformat](https://github.com/zadam/trilium/wiki/Text-notes#autoformat)
+* Notes can be arranged into arbitrarily deep trees. A single note can be placed in multiple locations in the tree (see [cloning](https://github.com/zadam/trilium/wiki/Cloning-notes))
+* Rich WYSIWYG note editing, including for example tables, images, and [math](https://github.com/zadam/trilium/wiki/Text-notes#math-support) with markdown [autoformat](https://github.com/zadam/trilium/wiki/Text-notes#autoformat)
 * Support for editing [notes with source code](https://github.com/zadam/trilium/wiki/Code-notes), including syntax highlighting
 * Fast and easy [navigation between notes](https://github.com/zadam/trilium/wiki/Note-navigation), full text search, and [note hoisting](https://github.com/zadam/trilium/wiki/Note-hoisting)
 * Seamless [note versioning](https://github.com/zadam/trilium/wiki/Note-revisions)
 * Note [attributes](https://github.com/zadam/trilium/wiki/Attributes) can be used for note organization, querying, and advanced [scripting](https://github.com/zadam/trilium/wiki/Scripts)
 * [Synchronization](https://github.com/zadam/trilium/wiki/Synchronization) with a self-hosted sync server
-  * There is a [third-party service for hosting synchronization servers](https://trilium.cc/paid-hosting)
+  * There is a [3rd-party service for hosting synchronization servers](https://trilium.cc/paid-hosting)
 * [Sharing](https://github.com/zadam/trilium/wiki/Sharing) (publishing) notes to the public internet
 * Strong [note encryption](https://github.com/zadam/trilium/wiki/Protected-notes) with per-note granularity
 * Sketching diagrams with built-in Excalidraw (note type "canvas")
 * [Relation maps](https://github.com/zadam/trilium/wiki/Relation-map) and [link maps](https://github.com/zadam/trilium/wiki/Link-map) for visualizing notes and their relationships
 * [Scripting](https://github.com/zadam/trilium/wiki/Scripts) - see [Advanced showcases](https://github.com/zadam/trilium/wiki/Advanced-showcases)
 * [REST API](https://github.com/zadam/trilium/wiki/ETAPI) for automation
-* Scales well in both usability and performance for upwards of 100,000 notes
+* Scales well in both usability and performance with over 100,000 notes
 * Touch-optimized [mobile frontend](https://github.com/zadam/trilium/wiki/Mobile-frontend) for smartphones and tablets
 * [Night theme](https://github.com/zadam/trilium/wiki/Themes)
 * [Evernote](https://github.com/zadam/trilium/wiki/Evernote-import) and [Markdown import & export](https://github.com/zadam/trilium/wiki/Markdown)

@@ -3,7 +3,7 @@
     "amd64"
   ],
   "boot": "auto",
-  "description": "Trilium Notes 是一款层级式笔记应用，专注于构建大型个人知识库",
+  "description": "Trilium Notes是一款以构建大型个人知识库为重点的层次化笔记应用程序。",
   "environment": {
     "TRILIUM_DATA_DIR": "/share/trillium"
   },
@@ -21,9 +21,9 @@
   "schema": {},
   "slug": "trilium",
   "startup": "services",
-  "upstream": "0.97.0",
+  "upstream": "0.97.1",
   "url": "https://ghfast.top/github.com/jdeath/homeassistant-addons",
-  "version": "0.97.0",
+  "version": "0.97.1",
   "ingress": true,
   "ingress_port": 8080,
   "image": "zadam/trilium",
