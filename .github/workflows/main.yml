@@ -177,6 +177,7 @@ jobs:
           rm -rf addons/homeassistant-addons-main/ladder
           rm -rf addons/hassio-addons-master/zzz_archived_*
           rm -rf addons/addons-master/dhcp_server
+          rm -rf addons/homeassistant-addons-main/octobot
 
 
       - name: Check and clean up addons
