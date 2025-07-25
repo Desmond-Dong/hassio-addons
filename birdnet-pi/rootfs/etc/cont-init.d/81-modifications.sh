@@ -22,14 +22,14 @@ bashio::log.info "Adapting webui"
 # HA specific elements
 ######################
 
-if bashio::supervisor.ping 2>/dev/null; then
+if bashio::supervisor.ping 2> /dev/null; then
     # Remove services tab from webui
     echo "... removing System Controls from webui as should be used from HA"
     sed -i '/>System Controls/d' "$HOME/BirdNET-Pi/homepage/views.php"
 
     # Remove pulseaudio
     echo "... disabling pulseaudio as managed by HomeAssistant"
-    for file in $(grep -srl "pulseaudio --start" $HOME/BirdNET-Pi/scripts); do
+    grep -srl "pulseaudio --start" "$HOME/BirdNET-Pi/scripts" | while read -r file; do
         sed -i "s|! pulseaudio --check|pulseaudio --check|g" "$file"
     done
 
@@ -42,6 +42,22 @@ fi
 # General elements
 ##################
 
+# Correct language labels according to birdnet.conf
+echo "... adapting labels according to birdnet.conf"
+if export "$(grep "^DATABASE_LANG" /config/birdnet.conf)"; then
+    export "$(grep "^MODEL" /config/birdnet.conf)"
+    bashio::log.info "Setting language to ${DATABASE_LANG:-en}"
+    if [ "$MODEL" == "BirdNET_GLOBAL_6K_V2.4_Model_FP16" ]; then
+      BASEDIR=labels_nm
+    else
+      BASEDIR=labels_l18n
+    fi
+    label_file_name="labels_${DATABASE_LANG}.txt"
+    ln -sf "$HOME/BirdNET-Pi/model/${BASEDIR}/${label_file_name}" "$HOME/BirdNET-Pi/model/labels.txt" || bashio::log.warning "Failed to update language labels"
+else
+    bashio::log.warning "DATABASE_LANG not found in configuration. Using default labels."
+fi
+
 # Remove Ram drive option from webui
 echo "... removing Ram drive from webui as it is handled from HA"
 if grep -q "Ram drive" "$HOME/BirdNET-Pi/scripts/service_controls.php"; then
@@ -52,8 +68,8 @@ fi
 # Allow symlinks
 echo "... ensuring symlinks work"
 for files in "$HOME"/BirdNET-Pi/scripts/*.sh; do
-  sed -i "s|find |find -L |g" "$files"
-  sed -i "s|find -L -L |find -L |g" "$files"
+    sed -i "s|find |find -L |g" "$files"
+    sed -i "s|find -L -L |find -L |g" "$files"
 done
 
 # Correct services to start as user pi
@@ -116,10 +132,13 @@ if ! grep -q "/stats/" "$HOME/BirdNET-Pi/homepage/views.php"; then
 fi
 
 # Correct systemctl path
-echo "... updating systemctl path"
-curl -f -L -s -S https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py -o /bin/systemctl || mv /helpers/systemctl3.py /bin/systemctl
-chown pi:pi /bin/systemctl
-chmod a+x /bin/systemctl
+if [ -f /helpers/systemctl ] && [ -f /helpers/journalctl ]; then
+    echo "... updating systemctl and journalctl"
+    cp -rf /helpers/systemctl /bin/systemctl
+    cp -rf /helpers/journalctl /bin/journalctl
+    chown pi:pi /bin/systemctl /bin/journalctl
+    chmod a+x /bin/systemctl /bin/journalctl
+fi
 
 # Allow reverse proxy for streamlit
 echo "... allow reverse proxy for streamlit"
@@ -127,7 +146,7 @@ sed -i "s|plotly_streamlit.py --browser.gatherUsageStats|plotly_streamlit.py --s
 
 # Clean saved mp3 files
 if [[ -f "$HOME/BirdNET-Pi/scripts/utils/reporting.py" ]]; then
-    echo ".. add highpass and lowpass to sox extracts"
+    echo "... add highpass and lowpass to sox extracts"
     sed -i "s|f'={stop}']|f'={stop}', 'highpass', '250']|g" "$HOME/BirdNET-Pi/scripts/utils/reporting.py"
 fi
 
@@ -150,11 +169,3 @@ grep -rl "RECS_DIR" "$HOME" --exclude="*.php" | while read -r file; do
 done
 mkdir -p /tmp
 
-# Correct language labels according to birdnet.conf
-echo "... adapting labels according to birdnet.conf"
-if export "$(grep "^DATABASE_LANG" /config/birdnet.conf)"; then
-    bashio::log.info "Setting language to ${DATABASE_LANG:-en}"
-    "$HOME/BirdNET-Pi/scripts/install_language_label_nm.sh" -l "${DATABASE_LANG:-}" &>/dev/null || bashio::log.warning "Failed to update language labels"
-else
-    bashio::log.warning "DATABASE_LANG not found in configuration. Using default labels."
-fi

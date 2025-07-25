@@ -60,11 +60,11 @@ bashio::log.info "Performing potential updates"
 
 # Adapt update_birdnet_snippets
 sed -i "s|systemctl list-unit-files|false \&\& echo|g" "$HOME"/BirdNET-Pi/scripts/update_birdnet_snippets.sh # Avoid systemctl
-sed -i "/systemctl /d" "$HOME"/BirdNET-Pi/scripts/update_birdnet_snippets.sh # Avoid systemctl
-sed -i "/install_tmp_mount/d" "$HOME"/BirdNET-Pi/scripts/update_birdnet_snippets.sh # Use HA tmp
-sed -i "/find /d" "$HOME"/BirdNET-Pi/scripts/update_birdnet_snippets.sh # Not useful
-sed -i "/set -x/d" "$HOME"/BirdNET-Pi/scripts/update_birdnet_snippets.sh # Not useful
-sed -i "/restart_services/d" "$HOME"/BirdNET-Pi/scripts/update_birdnet_snippets.sh  # Not useful
+sed -i "/systemctl /d" "$HOME"/BirdNET-Pi/scripts/update_birdnet_snippets.sh                                 # Avoid systemctl
+sed -i "/install_tmp_mount/d" "$HOME"/BirdNET-Pi/scripts/update_birdnet_snippets.sh                          # Use HA tmp
+sed -i "/find /d" "$HOME"/BirdNET-Pi/scripts/update_birdnet_snippets.sh                                      # Not useful
+sed -i "/set -x/d" "$HOME"/BirdNET-Pi/scripts/update_birdnet_snippets.sh                                     # Not useful
+sed -i "/restart_services/d" "$HOME"/BirdNET-Pi/scripts/update_birdnet_snippets.sh                           # Not useful
 sed -i "s|/etc/birdnet/birdnet.conf|/config/birdnet.conf|g" "$HOME"/BirdNET-Pi/scripts/update_birdnet_snippets.sh
 sed -i "/update_caddyfile/c echo \"yes\"" "$HOME"/BirdNET-Pi/scripts/update_birdnet_snippets.sh # Avoid systemctl
 

@@ -7,10 +7,10 @@ HOME="/home/pi"
 ########################################
 # Logging Functions (color-coded for terminal clarity)
 ########################################
-log_green()   { echo -e "\033[32m$1\033[0m"; }
-log_red()     { echo -e "\033[31m$1\033[0m"; }
-log_yellow()  { echo -e "\033[33m$1\033[0m"; }
-log_blue()    { echo -e "\033[34m$1\033[0m"; }
+log_green() { echo -e "\033[32m$1\033[0m"; }
+log_red() { echo -e "\033[31m$1\033[0m"; }
+log_yellow() { echo -e "\033[33m$1\033[0m"; }
+log_blue() { echo -e "\033[34m$1\033[0m"; }
 
 ########################################
 # Read configuration
@@ -35,7 +35,10 @@ touch "$ANALYZING_NOW_FILE"
 BIRDSONGS_DIR="$(readlink -f "$HOME/BirdSongs/Extracted/By_Date")"
 
 # Ensure directories and set permissions
-mkdir -p "$INGEST_DIR" || { log_red "Failed to create directory: $INGEST_DIR"; exit 1; }
+mkdir -p "$INGEST_DIR" || {
+    log_red "Failed to create directory: $INGEST_DIR"
+    exit 1
+}
 chown -R pi:pi "$INGEST_DIR" || log_yellow "Could not change ownership for $INGEST_DIR"
 chmod -R 755 "$INGEST_DIR" || log_yellow "Could not set permissions for $INGEST_DIR"
 
@@ -45,10 +48,10 @@ SERVICES=(birdnet_analysis chart_viewer spectrogram_viewer birdnet_recording bir
 ########################################
 # Notification settings
 ########################################
-NOTIFICATION_INTERVAL=1800  # 30 minutes in seconds
-NOTIFICATION_INTERVAL_IN_MINUTES=$(( NOTIFICATION_INTERVAL / 60 ))
+NOTIFICATION_INTERVAL=1800 # 30 minutes in seconds
+NOTIFICATION_INTERVAL_IN_MINUTES=$((NOTIFICATION_INTERVAL / 60))
 last_notification_time=0
-issue_reported=0  # 1 = an issue was reported, 0 = system is normal
+issue_reported=0 # 1 = an issue was reported, 0 = system is normal
 declare -A SERVICE_INACTIVE_COUNT=()
 
 # Disk usage threshold (percentage)
@@ -58,7 +61,7 @@ DISK_USAGE_THRESHOLD=95
 same_file_counter=0
 SAME_FILE_THRESHOLD=2
 if [[ -f "$ANALYZING_NOW_FILE" ]]; then
-    analyzing_now=$(<"$ANALYZING_NOW_FILE")
+    analyzing_now=$(< "$ANALYZING_NOW_FILE")
 else
     analyzing_now=""
 fi
@@ -72,10 +75,10 @@ apprisealert() {
     current_time=$(date +%s)
 
     # Calculate time_diff in minutes since last notification
-    local time_diff=$(( (current_time - last_notification_time) / 60 ))
+    local time_diff=$(((current_time - last_notification_time) / 60))
 
     # Throttle notifications
-    if (( time_diff < NOTIFICATION_INTERVAL_IN_MINUTES )); then
+    if ((time_diff < NOTIFICATION_INTERVAL_IN_MINUTES)); then
         log_yellow "Notification suppressed (last sent ${time_diff} minutes ago)."
         return
     fi
@@ -109,7 +112,7 @@ apprisealert() {
 
 apprisealert_recovery() {
     # Only send a recovery message if we had previously reported an issue
-    if (( issue_reported == 1 )); then
+    if ((issue_reported == 1)); then
         log_green "$(date) INFO: System is back to normal. Sending recovery notification."
 
         local TITLE="BirdNET-Pi System Recovered"
@@ -133,7 +136,7 @@ check_disk_space() {
     local current_usage
     current_usage=$(df -h "$BIRDSONGS_DIR" | awk 'NR==2 {print $5}' | sed 's/%//')
 
-    if (( current_usage >= DISK_USAGE_THRESHOLD )); then
+    if ((current_usage >= DISK_USAGE_THRESHOLD)); then
         log_red "$(date) INFO: Disk usage is at ${current_usage}% (CRITICAL!)"
         apprisealert "Disk usage critical: ${current_usage}%"
         return 1
@@ -145,15 +148,15 @@ check_disk_space() {
 
 check_analyzing_now() {
     local current_file
-    current_file=$(cat "$ANALYZING_NOW_FILE" 2>/dev/null)
+    current_file=$(cat "$ANALYZING_NOW_FILE" 2> /dev/null)
     if [[ "$current_file" == "$analyzing_now" ]]; then
-        (( same_file_counter++ ))
+        ((same_file_counter++))
     else
         same_file_counter=0
         analyzing_now="$current_file"
     fi
 
-    if (( same_file_counter >= SAME_FILE_THRESHOLD )); then
+    if ((same_file_counter >= SAME_FILE_THRESHOLD)); then
         log_red "$(date) INFO: 'analyzing_now' file unchanged for $SAME_FILE_THRESHOLD iterations."
         apprisealert "No change in analyzing_now for ${SAME_FILE_THRESHOLD} iterations"
         "$HOME/BirdNET-Pi/scripts/restart_services.sh"
@@ -161,7 +164,7 @@ check_analyzing_now() {
         return 1
     else
         # Only log if it changed this iteration
-        if (( same_file_counter == 0 )); then
+        if ((same_file_counter == 0)); then
             log_green "$(date) INFO: 'analyzing_now' file has been updated."
         fi
         return 0
@@ -174,13 +177,13 @@ check_queue() {
 
     log_green "$(date) INFO: Queue is at a manageable level (${wav_count} wav files)."
 
-    if (( wav_count > 50 )); then
+    if ((wav_count > 50)); then
         log_red "$(date) INFO: Queue >50. Stopping recorder + restarting analyzer."
         apprisealert "Queue exceeded 50: stopping recorder, restarting analyzer."
         sudo systemctl stop birdnet_recording
         sudo systemctl restart birdnet_analysis
         return 1
-    elif (( wav_count > 30 )); then
+    elif ((wav_count > 30)); then
         log_red "$(date) INFO: Queue >30. Restarting analyzer."
         apprisealert "Queue exceeded 30: restarting analyzer."
         sudo systemctl restart birdnet_analysis
@@ -194,14 +197,14 @@ check_services() {
 
     for service in "${SERVICES[@]}"; do
         if [[ "$(systemctl is-active "$service")" != "active" ]]; then
-            SERVICE_INACTIVE_COUNT["$service"]=$(( SERVICE_INACTIVE_COUNT["$service"] + 1 ))
+            SERVICE_INACTIVE_COUNT["$service"]=$((SERVICE_INACTIVE_COUNT["$service"] + 1))
 
-            if (( SERVICE_INACTIVE_COUNT["$service"] == 1 )); then
+            if ((SERVICE_INACTIVE_COUNT["$service"] == 1)); then
                 # First time inactive => Try to start
                 log_yellow "$(date) INFO: Service '$service' is inactive. Attempting to start..."
                 systemctl start "$service"
                 any_inactive=1
-            elif (( SERVICE_INACTIVE_COUNT["$service"] == 2 )); then
+            elif ((SERVICE_INACTIVE_COUNT["$service"] == 2)); then
                 # Second consecutive time => Send an alert
                 log_red "$(date) INFO: Service '$service' is still inactive after restart attempt."
                 apprisealert "Service '$service' remains inactive after restart attempt."
@@ -213,14 +216,14 @@ check_services() {
             fi
         else
             # Service is active => reset counter
-            if (( SERVICE_INACTIVE_COUNT["$service"] > 0 )); then
+            if ((SERVICE_INACTIVE_COUNT["$service"] > 0)); then
                 log_green "$(date) INFO: Service '$service' is back to active. Resetting counter."
             fi
             SERVICE_INACTIVE_COUNT["$service"]=0
         fi
     done
 
-    if (( any_inactive == 0 )); then
+    if ((any_inactive == 0)); then
         log_green "$(date) INFO: All services are active"
         return 0
     else
@@ -269,7 +272,7 @@ while true; do
     check_for_empty_stream || any_issue=1
 
     # Final summary
-    if (( any_issue == 0 )); then
+    if ((any_issue == 0)); then
         log_green "$(date) INFO: All systems are functioning normally"
         apprisealert_recovery
     else
