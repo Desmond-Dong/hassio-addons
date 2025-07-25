@@ -261,7 +261,8 @@ jobs:
                   jq --arg description "$translated_description" '.description = $description' "$file" > temp.json && mv temp.json "$file"
                 else
                   echo "Translated description for $file (YAML) : $description -> $translated_description"
-                  ~/bin/yq -i ".description = \"$translated_description\"" "$file"
+                  export translated_description="$translated_description"
+                  ~/bin/yq -i '.description = strenv(translated_description)' "$file"
                 fi
             } || {
               echo "Error processing $file, skipping..."
