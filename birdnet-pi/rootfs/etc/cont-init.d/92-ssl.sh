@@ -47,4 +47,3 @@ if bashio::config.true 'ssl'; then
         exit 1
     fi
 fi
-

@@ -32,7 +32,7 @@ if [ -d "$HOME"/BirdSongs/StreamData ]; then
     mkdir -p /config/TemporaryFiles
 
     # Move only valid WAV files under 50MB
-    shopt -s nullglob  # Prevent errors if no files match
+    shopt -s nullglob # Prevent errors if no files match
     for file in "$HOME"/BirdSongs/StreamData/*.wav; do
         if [ -f "$file" ] && [ "$(stat --format="%s" "$file")" -lt "$MAX_SIZE" ] && is_valid_wav "$file"; then
             if mv -v "$file" /config/TemporaryFiles/; then

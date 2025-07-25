@@ -121,4 +121,3 @@ echo "... setting up Matplotlabdir"
 mkdir -p "$HOME"/.cache/matplotlib
 chown -R "pi:pi" "$HOME"/.cache/matplotlib
 chmod 777 "$HOME"/.cache/matplotlib
-
