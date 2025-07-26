@@ -24,55 +24,55 @@ _Thanks to everyone having starred my repo! To star it click on the image below,
 
 ---
 
-[Codex](https://github.com/ajslater/codex) is a web based comic archive browser and reader
-This addon is based on the official docker image : https://hub.docker.com/r/ajslater/codex
+[Codex](https://github.com/ajslater/codex) 是一个基于网络的漫画存档浏览器和阅读器
+这个插件基于官方的 docker 镜像：https://hub.docker.com/r/ajslater/codex
 
-## Installation
+## 安装
 
 ---
 
-The installation of this add-on is pretty straightforward and not different in comparison to installing any other add-on.
+这个插件的安装非常简单，与其他插件的安装方式相同。
 
-1. Add my add-ons repository to your home assistant instance (in supervisor addons store at top right, or click button below if you have configured my HA)
-   [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Set the add-on options to your preferences
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Open the webUI and adapt the software options
+1. 将我的插件仓库添加到您的 home assistant 实例中（在 supervisor 插件商店的右上角，或者如果您已经配置了我的 HA，请点击下面的按钮）
+   [![打开您的 Home Assistant 实例并显示添加插件仓库对话框，预填特定的仓库 URL。](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
+1. 安装这个插件。
+1. 点击 `保存` 按钮以保存您的配置。
+1. 设置插件选项以符合您的偏好。
+1. 启动插件。
+1. 检查插件的日志以查看是否一切正常。
+1. 打开 webUI 并调整软件选项
 
-## Configuration
+## 配置
 
-Webui can be found at <http://homeassistant:PORT>.
-The default username/password : described in the startup log.
-Configurations can be done through the app webUI, except for the following options
+Webui 可以在 <http://homeassistant:PORT> 找到。
+默认的用户名/密码：在启动日志中描述。
+配置可以通过 app 的 webUI 进行，除了以下选项
 
-## Add theme/squeleton
+## 添加主题/骨架
 
-You can place the user folder from the theme/skeleton in /share/codex/www/user,
+您可以将主题/骨架的用户文件夹放置在 /share/codex/www/user，
 
-## Options
+## 选项
 
 ```yaml
 PGID: user
 GPID: user
-TZ : will explicitly the timezone in long format (e.g. "America/Los Angeles"). This is useful inside Docker because codex cannot automatically detect the host machine's timezone
-CODEX_RESET_ADMIN=1 : will reset the admin user and its password to defaults when codex starts.
-CODEX_SKIP_INTEGRITY_CHECK=1 : will skip the database integrity repair that runs when codex starts
-csrf_allowed : comma separated list of addresses allowed to access the app
-localdisks: sda1 #put the hardware name of your drive to mount separated by commas, or its label. ex. sda1, sdb1, MYNAS...
-networkdisks: "//SERVER/SHARE" # optional, list of smb servers to mount, separated by commas
-cifsusername: "username" # optional, smb username, same for all smb shares
-cifspassword: "password" # optional, smb password
+TZ : 明确指定时区，长格式（例如 "America/Los Angeles"）。在 Docker 中非常有用，因为 codex 无法自动检测主机机的时区
+CODEX_RESET_ADMIN=1 : codex 启动时将重置管理员用户及其密码为默认值。
+CODEX_SKIP_INTEGRITY_CHECK=1 : codex 启动时将跳过数据库完整性修复
+csrf_allowed : 允许访问应用的地址列表，用逗号分隔
+localdisks: sda1 #将您的驱动硬件名称添加到挂载中，用逗号分隔，或其标签。例如。 sda1, sdb1, MYNAS...
+networkdisks: "//SERVER/SHARE" #可选，要挂载的 SMB 服务器列表，用逗号分隔
+cifsusername: "username" #可选，SMB 用户名，所有 SMB 共享相同
+cifspassword: "password" #可选，SMB 密码
 ```
 
-## Illustration
+## 插图
 
 ![image](https://github.com/alexbelgium/hassio-addons/assets/44178713/f1cf3cad-5bda-46df-a0f5-864b127d7b6b)
 
-## Support
+## 支持
 
-Create an issue on github
+在 github 上创建问题
 
 [repository]: https://github.com/alexbelgium/hassio-addons
