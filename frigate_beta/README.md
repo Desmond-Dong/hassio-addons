@@ -4,7 +4,7 @@
 
 ![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield] ![支持 armv7 架构][armv7-shield]
 
-支持 IP 摄像头的实时本地对象检测的 NVR。
+NVR 具备实时本地对象检测功能，适用于 IP 摄像头。
 
 您必须在 Home Assistant 配置目录的根目录下创建一个名为 `frigate.yml` 的配置文件。
 
