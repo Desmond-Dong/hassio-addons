@@ -16,15 +16,15 @@ jobs:
     strategy:
       matrix:
         arch: [amd64, arm64]
-        addon: [xiaozhi]  # 多个 addon 可添加
+        addon: [ddnsto]  # 多个 addon 可添加
 
     permissions:
       contents: read
       packages: write
 
     env:
-      DEFAULT_BUILD_FROM_amd64: python:3.13.3-alpine
-      DEFAULT_BUILD_FROM_aarch64: python:3.13.3-alpine
+      DEFAULT_BUILD_FROM_amd64: alpine:3.21.3
+      DEFAULT_BUILD_FROM_aarch64: alpine:3.21.3
 
     steps:
       - name: Checkout code
