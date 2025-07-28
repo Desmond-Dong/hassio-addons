@@ -1,6 +1,5 @@
 {
   "build_from": {
-    "aarch64": "ghcr.nju.edu.cn/imagegenius/immich:cuda",
     "amd64": "ghcr.nju.edu.cn/imagegenius/immich:cuda"
   },
   "codenotary": {

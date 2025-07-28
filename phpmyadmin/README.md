@@ -1,16 +1,16 @@
-# Home Assistant 插件：“非官方” phpMyAdmin
+# Home Assistant Add-on: "Unofficial" phpMyAdmin
 
-[![发布][release-shield]][release] ![项目阶段][project-stage-shield] ![项目维护][maintenance-shield]
+[![Release][release-shield]][release] ![Project Stage][project-stage-shield] ![Project Maintenance][maintenance-shield]
 
-[![Discord][discord-shield]][discord] [![社区论坛][forum-shield]][forum]
+[![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-官方 MariaDB 插件的网页界面。
+一个用于官方 MariaDB 插件的网页界面。
 
 ## 关于
 
-phpMyAdmin 是一个用于 MySQL & MariaDB 的数据库管理工具。常用的操作（管理数据库、表、列、关系、索引、用户、权限等）可以通过用户界面执行，同时您仍然可以直接执行任何 SQL 语句。
+phpMyAdmin 是一个用于 MySQL 和 MariaDB 的数据库管理工具。常用的操作（管理数据库、表、列、关系、索引、用户、权限等）可以通过用户界面执行，同时您仍然可以直接执行任何 SQL 语句。
 
-此插件特别设计用于管理官方 Home Assistant MariaDB 插件。
+这个插件特别设计用于管理官方的 Home Assistant MariaDB 插件。
 
 ![phpMyAdmin 截图][screenshot]
 

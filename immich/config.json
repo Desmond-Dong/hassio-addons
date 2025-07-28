@@ -7,7 +7,7 @@
     "**/machine-learning/*"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "移动设备直接备份照片和视频的自托管解决方案。",
+  "description": "从你的手机直接托管照片和视频备份解决方案",
   "devices": [
     "/dev/dri",
     "/dev/dxg",
@@ -147,7 +147,7 @@
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
   "usb": true,
-  "version": "1.135.3",
+  "version": "1.136.0",
   "video": true,
   "webui": "http://[HOST]:[PORT:8080]"
 }

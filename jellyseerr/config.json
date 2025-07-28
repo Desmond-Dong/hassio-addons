@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "overseerr 的 jellyfin 支持 分叉",
+  "description": "overseerr 的 jellyfin 支持 分支",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -94,6 +94,6 @@
   "slug": "jellyseerr",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/jellyseerr",
-  "version": "v2.7.1",
+  "version": "v2.7.2",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:5055]"
 }

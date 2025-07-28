@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Piwigo 是一个用于网络的图片库软件。",
+  "description": "Piwigo是一款用于网络的图片库软件",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -108,6 +108,6 @@
   "slug": "piwigo",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "15.5.0",
+  "version": "15.6.0",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:80]"
 }

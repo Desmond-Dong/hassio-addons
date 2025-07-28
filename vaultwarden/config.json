@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "Bitwarden服务器API的替代实现，用Rust编写并兼容上游Bitwarden客户端*，非常适合部署在官方资源密集型服务可能不太理想的自我托管环境中。",
+  "description": "用Rust编写、与上游Bitwarden客户端*兼容的Bitwarden服务器API的替代实现，非常适合自托管部署，因为运行官方的资源密集型服务可能不太理想",
   "environment": {
     "DATA_FOLDER": "/config"
   },
@@ -12,7 +12,7 @@
     "addon_config:rw"
   ],
   "image": "ghcr.nju.edu.cn/dani-garcia/vaultwarden",
-  "version": "1.34.1",
+  "version": "1.34.2",
   "name": "Vaultwarden",
   "options": {},
   "ports": {
@@ -24,7 +24,7 @@
   "schema": {},
   "slug": "vaultwarden",
   "startup": "services",
-  "upstream": "1.34.1",
+  "upstream": "1.34.2",
   "url": "https://ghfast.top/github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:80]",
   "ingress": true,
