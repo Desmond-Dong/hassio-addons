@@ -179,6 +179,7 @@ jobs:
           rm -rf addons/addons-master/dhcp_server
           rm -rf addons/homeassistant-addons-main/octobot
           rm -rf addons/ha-addons-main/portainer
+          rm -rf addons/ha-addons-main/rtl_433
 
 
       - name: Check and clean up addons
