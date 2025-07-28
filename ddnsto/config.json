@@ -15,8 +15,5 @@
   },
   "schema": {
     "token": "str?"
-  },
-  "environment": {
-    "TOKEN": "$token"
   }
 }
