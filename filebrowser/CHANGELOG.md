@@ -1,3 +1,17 @@
+## 2.42.0-2 (28-07-2025)
+- Minor bugs fixed
+## 2.42.0 (28-07-2025)
+- Minor bugs fixed
+## 2.41.0-5 (25-07-2025)
+- Minor bugs fixed
+## 2.41.0-4 (25-07-2025)
+- Minor bugs fixed
+## 2.41.0-3 (25-07-2025)
+- Minor bugs fixed
+## 2.41.0-2 (25-07-2025)
+- Minor bugs fixed
+## 2.41.0 (25-07-2025)
+- Minor bugs fixed
 
 ## 2.40.2 (18-07-2025)
 - Update to latest version from filebrowser/filebrowser (changelog : https://github.com/filebrowser/filebrowser/releases)

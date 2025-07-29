@@ -1,16 +1,10 @@
+## nightly-20250725-2 (28-07-2025)
+- Fix /asset path
+- Added 9090 telemetry port
 
 ## nightly-20250725 (25-07-2025)
 - Update to latest version from tphakala/birdnet-go (changelog : https://github.com/tphakala/birdnet-go/releases)
-## nightly-20250718-6 (23-07-2025)
-- Minor bugs fixed
-## nightly-20250718-4 (23-07-2025)
-- Minor bugs fixed
-## nightly-20250718-3 (22-07-2025)
-- Minor bugs fixed
-## nightly-20250718-2 (22-07-2025)
-- Minor bugs fixed
-## nightly-20250718 (18-07-2025)
-- Minor bugs fixed
+
 ## nightly-20250710 (12-07-2025)
 
 - Update to latest version from tphakala/birdnet-go (changelog : https://github.com/tphakala/birdnet-go/releases)

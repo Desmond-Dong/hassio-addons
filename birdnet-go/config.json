@@ -5,7 +5,7 @@
   ],
   "audio": true,
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "实时鸟声地图声景分析器",
+  "description": "实时鸟类声音景观分析器",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -89,10 +89,12 @@
   "panel_admin": false,
   "panel_icon": "mdi:bird",
   "ports": {
-    "8080/tcp": 8080
+    "8080/tcp": 8080,
+    "9090/tcp": 9090
   },
   "ports_description": {
-    "8080/tcp": "Web ui"
+    "8080/tcp": "Web ui",
+    "9090/tcp": "Telemetry endpoint"
   },
   "privileged": [
     "SYS_ADMIN",
@@ -115,5 +117,5 @@
   "slug": "birdnet-go",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/birdnet-go",
-  "version": "nightly-20250725"
+  "version": "nightly-20250725-2"
 }
