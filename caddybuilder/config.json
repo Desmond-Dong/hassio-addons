@@ -6,13 +6,13 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "Caddy Builder 是一个用于构建 Caddy 服务器的工具。Caddy 是一个开源的 Web 服务器和反向代理，它以其易于使用和安全特性而闻名。",
+  "description": "Caddy构建器",
   "environment": {},
   "map": [
     "addon_config:rw"
   ],
   "init": "false",
-  "version": "v0.4.4",
+  "version": "v0.4.5",
   "name": "caddybuilder",
   "options": {},
   "ports": {},
@@ -20,7 +20,7 @@
   "schema": {},
   "slug": "caddybuilder",
   "startup": "services",
-  "upstream": "v0.4.4",
+  "upstream": "v0.4.5",
   "url": "https://ghfast.top/github.com/jdeath/homeassistant-addons",
   "panel_admin": false,
   "webui": "[PROTO:ssl]://[HOST]:[PORT:1432]",

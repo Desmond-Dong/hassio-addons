@@ -1,4 +1,4 @@
-FROM docker.1ms.run/caddy:builder-alpine
+FROM caddy:builder-alpine
 COPY run.sh /
 RUN chmod a+x /run.sh
 CMD [ "/run.sh" ]

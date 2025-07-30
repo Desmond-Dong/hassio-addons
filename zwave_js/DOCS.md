@@ -1,29 +1,41 @@
-# Home Assistant 添加程序：Z-Wave JS
+# Home Assistant Add-on: Z-Wave JS
 
-## 安装
+## Installation
 
-按照以下步骤将添加程序安装到您的系统上：
+Follow these steps to get the add-on installed on your system:
 
-1. 在 Home Assistant 前端中导航到 **设置** -> **添加程序** -> **添加程序商店**。
-2. 查找 "Z-Wave JS" 添加程序并点击它。
-3. 点击 "安装" 按钮。
+1. Navigate in your Home Assistant frontend to **Settings** -> **Add-ons** -> **Add-on Store**.
+2. Find the "Z-Wave JS" add-on and click it.
+3. Click on the "INSTALL" button.
 
-## 如何使用
+## How to use
 
-此添加程序需要知道您的 Z-Wave 棒的位置，因此，您需要配置添加程序以指向正确的设备。
+The add-on needs to know where your Z-Wave stick can be found, and therefore,
+you'll need to configure the add-on to point to the right device.
 
-如果您正在使用 Home Assistant，您可以通过进入 `设置 -> 系统 -> 硬件` 并然后点击三点菜单并选择 `所有硬件` 来找到此的正确值。如果存在，建议使用“按 ID”路径到设备，因为如果系统添加了其他设备，它不会改变。
+If you're using Home Assistant you may find the correct value for this by going to
+`Settings -> System -> Hardware` and then clicking the three dots menu and selecting
+`All Hardware`. It is recommended to use a "by-id" path to the device if one exists,
+as it is not subject to change if other devices are added to the system.
 
-1. 在添加程序配置中的 `device` 选项中替换 `null` 并用引号指定设备名称：例如，类似 `"/dev/serial/by-id/usb-0658_0200-if00"`、`"/dev/ttyUSB0"`、`"/dev/ttyAMA0"` 或 `"/dev/ttyACM0"`。
-2. 以 `2232666D1...` 形式的 16 字节（32 个字符十六进制）安全密钥，以便安全地连接到兼容的设备。建议将所有四个网络密钥都配置为一些安全启用的设备（锁等）如果它们没有被安全地添加，可能无法正常工作。
-   - 作为注释，不建议将所有设备都安全地连接，除非它们支持 S2 安全，因为 S0 安全会将网状网络上的消息数量增加到三倍。
-3. 点击 "保存" 以保存添加程序配置。
-4. 启动添加程序。
-5. 将 Z-Wave JS 集成添加到 Home Assistant，请参阅文档：<https://www.home-assistant.io/integrations/zwave_js>
+1. Replace `null` in the `device` option in the add-on configuration and specify
+   the device name in quotes: e.g., something like
+   `"/dev/serial/by-id/usb-0658_0200-if00"`,
+   `"/dev/ttyUSB0"`, `"/dev/ttyAMA0"`, or `"/dev/ttyACM0"`.
+2. Set your 16-byte (32 character hex) security keys in the form `2232666D1...`
+   in order to connect securely to compatible devices. It is recommended
+   that all four network keys are configured as some security enabled devices (locks, etc)
+   may not function correctly if they are not added securely.
+   - As a note, it is not recommended to securely connect _all_ devices unless they support S2 security
+     as the S0 security triples the amount of messages sent on the mesh.
+3. Click on "SAVE" to save the add-on configuration.
+4. Start the add-on.
+5. Add the Z-Wave JS integration to Home Assistant, see documentation:
+   <https://www.home-assistant.io/integrations/zwave_js>
 
-## 配置
+## Configuration
 
-添加程序配置：
+Add-on configuration:
 
 ```yaml
 device: /dev/ttyUSB0
@@ -35,66 +47,99 @@ lr_s2_access_control_key: E2CEA6B5986C818EEC0D0065D81E2BD5
 lr_s2_authenticated_key: 863027C59CFC522A9A3C41976AE54254
 ```
 
-### 选项 `device`
+### Option `device`
 
-Z-Wave 控制器设备。
+The Z-Wave controller device.
 
-如果您正在使用 Home Assistant，您可以通过进入 `设置 -> 系统 -> 硬件` 并然后点击三点菜单并选择 `所有硬件` 来找到此的正确值。如果存在，建议使用“按 ID”路径到设备，因为如果系统添加了其他设备，它不会改变。
+If you're using Home Assistant you may find the correct value for this by going to
+`Settings -> System -> Hardware` and then clicking the three dots menu and
+selecting `All Hardware`. It is recommended to use a "by-id" path to the device
+if one exists, as it is not subject to change if other devices are added to
+the system.
 
-在大多数情况下，它看起来像以下之一：
+In most cases this looks like one of the following:
 
 - `"/dev/serial/by-id/usb-0658_0200-if00"`
 - `"/dev/ttyUSB0"`
 - `"/dev/ttyAMA0"`
 - `"/dev/ttyACM0"`
 
-### 安全密钥
+### Security Keys
 
-要充分利用 Z-Wave JS 支持的不同包含方法，需要六个不同的安全密钥：`s0_legacy_key`、`s2_access_control_key`、`s2_authenticated_key`、`s2_unauthenticated_key`、`lr_s2_access_control_key` 和 `lr_s2_authenticated_key`。
+There are six different security keys required to take full advantage of the
+different inclusion methods that Z-Wave JS supports: `s0_legacy_key`,
+`s2_access_control_key`, `s2_authenticated_key`, `s2_unauthenticated_key`, `lr_s2_access_control_key`, and `lr_s2_authenticated_key`.
 
-如果您来自 `zwave-js` 的先前版本，您很可能在 `network_key` 配置选项中存储了一个密钥。当添加程序首次启动时，密钥将从 `network_key` 迁移到 `s0_legacy_key`，这将确保您的 S0 安全设备能够继续正常工作。
+If you are coming from a previous version of `zwave-js`, you likely have a key
+stored in the `network_key` configuration option. When the addon is first
+started, the key will be migrated from `network_key` to `s0_legacy_key` which
+will ensure that your S0 secured devices will continue to function.
 
-如果这些密钥中的任何一个在启动时丢失，添加程序将为您自动生成一个。要手动生成网络密钥，您可以使用以下脚本，例如在 SSH 添加程序中：
+If any of these keys are missing on startup, the addon will autogenerate one for
+you. To generate a network key manually, you can use the following script in,
+e.g., the SSH add-on:
 
 ```bash
 hexdump -n 16 -e '4/4 "%08X" 1 "\n"' /dev/random
 ```
 
-您还可以使用像这样的网站来生成所需的数据：
+You can also use sites like this one to generate the required data:
 
 <https://www.random.org/cgi-bin/randbyte?nbytes=16&format=h>
 
-确保备份这些密钥。如果您必须重建您的系统并且没有这些密钥的备份，您将无法与任何安全包含的设备通信。这可能意味着您必须对那些设备和控制器进行工厂重置，然后才能重建您的 Z-Wave 网络。
+Ensure you keep a backup of these keys. If you have to rebuild your system and
+don't have a backup of these keys, you won't be able to communicate to any
+securely included devices. This may mean you have to do a factory reset on
+those devices and your controller, before rebuilding your Z-Wave network.
 
-> 注意：在多个安全类之间共享密钥是一种安全风险，因此，如果您选择自行配置这些密钥，请确保使它们唯一！
+> NOTE: Sharing keys between multiple security classes is a security risk, so
+> if you choose to configure these keys on your own, be sure to make them
+> unique!
 
-#### 选项 `s0_legacy_key`
+#### Option `s0_legacy_key`
 
-S0 安全 Z-Wave 设备在添加到网络之前需要一个网络密钥。此配置选项是必需的，但如果它未设置，添加程序将在启动时自动生成一个新的。
+S0 Security Z-Wave devices require a network key before being added to the network.
+This configuration option is required, but if it is unset the addon will generate
+a new one automatically on startup.
 
-#### 选项 `s2_access_control_key`
+#### Option `s2_access_control_key`
 
-必须提供 `s2_access_control_key`，以便使用 S2 访问控制安全类包含设备。此类安全类由锁和车库门 opener 等设备需要。此配置选项是必需的，但如果它未设置，添加程序将在启动时自动生成一个新的。
+The `s2_access_control_key` must be provided in order to include devices with the
+S2 Access Control security class. This security class is needed by devices such
+as door locks and garage door openers. This configuration option is required,
+but if it is unset the addon will generate a new one automatically on startup.
 
-#### 选项 `s2_authenticated_key`
+#### Option `s2_authenticated_key`
 
-必须提供 `s2_authenticated_key`，以便使用 S2 认证安全类包含设备。安全系统、传感器、照明等设备可以请求此类安全。此配置选项是必需的，但如果它未设置，添加程序将在启动时自动生成一个新的。
+The `s2_authenticated_key` must be provided in order to include devices with
+the S2 Authenticated security class. Devices such as security systems, sensors,
+lighting, etc. can request this security class. This configuration option is
+required, but if it is unset the addon will generate a new one automatically
+on startup.
 
-### 选项 `s2_unauthenticated_key`
+### Option `s2_unauthenticated_key`
 
-必须提供 `s2_unauthenticated_key`，以便使用 S2 未认证安全类包含设备。这与 S2 认证类似，但没有验证是否包含正确的设备。此配置选项是必需的，但如果它未设置，添加程序将自动生成一个新的。
+The `s2_unauthenticated_key` must be provided in order to include devices with
+the S2 Unauthenticated security class. This is similar to S2 Authenticated, but
+without verification that the correct device was included. This configuration
+option is required, but if it is unset the addon will generate a new one
+automatically on startup.
 
-#### 选项 `lr_s2_access_control_key`
+#### Option `lr_s2_access_control_key`
 
-必须提供 `lr_s2_access_control_key`，以便使用 Z-Wave 长距离包含设备。此配置选项是必需的，但如果它未设置，添加程序将在启动时自动生成一个新的。
+The `lr_s2_access_control_key` must be provided in order to include devices using
+Z-Wave Long Range. This configuration option is required, but if it is unset
+the addon will generate a new one automatically on startup.
 
-#### 选项 `lr_s2_authenticated_key`
+#### Option `lr_s2_authenticated_key`
 
-必须提供 `lr_s2_authenticated_key`，以便使用 Z-Wave 长距离包含设备。此配置选项是必需的，但如果它未设置，添加程序将自动生成一个新的。
+The `lr_s2_authenticated_key` must be provided in order to include devices using
+Z-Wave Long Range. This configuration option is required, but if it is unset
+the addon will generate a new one automatically on startup.
 
-### 选项 `log_level`（可选）
+### Option `log_level` (optional)
 
-此选项设置 Z-Wave JS 的日志级别。有效的选项是：
+This option sets the log level of Z-Wave JS. Valid options are:
 
 - silly
 - debug
@@ -104,19 +149,24 @@ S0 安全 Z-Wave 设备在添加到网络之前需要一个网络密钥。此配
 - warn
 - error
 
-如果没有指定 `log_level`，日志级别将设置为 Supervisor 中设置的级别。
+If no `log_level` is specified, the log level will be set to the level set in
+the Supervisor.
 
-### 选项 `log_to_file`（可选）
+### Option `log_to_file` (optional)
 
-当此选项启用时，日志将写入 `/addon_configs/core_zwave_js` 文件夹，并具有 `.log` 扩展名。
+When this option is enabled, logs will be written to the `/addon_configs/core_zwave_js`
+folder with the `.log` file extension.
 
-### 选项 `log_max_files`（可选）
+### Option `log_max_files` (optional)
 
-当 `log_to_file` 为 true 时，Z-Wave JS 将为每一天创建一个日志文件。此选项允许您控制 Z-Wave JS 将保留的文件的最大数量。
+When `log_to_file` is true, Z-Wave JS will create a log file for each
+day. This option allows you to control the maximum number of files that
+Z-Wave JS will keep.
 
-### 选项 `rf_region`（可选）
+### Option `rf_region` (optional)
 
-此设置告诉添加程序控制器应使用的无线电频率区域。有效的选项是：
+This setting tells the add-on what radio frequency region the controller should use.
+Valid options are:
 
 - Automatic
 - Australia/New Zealand
@@ -132,61 +182,79 @@ S0 安全 Z-Wave 设备在添加到网络之前需要一个网络密钥。此配
 - USA
 - USA (Long Range)
 
-默认是 Automatic，它将尝试根据 Home Assistant 中设置的国家设置设置正确的区域。
+The default is Automatic which will try to set the correct region based on the country set in Home Assistant.
 
-### 选项 `soft_reset`（可选）
+### Option `soft_reset` (optional)
 
-此设置告诉添加程序如何处理 500 系列控制器的软重置：
-1. Automatic - 添加程序将决定是否为 500 系列控制器启用或禁用软重置。这是默认选项，应该适用于大多数人。
-2. Enabled - 将显式启用 500 系列控制器的软重置。
-3. Disabled - 将显式禁用 500 系列控制器的软重置。
+This setting tells the add-on how to handle soft-resets for 500 series controllers:
+1. Automatic - the add-on will decide whether soft-reset should be enabled or disabled for 500 series controllers. This is the default option and should work for most people.
+2. Enabled - Soft-reset will be explicitly enabled for 500 series controllers.
+3. Disabled - Soft-reset will be explicitly disabled for 500 series controllers.
 
-### 选项 `emulate_hardware`（可选）
+### Option `emulate_hardware` (optional)
 
-如果您没有 USB 棒，您可以使用一个假棒进行测试。它将无法控制任何真实设备。
+If you don't have a USB stick, you can use a fake stick for testing purposes.
+It will not be able to control any real devices.
 
-### 选项 `disable_controller_recovery`（可选）：
+### Option `disable_controller_recovery` (optional):
 
-此设置将禁用 Z-Wave JS 在控制器似乎无响应时的自动恢复过程，并将改为让控制器自行恢复，如果它能够这样做。当控制器无响应时，命令将开始失败，节点可能会随机被标记为已死。如果控制器无法自行恢复，您将需要重新启动添加程序以尝试恢复。在大多数情况下，用户永远不会需要使用此功能，因此，除非您知道自己在做什么和/或您被要求这样做，否则请不要更改此设置。
+This setting will disable Z-Wave JS's automatic recovery process when the
+controller appears to be unresponsive and will instead let the controller
+recover on its own if it's capable of doing so. While the controller is
+unresponsive, commands will start to fail and nodes may randomly get
+marked as dead. If a controller is not able to recover on its own, you
+will need to restart the add-on to attempt recovery. In most cases, users
+will never need to use this feature, so only change this setting if you
+know what you are doing and/or you are asked to.
 
-### 选项 `disable_watchdog`（可选）：
+### Option `disable_watchdog` (optional):
 
-此设置将阻止 Z-Wave JS 在支持的控制器上启用硬件看门狗。在大多数情况下，用户永远不会需要使用此功能，因此，除非您知道自己在做什么和/或您被要求这样做，否则请不要更改此设置。
+This setting will prevent Z-Wave JS from enabling the hardware watchdog
+on supporting controllers. In most cases, users will never need to use this
+feature, so only change this setting if you know what you are doing and/or
+you are asked to.
 
-### 选项 `safe_mode`（可选）
+### Option `safe_mode` (optional)
 
-此设置将您的网络置于安全模式，这可能会显著降低网络性能，但也可能有助于使网络启动并运行，以便您可以解决问题、获取日志等。在大多数情况下，用户永远不会需要使用此功能，因此，除非您知道自己在做什么和/或您被要求这样做，否则请不要更改此设置。
+This setting puts your network in safe mode, which could significantly decrease
+the performance of your network but may also help get the network up and running
+so that you can troubleshoot issues, grab logs, etc. In most cases, users will
+never need to use this feature, so only change this setting if you know what you
+are doing and/or you are asked to.
 
-### 选项 `network_key`（已弃用）
+### Option `network_key` (deprecated)
 
-在添加程序的先前版本中，这是唯一需要的密钥。随着在 zwave-js 中引入 S2 安全包含，此选项已被弃用，优先使用 `s0_legacy_key`。如果仍然设置，`network_key` 值将在首次启动时迁移到 `s0_legacy_key`。
+In previous versions of the addon, this was the only key that was needed. With
+the introduction of S2 security inclusion in zwave-js, this option has been
+deprecated in favor of `s0_legacy_key`. If still set, the `network_key` value will be
+migrated to `s0_legacy_key` on first startup.
 
-### 网络问题故障排除
+### Troubleshooting network issues
 
-添加程序中有几个功能可以帮助您在故障排除网络问题时提供数据，或者提供给 Home Assistant 或 Z-Wave JS 团队以帮助追踪问题：
+There are several features available in the add-on that can help you in troubleshooting network issues and/or providing data to either the Home Assistant or Z-Wave JS team to help in tracing an issue:
 
-1. **更新日志级别**：在打开 GitHub问题时，将 `log_level` 配置选项设置为 `debug` 并捕获问题发生时的情况非常有帮助。
-2. **记录到文件**：`log_to_file` 和 `log_max_files` 配置选项允许您启用和配置。请注意，为了访问日志文件，您需要能够访问您的 HA 实例的文件系统，您可以通过文件编辑器、samba 或 ssh 添加程序等方式做到这一点。
-3. **访问 Z-Wave JS 缓存**：Z-Wave JS 将有关您的网络发现的信息存储在缓存文件中，以便您的设备在每次启动时都不需要重新面试。在某些情况下，在打开 GitHub问题时，您可能会被要求提供缓存文件。您可以在 `/addon_configs/core_zwave_js/cache` 中访问它们。请注意，为了访问缓存，您需要能够访问您的 HA 实例的文件系统，您可以通过文件编辑器、samba 或 ssh 添加程序等方式做到这一点。
-4. **更改软重置行为**：默认情况下，添加程序将自动选择是否在启动时软重置控制器。在大多数情况下，不应该更改此设置，但如果在故障排除问题时被要求进行更改，您可以使用 `soft_reset` 配置选项进行更改。
-5. **禁用控制器恢复**：默认情况下，如果网络控制器似乎卡住，Z-Wave JS 将自动尝试将控制器恢复到健康状态。在大多数情况下，不应该更改此设置，但如果在故障排除问题时被要求进行更改，您可以使用 `disable_controller_recovery` 配置选项进行更改。
-6. **启用安全模式**：当 Z-Wave JS 在启动时遇到问题时，有时很难获取有用的日志来解决问题。通过将 `safe_mode` 设置为 true，Z-Wave JS 可能能够在 `safe_mode` 设置为 false 的情况下启动，在这种情况下它无法启动。请注意，启用 `safe_mode` 将对您的网络性能产生负面影响，并且应谨慎使用。
+1. **Update the log level:** It is extremely helpful when opening a GitHub issue to set the `log_level` configuration option to `debug` and capture when the issue occurs.
+2. **Log to file:** The `log_to_file` and `log_max_files` configuration options allow you to enable and configure that. Note that in order to access the log files, you will need to be able to access the filesystem of your HA instance, which you can do with the file editor, samba, or ssh add-ons among others.
+3. **Access Z-Wave JS cache:** Z-Wave JS stores information it discovers about your network in cache files so that your devices don't have to be reinterviewed on every startup. In some cases, when opening a GitHub issue, you may be asked to provide the cache files. You can access them in `/addon_configs/core_zwave_js/cache`. Note that in order to access the cache, you will need to be able to access the filesystem of your HA instance, which you can do with the file editor, samba, or ssh add-ons among others.
+4. **Change soft reset behavior:** By default, the addon will choose whether or not to soft reset the controller at startup automatically. In most cases that shouldn't be changed, but if asked to make a change when troubleshooting an issue, you can do so using the `soft_reset` configuration option.
+5. **Disable controller recovery:** By default, if the network controller appears to be jammed, Z-Wave JS will automatically try to restore the controller to a healthy state. In most cases that shouldn't be changed, but if asked to make a change when troubleshooting an issue, you can do so using the `disable_controller_recovery` configuration option.
+6. **Enable safe mode:** When Z-Wave JS is having trouble starting up, it can sometimes be hard to get useful logs to troubleshoot the issue. By setting `safe_mode` to true, Z-Wave JS may be able to start up in cases where it wouldn't with the `safe_mode` set to false. Note that enabling `safe_mode` will have a negative impact on the performance of your network and should be used sparingly.
 
-## 已知问题和限制
+## Known issues and limitations
 
-- 您的硬件需要与 Z-Wave JS 库兼容
+- Your hardware needs to be compatible with the Z-Wave JS library
 
-## 支持
+## Support
 
-有问题吗？
+Got questions?
 
-您有几个选项可以回答它们：
+You have several options to get them answered:
 
-- [Home Assistant Discord 聊天服务器][discord]。
-- Home Assistant [社区论坛][forum]。
-- 加入 [Reddit 子版块][reddit] 在 [/r/homeassistant][reddit]
+- The [Home Assistant Discord Chat Server][discord].
+- The Home Assistant [Community Forum][forum].
+- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
 
-如果您发现了一个错误，请 [在我们的 GitHub 上打开一个问题][issue]。
+In case you've found a bug, please [open an issue on our GitHub][issue].
 
 [discord]: https://discord.gg/c5DvZ4e
 [forum]: https://community.home-assistant.io
