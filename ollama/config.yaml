@@ -1,7 +1,7 @@
 name: "Ollama"
-description: "$translated_description"
+description: "使用大型语言模型快速上手。"
 # renovate: datasource=github-tags depName=ollama/ollama
-version: "0.9.6"
+version: "0.10.0"
 slug: "ollama"
 arch:
   - aarch64

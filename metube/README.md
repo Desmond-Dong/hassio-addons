@@ -1,33 +1,35 @@
-# Home assistant插件：MeTube
+# Home assistant add-on: MeTube
 
-youtube-dl的Web界面（使用yt-dlp分支），支持播放列表。允许您从YouTube和其他几十个网站（https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md）下载视频。
+Web GUI for youtube-dl (using the yt-dlp fork) with playlist support. Allows you to download videos from YouTube and dozens of other sites (https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md).
 
-_感谢所有给我的仓库点赞的人！要点赞，请点击下面的图片，然后它就会出现在右上角。谢谢！_
+
+_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
 ## 关于
 
-这个插件基于[docker镜像](https://github.com/alexta69/metube)。
+This addon is based on the [docker image](https://github.com/alexta69/metube).
 
 ## 安装
 
-这个插件的安装非常简单，与其他任何Hass.io插件的安装方式相同。
+The installation of this add-on is pretty straightforward and not different in
+comparison to installing any other Hass.io add-on.
 
-1. [将我的Hass.io插件仓库][repository]添加到您的Hass.io实例。
-1. 安装这个插件。
-1. 点击`保存`按钮以保存您的配置。
-1. 下载目录默认为/share/metube，可以在share中更改为任何内容。
-1. 启动插件。
-1. 检查插件的日志以查看是否一切正常。
-1. WebUI应该可以通过ingress或<your-ip>:port访问。
+1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
+1. Install this add-on.
+1. Click the `Save` button to store your configuration.
+1. Download directory defaults to /share/metube, can be changed to anything in share
+1. Start the add-on.
+1. Check the logs of the add-on to see if everything went well.
+1. Open WebUI should work via ingress or <your-ip>:port.
 
 ## 配置
 
 ```
-port : 8081 #您想要运行的端口。
+port : 8081 #你想要运行的端口。
 ```
 
-Webui可以在`<your-ip>:port`找到。
+Webui can be found at `<your-ip>:port`.
 
 [repository]: https://github.com/jdeath/homeassistant-addons
