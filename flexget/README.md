@@ -14,32 +14,87 @@
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_感谢所有给我的仓库点赞的人！点击下面的图片进行点赞，它将出现在右上角。谢谢！_
+_感谢所有给我仓库点赞的人！要点赞，请点击下面的图片，然后它将出现在右上角。谢谢！_
 
 [![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
-![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/flexget/stats.png)
+![下载趋势](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/flexget/stats.png)
 
 ## 关于
 
-FlexGet 是一个用于所有媒体的多功能自动化工具。查看 https://flexget.com/
+[FlexGet](https://flexget.com/) 是一个用于所有媒体的 multipurpose 自动化工具。它可以支持 torrent、NZB、播客、漫画、电视节目、电影、RSS、HTML、CSV 等。
 
-默认密码是 'homeassistant123'，或可以从添加项选项中设置
+主要功能：
+- 强大的插件系统，包含 300 多个插件
+- RSS 源处理和过滤
+- 与下载客户端的集成
+- 基于网页的管理界面
+- 定时执行和守护进程模式
 
-## 要求
+## 安装
+
+这个插件的安装非常简单，与其他插件的安装方式相同。
+
+1. 将我的插件仓库添加到您的 Home Assistant 实例中（在 supervisor 插件商店的右上角，或点击下面的按钮如果您已经配置了我的 HA）
+   [![打开您的 Home Assistant 实例并显示添加插件仓库对话框，预填充了特定的仓库 URL。](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
+1. 安装这个插件。
+1. 点击 `保存` 按钮以保存您的配置。
+1. 设置插件选项以符合您的偏好。
+1. 启动插件。
+1. 检查插件的日志以查看是否一切正常。
+1. 打开 WebUI 并调整软件选项
 
 ## 配置
 
-    "PUID": 自定义用户（默认 root）
-    "PGID": 自定义用户（默认 root）
-    "WebuiPass": Webui 密码定义
-    "FG_PLUGINS": 插件添加
-    "FG_LOG_LEVEL": 日志级别（critical|error|warning|info|verbose|debug|trace）
+Webui 可以在 <http://homeassistant:5050> 找到。
+默认密码：`homeassistant123`（通过插件选项更改）。
 
-## 启动
+### 设置步骤
 
-- 启动添加项。稍等片刻并检查日志中的任何错误。
+1. 启动插件后访问网页界面
+2. 创建或编辑您的 FlexGet 配置文件
+3. 设置 RSS 源和下载源
+4. 配置下载客户端的输出插件
+5. 测试配置并启用定时任务
 
-## 故障排除
+### 选项
 
-如果您在安装中遇到问题，请务必查看 github。
+| 选项 | 类型 | 默认 | 描述 |
+|------|------|------|------|
+| `PGID` | int | `0` | 文件权限的组 ID |
+| `PUID` | int | `0` | 文件权限的用户 ID |
+| `WebuiPass` | str | `homeassistant123` | Web 界面密码 |
+| `FG_PLUGINS` | str | | 需要安装的额外插件 |
+| `FG_LOG_LEVEL` | list | | 日志级别（critical/error/warning/info/verbose/debug/trace） |
+
+### 示例配置
+
+```yaml
+PGID: 1000
+PUID: 1000
+WebuiPass: "SecurePassword123"
+FG_PLUGINS: "flexget-plugins-extra"
+FG_LOG_LEVEL: "info"
+```
+
+### 配置文件
+
+FlexGet 使用位于 `/config/flexget/config.yml` 的 YAML 配置文件。示例：
+
+```yaml
+tasks:
+  tv-shows:
+    rss: https://example.com/tv-shows.rss
+    series:
+      - Breaking Bad
+      - Game of Thrones
+    transmission:
+      host: localhost
+      port: 9091
+```
+
+有关完整的配置文档，请参阅：https://flexget.com/Configuration
+
+## 支持
+
+如果您在安装过程中遇到问题，请务必查看 github。

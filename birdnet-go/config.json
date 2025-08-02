@@ -5,9 +5,14 @@
   ],
   "audio": true,
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "实时鸟类声音景观分析器",
+  "description": "实时鸟鸣网络声景分析器",
   "devices": [
     "/dev/dri",
+    "/dev/snd",
+    "/dev/snd/controlC0",
+    "/dev/snd/controlC1",
+    "/dev/snd/pcmC1D0c",
+    "/dev/snd/pcmC1D0p",
     "/dev/dri/card0",
     "/dev/dri/card1",
     "/dev/dri/renderD128",
@@ -98,7 +103,8 @@
   },
   "privileged": [
     "SYS_ADMIN",
-    "DAC_READ_SEARCH"
+    "DAC_READ_SEARCH",
+    "SYS_RESOURCE"
   ],
   "schema": {
     "ALSA_CARD": "int?",
@@ -117,5 +123,6 @@
   "slug": "birdnet-go",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/birdnet-go",
-  "version": "nightly-20250730"
+  "usb": true,
+  "version": "nightly-20250731"
 }

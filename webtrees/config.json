@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "网络领先的在线协作家谱应用程序。",
+  "description": "网络领先的在线协作家谱应用",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -126,6 +126,6 @@
   "slug": "webtrees",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "2.2.1-4",
+  "version": "2.2.3",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:80]"
 }

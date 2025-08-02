@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "FlexGet是一款用于所有媒体的多用途自动化工具",
+  "description": "FlexGet是一款适用于所有媒体的多功能自动化工具",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -101,6 +101,6 @@
   "slug": "flexget",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "3.17.0",
+  "version": "3.17.2",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:5050]"
 }
