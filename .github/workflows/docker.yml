@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         arch: [amd64, arm64]
-        addon: [ddnsto]  # 多个 addon 可添加
+        addon: [jdxb]  # 多个 addon 可添加
 
     permissions:
       contents: read
