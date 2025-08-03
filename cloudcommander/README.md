@@ -14,34 +14,65 @@
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_感谢所有给我的仓库加星的人！要给星，请点击下面的图片，然后它会在右上角。谢谢！_
+_感谢所有给我仓库点赞的人！点击下面的图片点赞，它将出现在右上角。谢谢！_
 
 [![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
-![下载趋势](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/cloudcommander/stats.png)
+![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/cloudcommander/stats.png)
 
 ## 关于
 
-[Cloud Commander](https://github.com/coderaiser/cloudcmd) 是一个具有控制台和编辑器的网页文件管理器。
+[Cloud Commander](https://github.com/coderaiser/cloudcmd) 是一个用于网络的文件管理器，具有控制台和编辑器。
 这个插件基于 [docker 镜像](https://hub.docker.com/r/coderaiser/cloudcmd)。
 
 ## 配置
 
-Webui 可以在 `<你的 IP>:8000` 找到。
+Webui 可以在 <http://homeassistant:8000> 或通过 Ingress 在侧边栏中找到。
+配置可以通过应用 webUI 进行，除了以下选项。
+
+### 选项
+
+| 选项 | 类型 | 默认值 | 描述 |
+|------|------|--------|------|
+| `CUSTOM_OPTIONS` | str | | 自定义 CLI 选项（例如，`--name Homeassistant`） |
+| `DROPBOX_TOKEN` | str | | Dropbox 集成令牌（参见 https://cloudcmd.io/） |
+| `localdisks` | str | | 挂载的本地驱动器（例如，`sda1,sdb1,MYNAS`） |
+| `networkdisks` | str | | 要挂载的 SMB 共享（例如，`//SERVER/SHARE`） |
+| `cifsusername` | str | | SMB 网络共享的用户名 |
+| `cifspassword` | str | | SMB 网络共享的密码 |
+| `cifsdomain` | str | | 网络共享的 SMB 域 |
+| `smbv1` | bool | `false` | 启用 SMB v1 协议 |
+
+### 示例配置
 
 ```yaml
-localdisks: sda1 #put the hardware name of your drive to mount separated by commas, or its label. ex. sda1, sdb1, MYNAS...
-networkdisks: "//SERVER/SHARE" # optional, list of smb servers to mount, separated by commas
-cifsusername: "username" # optional, smb username, same for all smb shares
-cifspassword: "password" # optional, smb password
-smbv1: "bool?" # smb v1
-DROPBOX_TOKEN: "str?" # see https://cloudcmd.io/
-CUSTOM_OPTIONS: "--name Homeassistant" # custom options from https://cloudcmd.io/
+CUSTOM_OPTIONS: "--name Homeassistant"
+DROPBOX_TOKEN: "your-dropbox-token"
+localdisks: "sda1,sdb1"
+networkdisks: "//192.168.1.100/files"
+cifsusername: "fileuser"
+cifspassword: "password123"
+cifsdomain: "workgroup"
+smbv1: false
 ```
+
+### 挂载驱动器
+
+这个插件支持挂载本地驱动器和远程 SMB 共享：
+
+- **本地驱动器**：参见 [在插件中挂载本地驱动器](https://github.com/alexbelgium/hassio-addons/wiki/Mounting-Local-Drives-in-Addons)
+- **远程共享**：参见 [在插件中挂载远程共享](https://github.com/alexbelgium/hassio-addons/wiki/Mounting-remote-shares-in-Addons)
+
+### 自定义脚本和环境变量
+
+这个插件支持自定义脚本和环境变量：
+
+- **自定义脚本**：参见 [在插件中运行自定义脚本](https://github.com/alexbelgium/hassio-addons/wiki/Running-custom-scripts-in-Addons)
+- **环境变量**：参见 [为你的插件添加环境变量](https://github.com/alexbelgium/hassio-addons/wiki/Add-Environment-variables-to-your-Addon)
 
 ## 安装
 
-这个插件的安装非常简单，与其他 Hass.io 插件的安装方式相同。
+这个插件的安装非常简单，与其他 Hass.io 插件安装没有区别。
 
 1. [将我的 Hass.io 插件仓库][repository] 添加到你的 Hass.io 实例。
 1. 安装这个插件。

@@ -1,6 +1,6 @@
 #!/usr/bin/env bashio
 # shellcheck shell=bash
-# shellcheck disable=SC2155
+# shellcheck disable=SC2155,SC1091
 
 #############
 # STRUCTURE #
@@ -15,9 +15,9 @@ DATA_LOCATION_FILE="/data/oldwebtreeshome"
 # Create folders
 mkdir -p "$DATA_LOCATION"
 mkdir -p /config/modules_v4
-cp -rn /var2/www/webtrees/data/* "$DATA_LOCATION"/ &>/dev/null || true
-cp -rn /var2/www/webtrees/data/.* "$DATA_LOCATION"/ &>/dev/null || true
-cp -rn /var2/www/webtrees/modules_v4/* /config/modules_v4/ &>/dev/null || true
+cp -rn /var2/www/webtrees/data/* "$DATA_LOCATION"/ &> /dev/null || true
+cp -rn /var2/www/webtrees/data/.* "$DATA_LOCATION"/ &> /dev/null || true
+cp -rn /var2/www/webtrees/modules_v4/* /config/modules_v4/ &> /dev/null || true
 
 # Check if a migration is needed
 if bashio::fs.file_exists "$DATA_LOCATION_FILE"; then
@@ -32,7 +32,7 @@ fi
 # Migrate files
 if [[ "$DATA_LOCATION_CURRENT" != "$DATA_LOCATION" ]] && [[ "$(ls -A "$DATA_LOCATION_CURRENT")" ]]; then
     bashio::log.warning "Data location was changed from $DATA_LOCATION_CURRENT to $DATA_LOCATION, migrating files"
-    cp -rnf "$DATA_LOCATION_CURRENT"/* "$DATA_LOCATION"/ &>/dev/null || true
+    cp -rnf "$DATA_LOCATION_CURRENT"/* "$DATA_LOCATION"/ &> /dev/null || true
     echo "Files moved to $DATA_LOCATION" > "$DATA_LOCATION_CURRENT"/migrated
     mv "$DATA_LOCATION_CURRENT" "${DATA_LOCATION_CURRENT}_migrated"
 fi
@@ -64,8 +64,8 @@ chmod -R 755 "/config"
 
 # Remove /data/data
 if [[ -d "$DATA_LOCATION"/data ]] && [[ "$(ls -A "$DATA_LOCATION"/data/*)" ]]; then
-  mv "$DATA_LOCATION"/data/* "$DATA_LOCATION"/
-  rm -r "$DATA_LOCATION"/data
+    mv "$DATA_LOCATION"/data/* "$DATA_LOCATION"/
+    rm -r "$DATA_LOCATION"/data
 fi
 
 ################
@@ -154,7 +154,6 @@ fi
 ############
 
 # Execute main script
-# shellcheck ignore=SC1091
 source /etc/apache2/envvars
 echo "Adapting start script"
 cd /var2/www/webtrees || exit 1

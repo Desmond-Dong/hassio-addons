@@ -1,3 +1,14 @@
+## "25.7.3" (01-08-2025)
+- Minor bugs fixed
+
+## 25.7.3 (01-08-2025)
+- Update to latest version from gramps-project/gramps-web (changelog : https://github.com/gramps-project/gramps-web/releases)
+## "25.7.2-4" (31-07-2025)
+- Minor bugs fixed
+## "25.7.2-3" (31-07-2025)
+- Minor bugs fixed
+## "25.7.2-2" (31-07-2025)
+- Minor bugs fixed
 ## "25.7.2" (18-07-2025)
 - Minor bugs fixed
 

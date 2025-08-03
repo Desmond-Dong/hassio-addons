@@ -2,24 +2,24 @@
 
 ## 安装
 
-按照以下步骤在您的系统上安装此插件：
+按照以下步骤将 Add-on 安装到您的系统上：
 
-1. 在 Home Assistant 前端导航到 **设置** -> **插件** -> **插件商店**。
-2. 找到 "MariaDB" 插件并点击它。
+1. 在 Home Assistant 前端导航到 **设置** -> **Add-on** -> **Add-on 商店**。
+2. 找到 "MariaDB" Add-on 并点击它。
 3. 点击 "安装" 按钮。
 
 ## 如何使用
 
 1. 将 `logins` -> `password` 字段设置为一个强而独特的值。
-2. 启动插件。
-3. 检查插件日志输出以查看结果。
+2. 启动 Add-on。
+3. 检查 Add-on 的日志输出以查看结果。
 4. 将 `recorder` 集成添加到您的 Home Assistant 配置中。
 
-## 插件配置
+## Add-on 配置
 
-MariaDB 服务器插件可以根据您的喜好进行调整。本节将描述每个插件的配置选项。
+MariaDB 服务器 Add-on 可以根据您的喜好进行调整。本节描述了 Add-on 的每个配置选项。
 
-示例插件配置：
+示例 Add-on 配置：
 
 ```yaml
 databases:
@@ -48,7 +48,7 @@ rights:
 
 ### 选项：`logins.username`（必需）
 
-数据库用户登录，例如 `homeassistant`。[用户名][username] 文档。
+数据库用户登录名，例如 `homeassistant`。[用户名][username] 文档。
 
 ### 选项：`logins.password`（必需）
 
@@ -68,12 +68,12 @@ rights:
 
 ### 选项：`rights.privileges`（可选）
 
-授予此用户的权限列表，例如 `SELECT` 和 `CREATE`，参考 [授予权限][grant]。
-如果省略，将向用户授予 `ALL PRIVILEGES`。不建议限制 Home Assistant 使用的用户的权限，但如果您希望允许其他应用程序查看 recorder 数据，则应创建一个仅具有数据库只读访问权限的用户。
+授予此用户的权限列表，从 [授予权限][grant] 如 `SELECT` 和 `CREATE`。
+如果省略，将向用户授予 `ALL PRIVILEGES`。限制 Home Assistant 使用的用户的权限是不推荐的，但如果您希望允许其他应用程序查看 recorder 数据，则应创建一个仅限于数据库只读访问的用户。
 
 ### 选项：`mariadb_server_args`（可选）
 
-一些用户在 Home Assistant 大型数据库架构更新过程中遇到了 [错误][migration-issues]。
+一些用户在 Home Assistant 大型数据库模式更新期间遇到了 [错误][migration-issues]。
 如果有可用 RAM，定义推荐参数可能会有所帮助。
 
 示例：`--innodb_buffer_pool_size=512M`
@@ -91,13 +91,13 @@ recorder:
 
 ## 支持
 
-有问题吗？
+有问题？
 
-您有几个选项来获得答案：
+您有几个选项可以获取答案：
 
 - [Home Assistant Discord 聊天服务器][discord]。
 - Home Assistant [社区论坛][forum]。
-- 加入 [Reddit 子版块][reddit] 在 [/r/homeassistant][reddit]。
+- 加入 [Reddit 子版块][reddit] 在 [/r/homeassistant][reddit]
 
 如果您发现了一个错误，请 [在我们的 GitHub 上打开一个问题][issue]。
 

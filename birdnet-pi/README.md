@@ -1,5 +1,5 @@
-## &#9888; Open Issue : [[BirdNET-Pi Docker Standalone] Services wont start (opened 2025-06-24)](https://github.com/alexbelgium/hassio-addons/issues/1927) by [@sirtakahe](https://github.com/sirtakahe)
-## &#9888; Open Issue : [🐛 [BirdNET-Pi] Latest version seem not respecting database language setting (opened 2025-07-16)](https://github.com/alexbelgium/hassio-addons/issues/1963) by [@gco33](https://github.com/gco33)
+## ⚠️ Open Issue : [[BirdNET-Pi Docker Standalone] Services won't start (opened 2025-06-24)](https://github.com/alexbelgium/hassio-addons/issues/1927) by [@sirtakahe](https://github.com/sirtakahe)
+## ⚠️ Open Issue : [🐛 [Birdnet-Pi] Birdnet Docker cannot open web terminal login incorrect (opened 2025-08-02)](https://github.com/alexbelgium/hassio-addons/issues/1991) by [@ignmedia](https://github.com/ignmedia)
 
 # Home assistant add-on: birdnet-pi
 
@@ -29,135 +29,149 @@ _Note : For usage without HomeAssistant (classic docker container), see [here](h
 
 ---
 
-[birdnet-pi](https://github.com/Nachtzuster/BirdNET-Pi) 是一个用于持续鸟类监测和识别的 AI 解决方案，最初由 @mcguirepr89 在 GitHub 上开发（https://github.com/mcguirepr89/BirdNET-Pi），目前由 @Nachtzuster 和其他开发者在活跃的分叉中继续开发（https://github.com/Nachtzuster/BirdNET-Pi）。
+[birdnet-pi](https://github.com/Nachtzuster/BirdNET-Pi) is an AI solution for continuous avian monitoring and identification originally developed by @mcguirepr89 on github (https://github.com/mcguirepr89/BirdNET-Pi), whose work is continued by @Nachtzuster and other developers on an active fork (https://github.com/Nachtzuster/BirdNET-Pi)
 
-插件功能：
-- 由 [linuxserver](https://github.com/linuxserver/docker-baseimage-debian) 提供的稳健基础镜像
-- 通过 https://github.com/gdraheim/docker-systemctl-replacement 实现的可用 Docker 系统
-- 使用 HA pulseaudio 服务器
-- 使用 HA tmpfs 在 RAM 中存储临时文件，避免磁盘磨损
-- 将所有配置文件暴露到 /config，以允许持久性和轻松访问
-- 允许修改存储鸟类歌曲的位置（最好连接到外部硬盘）
-- 支持入口，以允许安全远程访问而不暴露端口
+Features of the addon :
+- Robust base image provided by [linuxserver](https://github.com/linuxserver/docker-baseimage-debian)
+- Working docker system thanks to https://github.com/gdraheim/docker-systemctl-replacement
+- Uses HA pulseaudio server
+- Uses HA tmpfs to store temporary files in ram and avoid disk wear
+- Exposes all config files to /config to allow remanence and easy access
+- Allows to modify the location of the stored bird songs (preferably to an external hdd)
+- Supports ingress, to allow secure remote access without exposing ports
 
-## 配置
+## Configuration
 
 ---
 
-安装后，首次启动插件
-Web UI 可以通过两种方式访问：
-- 通过 HA 入口（无需密码，但某些功能无法使用）
-- 直接使用 <http://homeassistant:port>，其中 port 是 birdnet.conf 中定义的端口。当要求输入密码时，用户名为 `birdnet`，密码是可以在 birdnet.con 中定义的（默认为空）。这与插件选项中的密码不同，后者是访问 Web 终端的密码
+Install, then start the addon a first time
+Webui can be found by two ways :
+- Ingress from HA (no password but some functions don't work)
+- Direct access with <http://homeassistant:port>, port being the one defined in the birdnet.conf. The username when asked for a password is `birdnet`, the password is the one that you can define in the birdnet.con (blank by default). This is different than the password from the addon options, which is the one that must be used to access the web terminal
 
-Web 终端访问：用户名 `pi`，密码：在插件选项中定义的密码
+Web terminal access : username `pi`, password : as defined in the addon options
 
-您需要一个麦克风：可以使用连接到 HA 的麦克风，或使用 RTP 摄像机的音频流
+You'll need a microphone : either use one connected to HA or the audio stream of a rstp camera.
 
-选项可以通过三种方式配置：
+Options can be configured through three ways :
 
-- 插件选项
+- Addon options
 
 ```yaml
-BIRDSONGS_FOLDER: 存储鸟类歌曲文件的文件夹 # 如果您想避免分析堵塞，应该使用 SSD
-MQTT_DISABLED : 如果为 true，将禁用自动 MQTT 发布。只有当本地代理已经可用时才有效
-LIVESTREAM_BOOT_ENABLED: 从启动时开始直播，或从设置中开始
-PROCESSED_FOLDER_ENABLED : 如果启用，您需要在 birdnet.conf（或 birdnet 的设置）中设置最后保存的 WAV 文件数量，这些文件将保存在 tmpfs 中的临时文件夹 "/tmp/Processed" 中（因此不会磨损磁盘），如果您想检索它们。此数量可以从插件选项中调整
-TZ: Etc/UTC 指定一个时区使用，见 https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
-pi_password: 设置访问 Web 终端的用户密码
-localdisks: sda1 # 将您的驱动器的硬件名称（用逗号分隔）或其标签放入，例如 sda1, sdb1, MYNAS...
-networkdisks: "//SERVER/SHARE" # 可选，要挂载的 SMB 服务器的列表，用逗号分隔
-cifsusername: "username" # 可选，SMB 用户名，所有 SMB 共享相同
-cifspassword: "password" # 可选，SMB 密码
-cifsdomain: "domain" # 可选，允许为 SMB 共享设置域
+BIRDSONGS_FOLDER: folder to store birdsongs file # It should be an ssd if you want to avoid clogging of analysis
+MQTT_DISABLED : if true, disables automatic mqtt publishing. Only valid if there is a local broker already available
+LIVESTREAM_BOOT_ENABLED: start livestream from boot, or from settings
+PROCESSED_FOLDER_ENABLED : if enabled, you need to set in the birdnet.conf (or the setting of birdnet) the number of last wav files that will be saved in the temporary folder "/tmp/Processed" within the tmpfs (so no disk wear) in case you want to retrieve them. This amount can be adapted from the addon options
+TZ: Etc/UTC specify a timezone to use, see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
+pi_password: set the user password to access the web terminal
+localdisks: sda1 #put the hardware name of your drive to mount separated by commas, or its label. ex. sda1, sdb1, MYNAS...
+networkdisks: "//SERVER/SHARE" # optional, list of smb servers to mount, separated by commas
+cifsusername: "username" # optional, smb username, same for all smb shares
+cifspassword: "password" # optional, smb password
+cifsdomain: "domain" # optional, allow setting the domain for the smb share
 ```
 
-- config.yaml
-使用 Filebrowser 插件在 /config/db21ed7f_birdnet-pi/config.yaml 中找到的 config.yaml 文件可以配置附加变量
+- Config.yaml
+Additional variables can be configured using the config.yaml file found in /config/db21ed7f_birdnet-pi/config.yaml using the Filebrowser addon
 
-- config_env.yaml
-可以在那里配置附加环境变量
+- Config_env.yaml
+Additional environment variables can be configured there
 
-## 安装
+### Mounting Drives
+
+This addon supports mounting both local drives and remote SMB shares:
+
+- **Local drives**: See [Mounting Local Drives in Addons](https://github.com/alexbelgium/hassio-addons/wiki/Mounting-Local-Drives-in-Addons)
+- **Remote shares**: See [Mounting Remote Shares in Addons](https://github.com/alexbelgium/hassio-addons/wiki/Mounting-remote-shares-in-Addons)
+
+### Custom Scripts and Environment Variables
+
+This addon supports custom scripts and environment variables through the `addon_config` mapping:
+
+- **Custom scripts**: See [Running Custom Scripts in Addons](https://github.com/alexbelgium/hassio-addons/wiki/Running-custom-scripts-in-Addons)
+- **Environment variables**: See [Add Environment Variables to your Addon](https://github.com/alexbelgium/hassio-addons/wiki/Add-Environment-variables-to-your-Addon)
+
+## Installation
 
 ---
 
-这个插件的安装非常简单，与其他插件的安装方式没有区别。
+The installation of this add-on is pretty straightforward and not different in comparison to installing any other add-on.
 
-1. 将我的插件仓库添加到您的 Home Assistant 实例中（在 Supervisor 插件商店的右上角，或如果您已经配置了我的 HA，请点击下面的按钮）
-   [![打开您的 Home Assistant 实例并显示添加插件仓库对话框，并预填特定的仓库 URL。](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
-1. 安装此插件。
-1. 点击 `保存` 按钮以保存您的配置。
-1. 设置插件选项以符合您的偏好
-1. 启动插件。
-1. 检查插件的日志以查看是否一切正常。
-1. 打开 Web UI 并调整软件选项
+1. Add my add-ons repository to your home assistant instance (in supervisor addons store at top right, or click button below if you have configured my HA)
+   [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
+1. Install this add-on.
+1. Click the `Save` button to store your configuration.
+1. Set the add-on options to your preferences
+1. Start the add-on.
+1. Check the logs of the add-on to see if everything went well.
+1. Open the webUI and adapt the software options
 
-## 与 HA 集成
+## Integration with HA
 
 ---
 ### Apprise
 
-您可以使用 apprise 通过 MQTT 发送通知，然后使用 HomeAssistant 对这些通知进行操作
-更多信息：https://wander.ingstar.com/projects/birdnetpi.html
+You can use apprise to send notifications with mqtt, then act on those using HomeAssistant
+Further informations : https://wander.ingstar.com/projects/birdnetpi.html
 
-### 自动 MQTT
+### Automatic mqtt
 
-如果安装了 MQTT，插件将自动更新 birdnet 主题，以反映每次检测到的物种
+If mqtt is installed, the addon automatically updates the birdnet topic with each detected species
 
-## 使用 ssl
-
----
-
-选项 1：安装 let's encrypt 插件，生成证书。它们默认存储在 /ssl 中，为 certfile.pem 和 keyfile.pem。只需在插件选项中启用 ssl，它就会工作。
-
-选项 2：启用端口 80，将您的 BirdNET-Pi URL 定义为 https。证书将由 caddy 自动生成
-
-## 改进检测
+## Using ssl
 
 ---
 
-### 卡片的增益
+Option 1 : Install let's encrypt addon, generate certificates. They are by default certfile.pem and keyfile.pem stored in /ssl. Just enable ssl from the addon option and it will work.
 
-使用终端选项卡中的 alsamixer，确保音量足够高，但不要太高（不要在红色部分）
+Option 2 : enable port 80, define your BirdNET-Pi URL as https. Certificate will be automatically generated by caddy
+
+## Improve detections
+
+---
+
+### Gain for card
+
+Using alsamixer in the Terminal tab, make sure that the sound level is high enough but not too high (not in the red part)
 https://github.com/mcguirepr89/BirdNET-Pi/wiki/Adjusting-your-sound-card
 
 ### Ferrite
 
-在我的情况下，添加 ferrite 珠导致噪声更差
+Adding ferrite beads lead in my case to worst noise
 
-### Aux 到 usb 转换器
+### Aux to usb adapters
 
-根据我的测试，只有使用 KT0210 的转换器（例如 Ugreen 的）可以工作。我无法检测到基于 ALC 的转换器
+Based on my test, only adapters using KT0210 (such as Ugreen's) work. I couldn't get adapters based on ALC to be detected.
 
-### 麦克风比较
+### Microphone comparison
 
-推荐麦克风（[完整讨论在这里](https://github.com/mcguirepr89/BirdNET-Pi/discussions/39)）：
-- Clippy EM272 (https://www.veldshop.nl/en/smart-clippy-em272z1-mono-omni-microphone.html) + ugreen aux 到 usb 连接器：最佳灵敏度，使用领夹技术
-- Boya By-LM40：最佳性价比
-- Hyperx Quadcast：最佳灵敏度，使用心形技术
+Recommended microphones ([full discussion here](https://github.com/mcguirepr89/BirdNET-Pi/discussions/39)):
+- Clippy EM272 (https://www.veldshop.nl/en/smart-clippy-em272z1-mono-omni-microphone.html) + ugreen aux to usb connector : best sensitivity with lavalier tech
+- Boya By-LM40 : best quality/price
+- Hyperx Quadcast : best sensitivity with cardioid tech
 
-结论，使用 Dahua 的麦克风已经足够好，EM272 是最佳选择，但 Boya by-lm40 是一个非常好的折衷方案，因为 birndet 模型分析 0-15000Hz 范围
+Conclusion, using mic from Dahua is good enough, EM272 is optimal, but Boya by-lm40 is a very good compromise as birndet model analysis the 0-15000Hz range
 
 ![image](https://github.com/alexbelgium/hassio-addons/assets/44178713/df992b79-7171-4f73-b0c0-55eb4256cd5b)
 
-### Denoise ([完整讨论在这里](https://github.com/mcguirepr89/BirdNET-Pi/discussions/597))
+### Denoise ([Full discussion here](https://github.com/mcguirepr89/BirdNET-Pi/discussions/597))
 
-Denoise 受到严肃研究人员的不屑。然而，它确实似乎显著提高了检测质量！在 HA 中如何进行：
-- 使用 Portainer 插件，进入 hassio_audio 容器，并修改文件 /etc/pulse/system.pa 以添加行 `load-module module-echo-cancel`
-- 进入终端插件，并输入 `ha audio restart`
-- 在插件选项中选择回声消除设备作为输入设备
+Denoise is frowned upon by serious researchers. However it does seem to significantly increase quality of detection ! Here is how to do it in HA :
+- Using Portainer addon, go in the hassio_audio container, and modify the file /etc/pulse/system.pa to add the line `load-module module-echo-cancel`
+- Go in the Terminal addon, and type `ha audio restart`
+- Select the echo cancelled device as input device in the addon options
 
-### 高通
+### High pass
 
-应该避免，因为模型使用整个 0-15khz 范围
+Should be avoided as the model uses the whole 0-15khz range
 
-## 常见问题
+## Common issues
 
-尚未提供
+Not yet available
 
-## 支持
+## Support
 
-在 GitHub 上创建问题
+Create an issue on github
 
 ---
 

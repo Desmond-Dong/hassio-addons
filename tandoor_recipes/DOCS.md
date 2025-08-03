@@ -1,46 +1,40 @@
-## Configuration
+## 配置
 
-Please check Tandoor Recipes documentation : https://docs.tandoor.dev/install/docker/
+请查阅 Tandoor Recipes 文档：https://docs.tandoor.dev/install/docker/
 
 ```yaml
-Required :
-    "ALLOWED_HOSTS": "your system url", # You need to input your homeassistant urls (comma separated, without space) to allow ingress to work
-    "DB_TYPE": "list(sqlite|postgresql_external)" # Type of database to use.
-    "SECRET_KEY": "str", # Your secret key
-    "PORT": 9928 # By default, the webui is available on http://HAurl:9928. If you ever need to change the port, you should never do it within the app, but only through this option
-    "Environment": 0|1 # 1 is debug mode, 0 is normal mode. You should run in normal mode unless actively developing.
-    "GUNICORN_MEDIA": 0|1 # 1 enables gunicorn media hosting. This is not recommended. You should use an nginx server to host your media - see docs.
-Optional :
-    "POSTGRES_HOST": "str?", # Needed for postgresql_external
-    "POSTGRES_PORT": "str?", # Needed for postgresql_external
-    "POSTGRES_USER": "str?", # Needed for postgresql_external
-    "POSTGRES_PASSWORD": "str?", # Needed for postgresql_external
-    "POSTGRES_DB": "str?" # Needed for postgresql_external
-    "externalfiles_folder": "str?" # a folder that you want to map in to tandoor. Not needed as /share/ and /media/ are mapped. This folder will be created if it doesn't already exist.
+必需：
+    "ALLOWED_HOSTS": "your system url", # 您需要输入您的 homeassistant url（逗号分隔，无空格）以允许 ingress 正常工作
+    "DB_TYPE": "list(sqlite|postgresql_external)" # 要使用的数据库类型。
+    "SECRET_KEY": "str", # 您的秘密密钥
+    "环境": 0|1 # 1 是调试模式，0 是正常模式。除非您正在进行开发，否则应在正常模式下运行。
+可选：
+    "POSTGRES_HOST": "str?", # 用于 postgresql_external
+    "POSTGRES_PORT": "str?", # 用于 postgresql_external
+    "POSTGRES_USER": "str?", # 用于 postgresql_external
+    "POSTGRES_PASSWORD": "str?", # 用于 postgresql_external
+    "POSTGRES_DB": "str?" # 用于 postgresql_external
+    "externalfiles_folder": "str?" # 您希望映射到 tandoor 的文件夹。由于 /share/ 和 /media/ 已经映射，因此不需要此设置。如果此文件夹不存在，则会创建它。
 ```
-### Mariadb
-Mariadb is a popular addon in the home assistant community, however it is not supported by the Tandoor Recipes application.
+此插件现在使用 Tandoor 的集成 Nginx 服务器，并暴露端口 80（默认映射到 9928）。
 
-### Debug mode
-This is the "Environment" setting.
-0 is normal mode  
-1 is debug mode.
+### MariaDB
+MariaDB 是 home assistant 社区中一个受欢迎的插件，但它不受 Tandoor Recipes 应用程序的支持。
 
-### Authentication
-using external authentication. Tandoor Recipes supports this, but it is not implemented yet.
+### 调试模式
+这是“环境”设置。
+0 是正常模式  
+1 是调试模式。
 
-### Gunicorn Media
-Disabling gunicorn media is a good idea, but needs a webserver running to host the media files. The webserver should map `/media/`.  
-See https://docs.tandoor.dev/install/docker/#nginx-vs-gunicorn for more information on this.  
-0 is gunicorn DISABLED - media won't work without an nginx webserver.  
-1 is gunicorn enabled - mesia will be hosted using gunicorn which is not recommended.
+### 身份验证
+使用外部身份验证。Tandoor Recipes 支持此功能，但目前尚未实现。
 
-### External Recipe files
+### 外部配方文件
 
-The directory `/config/addons_config/tandoor_recipes/externalfiles` can be used for importing external files in to Tandoor. You can map this with /opt/recipes/externalfiles within Docker. As per directions here: https://docs.tandoor.dev/features/external_recipes/
-The directories `/config`, `/media/`, and `/share/` are mapped in to the addon. you can create a folder manually in any of these locations and map it in to tandoor:
-- create a directory in the location you want, e.g. `/share/tandoor/recipebook/`
-- create an externalstorage location in tandoor - `/share/tandoor/`
-- watch the specific folder - `/share/tandoor/recipebook/`
-- sync now
-- import.
+目录 `/config/addons_config/tandoor_recipes/externalfiles` 可用于将外部文件导入 Tandoor。您可以在 Docker 中将其映射到 `/opt/recipes/externalfiles`。根据以下指南操作：https://docs.tandoor.dev/features/external_recipes/
+目录 `/config`、`/media/` 和 `/share/` 已映射到插件。您可以在这些位置中的任何位置手动创建一个文件夹并将其映射到 tandoor：
+- 在您想要的位置创建一个目录，例如 `/share/tandoor/recipebook/`
+- 在 tandoor 中创建一个 externalstorage 位置 - `/share/tandoor/`
+- 观察特定的文件夹 - `/share/tandoor/recipebook/`
+- 现在同步
+- 导入。

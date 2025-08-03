@@ -1,13 +1,13 @@
-# Home assistant add-on: immich
+# Home assistant add-on: Immich CUDA
 
-⚠️ The project is under very active development. Expect bugs and changes. Do not use it as the only way to store your photos and videos! (from the developer)
+⚠️ 项目正在非常活跃地开发中。请预期出现错误和变化。不要将其作为存储您照片和视频的唯一方式！（来自开发者）
 
 [![Donate][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
 [![Donate][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
 
-![Version](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fimmich%2Fconfig.json)
-![Ingress](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fimmich%2Fconfig.json)
-![Arch](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fimmich%2Fconfig.json)
+![Version](https://img.shields.io/badge/dynamic/json?label=版本&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fimmich_cuda%2Fconfig.json)
+![Ingress](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fimmich_cuda%2Fconfig.json)
+![Arch](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fimmich_cuda%2Fconfig.json)
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/9c6cf10bdbba45ecb202d7f579b5be0e)](https://www.codacy.com/gh/alexbelgium/hassio-addons/dashboard?utm_source=github.com&utm_medium=referral&utm_content=alexbelgium/hassio-addons&utm_campaign=Badge_Grade)
 [![GitHub Super-Linter](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/weekly-supelinter.yaml?label=Lint%20code%20base)](https://github.com/alexbelgium/hassio-addons/actions/workflows/weekly-supelinter.yaml)
@@ -16,59 +16,108 @@
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢大家给我的仓库星标！要星标它，请点击下面的图片，然后它会在右上角。谢谢！_
 
 [![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
-![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/immich/stats.png)
+![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/immich_cuda/stats.png)
 
-## About
+## 关于
 
-Web based files browser.
-This addon is based on the [docker image](https://github.com/imagegenius/docker-immich) from imagegenius.
+直接从您的手机备份照片和视频的解决方案，支持CUDA硬件加速。这是支持CUDA的Immich版本，它为使用NVIDIA GPU进行机器学习任务提供了硬件加速。
 
-## Configuration
+此插件基于imagegenius的[docker镜像](https://github.com/imagegenius/docker-immich)，并启用了CUDA支持以增强性能。
 
-Postgresql can be either internal or external
+## 硬件要求
+
+- **NVIDIA GPU**: 兼容支持CUDA的NVIDIA显卡
+- **CUDA驱动程序**: NVIDIA驱动程序必须在主机系统上正确安装
+- **架构**: 仅支持AMD64（ARM架构不支持CUDA支持）
+
+## 配置
+
+Webui位于`<你的IP>:8080`。PostgreSQL可以是内部的或外部的。
+
+### 选项
+
+| 选项 | 类型 | 默认值 | 描述 |
+|------|------|--------|-------|
+| `data_location` | 字符串 | `/share/immich` | Immich数据存储的路径 |
+| `library_location` | 字符串 | | 照片/视频库的路径 |
+| `TZ` | 字符串 | | 时区（例如，`Europe/London`） |
+| `localdisks` | 字符串 | | 要挂载的本地驱动器（例如，`sda1,sdb1,MYNAS`） |
+| `networkdisks` | 字符串 | | 要挂载的SMB共享（例如，`//SERVER/SHARE`） |
+| `cifsusername` | 字符串 | | SMB网络共享的用户名 |
+| `cifspassword` | 字符串 | | SMB网络共享的密码 |
+| `cifsdomain` | 字符串 | | SMB网络共享的域 |
+| `DB_HOSTNAME` | 字符串 | `homeassistant.local` | 数据库主机名 |
+| `DB_USERNAME` | 字符串 | `postgres` | 数据库用户名 |
+| `DB_PASSWORD` | 字符串 | `homeassistant` | 数据库密码 |
+| `DB_DATABASE_NAME` | 字符串 | `immich` | 数据库名称 |
+| `DB_PORT` | 整数 | `5432` | 数据库端口 |
+| `DB_ROOT_PASSWORD` | 字符串 | | 数据库根密码 |
+| `JWT_SECRET` | 字符串 | | 用于身份验证的JWT密钥 |
+| `DISABLE_MACHINE_LEARNING` | 布尔值 | `false` | 禁用ML功能（不推荐用于CUDA版本） |
+| `MACHINE_LEARNING_WORKERS` | 整数 | `1` | ML工作者的数量（可以使用CUDA增加） |
+| `MACHINE_LEARNING_WORKER_TIMEOUT` | 整数 | `120` | ML工作者超时（秒） |
+
+### 示例配置
 
 ```yaml
-    "PGID": "int",
-    "PUID": "int",
-    "TZ": "str?",
-    "cifsdomain": "str?",
-    "cifspassword": "str?",
-    "cifsusername": "str?",
-    "data_location": "str",
-    "localdisks": "str?",
-    "networkdisks": "str?",
-    "DB_HOSTNAME": "str?",
-    "DB_USERNAME": "str?",
-    "DB_PORT": "int?",
-    "DB_PASSWORD": "str?",
-    "DB_DATABASE_NAME": "str?",
-    "JWT_SECRET": "str?"
+data_location: "/share/immich"
+library_location: "/media/photos"
+TZ: "Europe/London"
+localdisks: "sda1,sdb1"
+networkdisks: "//192.168.1.100/photos"
+cifsusername: "photouser"
+cifspassword: "password123"
+DB_HOSTNAME: "core-mariadb"
+DB_USERNAME: "immich"
+DB_PASSWORD: "secure_password"
+DB_DATABASE_NAME: "immich"
+JWT_SECRET: "your-secret-key-here"
+DISABLE_MACHINE_LEARNING: false
+MACHINE_LEARNING_WORKERS: 2
+MACHINE_LEARNING_WORKER_TIMEOUT: 180
 ```
 
-## Installation
+### 挂载驱动器
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+此插件支持挂载本地驱动器和远程SMB共享：
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Carefully configure the add-on to your preferences, see the official documentation for for that.
+- **本地驱动器**: 请参阅[Mounting Local Drives in Addons](https://github.com/alexbelgium/hassio-addons/wiki/Mounting-Local-Drives-in-Addons)
+- **远程共享**: 请参阅[Mounting Remote Shares in Addons](https://github.com/alexbelgium/hassio-addons/wiki/Mounting-remote-shares-in-Addons)
 
-Beware that you need to install a separate postgres addon to be able to connect the database. You can install the postgres addon already in my repository.
-Beware to change the password BEFORE starting it ; it won't change afterwards
+### 自定义脚本和环境变量
 
-## Support
+此插件通过` addon_config `映射支持自定义脚本和环境变量：
 
-Create an issue on github, or ask on the [home assistant thread](https://community.home-assistant.io/t/home-assistant-addon-immich/282108/3)
+- **自定义脚本**: 请参阅[Running Custom Scripts in Addons](https://github.com/alexbelgium/hassio-addons/wiki/Running-custom-scripts-in-Addons)
+- **环境变量**: 请参阅[Add Environment Variables to your Addon](https://github.com/alexbelgium/hassio-addons/wiki/Add-Environment-variables-to-your-Addon)
+
+## 安装
+
+此插件的安装非常简单，与安装任何其他Hass.io插件没有区别。
+
+**前提条件:**
+- 支持CUDA的NVIDIA GPU
+- 主机系统上安装了NVIDIA驱动程序
+- AMD64架构（ARM不支持）
+
+**步骤:**
+1. 将我的Hass.io插件仓库[repository]添加到您的Hass.io实例。
+1. 安装此插件。
+1. 点击`保存`按钮以存储您的配置。
+1. 启动插件。
+1. 检查插件的日志，看看一切是否正常。
+1. 仔细配置插件以满足您的需求，请参阅官方文档进行配置。
+
+**数据库设置:**
+请注意，您需要安装一个单独的postgres插件才能连接数据库。您可以在我的仓库中安装postgres插件。
+请注意在启动之前更改密码；之后将无法更改
+
+## 支持
+
+在github上创建问题，或在[home assistant thread](https://community.home-assistant.io/t/home-assistant-addon-immich/282108/3)上提问
 
 [repository]: https://github.com/alexbelgium/hassio-addons
-[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
-[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg

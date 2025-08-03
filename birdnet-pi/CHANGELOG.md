@@ -1,7 +1,6 @@
-## 2025.07.03 (24-07-2025)
-- Minor bugs fixed
-## 2025.07.02 (24-07-2025)
-- Minor bugs fixed
+## 2025.07.06 (03-08-2025)
+- Use wikipedia for images
+
 ## 2025.07.01 (24-07-2025)
 - Fix birdweather
 

@@ -1,0 +1,23 @@
+{
+  "arch": [
+    "aarch64",
+    "amd64"
+  ],
+  "codenotary": "alexandrep.github@gmail.com",
+  "description": "本地托管的强大网络工具集合，用于日常任务。无广告，无追踪，只需从您的浏览器快速访问实用工具。",
+  "image": "ghcr.nju.edu.cn/alexbelgium/omni-tools-{arch}",
+  "map": [
+    "addon_config:rw"
+  ],
+  "name": "Omni Tools",
+  "ports": {
+    "80/tcp": 8188
+  },
+  "ports_description": {
+    "80/tcp": "Web UI port"
+  },
+  "slug": "omni-tools",
+  "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
+  "version": "v0.5.0",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:80]"
+}

@@ -1,6 +1,11 @@
+## 5.1.2-6 (31-07-2025)
+- Support mounting NFS shares https://github.com/alexbelgium/hassio-addons/wiki/Mounting-remote-shares-in-Addons
+
+## 5.1.2-2 (12-07-2025)
 - Safety check : check if yify.foo found in qbittorrent.conf
 
 ## 5.1.2 (05-07-2025)
+
 - Update to latest version from linuxserver/docker-qbittorrent (changelog : https://github.com/linuxserver/docker-qbittorrent/releases)
 
 ## 5.1.1 (28-06-2025)

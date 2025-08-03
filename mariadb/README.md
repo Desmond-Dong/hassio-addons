@@ -6,7 +6,7 @@ MariaDB 数据库用于 Home Assistant。
 
 ## 关于
 
-您可以使用此插件来安装 MariaDB，它是一个开源（GPLv2 许可）数据库。MariaDB 可用作 Home Assistant 的数据库后端。更多信息，请参见 [MariaDB][mariadb]
+您可以使用此插件来安装 MariaDB，它是一个开源（GPLv2 许可）数据库。MariaDB 可用作 Home Assistant 的数据库后端。更多信息请参见 [MariaDB][mariadb]
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
