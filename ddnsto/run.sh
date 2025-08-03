@@ -1,7 +1,9 @@
 #!/bin/sh
-echo "请认准【老王杂谈说】，其它未标明出处的均为侵权"
-echo "官方网站：https://www.hasscn.top"
-
+echo "----------------------------------------"
+echo "请认准公众号【老王杂谈说】，其它未标明出处的均为侵权"
+echo "恶意未标明出处，占为己有，与偷窃无异，令人不齿"
+echo "唯一官方网站：https://www.hasscn.top"
+echo "----------------------------------------"
 token=$(jq -r '.token' /data/options.json)
 
 APP_URL='https://fw.koolcenter.com/binary/ddnsto/linux'
