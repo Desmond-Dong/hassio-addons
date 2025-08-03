@@ -261,10 +261,10 @@ jobs:
            
                 if file -b --mime-type "$file" | grep -q "json"; then
                   echo "Translated description for $file (JSON) : $description -> $translated_description"
-                  jq --arg description "$translated_description" '.description = $description' "$file" > temp.json && mv temp.json "$file"
+                  jq --arg description "[老王杂谈说]：$translated_description" '.description = $description' "$file" > temp.json && mv temp.json "$file"
                 else
                   echo "Translated description for $file (YAML) : $description -> $translated_description"
-                  export translated_description="$translated_description"
+                  export translated_description="[老王杂谈说]：$translated_description"
                   ~/bin/yq -i '.description = strenv(translated_description)' "$file"
                 fi
             } || {
