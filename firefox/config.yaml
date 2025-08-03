@@ -1,8 +1,8 @@
 name: "Firefox"
-version: "1.5.0"
+version: "1.6.0"
 slug: "firefox"
 panel_icon: "mdi:firefox"
-description: "Firefox Add-on for Home Assistant with persistent data \n 关注微信号：老王杂谈说 获取更多内容吧"
+description: "为Firefox的Docker容器"
 url: "https://ghfast.top/github.com/mincka/ha-addons/tree/main/firefox"
 arch:
   - aarch64
@@ -40,7 +40,7 @@ options:
   LANG: "en_US.UTF-8"
   TZ: "Etc/UTC"
   INSTALL_PACKAGES: ""
-  PACKAGES_MIRROR: ""  
+  PACKAGES_MIRROR: ""
   CONTAINER_DEBUG: "0"
   DISPLAY_WIDTH: "1920"
   DISPLAY_HEIGHT: "1080"
@@ -53,6 +53,7 @@ options:
   WEB_AUTHENTICATION_USERNAME: ""
   WEB_AUTHENTICATION_PASSWORD: ""
   FF_CUSTOM_ARGS: "0"
+  WEB_FILE_MANAGER: "0"
 schema:
   VNC_PASSWORD: str
   ENABLE_CJK_FONT: str
@@ -74,3 +75,4 @@ schema:
   WEB_AUTHENTICATION_USERNAME: str
   WEB_AUTHENTICATION_PASSWORD: str
   FF_CUSTOM_ARGS: str
+  WEB_FILE_MANAGER: str

@@ -1,8 +1,8 @@
 name: "Firefox (Edge)"
-version: "1.5.0"
+version: "1.6.0"
 slug: "firefox_edge"
 panel_icon: "mdi:firefox"
-description: "null"
+description: "用于Firefox的Docker容器。在容器启动时更新到最新版本的Firefox。"
 url: "https://ghfast.top/github.com/mincka/ha-addons/tree/main/firefox_edge"
 arch:
   - aarch64
@@ -19,7 +19,7 @@ ingress_port: 5800
 ports:
   5800/tcp: null
   5900/tcp: null
-  9222/tcp: null  
+  9222/tcp: null
 environment:
   # Required to write to /data
   USER_ID: "0"
@@ -40,7 +40,7 @@ options:
   LANG: "en_US.UTF-8"
   TZ: "Etc/UTC"
   INSTALL_PACKAGES: ""
-  PACKAGES_MIRROR: ""  
+  PACKAGES_MIRROR: ""
   CONTAINER_DEBUG: "0"
   DISPLAY_WIDTH: "1920"
   DISPLAY_HEIGHT: "1080"
@@ -52,7 +52,8 @@ options:
   WEB_AUTHENTICATION: "0"
   WEB_AUTHENTICATION_USERNAME: ""
   WEB_AUTHENTICATION_PASSWORD: ""
-  FF_CUSTOM_ARGS: "0"  
+  FF_CUSTOM_ARGS: "0"
+  WEB_FILE_MANAGER: "0"
 schema:
   VNC_PASSWORD: str
   ENABLE_CJK_FONT: str
@@ -73,4 +74,5 @@ schema:
   WEB_AUTHENTICATION: str
   WEB_AUTHENTICATION_USERNAME: str
   WEB_AUTHENTICATION_PASSWORD: str
-  FF_CUSTOM_ARGS: str  
+  FF_CUSTOM_ARGS: str
+  WEB_FILE_MANAGER: str

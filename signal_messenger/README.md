@@ -2,24 +2,26 @@
 
 # Signal Messenger
 
-用于 Signal-CLI Home Assistant 添加组件的 REST API
+Signal-CLI Home Assistant add-on REST-API
 
-# 如何使用此添加组件
+# 如何使用此插件
 
-安装添加组件，选择您想要的端口，然后启动。
+安装插件，选择您想要的端口，启动。
 
-添加组件启动后，请按照以下链接中的说明，从“注册电话号码”开始。
+插件启动后，请按照以下链接中的说明进行操作，从“注册电话号码”开始：
 
 https://github.com/bbernhard/signal-cli-rest-api/blob/master/doc/HOMEASSISTANT.md
 
-然后继续这里：
+然后继续：
 
 https://www.home-assistant.io/integrations/signal_messenger/
 
-# API 详情
+# API详细信息
 
-如果您想使用 i.e. REST 在 HA 中接收消息，可以在 [这里](https://bbernhard.github.io/signal-cli-rest-api/) 找到更多详细信息。
+如果您想使用REST接收HA中的消息，您可以在此处找到更多详细信息：
 
-强烈建议您使用机器的 IP 地址，而不是上游容器文档中提到的回环地址来注册号码。在 HAOS 中，一切都是容器化的，回环地址仅保留在各自的容器内。
+[此处](https://bbernhard.github.io/signal-cli-rest-api/)
 
-所有的功劳归于 [@bbernhard](https://github.com/bbernhard)，我所做的只是将他的 [工作](https://github.com/bbernhard/signal-cli-rest-api) 制作成一个添加组件。
+强烈建议您使用机器IP地址，而不是上游容器文档中提到的回环地址来注册号码。在HAOS中，一切都是容器化的，回环地址仍然位于各自的容器内部。
+
+所有功劳归于[@bbernhard](https://github.com/bbernhard)，我所做的一切只是采用了他的[工作](https://github.com/bbernhard/signal-cli-rest-api)并制作了一个插件。
