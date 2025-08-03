@@ -9,7 +9,7 @@
   "panel_icon": "mdi:application-variable",
   "boot": "manual",
   "host_network": true,
-  "image": "ghcr.nju.edu.cn/desmond-dong/ddnsto-{arch}",
+  "image": "ghcr.nju.edu.cn/desmond-dong/ddnsto/ddnsto-{arch}",
   "options": {
     "token": ""
   },
