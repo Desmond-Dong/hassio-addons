@@ -1,0 +1,42 @@
+{
+  "name": "room-assistant",
+  "version": "2.20.0",
+  "slug": "room_assistant",
+  "description": "Presence tracking and more for automation on the room-level",
+  "url": "https://www.room-assistant.io",
+  "stage": "stable",
+  "advanced": false,
+  "startup": "application",
+  "watchdog": "http://[HOST]:[PORT:6415]/status",
+  "arch": [
+    "aarch64",
+    "amd64",
+    "armhf",
+    "armv7",
+    "i386"
+  ],
+  "image": "docker.1ms.run/mkerix/room-assistant-{arch}",
+  "boot": "auto",
+  "services": [
+    "mqtt:want"
+  ],
+  "apparmor": false,
+  "host_network": true,
+  "host_dbus": true,
+  "gpio": true,
+  "privileged": [
+    "NET_ADMIN"
+  ],
+  "ports": {
+    "6415/tcp": 6415,
+    "6425/udp": 6425
+  },
+  "ports_description": {
+    "6415/tcp": "HTTP API",
+    "6425/udp": "Internal communication between instances"
+  },
+  "map": [
+    "config:rw"
+  ],
+  "schema": false
+}
