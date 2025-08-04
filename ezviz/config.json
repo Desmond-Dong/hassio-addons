@@ -23,7 +23,7 @@
   },
   "hassio_api": true,
   "hassio_role": "manager",
-  "image": "ghcr.nju.edu.cn/desmond-dong/ezviz-{arch}",
+  "image": "ghcr.nju.edu.cn/desmond-dong/ezviz/ezviz-{arch}",
   "webui": "http://[HOST]:[PORT:8888]",
   
   "options": {
