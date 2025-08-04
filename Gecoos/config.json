@@ -1,14 +1,15 @@
 {
   "name": "集客AC控制器",
-  "version": "2.2",
+  "version": "202503181710",
   "slug": "gecoos",
   "codenotary": "djhhui@gmail.com",
-  "description": "一个集客AC控制器的 Home Assistant 加载项",
-  "url": "https://github.com/Desmond-Dong/hassio-addons",
-  "arch": ["aarch64", "amd64", "armv7", "armhf", "i386"],
+  "description": "[老王杂谈说]一个集客AC控制器的 Home Assistant 加载项",
+  "url": "https://www.hasscn.top",
+  "arch": ["aarch64", "amd64"],
   "startup": "services",
   "boot": "auto",
   "webui": "http://[HOST]:[PORT:8080]",
+  "image": "ghcr.nju.edu.cn/desmond-dong/gecoos/gecoos-{arch}",
   "ports": {
     "8080/tcp": 8080
   },
