@@ -34,7 +34,7 @@
   "panel_icon": "mdi:application-variable",
   "boot": "manual",
   "host_network": true,
-  "image": "ghcr.nju.edu.cn/desmond-dong/easytier-{arch}",
+  "image": "ghcr.nju.edu.cn/desmond-dong/easytier/easytier-{arch}",
   "options": {
     "name": "EasyTier",
     "ipv4": "10.10.10.1/24",
