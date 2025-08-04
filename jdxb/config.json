@@ -9,7 +9,7 @@
   "startup": "services",
   "ingress": true,
   "ingress_port": 9118,
-  "image": "ghcr.nju.edu.cn/desmond-dong/jdxb-{arch}",
+  "image": "ghcr.nju.edu.cn/desmond-dong/jdxb/jdxb-{arch}",
   "init": false,
   "hassio_role": "manager",
   "panel_icon": "mdi:server-network",
