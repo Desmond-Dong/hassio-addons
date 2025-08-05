@@ -1,3 +1,10 @@
+## 2025.07.09 (04-08-2025)
+- Minor bugs fixed
+## 2025.07.08 (04-08-2025)
+- Minor bugs fixed
+## 2025.07.07 (04-08-2025)
+- Fix pulseaudio standalone @ignmedia
+
 ## 2025.07.06 (03-08-2025)
 - Use wikipedia for images
 

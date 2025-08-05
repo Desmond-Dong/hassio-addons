@@ -5,7 +5,7 @@
   ],
   "audio": true,
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "实时鸟类网络声音景观分析器",
+  "description": "[老王杂谈说]：实时鸟类声音景观分析器",
   "devices": [
     "/dev/dri",
     "/dev/snd",
@@ -124,5 +124,5 @@
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/birdnet-go",
   "usb": true,
-  "version": "nightly-20250731-2"
+  "version": "nightly-20250731-4"
 }

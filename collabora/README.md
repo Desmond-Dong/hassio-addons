@@ -13,10 +13,10 @@ Collabora Online 是一个基于 LibreOffice 技术的协作办公套件。
 
 ## 安装
 
-1. 点击下面的 Home Assistant 我的插件商店按钮。
+1. 点击下方 Home Assistant 我的插件商店按钮。
 1. 点击“安装”按钮来安装插件。
 1. 启动插件。
-1. 检查插件的日志以查看是否一切正常。
+1. 检查插件的日志，看看是否一切顺利。
 
 <a href="https://my.home-assistant.io/redirect/supervisor_addon/?addon=local_collabora" target="_blank"><img src="https://my.home-assistant.io/badges/supervisor_addon.svg" alt="打开你的 Home Assistant 实例并显示添加插件仓库对话框"/></a>
 
@@ -26,17 +26,17 @@ Web UI 可以在 <http://homeassistant:9980> 或通过 Ingress 访问。
 
 ### 选项
 
-配置插件以允许从您的 Nextcloud 实例访问：
+配置插件以允许从你的 Nextcloud 实例访问：
 
 - `domain`: 匹配 Nextcloud 主机的正则表达式（例如 `cloud\\.example\\.com`）。
 - `username` 和 `password`: Collabora 管理控制台的可选凭证。
 
 ### 自定义脚本和环境变量
 
-此插件通过 `addon_config` 映射支持自定义脚本和环境变量：
+此插件支持通过 `addon_config` 映射自定义脚本和环境变量：
 
-- **自定义脚本**: 请参阅 [在插件中运行自定义脚本](https://github.com/alexbelgium/hassio-addons/wiki/Running-custom-scripts-in-Addons)
-- **环境变量**: 请参阅 [为您的插件添加环境变量](https://github.com/alexbelgium/hassio-addons/wiki/Add-Environment-variables-to-your-Addon)
+- **自定义脚本**: 查看 [在插件中运行自定义脚本](https://github.com/alexbelgium/hassio-addons/wiki/Running-custom-scripts-in-Addons)
+- **环境变量**: 查看 [向你的插件添加环境变量](https://github.com/alexbelgium/hassio-addons/wiki/Add-Environment-variables-to-your-Addon)
 
 ## 支持
 
