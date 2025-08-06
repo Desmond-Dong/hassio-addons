@@ -8,19 +8,15 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-Network-wide ads & trackers blocking DNS server.
+网络范围内的广告和跟踪器拦截DNS服务器。
 
-## About
+## 关于
 
-AdGuard Home is a network-wide ad-and-tracker blocking DNS server with
-parental control (adult content blocking) capabilities. Its purpose is to let
-you control your entire network and all your devices, and it does not require
-using a client-side program.
+AdGuard Home 是一个具有家长控制（成人内容拦截）功能的网络范围内的广告和跟踪器拦截DNS服务器。它的目的是让你控制整个网络和所有你的设备，并且不需要使用客户端程序。
 
-AdGuard Home provides a beautiful, easy and feature-rich web interface to
-easily manage the filtering process and its settings.
+AdGuard Home 提供了一个美观、简单且功能丰富的网页界面，方便你轻松管理过滤过程及其设置。
 
-![AdGuard Home in the Home Assistant frontend][screenshot]
+![AdGuard Home 在 Home Assistant 前端][screenshot]
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
@@ -32,6 +28,6 @@ easily manage the filtering process and its settings.
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
 [patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[release-shield]: https://img.shields.io/badge/version-v5.3.0-blue.svg
-[release]: https://github.com/hassio-addons/addon-adguard-home/tree/v5.3.0
-[screenshot]: https://github.com/hassio-addons/addon-adguard-home/raw/v5.3.0/images/screenshot.png
+[release-shield]: https://img.shields.io/badge/version-v5.3.1-blue.svg
+[release]: https://github.com/hassio-addons/addon-adguard-home/tree/v5.3.1
+[screenshot]: https://github.com/hassio-addons/addon-adguard-home/raw/v5.3.1/images/screenshot.png

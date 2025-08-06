@@ -1,8 +1,8 @@
 ---
-version: 1.6.2
+version: 1.6.3
 slug: piper
 name: Piper
-description: Piper语音合成
+description: '[老王杂谈说]：使用Piper进行文本到语音转换'
 url: https://ghfast.top/github.com/home-assistant/addons/blob/master/piper
 arch:
   - amd64

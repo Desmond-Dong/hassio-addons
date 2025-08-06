@@ -1,7 +1,7 @@
 name: AdGuard Home
-version: 5.3.0
+version: 5.3.1
 slug: adguard
-description: 跨网络广告和追踪器阻止DNS服务器。
+description: '[老王杂谈说]：全网广告和跟踪器阻止DNS服务器'
 url: https://ghfast.top/github.com/hassio-addons/addon-adguard-home
 codenotary: codenotary@frenck.dev
 ingress: true
@@ -11,9 +11,9 @@ panel_icon: mdi:shield-check
 startup: services
 homeassistant: 0.113.2
 arch:
-- aarch64
-- amd64
-- armv7
+  - aarch64
+  - amd64
+  - armv7
 init: false
 ports:
   53/udp: 53
@@ -22,13 +22,13 @@ ports_description:
   53/udp: DNS server port
   80/tcp: Web interface (Not required for Ingress)
 discovery:
-- adguard
+  - adguard
 auth_api: true
 host_network: true
 hassio_api: true
 hassio_role: manager
 map:
-- ssl
+  - ssl
 options:
   ssl: true
   certfile: fullchain.pem
@@ -40,5 +40,5 @@ schema:
   keyfile: str
   leave_front_door_open: bool?
 backup_exclude:
-- '*/adguard/data/querylog.*'
+  - '*/adguard/data/querylog.*'
 image: ghcr.nju.edu.cn/hassio-addons/adguard/{arch}
