@@ -1,13 +1,13 @@
 name: AppDaemon
-version: 0.17.7
+version: 0.17.8
 slug: appdaemon
-description: Python Apps and Dashboard using AppDaemon 4.x for Home Assistant
+description: '[老王杂谈说]：使用 AppDaemon 4.x 为 Home Assistant 创建 Python 应用和仪表板'
 url: https://ghfast.top/github.com/hassio-addons/addon-appdaemon
 codenotary: codenotary@frenck.dev
 webui: http://[HOST]:[PORT:5050]
 arch:
-- aarch64
-- amd64
+  - aarch64
+  - amd64
 init: false
 homeassistant_api: true
 uart: true
@@ -16,11 +16,11 @@ ports:
 ports_description:
   5050/tcp: AppDaemon
 map:
-- addon_config:rw
-- homeassistant_config:rw
-- media:rw
-- share:rw
-- ssl
+  - addon_config:rw
+  - homeassistant_config:rw
+  - media:rw
+  - share:rw
+  - ssl
 options:
   system_packages: []
   python_packages: []
@@ -28,9 +28,9 @@ options:
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   system_packages:
-  - str
+    - str
   python_packages:
-  - str
+    - str
   init_commands:
-  - str
+    - str
 image: ghcr.nju.edu.cn/hassio-addons/appdaemon/{arch}
