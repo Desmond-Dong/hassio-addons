@@ -21,6 +21,9 @@
     "lang": "zh",
     "passwd": "admin"
   },
+  "map": [
+    "config:rw"
+  ],
   "ports_description": {
     "8080/tcp": "Web interface"
   },

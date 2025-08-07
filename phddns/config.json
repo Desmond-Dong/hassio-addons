@@ -18,6 +18,9 @@
   ],
   "options": {},
   "schema": {},
+  "map": [
+    "config:rw"
+  ],
   "restart": "always",
   "host_network": true,
   "environment": {

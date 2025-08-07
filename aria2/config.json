@@ -35,7 +35,8 @@
         "8080/tcp": 8080
     },
     "map": [
-        "share:rw"
+        "share:rw",
+        "config:rw"
     ],
     "webui": "http://[HOST]:[PORT:8080]/"
 }

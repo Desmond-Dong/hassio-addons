@@ -13,6 +13,9 @@
   "options": {
     "token": ""
   },
+  "map": [
+    "config:rw"
+  ],
   "schema": {
     "token": "str?"
   }

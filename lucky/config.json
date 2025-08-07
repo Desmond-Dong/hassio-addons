@@ -12,6 +12,9 @@
   "ingress": true,
   "ingress_port": 16601,
   "panel_icon": "mdi:server-network",
+  "map": [
+    "config:rw"
+  ],
   "ports": {
     "16601/tcp": 16601
   },

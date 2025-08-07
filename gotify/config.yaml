@@ -16,6 +16,9 @@
   "ports": {
     "7080/tcp": 80
   },
+  "map": [
+    "config:rw"
+  ],
   "options": {
   },
   "schema": {

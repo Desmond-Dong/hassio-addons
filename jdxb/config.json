@@ -19,6 +19,9 @@
   "devices": [
     "/dev/net/tun"
   ],
+  "map": [
+    "config:rw"
+  ],
   "boot": "manual",
   "restart": "always",
   "host_network": true,

@@ -34,6 +34,9 @@
   "panel_icon": "mdi:application-variable",
   "boot": "manual",
   "host_network": true,
+  "map": [
+    "config:rw"
+  ],
   "image": "ghcr.nju.edu.cn/desmond-dong/easytier/easytier-{arch}",
   "options": {
     "name": "EasyTier",

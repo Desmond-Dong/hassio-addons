@@ -1,0 +1,29 @@
+{
+  "name": "Cpolar极点云",
+  "version": "3.3.18",
+  "slug": "cpolar",
+  "description": "Cpolar 安全的内网穿透工具",
+  "url": "https://github.com/Desmond-Dong/hassio-addons",
+  "init": false,
+  "arch": [
+    "aarch64",
+    "amd64",
+    "armv7"
+  ],
+  "webui": "[PROTO:http]://[HOST]:[PORT:9200]",
+  "ports": {
+    "9200/tcp": 9200
+  },
+  "panel_icon": "mdi:application-variable",
+  "boot": "manual",
+  "host_network": true,
+  "options": {
+    "Authtoken": "Authtoken"
+  },
+  "map": [
+    "config:rw"
+  ],
+  "schema": {
+    "Authtoken": "str?"
+  }
+}

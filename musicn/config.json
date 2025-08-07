@@ -22,6 +22,9 @@
     "7478/tcp": "Web Server port"
   },
   "restart": "unless-stopped",
+  "map": [
+    "config:rw"
+  ],
   "options": {},
   "schema": {},
   "webui": "http://[HOST]:[PORT:7478]",

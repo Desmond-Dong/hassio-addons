@@ -29,6 +29,9 @@
     "PGID": "1000",
     "TZ": "Asia/Shanghai"
   },
+  "map": [
+    "config:rw"
+  ],
   "restart": "unless-stopped",
   "options": {},
   "schema": {},
