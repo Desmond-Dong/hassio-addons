@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.3.0](https://github.com/hugobloem/wyoming-microsoft-tts/compare/v1.2.1...v1.3.0) (2025-08-07)
+
+
+### 🚀 Features
+
+* add partial sentence synthesizing support ([#116](https://github.com/hugobloem/wyoming-microsoft-tts/issues/116)) ([caa6183](https://github.com/hugobloem/wyoming-microsoft-tts/commit/caa61839bb13ff69d2c3e263bbfeb70bc0bf59a9))
+
+## [1.2.1](https://github.com/hugobloem/wyoming-microsoft-tts/compare/v1.2.0...v1.2.1) (2025-08-07)
+
+
+### 📝 Documentation
+
+* update docker compose instructions @DOliana ([33f4c74](https://github.com/hugobloem/wyoming-microsoft-tts/commit/33f4c744c39a94563c45227f37099311f4790e93))
+
+
+### 🧪 Tests
+
+* only test for 3.13 ([#108](https://github.com/hugobloem/wyoming-microsoft-tts/issues/108)) ([2b0c9b4](https://github.com/hugobloem/wyoming-microsoft-tts/commit/2b0c9b4ab6376c157f8b6d903a0400a5f0b9f092))
+
+
+### 🏗️ Maintenance
+
+* **deps:** bump azure-cognitiveservices-speech from 1.42.0 to 1.44.0 ([#105](https://github.com/hugobloem/wyoming-microsoft-tts/issues/105)) ([56f034b](https://github.com/hugobloem/wyoming-microsoft-tts/commit/56f034beb5aa8df48fca776659a1c74a5d759b24))
+* **deps:** bump azure-cognitiveservices-speech from 1.44.0 to 1.45.0 ([#110](https://github.com/hugobloem/wyoming-microsoft-tts/issues/110)) ([a270a62](https://github.com/hugobloem/wyoming-microsoft-tts/commit/a270a62eed58b4907ed957f622b89d94f5d22275))
+* **deps:** bump wyoming from 1.6.0 to 1.7.1 ([#106](https://github.com/hugobloem/wyoming-microsoft-tts/issues/106)) ([8400041](https://github.com/hugobloem/wyoming-microsoft-tts/commit/8400041cc4dc9fe44419bca6586b6d028763c8da))
+* **deps:** bump wyoming from 1.7.1 to 1.7.2 ([#114](https://github.com/hugobloem/wyoming-microsoft-tts/issues/114)) ([f6abf28](https://github.com/hugobloem/wyoming-microsoft-tts/commit/f6abf281ab1515da6221627d21b11948e20b2724))
+* **deps:** update lxml requirement from &lt;6,&gt;=5 to &gt;=5,&lt;7 ([#107](https://github.com/hugobloem/wyoming-microsoft-tts/issues/107)) ([0e75ae0](https://github.com/hugobloem/wyoming-microsoft-tts/commit/0e75ae0921763100d5617f36b463c2bfa0d2cf16))
+
 ## [1.2.0](https://github.com/hugobloem/wyoming-microsoft-tts/compare/v1.1.2...v1.2.0) (2025-02-23)
 
 

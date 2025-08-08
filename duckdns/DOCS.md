@@ -1,25 +1,25 @@
-# Home Assistant 附加组件：DuckDNS
+# Home Assistant Add-on: DuckDNS
 
 ## 安装
 
-按照以下步骤在系统上安装附加组件：
+按照以下步骤将插件安装到您的系统上：
 
-1. 在 Home Assistant 前端导航至 **设置** -> **附加组件** -> **附加组件商店**。
-2. 找到 "DuckDNS" 附加组件并点击它。
+1. 在 Home Assistant 前端导航到 **设置** -> **插件** -> **插件商店**。
+2. 找到 "DuckDNS" 插件并点击它。
 3. 点击 "安装" 按钮。
 
-## 如何使用
+## 使用方法
 
-1. 访问 [DuckDNS.org](https://www.duckdns.org/) 并通过任何可用的账户服务（谷歌、GitHub、Twitter、Persona、Reddit）登录创建账户。
-2. 在 `域名` 部分，输入您希望注册的子域名，并点击 `添加域名`。
-3. 如果注册成功，子域名将显示在 `域名` 部分，同时 `当前 IP` 显示为您当前访问 `duckdns.org` 的设备的公共 IP 地址。IP 地址将由 DuckDNS 附加组件更新。
-4. 在 DuckDNS 附加组件的配置中，执行以下操作：
-    - 从 `duckdns.org` 复制 DuckDNS 令牌（在显示账户详细信息的页面顶部），并粘贴到 `令牌` 选项中。
-    - 用您注册的完整域名更新 `域名` 选项。例如，`my-domain.duckdns.org`。
+1. 访问 [DuckDNS.org](https://www.duckdns.org/) 并通过任何可用的账户服务（Google、Github、Twitter、Persona、Reddit）创建一个账户。
+2. 在 `域名` 部分，输入您希望注册的子域名，然后点击 `添加域名`。
+3. 如果注册成功，子域名将列在 `域名` 部分，`当前IP` 是您当前用来访问 `duckdns.org` 的设备的公网 IP 地址。DuckDNS 插件将更新 IP 地址。
+4. 在 DuckDNS 插件配置中，执行以下操作：
+    - 从 `duckdns.org` 处显示账户详情的页面顶部复制 DuckDNS 令牌，并将其粘贴到 `token` 选项中。
+    - 使用您注册的完整域名更新 `domains` 选项。例如：`my-domain.duckdns.org`。
 
 ## 配置
 
-附加组件配置：
+插件配置：
 
 ```yaml
 lets_encrypt:
@@ -33,7 +33,7 @@ aliases: []
 seconds: 300
 ```
 
-此外，您还需要配置 Home Assistant Core 以识别 SSL 证书。这通过在您的 `configuration.yaml` 中为 [HTTP][HTTP] 集成配置设置以下配置来实现：
+此外，您还需要配置 Home Assistant Core 以获取 SSL 证书。这是通过在您的 `configuration.yaml` 中的 [HTTP][HTTP] 集成配置中设置以下配置来完成的：
 
 ```yaml
 http:
@@ -43,59 +43,59 @@ http:
 
 ### 选项组 `lets_encrypt`
 
-以下选项适用于选项组：`lets_encrypt`。这些设置仅适用于 Let's Encrypt SSL 证书。
+以下选项用于 `lets_encrypt` 选项组。这些设置仅适用于 Let's Encrypt SSL 证书。
 
 #### 选项 `lets_encrypt.accept_terms`
 
-在阅读并接受 Let's Encrypt [订阅协议](https://letsencrypt.org/repository/) 后，将值更改为 `true` 以使用 Let's Encrypt 服务。
+在您阅读并接受 Let's Encrypt [订阅协议](https://letsencrypt.org/repository/) 后，将值更改为 `true` 以使用 Let's Encrypt 服务。
 
 #### 选项 `lets_encrypt.certfile`
 
-由 Let's Encrypt 生成的证书文件的名称。该文件用于 Home Assistant 附加组件的 SSL，建议保持文件名不变 (`fullchain.pem`) 以确保兼容性。
+Let's Encrypt 生成的证书文件的名称。该文件用于 Home Assistant 插件的 SSL，建议保留文件名不变（`fullchain.pem`）以保持兼容性。
 
-**注意**：_该文件存储在 `/ssl/` 中，这是 Home Assistant 的默认设置_
+**注意**：_文件存储在 `/ssl/`，这是 Home Assistant 的默认路径_
 
 #### 选项 `lets_encrypt.keyfile`
 
-由 Let's Encrypt 生成的私钥文件的名称。私钥文件用于 Home Assistant 附加组件的 SSL，建议保持文件名不变 (`privkey.pem`) 以确保兼容性。
+Let's Encrypt 生成的私钥文件的名称。私钥文件用于 Home Assistant 插件的 SSL，建议保留文件名不变（`privkey.pem`）以保持兼容性。
 
-**注意**：_该文件存储在 `/ssl/` 中，这是 Home Assistant 的默认设置_
+**注意**：_文件存储在 `/ssl/`，这是 Home Assistant 的默认路径_
 
 #### 选项 `lets_encrypt.algo`
 
 将使用的公钥算法。
 
-支持的值：`rsa`、`prime256v1` 和 `secp384r1`。
+支持值：`rsa`、`prime256v1` 和 `secp384r1`。
 
-默认值为 `secp384r1`
+默认值是 `secp384r1`
+
 
 ### 选项：`ipv4`（可选）
 
-默认情况下，Duck DNS 会自动检测您的 IPv4 地址并使用该地址。
-此选项允许您覆盖自动检测并手动指定 IPv4 地址。
+默认情况下，Duck DNS 将自动检测您的 IPv4 地址并使用该地址。
+此选项允许您覆盖自动检测并手动指定一个 IPv4 地址。
 
-如果您在此处指定 URL，它指向的资源的内容将被获取并用作地址。这使得可以使用像 https://api.ipify.org/ 或 https://ipv4.text.wtfismyip.com 的服务获取地址。
+如果您在此处指定一个 URL，它指向的资源的内容将被获取并用作地址。这可以通过使用类似 https://api.ipify.org/ 或 https://ipv4.text.wtfismyip.com 的服务来获取地址。
 
 ### 选项：`ipv6`（可选）
 
-默认情况下，Duck DNS 会自动检测您的 IPv6 地址并使用该地址。
-此选项允许您覆盖自动检测并手动指定 IPv6 地址。
+默认情况下，Duck DNS 将自动检测您的 IPv6 地址并使用该地址。
+此选项允许您覆盖自动检测并手动指定一个 IPv6 地址。
 
-如果您在此处指定 URL，它指向的资源的内容将被获取并用作地址。这使得可以使用像 https://api6.ipify.org/ 或 https://ipv6.text.wtfismyip.com 的服务获取地址。
+如果您在此处指定一个 URL，它指向的资源的内容将被获取并用作地址。这可以通过使用类似 https://api6.ipify.org/ 或 https://ipv6.text.wtfismyip.com 的服务来获取地址。
 
 ### 选项：`token`
 
-在 DuckDNS 账户登录页面顶部找到的 DuckDNS 身份验证令牌。进行任何对您账户登记的子域名的更改都需要此令牌。
+在 DuckDNS 账户登录页面的顶部找到的 DuckDNS 认证令牌。要对您账户下注册的子域名进行任何更改，需要此令牌。
 
 ### 选项：`domains`
 
-在您账户下注册的 DuckDNS 子域名列表。可接受的命名规则为 `my-domain.duckdns.org`。
+您账户下注册的 DuckDNS 子域名列表。可接受的命名约定是 `my-domain.duckdns.org`。
 
 ### 选项：`aliases`（可选）
 
-在 `域名` 选项上配置的域名别名列表。
-这在您想使用自己的域名时非常有用。
-创建一个 CNAME 记录以指向 DuckDNS 子域名，并相应地设置此值。
+在 `domains` 选项上配置的域名别名列表。
+在您希望使用自己的域名的情况下，这很有用。创建一个 CNAME 记录指向 DuckDNS 子域名，并相应地设置此值。
 
 例如：
 
@@ -107,9 +107,9 @@ aliases:
     alias: my-domain.duckdns.org
 ```
 
-不要将您的自定义域名添加到 `domains` 数组中。在创建证书时，将使用所有唯一的域名和别名。
+不要将您的自定义域名添加到 `domains` 数组。对于证书创建，所有唯一的域名和别名都将被使用。
 
-此外，不要忘记确保 dns-01 挑战能够到达 Duckdns。可能需要为此添加特定的 CNAME：
+同样，不要忘记确保 dns-01 挑战可以到达 Duckdns。可能需要为此添加一个特定的 CNAME：
 
 ```
 CNAME _acme-challenge.<own-domain>    _acme-challenge.<domain>.duckdns.org
@@ -122,22 +122,21 @@ CNAME                 <own-domain>                    <domain>.duckdns.org
 
 ## 已知问题和限制
 
-- 登录时，DuckDNS 需要来自以下任一服务的免费账户：谷歌、GitHub、Twitter 或 Persona。
+- 要登录，DuckDNS 需要从以下服务之一获取免费账户：Google、Github、Twitter 或 Persona。
 - 免费的 DuckDNS 账户限制为五个子域名。
-- 在撰写本文时，Duck DNS 自己的 IPv6 自动检测
-  [实际上不起作用][duckdns-faq]，但您可以使用 `ipv6` 的 URL 选项来解决此问题，继续阅读。
+- 在撰写本文时，Duck DNS 自身的 IPv6 自动检测 [实际上不起作用][duckdns-faq]，但您可以使用 `ipv6` 的 URL 选项来绕过这个问题，请继续阅读。
 
 ## 支持
 
-有问题吗？
+有问题？
 
-您有几个选项可以获得答案：
+您有几个选项来获得答案：
 
 - [Home Assistant Discord 聊天服务器][discord]。
 - Home Assistant [社区论坛][forum]。
-- 加入 [/r/homeassistant][reddit] 的 [Reddit 论坛][reddit]
+- 加入 [Reddit 子版块][reddit] 在 [/r/homeassistant][reddit]
 
-如果您发现了错误，请 [在我们的 GitHub 上开启一个问题][issue]。
+如果您发现了一个错误，请 [在我们的 GitHub 上打开一个问题][issue]。
 
 [discord]: https://discord.gg/c5DvZ4e
 [forum]: https://community.home-assistant.io

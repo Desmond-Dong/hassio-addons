@@ -1,0 +1,15 @@
+name: Smart Scale Connect
+description: '[老王杂谈说]：在不同生态系统之间同步智能秤数据的申请'
+url: https://ghfast.top/github.com/AlexxIT/SmartScaleConnect
+image: alexxit/smartscaleconnect
+arch: [amd64, aarch64, i386, armv7, armhf]
+# https://developers.home-assistant.io/docs/add-ons/configuration
+version: 0.1.0
+slug: scaleconnect
+init: false
+startup: system
+options:
+  sleep: 24h
+schema:
+  sleep: "str"
+map: ["config:rw"]

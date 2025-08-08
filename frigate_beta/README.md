@@ -1,6 +1,6 @@
 # Home Assistant 插件：Frigate Beta
 
-请参考 [发布说明](https://github.com/blakeblackshear/frigate/releases) 以了解破坏性变更。
+请参考 [发布说明](https://github.com/blakeblackshear/frigate/releases) 以了解重大变更。
 
 ![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield] ![支持 armv7 架构][armv7-shield]
 
