@@ -3,7 +3,7 @@
     "aarch64",
     "amd64"
   ],
-  "description": "自托管、端到端加密的照片和视频存储（Ente服务器 + MinIO）",
+  "description": "[老王杂谈说]：自托管、端到端加密的照片和视频存储（Ente服务器 + MinIO）",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -88,7 +88,6 @@
     "TZ": "Europe/Paris",
     "USE_EXTERNAL_DB": false
   },
-  "panel_icon": "mdi:image-multiple",
   "ports": {
     "3000/tcp": 8300,
     "3200/tcp": 8320,
@@ -125,7 +124,7 @@
   "slug": "ente",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "4.4.3",
+  "version": "4.4.4",
   "video": true,
   "webui": "http://[HOST]:[PORT:3000]"
 }

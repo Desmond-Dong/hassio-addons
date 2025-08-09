@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Openproject for Home Assistant",
+  "description": "[老王杂谈说]：Openproject for Home Assistant",
   "environment": {
     "APP_DATA_PATH": "/data/assets",
     "OPENPROJECT_ATTACHMENTS__STORAGE__PATH": "/data/assets/files",
@@ -39,6 +39,6 @@
   "slug": "openproject",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/openproject",
-  "version": "16.2.0",
+  "version": "16.2.2",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]"
 }

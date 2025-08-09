@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "基于网络的漫画存档浏览器和阅读器",
+  "description": "[老王杂谈说]：基于网络的漫画存档浏览器和阅读器",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -108,5 +108,5 @@
   "slug": "codex",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "1.8.6"
+  "version": "1.8.11"
 }
