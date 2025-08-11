@@ -1,0 +1,15 @@
+name: Smart Scale Connect (master)
+description: '[老王杂谈说]：最新不稳定版本'
+url: https://ghfast.top/github.com/AlexxIT/SmartScaleConnect
+image: alexxit/smartscaleconnect
+arch: [amd64, aarch64, i386, armv7, armhf]
+# https://developers.home-assistant.io/docs/add-ons/configuration
+version: master
+slug: scaleconnect-master
+init: false
+startup: system
+options:
+  sleep: 24h
+schema:
+  sleep: "str"
+map: ["config:rw"]

@@ -1,70 +1,71 @@
-## ⚠️ Open Issue : [🐛 [Filebrowser] 在新安装时崩溃 (已打开 2025-08-02)](https://github.com/alexbelgium/hassio-addons/issues/1993) by [@LivArt01](https://github.com/LivArt01)
-# Home assistant 插件：Filebrowser
+## &#9888; Open Issue : [🐛 [Filebrowser] Crashing on new install (opened 2025-08-02)](https://github.com/alexbelgium/hassio-addons/issues/1993) by [@LivArt01](https://github.com/LivArt01)
+# Home assistant add-on: Filebrowser
 
-[![支持](https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white)](https://www.buymeacoffee.com/alexbelgium)
-[![支持](https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white)](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
+[![Donate][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
+[![Donate][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
 
-![版本](https://img.shields.io/badge/dynamic/json?label=版本&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Ffilebrowser%2Fconfig.json)
+![Version](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Ffilebrowser%2Fconfig.json)
 ![Ingress](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Ffilebrowser%2Fconfig.json)
-![架构](https://img.shields.io/badge/dynamic/json?color=success&label=架构&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Ffilebrowser%2Fconfig.json)
+![Arch](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Ffilebrowser%2Fconfig.json)
 
-[![Codacy 徽章](https://app.codacy.com/project/badge/Grade/9c6cf10bdbba45ecb202d7f579b5be0e)](https://www.codacy.com/gh/alexbelgium/hassio-addons/dashboard?utm_source=github.com&utm_medium=referral&utm_content=alexbelgium/hassio-addons&utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/9c6cf10bdbba45ecb202d7f579b5be0e)](https://www.codacy.com/gh/alexbelgium/hassio-addons/dashboard?utm_source=github.com&utm_medium=referral&utm_content=alexbelgium/hassio-addons&utm_campaign=Badge_Grade)
 [![GitHub Super-Linter](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/weekly-supelinter.yaml?label=Lint%20code%20base)](https://github.com/alexbelgium/hassio-addons/actions/workflows/weekly-supelinter.yaml)
-[![构建器](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/onpush_builder.yaml?label=构建器)](https://github.com/alexbelgium/hassio-addons/actions/workflows/onpush_builder.yaml)
+[![Builder](https://img.shields.io/github/actions/workflow/status/alexbelgium/hassio-addons/onpush_builder.yaml?label=Builder)](https://github.com/alexbelgium/hassio-addons/actions/workflows/onpush_builder.yaml)
 
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_感谢所有给我的仓库星标的人！要星标它，点击下面的图片，然后它就会在右上角。谢谢！_
+_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
 
 [![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
-![下载趋势](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/filebrowser/stats.png)
+![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/filebrowser/stats.png)
 
-## 关于
+## About
 
-基于 Web 的文件管理界面，提供了一种安全的方式来浏览、上传、下载、编辑和管理您 Home Assistant 系统上的文件。Filebrowser 通过 Web 浏览器提供了一种干净、现代的界面来处理您的文件，支持多种文件格式、预览功能以及全面的文件操作。
+Web-based file management interface that provides a secure way to browse, upload, download, edit and manage files on your Home Assistant system. Filebrowser offers a clean, modern interface for handling your files through a web browser, with support for multiple file formats, preview capabilities, and comprehensive file operations.
 
-这个插件基于官方 Filebrowser 项目的 [docker 镜像](https://hub.docker.com/r/filebrowser/filebrowser)。
+This addon is based on the [docker image](https://hub.docker.com/r/filebrowser/filebrowser) from the official Filebrowser project.
 
-## 安装
+## Installation
 
-这个插件的安装非常简单，与安装任何其他 Home Assistant 插件没有区别。
+The installation of this add-on is pretty straightforward and not different in
+comparison to installing any other Home Assistant add-on.
 
-1. 将我的 Home Assistant 插件仓库 [repository] 添加到您的 Home Assistant 实例中。
-2. 安装这个插件。
-3. 点击 `保存` 按钮以保存您的配置。
-4. 启动插件。
-5. 检查插件的日志以查看是否一切正常。
-6. 通过侧边栏或 `<your-ip>:8071` 访问 Web 界面。
+1. [Add my Home Assistant add-ons repository][repository] to your Home Assistant instance.
+1. Install this add-on.
+1. Click the `Save` button to store your configuration.
+1. Start the add-on.
+1. Check the logs of the add-on to see if everything went well.
+1. Access the web UI through the sidebar or at `<your-ip>:8071`.
 
-## 配置
+## Configuration
 
-Web 界面位于 `<your-ip>:8071` 或通过 Ingress 在 Home Assistant 侧边栏中访问。
+The web UI can be found at `<your-ip>:8071` or through the Home Assistant sidebar when using Ingress.
 
-**默认凭证：**
-- 用户名：`admin`
-- 密码：`admin`
+**Default credentials:**
+- Username: `admin`
+- Password: `admin`
 
-**重要提示：** 首次登录后立即更改默认凭证以提高安全性。
+**Important:** Change the default credentials immediately after first login for security.
 
-### 选项
+### Options
 
-| 选项 | 类型 | 默认值 | 描述 |
-|------|------|--------|------|
-| `ssl` | bool | `false` | 为 Web 界面启用 HTTPS |
-| `certfile` | str | `fullchain.pem` | SSL 证书文件（位于 `/ssl/`） |
-| `keyfile` | str | `privkey.pem` | SSL 私有密钥文件（位于 `/ssl/`） |
-| `NoAuth` | bool | `true` | 禁用身份验证（更改时重置数据库） |
-| `disable_thumbnails` | bool | `true` | 禁用缩略图生成以提高性能 |
-| `base_folder` | str | *(可选)* | 文件浏览器的根文件夹（默认为所有映射文件夹） |
-| `localdisks` | str | *(可选)* | 要挂载的本地驱动器（例如，`sda1,sdb1,MYNAS`） |
-| `networkdisks` | str | *(可选)* | 要挂载的 SMB 共享（例如，`//SERVER/SHARE`） |
-| `cifsusername` | str | *(可选)* | SMB 共享的网络用户名 |
-| `cifspassword` | str | *(可选)* | SMB 共享的网络密码 |
-| `cifsdomain` | str | *(可选)* | SMB 共享的网络域 |
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `ssl` | bool | `false` | Enable HTTPS for web interface |
+| `certfile` | str | `fullchain.pem` | SSL certificate file (in `/ssl/`) |
+| `keyfile` | str | `privkey.pem` | SSL private key file (in `/ssl/`) |
+| `NoAuth` | bool | `true` | Disable authentication (resets database when changed) |
+| `disable_thumbnails` | bool | `true` | Disable thumbnail generation for improved performance |
+| `base_folder` | str | *(optional)* | Root folder for file browser (defaults to all mapped folders) |
+| `localdisks` | str | *(optional)* | Local drives to mount (e.g., `sda1,sdb1,MYNAS`) |
+| `networkdisks` | str | *(optional)* | SMB shares to mount (e.g., `//SERVER/SHARE`) |
+| `cifsusername` | str | *(optional)* | SMB username for network shares |
+| `cifspassword` | str | *(optional)* | SMB password for network shares |
+| `cifsdomain` | str | *(optional)* | SMB domain for network shares |
 
-### 示例配置
+### Example Configuration
 
 ```yaml
 ssl: true
@@ -80,34 +81,34 @@ cifspassword: "password123"
 cifsdomain: "workgroup"
 ```
 
-## 设置
+## Setup
 
-1. 启动插件并等待其初始化。
-2. 通过 Home Assistant 侧边栏或 `<your-ip>:8071` 访问 Web 界面。
-3. 使用默认凭证登录：
-   - 用户名：`admin`
-   - 密码：`admin`
-4. **重要提示：** 通过点击 "设置" > "用户管理" 立即更改默认密码。
-5. 通过 Web 界面配置您喜欢的设置。
-6. 如果禁用身份验证 (`NoAuth: true`)，则将跳过登录屏幕。
+1. Start the add-on and wait for it to initialize.
+1. Access the web interface through the Home Assistant sidebar or at `<your-ip>:8071`.
+1. Log in using the default credentials:
+   - Username: `admin`
+   - Password: `admin`
+1. **Important:** Immediately change the default password by clicking on "Settings" > "User Management".
+1. Configure your preferred settings through the web interface.
+1. If authentication is disabled (`NoAuth: true`), the login screen will be bypassed.
 
-### 挂载驱动器
+### Mounting Drives
 
-这个插件支持挂载本地驱动器和远程 SMB 共享：
+This addon supports mounting both local drives and remote SMB shares:
 
-- **本地驱动器**：参见 [在插件中挂载本地驱动器](https://github.com/alexbelgium/hassio-addons/wiki/Mounting-Local-Drives-in-Addons)
-- **远程共享**：参见 [在插件中挂载远程共享](https://github.com/alexbelgium/hassio-addons/wiki/Mounting-remote-shares-in-Addons)
+- **Local drives**: See [Mounting Local Drives in Addons](https://github.com/alexbelgium/hassio-addons/wiki/Mounting-Local-Drives-in-Addons)
+- **Remote shares**: See [Mounting Remote Shares in Addons](https://github.com/alexbelgium/hassio-addons/wiki/Mounting-remote-shares-in-Addons)
 
-### 自定义脚本和环境变量
+### Custom Scripts and Environment Variables
 
-这个插件支持通过 `addon_config` 映射的自定义脚本和环境变量：
+This addon supports custom scripts and environment variables through the `addon_config` mapping:
 
-- **自定义脚本**：参见 [在插件中运行自定义脚本](https://github.com/alexbelgium/hassio-addons/wiki/Running-custom-scripts-in-Addons)
-- **环境变量**：参见 [向您的插件添加环境变量](https://github.com/alexbelgium/hassio-addons/wiki/Add-Environment-variables-to-your-Addon)
+- **Custom scripts**: See [Running Custom Scripts in Addons](https://github.com/alexbelgium/hassio-addons/wiki/Running-custom-scripts-in-Addons)
+- **Environment variables**: See [Add Environment Variables to your Addon](https://github.com/alexbelgium/hassio-addons/wiki/Add-Environment-variables-to-your-Addon)
 
-## 支持
+## Support
 
-在 GitHub 上创建问题，或在 [Home Assistant 社区线程](https://community.home-assistant.io/t/home-assistant-addon-filebrowser/282108/3) 上提问。
+Create an issue on GitHub, or ask on the [Home Assistant Community thread](https://community.home-assistant.io/t/home-assistant-addon-filebrowser/282108/3).
 
 [repository]: https://github.com/alexbelgium/hassio-addons
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg

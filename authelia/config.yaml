@@ -1,7 +1,7 @@
 name: Authelia
-version: 0.1.11
+version: 0.1.12
 slug: authelia
-description: $translated_description
+description: '[老王杂谈说]：认证和授权服务器'
 url: https://ghfast.top/github.com/einschmidt/addon-authelia
 arch:
   - amd64

@@ -1,7 +1,7 @@
 name: Pocket ID
-version: 1.1.8
+version: 1.1.9
 slug: pocket-id
-description: $translated_description
+description: '[老王杂谈说]：简单的OIDC提供者用于密钥认证'
 url: https://ghfast.top/github.com/einschmidt/addon-pocket-id
 arch:
   - amd64
