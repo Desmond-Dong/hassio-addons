@@ -4,7 +4,7 @@
   "url": "https://gitee.com/desmond_GT/hassio-addons/blob/main/README.md",
   "codenotary": "djhhui@gmail.com",
   "slug": "dedeaddon",
-  "description": "！！说明上有的问题一概不重复回答！！，这个加载项不可安装，请不要尝试安装此加载项",
+  "description": "！！请先阅读此说明",
   "arch": ["aarch64", "amd64", "armv7", "i386", "armhf"],
   "startup": "services",
   "boot": "auto",
