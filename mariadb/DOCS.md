@@ -1,4 +1,4 @@
-# Home Assistant Add-on: "Unofficial" MariaDB
+# Home Assistant Add-on: MariaDB
 
 ## Installation
 
@@ -96,12 +96,23 @@ recorder:
 
 Got questions?
 
-You could [open an issue here][issue] GitHub.
+You have several options to get them answered:
 
-[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
-[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
-[armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
+- The [Home Assistant Discord Chat Server][discord].
+- The Home Assistant [Community Forum][forum].
+- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+
+In case you've found a bug, please [open an issue on our GitHub][issue].
+
+[createuser]: https://mariadb.com/kb/en/create-user/
+[username]: https://mariadb.com/kb/en/create-user/#user-name-component
+[hostname]: https://mariadb.com/kb/en/create-user/#host-name-component
+[grant]: https://mariadb.com/kb/en/grant/
+[migration-issues]: https://github.com/home-assistant/core/issues/125339
+[mariadb-ha-recorder]: https://www.home-assistant.io/integrations/recorder/
+[discord]: https://discord.gg/c5DvZ4e
+[forum]: https://community.home-assistant.io
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
-[issue]: https://github.com/erik73/addon-mariadb/issues
-[repository]: https://github.com/erik73/hassio-addons
+[issue]: https://github.com/home-assistant/addons/issues
+[reddit]: https://reddit.com/r/homeassistant
+[repository]: https://github.com/hassio-addons/repository

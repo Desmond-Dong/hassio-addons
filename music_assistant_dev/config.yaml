@@ -1,11 +1,8 @@
 name: Music Assistant Server (dev/nightly)
 # version number gets updated only when the mass base image updates!
-version: 1.3.0
+version: 1.3.1
 slug: music_assistant_dev
-description: 开发（夜间）版本的Music Assistant。此附加组件会从git直接安装最新版本到启动时指定的分支。如果您想跟上最新的开发进度，但需自行承担风险，不建议日常使用。只需重新启动附加组件即可获取最新版本。
-  This add-on installs the latest version from the (configurable) branch directly from git at startup.
-  Install this version if you want to keep up with the latest bleeding edge development but use it at your own risk, not recomended for daily use.
-  Simply restart the add-on to fetch the latest version from source.
+description: '[老王杂谈说]：音乐助手（夜间）开发版本。此插件在启动时直接从git安装（可配置）分支的最新版本。如果你想紧跟最新的尖端开发，但请自行承担风险使用，不建议日常使用。只需重新启动插件即可从源获取最新版本。'
 url: https://music-assistant.io
 arch:
   - amd64
@@ -14,7 +11,7 @@ homeassistant_api: true
 auth_api: true
 host_network: true
 ingress: true
-ingress_port: 8095
+ingress_port: 8094
 panel_icon: mdi:play-circle
 panel_title: Music Assistant
 panel_admin: false

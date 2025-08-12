@@ -1,3 +1,15 @@
+## 2.42.2-5 (11-08-2025)
+- Minor bugs fixed
+## 2.42.2-4 (11-08-2025)
+- Minor bugs fixed
+## 2.42.2-3 (10-08-2025)
+- Fix: disable PCRE JIT in Nginx to prevent crashes on some x86 systems
+
+## 2.42.2-2 (09-08-2025)
+- Minor bugs fixed
+
+## 2.42.2 (09-08-2025)
+- Update to latest version from filebrowser/filebrowser (changelog : https://github.com/filebrowser/filebrowser/releases)
 ## 2.42.1-3 (01-08-2025)
 - Minor bugs fixed
 

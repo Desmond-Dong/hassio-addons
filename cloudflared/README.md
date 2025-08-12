@@ -9,13 +9,13 @@
 
 ## 关于
 
-Cloudflared 通过安全的隧道将您的 Home Assistant 实例连接到 Cloudflare 的域名或子域名。这样做，您可以在不打开路由器端口的情况下将 Home Assistant 暴露给互联网。此外，您还可以利用 Cloudflare Teams，他们的零信任平台来进一步保护您的 Home Assistant 连接。
+Cloudflared 通过安全的隧道连接您的 Home Assistant 实例到 Cloudflare 的域名或子域名。这样做，您可以在不打开路由器端口的情况下将 Home Assistant 暴露给互联网。此外，您还可以利用 Cloudflare Teams，他们的零信任平台来进一步保护您的 Home Assistant 连接。
 
-**要使用此插件，您必须拥有一个使用 Cloudflare 进行 DNS 条目的域名（例如 example.com）。您可以在我们的 [Wiki][wiki] 中找到更多相关信息**。
+**要使用此插件，您必须拥有一个使用 Cloudflare 进行 DNS 条目的域名（例如 example.com）。您可以在我们的 [维基][wiki] 中找到更多相关信息**。
 
 ## 免责声明
 
-在使用此插件时，请确保遵守 [Cloudflare 自助服务订阅协议][cloudflare-sssa]。
+在使用此插件时，请确保您遵守 [Cloudflare 自助服务订阅协议][cloudflare-sssa]。
 
 [cloudflare-sssa]: https://www.cloudflare.com/terms/
 [domainarticle]: https://www.linkedin.com/pulse/what-do-domain-name-how-get-one-free-tobias-brenner?trk=public_post-content_share-article

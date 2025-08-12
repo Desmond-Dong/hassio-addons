@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Gitea for Home Assistant",
+  "description": "[老王杂谈说]：Gitea for Home Assistant",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -102,6 +102,6 @@
   "slug": "gitea",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/gitea",
-  "version": "1.24.3",
+  "version": "1.24.4",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:3000]"
 }

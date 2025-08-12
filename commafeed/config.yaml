@@ -1,15 +1,15 @@
 name: CommaFeed
-version: "5.10.0-h2"
+version: "5.11.0-h2"
 upstream: 5.3.4-h2
 slug: commafeed
-description: >-  
-  基于Quarkus和React/TypeScript的自托管RSS阅读器，受到Google Reader的启发。
+description: >-
+  [老王杂谈说]：基于Quarkus和React/TypeScript的Google Reader启发式自托管RSS阅读器。
 arch:
   - amd64
   - aarch64
 url: "https://ghfast.top/github.com/jdeath/homeassistant-addons"
 ports:
-  8082/tcp: 8082 
+  8082/tcp: 8082
 ports_description:
   8082/tcp: "Web Interface"
 map:

@@ -1,9 +1,9 @@
 name: "Stirling-PDF"
-version: "1.1.1"
-upstream: "1.1.1"
+version: "1.2.0"
+upstream: "1.2.0"
 slug: stirling-pdf
 description: >-
-  一个稳健的、本地托管的基于网页的PDF操作工具
+  [老王杂谈说]：一个强大、本地托管的基于网络的PDF操作工具
 arch:
   - amd64
   - aarch64

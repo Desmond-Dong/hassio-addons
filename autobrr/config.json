@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "下载自动化",
+  "description": "[老王杂谈说]：下载自动化",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -116,5 +116,5 @@
   "slug": "autobrr",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/autobrr",
-  "version": "1.64.0"
+  "version": "1.65.0"
 }
