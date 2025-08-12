@@ -1,8 +1,8 @@
 ---
-version: 9.18.0
+version: 9.19.0
 slug: ssh
 name: Terminal & SSH
-description: 允许通过SSH远程登录到Home Assistant。
+description: '[老王杂谈说]：允许使用SSH远程登录到Home Assistant'
 url: https://ghfast.top/github.com/home-assistant/addons/tree/master/ssh
 codenotary: notary@home-assistant.io
 advanced: true
@@ -16,7 +16,7 @@ audio: true
 hassio_api: true
 hassio_role: manager
 host_dbus: true
-image: docker.m.daocloud.io/homeassistant/{arch}-addon-ssh
+image: docker.1ms.run/homeassistant/{arch}-addon-ssh
 ingress: true
 init: false
 map:

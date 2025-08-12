@@ -1,59 +1,60 @@
-# Home Assistant 插件：终端和 SSH
+# Home Assistant Add-on: Terminal & SSH
 
-## 安装
+## Installation
 
-按照以下步骤在您的系统上安装该插件：
+Follow these steps to get the add-on installed on your system:
 
-1. 该插件仅对“高级模式”用户可见。要启用高级模式，请转到 **个人资料** -> 并打开 **高级模式**。
-2. 在 Home Assistant 前端导航到 **设置** -> **插件** -> **插件商店**。
-3. 找到“终端和 SSH”插件并点击它。
-4. 点击“安装”按钮。
+1. This add-on is only visible to "Advanced Mode" users. To enable advanced mode, go to **Profile** -> and turn on **Advanced Mode**.
+2. Navigate in your Home Assistant frontend to **Settings** -> **Add-ons** -> **Add-on store**.
+3. Find the "Terminal & SSH" add-on and click it.
+4. Click on the "INSTALL" button.
 
-## 如何使用
+## How to use
 
-该插件为您的 Home Assistant 安装添加了两个主要功能：
+This add-on adds two main features to your Home Assistant installation:
 
-- 一个可以从浏览器使用的网页终端，以及
-- 启用使用 SSH 客户端连接到您的系统。
+- a web terminal that you can use from your browser, and
+- enable connecting to your system using an SSH client.
 
-无论您如何连接（使用网页终端或使用 SSH 客户端），您最终都会进入该插件的容器。Home Assistant 配置目录位于路径 `/config`。
+Regardless of how you connect (using the web terminal or using an SSH client), you end up in this add-on's container. The Home Assistant configuration
+directory is located on the path `/config`.
 
-该插件捆绑了 [Home Assistant CLI](https://www.home-assistant.io/common-tasks/os#home-assistant-via-the-command-line)。您可以通过以下方式尝试：
+This add-on comes bundled with [The Home Assistant CLI](https://www.home-assistant.io/common-tasks/os#home-assistant-via-the-command-line). Try it out using:
 
 ```bash
 ha help
 ```
 
-### 网页终端
+### The Web Terminal
 
-您可以通过点击该插件的信息标签上的“打开网页 UI”按钮访问网页终端。如果您将“在侧边栏显示”设置（在同一信息标签上找到）设置为“开启”，那么将会在侧边栏中添加一个快捷方式，允许您快速访问网页终端。
+You can access the web terminal by clicking the "Open Web UI" button on this add-on's Info tab. If you set the "Show in sidebar" setting (found on the same Info tab) to "on", a shortcut is added to the sidebar allowing you to access the web terminal quickly.
 
-要从网页 UI 复制文本：
-1. 按住 SHIFT 键。
-2. 使用鼠标选择您要复制的文本。
-3. 释放左键鼠标按钮后，文本将被复制到您的系统剪贴板。
+To copy text from the Web UI:
+1. Hold down the SHIFT key.
+2. Select the text you want to copy using your mouse.
+3. On releasing the left mouse button, the text gets copied to your system clipboard.
 
-要将文本粘贴到网页 UI 中：
-1. 按 SHIFT + INSERT。
+To paste text into the Web UI:
+1. Press SHIFT + INSERT.
 
-### SSH 服务器连接
+### SSH Server Connection
 
-默认情况下，远程 SSH 访问通过网络是禁用的（请见下面的网络部分）。要使用 SSH 客户端（如 PuTTY 或 Linux 终端）连接，您需要为该插件提供额外的配置。要启用 SSH 连接，您需要：
+Remote SSH access from the network is disabled by default (See Network below).  To connect using an SSH client, such as PuTTY or Linux terminal, you need to supply additional configuration for this add-on. To enable SSH connectivity, you need to:
 
-- 提供身份验证凭据 - 密码或 SSH 密钥
-- 指定要绑定到 Home Assistant 主机的 TCP 端口
+- Provide authentication credentials - a password or SSH key(s)
+- Specify which TCP port to bind to, on the Home Assistant host
 
-然后，您可以使用用户名 `root` 连接到指定的端口。请注意，启用 SSH 服务器可能会使您的 Home Assistant 系统的安全性降低，因为这可能会使互联网任何人尝试访问您的系统。您系统的安全性也取决于您的网络设置、路由器设置、防火墙使用等。作为一般建议，除非您了解其后果，否则不应启用该插件的这一部分。
+You can then connect to the port specified, using the username `root`. Please note that enabling the SSH Server potentially makes your Home Assistant system less secure, as it might enable anyone on the internet to try to access your system. The security of your system also depends on your network set up, router settings, use of firewalls, etc. As a general recommendation, you should not activate this part of the add-on unless you understand the ramifications.
 
-如果您启用使用 SSH 客户端连接到 SSH 服务器，强烈建议您使用公钥/私钥进行登录。只要您保持私钥的安全，使用公钥/私钥使您的系统变得更难以被攻破。因此，使用密码通常被认为是一种较不安全的机制。要生成公钥/私钥 SSH 密钥，请按照 [Windows 的说明][keygen-windows] 和 [其他平台的说明][keygen]。
+If you enable connecting to the SSH Server using an SSH client, you are strongly recommended to use private/public keys to log in. As long as you keep the private part of your key safe, this makes your system much harder to break into. Using passwords is, therefore, generally considered a less secure mechanism. To generate private/public SSH keys, follow the [instructions for Windows][keygen-windows] and [these for other platforms][keygen].
 
-**注意**：在上述说明中选择 ECDSA 作为 `生成密钥类型`，而不是 RSA。RSA 不再受支持。
+**Note**: While following the instructions above, select ECDSA as `Type of key to generate` instead of RSA. RSA is no longer supported.
 
-启用密码登录将禁用基于密钥的登录。您不能同时运行这两种变体。
+Enabling login via password will disable key-based login. You can not run both variants at the same time.
 
-## 配置
+## Configuration
 
-插件配置：
+Add-on configuration:
 
 ```yaml
 authorized_keys:
@@ -64,52 +65,52 @@ server:
   tcp_forwarding: false
 ```
 
-### 选项：`apks`
+### Option: `apks`
 
-要在插件容器中安装的其他软件包。
+Additional software packages to install in the add-on container.
 
-### 选项：`authorized_keys`
+### Option: `authorized_keys`
 
-您希望接受用于登录的 **公钥**。您可以通过将多个公钥添加到列表中来授权多个密钥。
+Your **public keys** that you wish to accept for login. You can authorize multiple keys by adding multiple public keys to the list.
 
-如果您在添加密钥时遇到错误，可能是因为您尝试添加的公钥包含与 YAML 语法冲突的字符。尝试用双引号将密钥括起来以避免此问题。
+If you get errors when adding your key, it is likely that the public key you're trying to add, contains characters that intervene with YAML syntax. Try enclosing your key in double quotes to avoid this issue.
 
-### 选项：`password`
+### Option: `password`
 
-设置登录密码。 **我们不推荐这种变体**。
+Set a password for login. **We do NOT recommend this variant**.
 
-### 选项组 `server`
+### Option group  `server`
 
-一些 SSH 服务器选项。
+Some SSH server options.
 
-#### 选项 `tcp_forwarding`
+#### Option `tcp_forwarding`
 
-指定是否允许 TCP 端口转发（-L -R 等）。
+Specifies whether TCP port forwarding (-L -R etc.) is permitted or not.
 
-**注意**：_启用此选项会降低您 SSH 服务器的安全性！尽管如此，这个警告是有争议的。_
+**Note**: _Enabling this option lowers the security of your SSH server! Nevertheless, this warning is debatable._
 
-## 网络
+## Network
 
-如果您希望使用 SSH 客户端（如 PuTTY 或 Linux 终端）连接到 Home Assistant，此部分仅适用。要从网络启用 SSH 远程访问，请在网络配置输入框中指定所需的 SSH TCP 服务器端口。您输入的数字将用于将该端口从主机映射到正在运行的“终端和 SSH”插件。SSH 协议使用的标准端口是 `22`。
+This section is only relevant if you want to connect to Home Assistant using an SSH client, such as PuTTY or Linux terminal. To enable SSH remote access from the Network, specify the desired SSH TCP server port in the Network configuration input box. The number you enter will be used to map that port from the host into the running "Terminal & SSH" add-on. The standard port used for the SSH protocol is `22`.  
 
-远程 SSH 访问可以通过清除输入框、保存配置并重启插件再次禁用。
+Remote SSH access can be disabled again, by clearing the input box, saving the configuration and restarting the add-on.
 
-## 已知问题和限制
+## Known issues and limitations
 
-- 此插件将无法让您以根用户身份安装软件包或执行任何操作。
-  这在 Home Assistant 中是无法工作的。
+- This add-on will not enable you to install packages or do anything as root.
+  This is not working with Home Assistant.
 
-## 支持
+## Support
 
-有问题吗？
+Got questions?
 
-您有几种选项可以获得解答：
+You have several options to get them answered:
 
-- [Home Assistant Discord 聊天服务器][discord]。
-- Home Assistant [社区论坛][forum]。
-- 加入 [Reddit 子版块][reddit] 在 [/r/homeassistant][reddit]。
+- The [Home Assistant Discord Chat Server][discord].
+- The Home Assistant [Community Forum][forum].
+- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
 
-如果您发现了错误，请 [在我们的 GitHub 上报告问题][issue]。
+In case you've found a bug, please [open an issue on our GitHub][issue].
 
 [discord]: https://discord.gg/c5DvZ4e
 [forum]: https://community.home-assistant.io

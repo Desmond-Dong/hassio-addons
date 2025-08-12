@@ -1,4 +1,4 @@
-# Home Assistant 插件: VLC
+# Home Assistant Add-on: VLC
 
 允许 Home Assistant 使用您的本地设备作为媒体播放器。
 
