@@ -287,7 +287,7 @@ jobs:
               echo "Moved directory: $ITEM"
             fi
           done
-          rm -rf whisparr _images scripts script template binance-trading-bot ladder dhcp_server zzz_archived_* octobot # 删除无用的仓库
+          rm -rf whisparr _images scripts script template binance-trading-bot ladder dhcp_server zzz_archived_* octobot tor # 删除无用的仓库
 
 
 
