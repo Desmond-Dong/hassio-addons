@@ -8,14 +8,14 @@
 2. 找到 "DuckDNS" 插件并点击它。
 3. 点击 "安装" 按钮。
 
-## 使用方法
+## 如何使用
 
-1. 访问 [DuckDNS.org](https://www.duckdns.org/) 并通过任何可用的账户服务（Google、Github、Twitter、Persona、Reddit）创建一个账户。
-2. 在 `域名` 部分，输入您希望注册的子域名，然后点击 `添加域名`。
-3. 如果注册成功，子域名将列在 `域名` 部分，`当前IP` 是您当前用来访问 `duckdns.org` 的设备的公网 IP 地址。DuckDNS 插件将更新 IP 地址。
+1. 访问 [DuckDNS.org](https://www.duckdns.org/) 并通过任何可用的账户服务（Google、Github、Twitter、Persona、Reddit）登录来创建一个账户。
+2. 在 `域名` 部分，输入您希望注册的子域名名称并点击 `添加域名`。
+3. 如果注册成功，子域名将列在 `域名` 部分中，`当前 IP` 将是您当前用于访问 `duckdns.org` 的设备的公网 IP 地址。DuckDNS 插件将更新 IP 地址。
 4. 在 DuckDNS 插件配置中，执行以下操作：
-    - 从 `duckdns.org` 处显示账户详情的页面顶部复制 DuckDNS 令牌，并将其粘贴到 `token` 选项中。
-    - 使用您注册的完整域名更新 `domains` 选项。例如：`my-domain.duckdns.org`。
+    - 从 `duckdns.org` 的账户详情页面顶部复制 DuckDNS 令牌并粘贴到 `token` 选项中。
+    - 使用您注册的完整域名更新 `domains` 选项。例如，`my-domain.duckdns.org`。
 
 ## 配置
 
@@ -33,7 +33,7 @@ aliases: []
 seconds: 300
 ```
 
-此外，您还需要配置 Home Assistant Core 以获取 SSL 证书。这是通过在您的 `configuration.yaml` 中的 [HTTP][HTTP] 集成配置中设置以下配置来完成的：
+此外，您需要配置 Home Assistant Core 以获取 SSL 证书。这是通过在您的 `configuration.yaml` 中为 [HTTP][HTTP] 集成配置设置以下配置来完成的：
 
 ```yaml
 http:
@@ -75,18 +75,18 @@ Let's Encrypt 生成的私钥文件的名称。私钥文件用于 Home Assistant
 默认情况下，Duck DNS 将自动检测您的 IPv4 地址并使用该地址。
 此选项允许您覆盖自动检测并手动指定一个 IPv4 地址。
 
-如果您在此处指定一个 URL，它指向的资源的内容将被获取并用作地址。这可以通过使用类似 https://api.ipify.org/ 或 https://ipv4.text.wtfismyip.com 的服务来获取地址。
+如果您在此处指定一个 URL，它将获取指向的资源的内容并用作地址。这使您能够使用像 https://api.ipify.org/ 或 https://ipv4.text.wtfismyip.com 这样的服务来获取地址
 
 ### 选项：`ipv6`（可选）
 
 默认情况下，Duck DNS 将自动检测您的 IPv6 地址并使用该地址。
 此选项允许您覆盖自动检测并手动指定一个 IPv6 地址。
 
-如果您在此处指定一个 URL，它指向的资源的内容将被获取并用作地址。这可以通过使用类似 https://api6.ipify.org/ 或 https://ipv6.text.wtfismyip.com 的服务来获取地址。
+如果您在此处指定一个 URL，它将获取指向的资源的内容并用作地址。这使您能够使用像 https://api6.ipify.org/ 或 https://ipv6.text.wtfismyip.com 这样的服务来获取地址
 
 ### 选项：`token`
 
-在 DuckDNS 账户登录页面的顶部找到的 DuckDNS 认证令牌。要对您账户下注册的子域名进行任何更改，需要此令牌。
+在 DuckDNS 账户首页顶部找到的 DuckDNS 认证令牌。要对您的账户注册的子域名进行任何更改，需要此令牌。
 
 ### 选项：`domains`
 
@@ -94,8 +94,8 @@ Let's Encrypt 生成的私钥文件的名称。私钥文件用于 Home Assistant
 
 ### 选项：`aliases`（可选）
 
-在 `domains` 选项上配置的域名别名列表。
-在您希望使用自己的域名的情况下，这很有用。创建一个 CNAME 记录指向 DuckDNS 子域名，并相应地设置此值。
+`domains` 选项上配置的域名别名列表。
+在您希望使用您自己的域名的情况下，这很有用。创建一个 CNAME 记录指向 DuckDNS 子域名，并相应地设置此值。
 
 例如：
 
@@ -109,7 +109,7 @@ aliases:
 
 不要将您的自定义域名添加到 `domains` 数组。对于证书创建，所有唯一的域名和别名都将被使用。
 
-同样，不要忘记确保 dns-01 挑战可以到达 Duckdns。可能需要为此添加一个特定的 CNAME：
+同样，别忘了确保 dns-01 挑战可以到达 Duckdns。可能需要添加一个特定的 CNAME：
 
 ```
 CNAME _acme-challenge.<own-domain>    _acme-challenge.<domain>.duckdns.org
@@ -122,13 +122,13 @@ CNAME                 <own-domain>                    <domain>.duckdns.org
 
 ## 已知问题和限制
 
-- 要登录，DuckDNS 需要从以下服务之一获取免费账户：Google、Github、Twitter 或 Persona。
-- 免费的 DuckDNS 账户限制为五个子域名。
+- 要登录，DuckDNS 需要来自以下任何服务的免费账户：Google、Github、Twitter 或 Persona。
+- 免费的 DuckDNS 账户最多限制五个子域名。
 - 在撰写本文时，Duck DNS 自身的 IPv6 自动检测 [实际上不起作用][duckdns-faq]，但您可以使用 `ipv6` 的 URL 选项来绕过这个问题，请继续阅读。
 
 ## 支持
 
-有问题？
+有问题吗？
 
 您有几个选项来获得答案：
 

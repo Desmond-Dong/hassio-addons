@@ -4,12 +4,12 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "youtube-dl的Web图形用户界面",
+  "description": "[老王杂谈说]：youtube-dl的Web图形用户界面",
   "map": [
     "share:rw",
     "media:rw"
   ],
-  "version": "2025.07.31",
+  "version": "2025.08.12",
   "name": "metube",
   "options": {
     "DELETE_FILE_ON_TRASHCAN": false,
@@ -29,7 +29,7 @@
   },
   "slug": "metube",
   "startup": "services",
-  "upstream": "2025.07.31",
+  "upstream": "2025.08.12",
   "url": "https://ghfast.top/github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8081]",
   "ingress": true,

@@ -1,8 +1,8 @@
 ---
-version: 0.3.0
+version: 0.3.1
 slug: vlc
 name: VLC
-description: 将您的设备变成一个媒体播放器，使用VLC。
+description: '[老王杂谈说]：将您的设备转换为使用VLC的媒体播放器'
 url: https://ghfast.top/github.com/home-assistant/addons/tree/master/vlc
 arch:
   - amd64

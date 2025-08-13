@@ -1,10 +1,10 @@
 # Home Assistant 插件：Silicon Labs Flasher 插件
 
-Silicon Labs Flasher 插件用于闪烁基于 Silicon Labs 的无线电。
+用于刷写 Silicon Labs 基于的无线电的 Silicon Labs Flasher 插件。
 
-默认情况下，此插件会闪烁固件以使用 Zigbee（Silicon Labs EmberZNet Zigbee 堆栈）。
+默认情况下，此插件会刷写用于使用 Zigbee（Silicon Labs EmberZNet Zigbee 堆栈）的固件。
 
-**注意：** 确保没有其他插件或集成正在使用无线电。特别是禁用 Zigbee 家庭自动化集成和 Silicon Labs 多协议插件。
+**注意：** 确保没有其他插件或集成正在使用该无线电。特别是禁用 Zigbee 家庭自动化集成和 Silicon Labs 多协议插件。
 
 ![支持 aarch64 架构][aarch64-shield]
 ![支持 amd64 架构][amd64-shield]
@@ -14,7 +14,7 @@ Silicon Labs Flasher 插件用于闪烁基于 Silicon Labs 的无线电。
 
 ## 关于
 
-此插件允许您使用 Gecko Bootloader 文件格式 (gbl) 闪烁固件。默认情况下，它附带适用于 Home Assistant SkyConnect/ZBT-1 和 Home Assistant Yellow 的固件以闪烁 Zigbee。
+此插件允许您使用 Gecko 引导加载程序文件格式（gbl）刷写固件。默认情况下，它附带 Home Assistant SkyConnect/ZBT-1 和 Home Assistant Yellow 的固件，用于刷写 Zigbee。
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
