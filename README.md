@@ -115,22 +115,29 @@
    ```
 5. ➕ 点击 **添加**
 6. ✅ 该库中的加载项现在将在您的加载项商店中可用
+---
 
-您也可以点击下面的按钮自动添加库：
+**推荐**: 您也可以点按钮自动添加库：[![添加加载项到 Home Assistant](https://img.shields.io/badge/add_addon_repository-MY%20HA-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://gitee.com/desmond_GT/hassio-addons) 
 
-**Gitee** [![添加加载项到 Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://gitee.com/desmond_GT/hassio-addons) 🚀
+---
+
 ## 🛠️ 支持与反馈
 
-如果您在使用过程中遇到任何问题或有疑问，请在我的公众号后台留言，我会尽快回复您。📩
+如果您在使用过程中遇到任何问题或有疑问，请到[这里提交issue](https://gitee.com/desmond_GT/hassio-addons/issues)
 
 ## 📜 许可证信息
 
-本项目遵循 **Apache 2.0 许可证** 进行授权，  
-详细信息请参阅 [LICENSE](LICENSE) 文件。  
-如未按照 **Apache 2.0 许可证** 的规定进行使用，  
-本站内容将会转为闭源，并停止提供任何更新及新功能的添加。  
-所有内容将随着 Home Assistant 功能的升级而逐步失效。⚠️
-未经我同意未标出处就占为己有的我将保留追究的权利
+🛡️ 本项目严格遵循 **Apache 2.0 许可证** 进行授权。  
+请务必仔细阅读并遵守 [LICENSE](LICENSE) 文件中的所有条款。  
+任何未按照 **Apache 2.0 许可证** 规定使用、分发、修改本项目内容的行为，将被视为严重侵权。  
+如发现违规行为，本站将立即采取措施，包括但不限于：  
+- 终止开源，转为闭源处理  
+- 停止一切更新与新功能添加  
+- 追究相关法律责任
+
+🚫⚖️ **严正法律声明**  
+任何个人或组织，未经本人明确书面授权，擅自复制、占为己有、商用、或未标明出处者，  
+本人将坚决依法追究其全部法律责任，绝不姑息。请务必尊重开源成果，切勿以身试法，否则后果自负！
 
 ## 📱 关注我
 
