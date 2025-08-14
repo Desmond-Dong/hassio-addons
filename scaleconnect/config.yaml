@@ -4,10 +4,11 @@ url: https://ghfast.top/github.com/AlexxIT/SmartScaleConnect
 image: alexxit/smartscaleconnect
 arch: [amd64, aarch64, i386, armv7, armhf]
 # https://developers.home-assistant.io/docs/add-ons/configuration
-version: 0.1.0
+version: 0.3.0
 slug: scaleconnect
 init: false
 startup: system
+stdin: true
 options:
   sleep: 24h
 schema:

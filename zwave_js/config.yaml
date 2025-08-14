@@ -1,8 +1,8 @@
 ---
-version: 0.20.0
+version: 0.21.0
 slug: zwave_js
 name: Z-Wave JS
-description: 使用Home Assistant Z-Wave JS控制Z-Wave网络
+description: '[老王杂谈说]：使用Home Assistant Z-Wave JS控制Z-Wave网络'
 url: https://ghfast.top/github.com/home-assistant/addons/tree/master/zwave_js
 arch:
   - amd64

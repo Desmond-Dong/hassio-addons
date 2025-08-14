@@ -5,7 +5,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "智能硬盘监测工具smartd的Web用户界面（webUI）监视。",
+  "description": "[老王杂谈说]：用于smartd S.M.A.R.T监控的Scrutiny webUI",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -94,7 +94,7 @@
   "panel_admin": false,
   "panel_icon": "mdi:glasses",
   "ports": {
-    "8080/tcp": 8086,
+    "8080/tcp": null,
     "8086/tcp": null
   },
   "ports_description": {
@@ -120,5 +120,5 @@
   "slug": "scrutiny",
   "udev": true,
   "url": "https://ghfast.top/github.com/AnalogJ/scrutiny",
-  "version": "v0.8.1-9"
+  "version": "v0.8.1-10"
 }
