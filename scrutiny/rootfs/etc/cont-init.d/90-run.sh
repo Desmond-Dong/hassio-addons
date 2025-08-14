@@ -9,11 +9,11 @@ set -e
 if bashio::config.true "expose_collector"; then
     bashio::log.info "collector.yaml exposed in /share/scrutiny"
     mkdir -p /share/scrutiny
-    if [ -f /data/config/collector.yaml ] ; then
+    if [ -f /data/config/collector.yaml ]; then
         cp -rnf /data/config/collector.yaml /share/scrutiny || true
         rm -R /data/config/collector.yaml
     fi
-    if [ -f /opt/scrutiny/config/collector.yaml ] ; then
+    if [ -f /opt/scrutiny/config/collector.yaml ]; then
         cp -rnf /opt/scrutiny/config/collector.yaml /share/scrutiny || true
         rm /opt/scrutiny/config/collector.yaml
     fi
@@ -21,7 +21,7 @@ if bashio::config.true "expose_collector"; then
     ln -sf /share/scrutiny/collector.yaml /data/config || true
     mkdir -p /opt/scrutiny/config
     ln -sf /share/scrutiny/collector.yaml /opt/scrutiny/config/collector.yaml || true
-    chmod 777 -R /share/scrutiny
+    chmod 755 -R /share/scrutiny
 fi
 
 ########

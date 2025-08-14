@@ -9,7 +9,7 @@
     "docker_config/cli-plugins"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "轻松管理您的Docker环境",
+  "description": "[老王杂谈说]：轻松管理您的Docker环境",
   "docker_api": true,
   "hassio_api": true,
   "image": "ghcr.nju.edu.cn/alexbelgium/portainer-{arch}",
@@ -48,5 +48,5 @@
   "slug": "portainer",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "2.32.0-6"
+  "version": "2.32.0-7"
 }
