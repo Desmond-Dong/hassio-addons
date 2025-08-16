@@ -15,36 +15,36 @@
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢大家给我的仓库点赞！点击下面的图片即可点赞，点赞后会在右上角显示。谢谢！_
 
 [![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
 ![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/gitea/stats.png)
 
-## About
+## 关于
 
-[Gitea](https://about.gitea.com/) is a painless self-hosted all-in-one software development service, it includes Git hosting, code review, team collaboration, package registry and CI/CD. It is similar to GitHub, Bitbucket and GitLab.
+[Gitea](https://about.gitea.com/) 是一款简单易用的自托管一站式软件开发服务，它包括 Git 托管、代码审查、团队协作、包注册和 CI/CD。它与 GitHub、Bitbucket 和 GitLab 类似。
 
-Various tweaks and configuration options addition.
-This addon is based on the [docker image](https://hub.docker.com/r/gitea/gitea).
+各种调整和配置选项的添加。
+此插件基于 [docker 镜像](https://hub.docker.com/r/gitea/gitea)。
 
-## Configuration
+## 配置
 
-Webui can be found at <http://homeassistant:PORT> or through the sidebar using Ingress.
-Configurations can be done through the app webUI, except for the following options.
+Webui 可以在 <http://homeassistant:PORT> 或通过 Ingress 侧边栏访问。
+配置可以通过应用 webUI 进行，以下选项除外。
 
-### Options
+### 选项
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `ssl` | bool | `false` | Enable HTTPS for the web interface |
-| `certfile` | str | `fullchain.pem` | SSL certificate file (must be located in /ssl) |
-| `keyfile` | str | `privkey.pem` | SSL key file (must be located in /ssl) |
-| `APP_NAME` | str | | Name of the Gitea application |
-| `DOMAIN` | str | | Domain to be reached (default: homeassistant.local) |
-| `ROOT_URL` | str | | Customize root URL (for specific routing needs) |
+| 选项 | 类型 | 默认值 | 描述 |
+|------|------|--------|------|
+| `ssl` | bool | `false` | 为 Web 界面启用 HTTPS |
+| `certfile` | str | `fullchain.pem` | SSL 证书文件（必须位于 /ssl） |
+| `keyfile` | str | `privkey.pem` | SSL 密钥文件（必须位于 /ssl） |
+| `APP_NAME` | str | | Gitea 应用的名称 |
+| `DOMAIN` | str | | 要访问的域名（默认：homeassistant.local） |
+| `ROOT_URL` | str | | 自定义根 URL（用于特定路由需求） |
 
-### Example Configuration
+### 示例配置
 
 ```yaml
 ssl: false
@@ -55,24 +55,23 @@ DOMAIN: "homeassistant.local"
 ROOT_URL: "http://homeassistant.local:3000"
 ```
 
-### Custom Scripts and Environment Variables
+### 自定义脚本和环境变量
 
-This addon supports custom scripts and environment variables through the `addon_config` mapping:
+此插件通过 `addon_config` 映射支持自定义脚本和环境变量：
 
-- **Custom scripts**: See [Running Custom Scripts in Addons](https://github.com/alexbelgium/hassio-addons/wiki/Running-custom-scripts-in-Addons)
-- **Environment variables**: See [Add Environment Variables to your Addon](https://github.com/alexbelgium/hassio-addons/wiki/Add-Environment-variables-to-your-Addon)
+- **自定义脚本**：参见 [在插件中运行自定义脚本](https://github.com/alexbelgium/hassio-addons/wiki/Running-custom-scripts-in-Addons)
+- **环境变量**：参见 [为您的插件添加环境变量](https://github.com/alexbelgium/hassio-addons/wiki/Add-Environment-variables-to-your-Addon)
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+此插件的安装非常简单，与安装任何其他 Hass.io 插件没有区别。
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Go to the webui, where you will initialize the app
-1. Restart the addon, to apply any option that should be applied
+1. [将我的 Hass.io 插件仓库][repository] 添加到您的 Hass.io 实例。
+1. 安装此插件。
+1. 点击 `保存` 按钮以保存您的配置。
+1. 启动插件。
+1. 检查插件的日志，看看是否一切正常。
+1. 进入 Webui，初始化应用。
+1. 重新启动插件，以应用任何需要应用的选项
 
 [repository]: https://github.com/alexbelgium/hassio-addons

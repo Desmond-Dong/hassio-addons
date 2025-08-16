@@ -1,4 +1,3 @@
-## ⚠️ Open Request : [✨ [REQUEST] immich and Nextcloud Ingress support (opened 2025-03-15)](https://github.com/alexbelgium/hassio-addons/issues/1812) by [@bessertristan09](https://github.com/bessertristan09)
 # Home assistant add-on: immich
 
 ⚠️ The project is under very active development. Expect bugs and changes. Do not use it as the only way to store your photos and videos! (from the developer)
@@ -25,35 +24,35 @@ _Thanks to everyone having starred my repo! To star it click on the image below,
 
 ## About
 
-Web based files browser.
-This addon is based on the [docker image](https://github.com/imagegenius/docker-immich) from imagegenius.
+基于Web的文件浏览器。
+此插件基于imagegenius的[docker镜像](https://github.com/imagegenius/docker-immich)。
 
 ## Configuration
 
-Webui can be found at `<your-ip>:8080`. PostgreSQL/MySQL can be either internal or external.
+Webui位于`<你的IP>:8080`。PostgreSQL/MySQL可以是内部的，也可以是外部的。
 
 ### Options
 
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|
-| `data_location` | str | `/share/immich` | Path where Immich data is stored |
-| `library_location` | str | | Path to photo/video library |
-| `TZ` | str | | Timezone (e.g., `Europe/London`) |
-| `localdisks` | str | | Local drives to mount (e.g., `sda1,sdb1,MYNAS`) |
-| `networkdisks` | str | | SMB shares to mount (e.g., `//SERVER/SHARE`) |
-| `cifsusername` | str | | SMB username for network shares |
-| `cifspassword` | str | | SMB password for network shares |
-| `cifsdomain` | str | | SMB domain for network shares |
-| `DB_HOSTNAME` | str | `localhost` | Database hostname |
-| `DB_USERNAME` | str | `immich` | Database username |
-| `DB_PASSWORD` | str | | Database password |
-| `DB_DATABASE_NAME` | str | `immich` | Database name |
-| `DB_PORT` | int | `5432` | Database port |
-| `DB_ROOT_PASSWORD` | str | | Database root password |
-| `JWT_SECRET` | str | | JWT secret for authentication |
-| `DISABLE_MACHINE_LEARNING` | bool | `false` | Disable ML features |
-| `MACHINE_LEARNING_WORKERS` | int | `1` | Number of ML workers |
-| `MACHINE_LEARNING_WORKER_TIMEOUT` | int | `120` | ML worker timeout (seconds) |
+| `data_location` | str | `/share/immich` | Immich数据存储路径 |
+| `library_location` | str | | 照片/视频库路径 |
+| `TZ` | str | | 时区（例如，`Europe/London`） |
+| `localdisks` | str | | 要挂载的本地驱动器（例如，`sda1,sdb1,MYNAS`） |
+| `networkdisks` | str | | 要挂载的SMB共享（例如，`//SERVER/SHARE`） |
+| `cifsusername` | str | | SMB网络共享的用户名 |
+| `cifspassword` | str | | SMB网络共享的密码 |
+| `cifsdomain` | str | | SMB网络共享的域 |
+| `DB_HOSTNAME` | str | `localhost` | 数据库主机名 |
+| `DB_USERNAME` | str | `immich` | 数据库用户名 |
+| `DB_PASSWORD` | str | | 数据库密码 |
+| `DB_DATABASE_NAME` | str | `immich` | 数据库名称 |
+| `DB_PORT` | int | `5432` | 数据库端口 |
+| `DB_ROOT_PASSWORD` | str | | 数据库根密码 |
+| `JWT_SECRET` | str | | 用于认证的JWT密钥 |
+| `DISABLE_MACHINE_LEARNING` | bool | `false` | 禁用ML功能 |
+| `MACHINE_LEARNING_WORKERS` | int | `1` | ML工作线程数量 |
+| `MACHINE_LEARNING_WORKER_TIMEOUT` | int | `120` | ML工作线程超时（秒） |
 
 ### Example Configuration
 
@@ -74,29 +73,35 @@ JWT_SECRET: "your-secret-key-here"
 
 ### Mounting Drives
 
-This addon supports mounting both local drives and remote SMB shares:
+此插件支持挂载本地驱动器和远程SMB共享：
 
-- **Local drives**: See [Mounting Local Drives in Addons](https://github.com/alexbelgium/hassio-addons/wiki/Mounting-Local-Drives-in-Addons)
-- **Remote shares**: See [Mounting Remote Shares in Addons](https://github.com/alexbelgium/hassio-addons/wiki/Mounting-remote-shares-in-Addons)
+- **本地驱动器**：请参阅[在插件中挂载本地驱动器](https://github.com/alexbelgium/hassio-addons/wiki/Mounting-Local-Drives-in-Addons)
+- **远程共享**：请参阅[在插件中挂载远程共享](https://github.com/alexbelgium/hassio-addons/wiki/Mounting-remote-shares-in-Addons)
+
+### Custom Scripts and Environment Variables
+
+此插件通过`addon_config`映射支持自定义脚本和环境变量：
+
+- **自定义脚本**：请参阅[在插件中运行自定义脚本](https://github.com/alexbelgium/hassio-addons/wiki/Running-custom-scripts-in-Addons)
+- **环境变量**：请参阅[为您的插件添加环境变量](https://github.com/alexbelgium/hassio-addons/wiki/Add-Environment-variables-to-your-Addon)
 
 ## Installation
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+此插件的安装非常简单，与安装任何其他Hass.io插件的方法相同。
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Carefully configure the add-on to your preferences, see the official documentation for for that.
+1. 将我的Hass.io插件存储库[repository]添加到您的Hass.io实例。
+1. 安装此插件。
+1. 点击`Save`按钮以保存您的配置。
+1. 启动插件。
+1. 检查插件的日志以查看是否一切正常。
+1. 仔细配置插件以满足您的需求，请参阅官方文档进行配置。
 
-Beware that you need to install a separate postgres addon to be able to connect the database. You can install the postgres addon already in my repository.
-Beware to change the password BEFORE starting it ; it won't change afterwards
+注意：您需要安装一个单独的postgres插件才能连接数据库。您可以在我的存储库中安装postgres插件。
+注意：在启动之前更改密码；之后将无法更改
 
 ## Support
 
-Create an issue on github, or ask on the [home assistant thread](https://community.home-assistant.io/t/home-assistant-addon-immich/282108/3)
+在github上创建问题，或在[home assistant线程](https://community.home-assistant.io/t/home-assistant-addon-immich/282108/3)上提问。
 
 [repository]: https://github.com/alexbelgium/hassio-addons
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg

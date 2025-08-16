@@ -1,9 +1,11 @@
+## &#9888; Open Issue : [🐛 [Scrutiny] no ssd are shown (opened 2025-08-13)](https://github.com/alexbelgium/hassio-addons/issues/2033) by [@hoboristi](https://github.com/hoboristi)
+## &#9888; Open Issue : [🐛 [Scrutiny] 502: Bad Gateway (opened 2025-08-15)](https://github.com/alexbelgium/hassio-addons/issues/2037) by [@VladDBA](https://github.com/VladDBA)
 # Home assistant add-on: Scrutiny
 
 [![Donate][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
 [![Donate][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
 
-![Version](https://img.shields.io/badge/dynamic/json?label=版本&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fscrutiny%2Fconfig.json)
+![Version](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fscrutiny%2Fconfig.json)
 ![Ingress](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fscrutiny%2Fconfig.json)
 ![Arch](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fscrutiny%2Fconfig.json)
 
@@ -14,49 +16,49 @@
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_感谢所有给我的仓库点赞的人！要点赞，请点击下面的图片，然后它将出现在右上角。谢谢！_
+_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
 
 [![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
-![下载趋势](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/scrutiny/stats.png)
+![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/scrutiny/stats.png)
 
-## 关于
+## About
 
 ---
 
-[Scrutiny](https://github.com/AnalogJ/scrutiny) 是一个硬盘健康仪表盘和监控解决方案，将制造商提供的 S.M.A.R.T 指标与实际故障率相结合。这个插件基于 [linuxserver.io](https://www.linuxserver.io/) 的 [docker 镜像](https://hub.docker.com/r/linuxserver/scrutiny)。
+[Scrutiny](https://github.com/AnalogJ/scrutiny) is a Hard Drive Health Dashboard & Monitoring solution, merging manufacturer provided S.M.A.R.T metrics with real-world failure rates. This addon is based on the [docker image](https://hub.docker.com/r/linuxserver/scrutiny) from [linuxserver.io](https://www.linuxserver.io/).
 
-特性：
+Features :
 
-- SMART 监控
-- 自动添加本地驱动器
-- 每小时更新
+- SMART monitoring
+- Automatic addition of local drives
+- Hourly updates
 - Ingress
-- 自动上游更新
+- Automatic upstream updates
 
-## 配置
+## Configuration
 
-Web UI 可以在 <http://homeassistant:8080> 或通过 Ingress 在侧边栏中访问。
-配置可以通过插件 Web UI 进行，除了以下选项。
-它会自动挂载所有本地驱动器。
+Webui can be found at <http://homeassistant:8080> or through the sidebar using Ingress.
+Configurations can be done through the app webUI, except for the following options.
+It automatically mounts all local drives.
 
-**注意**：只有当遇到问题时才启用完全访问权限。在所有情况下，SMART 访问应该不需要完全访问权限。
+**Note**: Enable full access only if encountering issues. SMART access should work without full access in all scenarios.
 
-### 选项
+### Options
 
-| 选项 | 类型 | 默认值 | 描述 |
-|------|------|--------|------|
-| `Updates` | 列表 | `Hourly` | 更新计划（Quarterly/Hourly/Daily/Weekly/Custom） |
-| `Updates_custom_time` | 字符串 | | 自定义更新间隔（例如，"5m"，"2h"，"1w"，"2mo"） |
-| `TZ` | 字符串 | | 时区（例如，`Europe/London`） |
-| `Mode` | 列表 | | 操作模式（Collector+WebUI 或 Collector 仅） |
-| `COLLECTOR_API_ENDPOINT` | 字符串 | | Collector API 端点 URL |
-| `COLLECTOR_HOST_ID` | 字符串 | | Collector 主机标识符 |
-| `SMARTCTL_COMMAND_DEVICE_TYPE` | 列表 | | SMARTCTL 命令的设备类型 |
-| `SMARTCTL_MEGARAID_DISK_NUM` | 整数 | | MegaRAID 磁盘编号 |
-| `expose_collector` | 布尔值 | | 外部暴露 Collector 端口 |
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `Updates` | list | `Hourly` | Update schedule (Quarterly/Hourly/Daily/Weekly/Custom) |
+| `Updates_custom_time` | str | | Custom update interval (e.g., "5m", "2h", "1w", "2mo") |
+| `TZ` | str | | Timezone (e.g., `Europe/London`) |
+| `Mode` | list | | Operating mode (Collector+WebUI or Collector only) |
+| `COLLECTOR_API_ENDPOINT` | str | | Collector API endpoint URL |
+| `COLLECTOR_HOST_ID` | str | | Host identifier for collector |
+| `SMARTCTL_COMMAND_DEVICE_TYPE` | list | | Device type for SMARTCTL commands |
+| `SMARTCTL_MEGARAID_DISK_NUM` | int | | MegaRAID disk number |
+| `expose_collector` | bool | | Expose collector port externally |
 
-### 示例配置
+### Example Configuration
 
 ```yaml
 Updates: "Daily"
@@ -69,43 +71,44 @@ SMARTCTL_COMMAND_DEVICE_TYPE: "auto"
 expose_collector: false
 ```
 
-### 自定义脚本和环境变量
+### Custom Scripts and Environment Variables
 
-这个插件支持自定义脚本和环境变量：
+This addon supports custom scripts and environment variables:
 
-- **自定义脚本**：参见 [在插件中运行自定义脚本](https://github.com/alexbelgium/hassio-addons/wiki/Running-custom-scripts-in-Addons)
-- **环境变量**：参见 [为你的插件添加环境变量](https://github.com/alexbelgium/hassio-addons/wiki/Add-Environment-variables-to-your-Addon)
+- **Custom scripts**: See [Running Custom Scripts in Addons](https://github.com/alexbelgium/hassio-addons/wiki/Running-custom-scripts-in-Addons)
+- **Environment variables**: See [Add Environment Variables to your Addon](https://github.com/alexbelgium/hassio-addons/wiki/Add-Environment-variables-to-your-Addon)
 
-## 安装
-
----
-
-这个插件的安装非常简单，与安装任何其他插件没有什么不同。
-
-1. 将我的 [Hass.io 插件仓库][repository] 添加到你的 home assistant 实例中。
-1. 安装这个插件。
-1. 点击 `保存` 按钮来保存你的配置。
-1. 设置插件的选项以符合你的偏好。
-1. 启动插件。
-1. 检查插件的日志以查看一切是否正常。
-1. 打开 Web UI（基于 Ingress），并调整软件选项。
-
-# 在 home assistant 中的集成
+## Installation
 
 ---
 
-通过与 [rest 平台](https://www.home-assistant.io/integrations/rest) 在配置文件中集成 HA。
+The installation of this add-on is pretty straightforward and not different in comparison to installing any other add-on.
 
-即使端口未暴露，API 也可以在 Home Assistant 的内部网络上使用。使用插件的内部域名（`http://db21ed7f-scrutiny:8080`）从 Home Assistant 或其他插件中查询它。如果你需要从本地网络访问 API，请在插件选项中暴露端口，并将域名替换为你的 Home Assistant IP 地址。
+1. [Add my Hass.io add-ons repository][repository] to your home assistant instance.
+1. Install this add-on.
+1. Click the `Save` button to store your configuration.
+1. Set the add-on options to your preferences
+1. Start the add-on.
+1. Check the logs of the add-on to see if everything went well.
+1. Open the webUI (Ingress based) and adapt the software options
 
-提供了两种类型的 API 端点：
+# Integration in home assistant
 
-- 摘要数据：<http://db21ed7f-scrutiny:8080/api/summary>
-- 详细数据：<http://db21ed7f-scrutiny:8080/api/device/WWN/details>
+---
 
-对于详细数据，可以在 Scrutiny 应用程序中找到每个 HDD 的 wwn。例如：<http://db21ed7f-scrutiny:8080/api/device/0x50014ee606c14537/details>
+Integration with HA can be done with the [rest platform](https://www.home-assistant.io/integrations/rest) in configuration.yaml.
 
-获取第一个 HDD 数据的示例。
+The API is available on Home Assistant's internal network even when the port is not exposed. Use the add-on's internal
+domain name (`http://db21ed7f-scrutiny:8080`) to query it from Home Assistant or other add-ons. If you need to reach the API from your local network, expose the port in the add-on options and replace the domain with your Home Assistant IP address.
+
+Two types of API endpoints are available:
+
+- Summary data: <http://db21ed7f-scrutiny:8080/api/summary>
+- Detailed data: <http://db21ed7f-scrutiny:8080/api/device/WWN/details>
+
+For the detailed data, wwn can be found for each HDD within the Scrutiny app. For example: <http://db21ed7f-scrutiny:8080/api/device/0x50014ee606c14537/details>
+
+Example to get data from the first hdd.
 
 ```yaml
 rest:
@@ -143,15 +146,15 @@ rest:
         device_class: problem
 ```
 
-## 插图
+## Illustration
 
 ---
 
-![插图](https://github.com/AnalogJ/scrutiny/raw/master/docs/dashboard.png)
+![Illustration](https://github.com/AnalogJ/scrutiny/raw/master/docs/dashboard.png)
 
-## 支持
+## Support
 
-在 github 上创建问题，或在 [home assistant 论坛](https://community.home-assistant.io/t/home-assistant-addon-scrutiny-smart-dashboard/295747) 上提问。
+Create an issue on github, or ask on the [home assistant thread](https://community.home-assistant.io/t/home-assistant-addon-scrutiny-smart-dashboard/295747)
 
 <https://github.com/alexbelgium/hassio-addons>
 
