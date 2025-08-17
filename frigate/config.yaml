@@ -1,8 +1,7 @@
 name: Frigate
-# TODO: apply these changes after updating to 0.16.0:
-# https://ghfast.top/github.com/blakeblackshear/frigate-hass-addons/pull/210
-version: 0.15.2
+version: 0.16.0
 breaking_versions:
+  - 0.16.0
   - 0.15.1
   - 0.15.0
   - 0.14.1
@@ -10,7 +9,7 @@ breaking_versions:
 panel_icon: "mdi:cctv"
 panel_title: Frigate
 slug: frigate
-description: $translated_description
+description: '[老王杂谈说]：带有实时本地物体检测的NVR，用于IP摄像头'
 url: "https://ghfast.top/github.com/blakeblackshear/frigate"
 image: ghcr.nju.edu.cn/blakeblackshear/frigate
 startup: application
@@ -50,17 +49,14 @@ devices:
   - /dev/vchiq
   - /dev/video10
   - /dev/video0
-  # TODO: uncomment after updating to 0.16.0:
-  # - /dev/hailo0
-  # - /dev/hailo1
+  - /dev/hailo0
+  - /dev/hailo1
 usb: true
 video: true
 tmpfs: true
 full_access: false
 privileged:
   - PERFMON
-environment:
-  CONFIG_FILE: /config/frigate.yml
 schema:
   plus_api_key: password?
 services:
@@ -70,5 +66,6 @@ arch:
   - aarch64
 map:
   - "media:rw"
-  - "config:rw"
+  - "addon_config:rw"
+  - "homeassistant_config:rw"
   - "ssl"

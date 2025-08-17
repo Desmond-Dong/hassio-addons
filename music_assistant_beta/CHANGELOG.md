@@ -1,8 +1,8 @@
-# [2.6.0 BETA 19] - 15.08.2025
+# [2.6.0 BETA 21] - 16.08.2025
 
 ## What’s Changed
 
-### Server 2.6.0 BETA 19
+### Server 2.6.0 BETA 21
 
 ## What's Changed
 
@@ -12,6 +12,7 @@
 * frontend-2.15.3 by @music-assistant-machine in https://github.com/music-assistant/server/pull/2333
 * Disable new PO token generation to avoid warnings in the logs. by @MarvinSchenkel in https://github.com/music-assistant/server/pull/2334
 * Fix album info being lost for non-library items by @OzGav in https://github.com/music-assistant/server/pull/2330
+* Fixes for the server not starting due to missing cache directory and models mismatch (in b19/b20)
 
 ## New Contributors
 * @jamiethecat made their first contribution in https://github.com/music-assistant/server/pull/2302
@@ -1153,6 +1154,11 @@ Fix creation of player groups
 **The start of the beta cycle for 2.5 !**
 
 This version is on-par with the 2.4.0 stable version
+
+
+
+
+
 
 
 

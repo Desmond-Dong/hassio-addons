@@ -1,4 +1,4 @@
-# ESPHome 设备构建器（开发分支）
+# ESPHome Device Builder (开发分支)
 
 [![ESPHome logo][logo]][website]
 
@@ -8,7 +8,7 @@
 ## 关于
 
 这个插件允许您编写配置，并通过 Home Assistant 将您的微控制器直接变成智能家居设备，**无需编程经验**。
-您只需要编写 YAML 配置文件；其余的（空中更新、编译）都是由 ESPHome 处理。
+您需要做的是编写 YAML 配置文件；其余（空中更新、编译）都由 ESPHome 处理。
 
 <p align="center">
 <img title="ESPHome Device Builder 截图" src="https://github.com/esphome/home-assistant-addon/raw/main/esphome-dev/images/screenshot.png" width="700px"></img>
@@ -18,7 +18,8 @@
 
 ## 示例
 
-使用 ESPHome，您可以从几行 YAML 直接到自定义固件。例如，要包含一个 [DHT22][dht22] 温度和湿度传感器，您只需要在配置文件中包含 8 行 YAML：
+使用 ESPHome，您可以从几行 YAML 直接到定制固件。例如，要包含一个 [DHT22][dht22]
+温度和湿度传感器，您只需要在配置文件中包含 8 行 YAML：
 
 <img title="ESPHome DHT 配置示例" src="https://github.com/esphome/home-assistant-addon/raw/main/esphome-dev/images/dht-example.png" width="500px"></img>
 
