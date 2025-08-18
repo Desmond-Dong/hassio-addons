@@ -1,15 +1,15 @@
 name: "linkding"
-version: "1.41.0"
-upstream: "1.41.0"
+version: "1.42.0"
+upstream: "1.42.0"
 slug: linkding
-description: Linkding 是一个你可以自己托管的书签管理器。它旨在设计得简单、快速且易于使用 Docker 设置。
-  linkding is a bookmark manager that you can host yourself. It's designed be to be minimal, fast, and easy to set up using Docker
+description: >-
+  [老王杂谈说]：Linkding 是一个你可以自行托管的收藏夹管理器。它设计得简约、快速，并易于使用 Docker 设置。
 arch:
   - amd64
   - aarch64
 url: "https://ghfast.top/github.com/jdeath/homeassistant-addons"
 ports:
-  9090/tcp: 9090 
+  9090/tcp: 9090
 ports_description:
   9090/tcp: "Web Interface"
 map:

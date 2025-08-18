@@ -1,62 +1,62 @@
-# 家庭助手插件：linkding
+# Home assistant add-on: linkding
 
-## 介绍
-linkding 是一个您可以自我托管的书签管理器。
-它旨在简约、快速，并且可以使用 Docker 轻松设置。
+##  Introduction
+linkding是一个可以由你自己托管的收藏夹管理器。
+它的设计目标是简洁、快速，并且使用Docker易于设置。
 
-这个名字源于：
-- *link*，这个词在日常语言中通常用作 URL 和书签的同义词
-- *Ding* 是德语中表示事物的词
-- ...所以基本上是用于管理链接的工具
+它的名字来源于：
+- *link*，通常在常用语言中用作URL和收藏夹的同义词
+- *Ding*，德语中意为事物
+- ...所以基本上是用于管理你的链接的工具
 
-**功能概述：**
-- 优化可读性的干净界面
-- 使用标签组织书签
-- 批量编辑、Markdown 笔记、稍后阅读功能
-- 与其他用户或访客共享书签
-- 自动提供书签网站的标题、描述和图标
-- 自动归档网站，可以作为本地 HTML 文件或在 Internet Archive 中归档
-- 以 Netscape HTML 格式导入和导出书签
-- 可安装为渐进式 Web 应用（PWA）
-- 为 [Firefox](https://addons.mozilla.org/firefox/addon/linkding-extension/) 和 [Chrome](https://chrome.google.com/webstore/detail/linkding-extension/beakmhbijpdhipnjhnclmhgjlddhidpe) 提供扩展，以及书签小工具
-- 通过 OIDC 或身份验证代理支持 SSO
-- 提供 REST API 以开发第三方应用
-- 用户自助服务和原始数据访问的管理面板
+**功能概述:**
+- 清晰的用户界面，优化了可读性
+- 使用标签组织收藏夹
+- 批量编辑、Markdown笔记、稍后阅读功能
+- 与其他用户或访客分享收藏夹
+- 自动提供收藏网站的标题、描述和图标
+- 自动归档网站，作为本地HTML文件或存档在Internet Archive
+- 以Netscape HTML格式导入和导出收藏夹
+- 可作为渐进式网络应用（PWA）安装
+- [Firefox](https://addons.mozilla.org/firefox/addon/linkding-extension/)和[Chrome](https://chrome.google.com/webstore/detail/linkding-extension/beakmhbijpdhipnjhnclmhgjlddhidpe)的扩展，以及一个收藏夹小工具
+- 通过OIDC或认证代理支持单点登录（SSO）
+- 用于开发第三方应用的REST API
+- 管理员面板，用于用户自助服务和原始数据访问
 
-_感谢所有为我的仓库加星的人！要加星请点击下面的图片，然后它会在右上角显示。谢谢！_
+_感谢大家给我的仓库点亮星标！要点亮星标，请点击下面的图片，然后它就会出现在右上角。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## 关于
+## About
 
-此插件使用 [docker 镜像](https://github.com/sissbruecker/linkding)。
+这个插件使用了[docker镜像](https://github.com/sissbruecker/linkding)。
 
-稍微占用内存。此插件使用常规的 linkding 镜像，而不是 plus 版本。如果您想使用 plus ，请下载插件源代码，放置在 /addons/ 中，并编辑 config.json 将版本更改为 latest-plus 而不是版本号。
+有点消耗内存。这个使用的是常规的linkding镜像，而不是plus版。如果你想使用plus版，下载插件的源代码，放到/addons/目录下，编辑config.json文件，将版本号改为latest-plus，而不是具体的版本号。
 
-## 安装
+## Installation
 
-此插件的安装非常简单，与安装任何其他 Hass.io 插件没有区别。
+这个插件的安装非常简单，与安装任何其他Hass.io插件没有区别。
 
-1. [将我的 Hass.io 插件库][repository] 添加到您的 Hass.io 实例。
-1. 安装此插件。
-1. 点击 `保存` 按钮以存储您的配置。
+1. [将我的Hass.io插件仓库][repository]添加到你的Hass.io实例。
+1. 安装这个插件。
+1. 点击`保存`按钮以保存你的配置。
 1. 启动插件。
 1. 检查插件的日志，看看是否一切正常。
-1. WebUI 应该可以通过 <your-ip>:port 访问。
+1. 应该可以通过<your-ip>:port访问WebUI。
 1. 设置将在 /addon_configs/2effc9b9_linkding 中。
-1. 停止插件，编辑 settings.yaml 文件以更改所需的任何内容。
+1. 停止插件，编辑settings.yaml文件以更改任何你需要的设置
 
-## 配置
-1. 您必须创建一个初始的超级用户账户。
-1. 启动插件。
-1. 登录到 homeassistant cli。
-1. `docker ps | grep "link"`，复制第一个显示的十六进制字符串。
-1. docker exec -it 3c32b108bd10 python manage.py createsuperuser --username=joe --email=joe@mail.com
-1. 输入密码，然后重启插件。
+## Configuration
+1. 你必须创建一个初始的超级用户账户。
+1. 启动插件
+1. 使用homeassistant cli登录
+1. `docker ps | grep "link"`，复制显示的第一个十六进制字符串
+1. `docker exec -it 3c32b108bd10 python manage.py createsuperuser --username=joe --email=joe@mail.com`
+1. 输入密码，然后重启插件
 ```
-port : 9090 #您想要运行的端口。
+port : 9090 #你想要运行的端口。
 ```
 
-Webui 可以在 `<your-ip>:port` 找到。
+Webui可以在<your-ip>:port找到。
 
 [repository]: https://github.com/jdeath/homeassistant-addons
