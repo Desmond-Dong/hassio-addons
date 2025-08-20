@@ -1,10 +1,10 @@
-# Home Assistant 插件：Piper
+# Home Assistant Add-on: Piper
 
-![支持 aarch64 架构][aarch64-shield] ![支持 amd64 架构][amd64-shield]
+![支持aarch64架构][aarch64-shield] ![支持amd64架构][amd64-shield]
 
-一个使用 [piper](https://github.com/rhasspy/piper/) 进行文本到语音转换的 Home Assistant 插件。
+一个使用[piper](https://github.com/rhasspy/piper/)进行文本转语音的Home Assistant插件。
 
-是 [声音之年](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/) 的一部分。
+是[年度语音](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/)的一部分。
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

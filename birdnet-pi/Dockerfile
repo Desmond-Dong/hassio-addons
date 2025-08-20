@@ -38,6 +38,8 @@ RUN chmod 744 /ha_lsio.sh && if grep -qr "lsio" /etc; then /ha_lsio.sh "$CONFIGL
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # hadolint ignore=DL3015,SC2016
+# Add rootfs
+COPY rootfs/ /
 RUN \
     # Install dependencies
     echo "Install dependencies" && \
@@ -53,6 +55,10 @@ RUN \
     curl -f -L -s -S https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/journalctl3.py -o /helpers/journalctl && \
     cp -rf /helpers/journalctl /bin/journalctl && \
     chmod a+x /bin/journalctl && \
+    \
+    # Correct for timedatectl
+    cp /helpers/timedatectl /usr/bin/timedatectl && \
+    chmod a+x /usr/bin/timedatectl && \
     \
     # Change user to pi and create /home/pi
     echo "setting users" && \
@@ -87,7 +93,8 @@ RUN \
     # Use my repository
     sed -i "s|Nachtzuster|alexbelgium|g" /newinstaller.sh && \
     # Install open PR
-    sed -i '/^git clone/a for pr in $(curl -s https://api.github.com/repos/alexbelgium/BirdNET-Pi/pulls?state=open | jq -r ".[].number"); do echo "Merging PR #$pr" && git fetch origin pull/$pr/merge:pr-$pr && git merge --no-ff -m "Merge PR #$pr" pr-$pr || { echo "Skipping PR #$pr"; git merge --abort || true; }; done' /newinstaller.sh && \
+    chmod +x /helpers/merge_open_prs.sh && \
+    sed -i '/git clone/a echo "Merge PR" && bash /helpers/merge_open_prs.sh' /newinstaller.sh && \
     # Avoid rebooting at end of installation
     sed -i "/reboot/d" /newinstaller.sh && \
     # Use apt-get as without user action
@@ -136,9 +143,6 @@ ENV S6_CMD_WAIT_FOR_SERVICES=1 \
 ##################
 # 3 Install apps #
 ##################
-
-# Add rootfs
-COPY rootfs/ /
 
 # Uses /bin for compatibility purposes
 # hadolint ignore=DL4005

@@ -1,10 +1,8 @@
-## 2025.8.0b2
+## 2025.8.0b4
 
 [**Read release announcement**](https://beta.esphome.io/changelog/2025.8.0)
 
-- [entity] Allow ``device_id`` to be blank on entities [esphome#10217](https://github.com/esphome/esphome/pull/10217) by [@jesserockz](https://github.com/jesserockz) (new-feature)
-- [espnow] Set state to enabled before adding initial peers [esphome#10225](https://github.com/esphome/esphome/pull/10225) by [@jesserockz](https://github.com/jesserockz)
-- [psram] allow disabling [esphome#10224](https://github.com/esphome/esphome/pull/10224) by [@ssieb](https://github.com/ssieb)
-- Bump aioesphomeapi from 38.2.1 to 39.0.0 [esphome#10222](https://github.com/esphome/esphome/pull/10222) by [@dependabot[bot]](https://github.com/apps/dependabot)
-- Bump esphome-dashboard from 20250514.0 to 20250814.0 [esphome#10227](https://github.com/esphome/esphome/pull/10227) by [@dependabot[bot]](https://github.com/apps/dependabot)
+- [atm90e32] Only read 1 register per SPI transaction per datasheet. [esphome#10258](https://github.com/esphome/esphome/pull/10258) by [@raineth](https://github.com/raineth)
+- [pipsolar] fix faults_present, fix update interval [esphome#10289](https://github.com/esphome/esphome/pull/10289) by [@patagonaa](https://github.com/patagonaa)
+- [bluetooth_proxy] Fix connection slot race by deferring slot release until GATT close [esphome#10303](https://github.com/esphome/esphome/pull/10303) by [@bdraco](https://github.com/bdraco)
 

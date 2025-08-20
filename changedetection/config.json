@@ -7,7 +7,7 @@
     "i386"
   ],
   "boot": "auto",
-  "description": "[老王杂谈说]：积极管理你的数据生活，追踪网站内容变化，并通过Discord、Email、Slack、Telegram以及70多种其他方式接收通知",
+  "description": "[老王杂谈说]：积极管理你的数据生活，跟踪网站内容变化，并通过Discord、电子邮件、Slack、Telegram以及70多个其他平台接收通知。",
   "environment": {
     "PLAYWRIGHT_DRIVER_URL": "ws://db21ed7f-browserless-chrome:3000/?stealth=1&--disable-web-security=true",
     "FETCH_WORKERS": "1"
@@ -24,9 +24,9 @@
   },
   "slug": "changedetection",
   "startup": "services",
-  "upstream": "0.50.9",
+  "upstream": "0.50.10",
   "url": "https://ghfast.top/github.com/jdeath/homeassistant-addons/tree/main/changedetection",
-  "version": "0.50.9",
+  "version": "0.50.10",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:5000]",
   "panel_admin": false,
   "ingress": true,

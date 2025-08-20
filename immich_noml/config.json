@@ -7,7 +7,7 @@
     "**/machine-learning/*"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "[老王杂谈说]：从您的手机直接提供的自托管照片和视频备份解决方案",
+  "description": "[老王杂谈说]：从你的手机直接进行自托管照片和视频备份解决方案",
   "devices": [
     "/dev/dri",
     "/dev/dxg",
@@ -138,7 +138,8 @@
     "data_location": "str",
     "library_location": "str?",
     "localdisks": "str?",
-    "networkdisks": "str?"
+    "networkdisks": "str?",
+    "skip_permissions_check": "bool?"
   },
   "services": [
     "mysql:want"
@@ -147,7 +148,7 @@
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
   "usb": true,
-  "version": "1.138.0",
+  "version": "1.138.1",
   "video": true,
   "webui": "http://[HOST]:[PORT:8080]"
 }
