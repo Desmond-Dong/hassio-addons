@@ -1,5 +1,5 @@
 {
-  "version": "25.06.12",
+  "version": "25.08.09",
   "name": "WebTunnel",
   "url": "https://mp.weixin.qq.com/s/nWA72IHHPTtsmoG_45rCsQ",
   "slug": "webtunnel",
@@ -7,7 +7,7 @@
   "description": "安全好用的内网穿透软件",
   "arch": ["amd64", "aarch64"],
   "startup": "services",
-   "image": "ghcr.nju.edu.cn/desmond-dong/webtunnel-{arch}",
+   "image": "ghcr.nju.edu.cn/desmond-dong/webtunnel/webtunnel-{arch}",
   "init": false,
   "hassio_role": "manager",
   "panel_icon": "mdi:server-network",
@@ -22,4 +22,3 @@
   "host_network": true,
   "webui": "http://[HOST]:[PORT:9600]"
 }
-
