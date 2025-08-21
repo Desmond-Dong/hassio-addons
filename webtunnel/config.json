@@ -20,5 +20,5 @@
   "boot": "auto",
   "restart": "always",
   "host_network": true,
-  "webui": "http://[HOST]:[PORT:9600]"
+  "webui": "http://[HOST]:[PORT:9600]/?s=gjhAXN"
 }
