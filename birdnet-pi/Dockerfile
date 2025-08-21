@@ -56,10 +56,6 @@ RUN \
     cp -rf /helpers/journalctl /bin/journalctl && \
     chmod a+x /bin/journalctl && \
     \
-    # Correct for timedatectl
-    cp /helpers/timedatectl /usr/bin/timedatectl && \
-    chmod a+x /usr/bin/timedatectl && \
-    \
     # Change user to pi and create /home/pi
     echo "setting users" && \
     if id abc >/dev/null 2>&1; then groupmod -o -g 101 abc && usermod -o -u 101 abc; fi && \
@@ -94,7 +90,6 @@ RUN \
     sed -i "s|Nachtzuster|alexbelgium|g" /newinstaller.sh && \
     # Install open PR
     chmod +x /helpers/merge_open_prs.sh && \
-    sed -i '/git clone/a echo "Merge PR" && bash /helpers/merge_open_prs.sh' /newinstaller.sh && \
     # Avoid rebooting at end of installation
     sed -i "/reboot/d" /newinstaller.sh && \
     # Use apt-get as without user action
@@ -106,6 +101,8 @@ RUN \
     sed -i '/git clone/a sed -i "/CURRENT_TIMEZONE/s/$/ || true/" $HOME/BirdNET-Pi/scripts/install_birdnet.sh' /newinstaller.sh && \
     # Remove all instances of sudo from the newinstaller
     sed -i -e "s|== 0|== 7|g" -e "s|sudo -n true|true|g" -e "s|sudo -K|true|g" /newinstaller.sh && \
+    # Merge all PR
+    sed -i '/git clone/a echo "Merge PR" && bash /helpers/merge_open_prs.sh' /newinstaller.sh && \
     \
     # Execute installer
     /./newinstaller.sh && \

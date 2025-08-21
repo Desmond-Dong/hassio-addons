@@ -32,7 +32,7 @@ init: false
 startup: services
 name: ESPHome Device Builder
 panel_title: ESPHome Builder
-version: 2025.7.5
+version: 2025.8.0
 slug: esphome
-description: '[老王杂谈说]：使用ESPHome构建自己的智能家居设备，无需编程经验'
+description: '[老王杂谈说]：使用 ESPHome 构建您自己的智能家居设备，无需编程经验'
 image: ghcr.nju.edu.cn/esphome/esphome-hassio
