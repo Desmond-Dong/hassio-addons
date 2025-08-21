@@ -1,24 +1,24 @@
 name: FreshRSS
-version: 0.4.3
+version: 0.4.4
 slug: freshrss
-description: 一个免费的自托管RSS聚合器。
+description: '[老王杂谈说]：一个免费、可自托管的聚合器'
 url: https://ghfast.top/github.com/einschmidt/addon-freshrss
 panel_icon: mdi:rss-box
 arch:
-- i386
-- armhf
-- armv7
-- amd64
-- aarch64
+  - i386
+  - armhf
+  - armv7
+  - amd64
+  - aarch64
 ports:
   80/tcp: 7077
 ports_description:
   80/tcp: Web interface
 init: false
 map:
-- type: ssl
-- type: addon_config
-  read_only: false
+  - type: ssl
+  - type: addon_config
+    read_only: false
 options:
   base_url: ''
   ssl: false

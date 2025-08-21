@@ -1,9 +1,9 @@
 ---
 name: TorrServer
 slug: torrserver
-description: $translated_description
+description: '[老王杂谈说]：TorrServer for home assistant'
 image: ghcr.nju.edu.cn/aatrubilin/hassio-torrserver/{arch}
-version: 1.4.0-MatriX.135
+version: 1.4.0-MatriX.136
 url: https://ghfast.top/github.com/aatrubilin/hassio-torrserver
 codenotary: aatrubilin@gmail.com
 init: false

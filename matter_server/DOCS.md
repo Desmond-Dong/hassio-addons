@@ -1,52 +1,58 @@
-# Home Assistant 插件：Matter 服务器
+# Home Assistant Add-on: Matter Server
 
-## 安装
+## Installation
 
-按照以下步骤安装此插件。
+Use the following steps to install this add-on.
 
-1. 点击下面的 Home Assistant 我的按钮，以在您的 Home Assistant 实例上打开插件页面。
+1. Click the Home Assistant My button below to open the add-on page on your
+   Home Assistant instance.
 
-   [![在您的 Home Assistant 实例中打开此插件。][addon-badge]][addon]
+   [![Open this add-on in your Home Assistant instance.][ addon-badge]][ addon]
 
-1. 点击“安装”按钮以安装插件。
+1. Click the "Install" button to install the add-on.
 
-## 如何使用
+## How to use
 
-启动 Matter 服务器插件以使 WebSocket 可用于 Home Assistant Core。在 Home Assistant Core 中安装 [Matter 集成][matter_integration]。
+Start the Matter Server add-on to make the WebSocket available to Home
+Assistant Core. Install the [Matter integration][matter_integration]
+in Home Assistant Core.
 
-### 外部访问 WebSocket 接口（高级）
+### Access WebSocket interface externally (advanced)
 
-默认情况下，Python Matter 服务器的 WebSocket 接口仅在内部公开。仍然可以通过主机接口启用访问。要做到这一点，请点击“显示禁用端口”，并在 Matter 服务器 WebSocket 服务器端口字段中输入一个端口（例如 5580）。
+By default, the Python Matter Server's WebSocket interface is only exposed
+internally. It is still possible to enable access through the host interface
+To do so, click on "Show disabled ports" and enter a port (e.g. 5580) in the
+Matter Server WebSocket server port field.
 
-## 配置
+## Configuration
 
-插件配置：
+Add-on configuration:
 
-| 配置项                | 描述                                                       |
-|---------------------|-----------------------------------------------------------|
-| log_level           | Matter 服务器组件的日志级别。                             |
-| log_level_sdk       | Matter SDK 日志的日志级别。                              |
-| beta                | 是否在启动时安装最新的测试版。                           |
-| enable_test_net_dcl | 启用 test-net DCL 用于 PAA 根证书和其他设备信息。       |
-| bluetooth_adapter_id | 设置 BlueZ 蓝牙控制器 ID（用于本地调试）                 |
+| Configuration       | Description                                                 |
+|---------------------|-------------------------------------------------------------|
+| log_level           | Logging level of the Matter Server component.               |
+| log_level_sdk       | Logging level for Matter SDK logs.                          |
+| beta                | Whether to install the latest beta version on startup       |
+| enable_test_net_dcl | Enable test-net DCL for PAA root certificates and other device information. |
+| bluetooth_adapter_id | Set BlueZ Bluetooth Controller ID (for local commissioning) |
 
-## 支持
+## Support
 
-有问题？
+Got questions?
 
-您有几种选择来获得答案：
+You have several options to get them answered:
 
-- [Home Assistant Discord 聊天服务器][discord]。
-- Home Assistant [社区论坛][forum]。
-- 加入 [/r/homeassistant][reddit] 的 [Reddit 子论坛][reddit]。
+- The [Home Assistant Discord Chat Server][discord].
+- The Home Assistant [Community Forum][forum].
+- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
 
-如果您发现了错误，请 [在我们的 GitHub 上报告问题][issue]。
+In case you've found a bug, please [open an issue on our GitHub][issue].
 
-[addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=core_matter_server
-[addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
-[discord]: https://discord.gg/c5DvZ4e
-[forum]: https://community.home-assistant.io
-[reddit]: https://reddit.com/r/homeassistant
-[issue]: https://github.com/home-assistant/addons/issues
-[matter_server_repo]: https://github.com/home-assistant-libs/python-matter-server
-[matter_integration]: https://www.home-assistant.io/integrations/matter/
+[ addon]: https://my.home-assistant.io/redirect/supervisor_addon/? addon=core_matter_server
+[ addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
+[ discord]: https://discord.gg/c5DvZ4e
+[ forum]: https://community.home-assistant.io
+[ reddit]: https://reddit.com/r/homeassistant
+[ issue]: https://github.com/home-assistant/addons/issues
+[ matter_server_repo]: https://github.com/home-assistant-libs/python-matter-server
+[ matter_integration]: https://www.home-assistant.io/integrations/matter/

@@ -8,7 +8,7 @@
 
 ## Ollama 集成
 
-要下载任何模型，请使用 Ollama 的 API 或通过 Home Assistant 集成 [Ollama](https://www.home-assistant.io/integrations/ollama/)：
+要下载任何模型，请使用 Ollama 的 API 或通过 Home Assistant 集成 [Ollama](https://www.home-assistant.io/integrations/ollama/) 进行集成：
 
 [![添加 Ollama 集成](https://my.home-assistant.io/badges/brand.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=ollama)
 
@@ -20,4 +20,4 @@
 
 ## UI 链接的说明
 
-UI 链接仅用于检查 Ollama 的 API 是否可用。官方 Ollama 图像中不包含聊天功能。
+UI 链接仅用于检查 ollama 的 API 是否可用。官方 ollama 图像中不包含聊天功能。

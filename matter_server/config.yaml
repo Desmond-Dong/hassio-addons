@@ -1,8 +1,8 @@
 ---
-version: 8.0.0
+version: 8.1.0
 slug: matter_server
 name: Matter Server
-description: 家庭助手 Matter 支持的 Matter WebSockets 服务器。
+description: '[老王杂谈说]：Home Assistant Matter支持的Matter WebSocket服务器。'
 url: >-
   https://ghfast.top/github.com/home-assistant/addons/tree/master/matter_server
 arch:
