@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.3.1](https://github.com/hugobloem/wyoming-microsoft-tts/compare/v1.3.0...v1.3.1) (2025-08-21)
+
+
+### 🐛 Bugfixes
+
+* voice parsing errors for locales with script codes (fixes [#111](https://github.com/hugobloem/wyoming-microsoft-tts/issues/111)) ([#120](https://github.com/hugobloem/wyoming-microsoft-tts/issues/120)) ([b2f02fb](https://github.com/hugobloem/wyoming-microsoft-tts/commit/b2f02fbab62d608d7154375e754f9ec63215d661))
+
+
+### 🧪 Tests
+
+* Add comprehensive test coverage for voices.json download functionality ([#121](https://github.com/hugobloem/wyoming-microsoft-tts/issues/121)) ([ba0271d](https://github.com/hugobloem/wyoming-microsoft-tts/commit/ba0271d1bf511d9afc0343566708c1bf79ab4c56))
+
+
+### 🏗️ Maintenance
+
+* **deps:** bump actions/checkout from 4 to 5 ([#118](https://github.com/hugobloem/wyoming-microsoft-tts/issues/118)) ([31deb21](https://github.com/hugobloem/wyoming-microsoft-tts/commit/31deb214e73ba2c3a46a5870debd1117c7492059))
+
 ## [1.3.0](https://github.com/hugobloem/wyoming-microsoft-tts/compare/v1.2.1...v1.3.0) (2025-08-07)
 
 
