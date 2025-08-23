@@ -1,11 +1,9 @@
-## ⚠️ Open Issue : [🐛 [Firefly iii data importer] Updater pulls pre-releases (opened 2025-07-14)](https://github.com/alexbelgium/hassio-addons/issues/1956) by [@gmariotti](https://github.com/gmariotti)
-
 # Home assistant add-on: fireflyiii
 
 [![Donate][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
 [![Donate][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
 
-![Version](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Ffireflyiii%2Fconfig.json)
+![Version](https://img.shields.io/badge/dynamic/json?label=版本&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Ffireflyiii%2Fconfig.json)
 ![Ingress](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Ffireflyiii%2Fconfig.json)
 ![Arch](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Ffireflyiii%2Fconfig.json)
 
@@ -16,63 +14,79 @@
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有给我的仓库点赞的人！要点赞，请点击下面的图片，然后它将在右上角。谢谢！_
 
 [![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
-![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/fireflyiii/stats.png)
+![下载趋势](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/fireflyiii/stats.png)
 
-## About
+## 关于
 
-["Firefly III"](https://www.firefly-iii.org) is a (self-hosted) manager for your personal finances. It can help you keep track of your expenses and income, so you can spend less and save more.
-This addon is based on the docker image https://hub.docker.com/r/fireflyiii/core
+["Firefly III"](https://www.firefly-iii.org) 是一个（自托管）的个人财务管理工具。它可以帮助您跟踪支出和收入，从而减少开支并增加储蓄。
+此插件基于 Docker 镜像 https://hub.docker.com/r/fireflyiii/core
 
-## Configuration
+## 配置
 
-PLEASE CHANGE YOUR APP_KEY BEFORE FIRST LAUNCH! YOU WON'T BE ABLE AFTERWRADS WITHOUT RESETTING YOUR DATABASE.
+Web UI 可以在 <http://homeassistant:PORT> 或通过 Ingress 侧边栏访问。
+配置可以通过应用 Web UI 进行，以下选项除外。
 
-Options can be configured through two ways :
+**⚠️ 重要提示**：在首次启动之前更改您的 `APP_KEY`！如果没有重置数据库，您将无法更改它。
 
-- Addon options
+### 选项
+
+| 选项 | 类型 | 默认值 | 描述 |
+|------|------|--------|------|
+| `APP_KEY` | 字符串 | `CHANGEME_32_CHARS_EuC5dfn3LAPzeO` | **关键**：32 位加密密钥 - 在首次运行前更改！ |
+| `CONFIG_LOCATION` | 字符串 | `/config/addons_config/fireflyiii/config.yaml` | 附加配置文件的位置 |
+| `DB_CONNECTION` | 列表 | `sqlite_internal` | 数据库类型（sqlite_internal/mariadb_addon/mysql/pgsql） |
+| `DB_HOST` | 字符串 | | 数据库主机（用于外部数据库） |
+| `DB_PORT` | 字符串 | | 数据库端口（用于外部数据库） |
+| `DB_DATABASE` | 字符串 | | 数据库名称（用于外部数据库） |
+| `DB_USERNAME` | 字符串 | | 数据库用户名（用于外部数据库） |
+| `DB_PASSWORD` | 字符串 | | 数据库密码（用于外部数据库） |
+| `Updates` | 列表 | | 自动更新计划（hourly/daily/weekly） |
+| `silent` | 布尔值 | `true` | 静默模式 - 设置为 false 以获取调试信息 |
+
+### 示例配置
 
 ```yaml
-"CONFIG_LOCATION": location of the config.yaml # Sets the location of the config.yaml (see below)
-"DB_CONNECTION": "list(sqlite_internal|mariadb_addon|mysql|pgsql)" # Defines the type of database to use : sqlite (default, embedded in the addon) ; MariaDB (auto-detection if the MariaDB addon is installed and runs), and external databases that requires that the other DB_ fields are set (mysql and pgsql)
-"APP_KEY": 32 characters # This is your encryption key, don't lose it!
-"DB_HOST": "CHANGEME" # only needed if using a remote database
-"DB_PORT": "CHANGEME" # only needed if using a remote database
-"DB_DATABASE": "CHANGEME" # only needed if using a remote database
-"DB_USERNAME": "CHANGEME" # only needed if using a remote database
-"DB_PASSWORD": "CHANGEME" # only needed if using a remote database
-"Updates": hourly|daily|weekly # Sets an automatic update
-"silent": true # If false, show debug info
+APP_KEY: "SomeRandomStringOf32CharsExactly"
+CONFIG_LOCATION: "/config/addons_config/fireflyiii/config.yaml"
+DB_CONNECTION: "mariadb_addon"
+DB_HOST: "core-mariadb"
+DB_PORT: "3306"
+DB_DATABASE: "firefly"
+DB_USERNAME: "firefly"
+DB_PASSWORD: "secure_password"
+Updates: "weekly"
+silent: false
 ```
 
-- Config.yaml (advanced usage)
+### 高级配置
 
-Additional variables can be set as ENV variables by adding them in the config.yaml in the location defined in your addon options according to this guide : https://github.com/alexbelgium/hassio-addons/wiki/Addons-feature:-add-env-variables
+可以使用 config.yaml 文件配置额外的环境变量。参见：
+- [添加环境变量指南](https://github.com/alexbelgium/hassio-addons/wiki/Add-Environment-variables-to-your-Addon)
+- [完整的 Firefly III 环境变量](https://raw.githubusercontent.com/firefly-iii/firefly-iii/main/.env.example)
 
-The complete list of ENV variables can be seen here : https://raw.githubusercontent.com/firefly-iii/firefly-iii/main/.env.example
+## 安装
 
-## Installation
+此插件的安装非常简单，与其他插件的安装方式相同。
 
-The installation of this add-on is pretty straightforward and not different in comparison to installing any other add-on.
+1. 将我的插件仓库添加到您的 Home Assistant 实例中（在 Supervisor 插件商店的右上角，或如果您已配置我的 HA，请点击下面的按钮）
+   [![打开您的 Home Assistant 实例并显示带有预填充特定仓库 URL 的添加插件仓库对话框。](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
+1. 安装此插件。
+1. 点击 `保存` 按钮以保存您的配置。
+1. 根据您的偏好设置插件选项。
+1. 启动插件。
+1. 检查插件的日志以查看是否一切正常。
+1. 打开 Web UI 并调整软件选项
 
-1. Add my add-ons repository to your home assistant instance (in supervisor addons store at top right, or click button below if you have configured my HA)
-   [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Set the add-on options to your preferences
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Open the webUI and adapt the software options
+## 支持
 
-## Support
+在 github 上创建问题
 
-Create an issue on github
+## 插图
 
-## Illustration
-
-![illustration](https://raw.githubusercontent.com/firefly-iii/firefly-iii/develop/.github/assets/img/imac-complete.png)
+![插图](https://raw.githubusercontent.com/firefly-iii/firefly-iii/develop/.github/assets/img/imac-complete.png)
 
 [repository]: https://github.com/alexbelgium/hassio-addons

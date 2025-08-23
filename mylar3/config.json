@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "自动漫画书下载器，用于与NZB和torrent一起使用。",
+  "description": "[老王杂谈说]：用于NZB和种子文件自动漫画下载器",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -108,6 +108,6 @@
   "slug": "mylar3",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8090]"
 }

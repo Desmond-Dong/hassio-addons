@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "免费、轻量级且易于使用的家庭服务器，用于您的漫画和电子书。",
+  "description": "[老王杂谈说]：免费、轻量且易于使用的家庭服务器，用于您的漫画和电子书",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -117,6 +117,6 @@
   "slug": "ubooquity",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "2.1.5",
+  "version": "3.1.0",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:2206]/ubooquity/admin"
 }

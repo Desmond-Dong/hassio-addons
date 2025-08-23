@@ -5,7 +5,7 @@
   ],
   "backup": "cold",
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "Postgres 17 支持VectorChord",
+  "description": "[老王杂谈说]：带有VectorChord支持的Postgres 17",
   "environment": {
     "CONFIG_LOCATION": "/config/postgresql.conf",
     "PGDATA": "/config/database"
@@ -37,7 +37,8 @@
     "POSTGRES_USER": "str?"
   },
   "slug": "postgres_latest",
+  "startup": "system",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/postgres",
-  "version": "17.4-12"
+  "version": "17.4-13"
 }

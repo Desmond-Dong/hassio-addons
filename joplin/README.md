@@ -1,10 +1,9 @@
-## ⚠️ Open Request : [✨ [REQUEST] [Joplin] Add Ingress (opened 2025-06-15)](https://github.com/alexbelgium/hassio-addons/issues/1913) by [@aluavin](https://github.com/aluavin)
 # Home assistant add-on: Joplin
 
 [![Donate][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
 [![Donate][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
 
-![Version](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fjoplin%2Fconfig.json)
+![Version](https://img.shields.io/badge/dynamic/json?label=版本&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fjoplin%2Fconfig.json)
 ![Ingress](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fjoplin%2Fconfig.json)
 ![Arch](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fjoplin%2Fconfig.json)
 
@@ -15,70 +14,114 @@
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_感谢大家给我的仓库点赞！点击下面的图片为仓库点赞，它就会出现在右上角。谢谢！_
+_感谢所有给我的仓库加星的贡献者！要加星，请点击下面的图片，然后它将出现在右上角。谢谢！_
 
 [![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
-![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/joplin/stats.png)
+![下载量趋势](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/joplin/stats.png)
 
 ## 关于
 
-Joplin Server 是一个免费、开源的笔记和待办事项同步应用程序，它可以处理大量笔记并将其组织成笔记本。
-使用此服务器，您可以在所有设备上同步所有笔记。
+[Joplin Server](https://github.com/laurent22/joplin) 是一个免费、开源的笔记和待办事项同步应用，它可以处理大量组织成笔记本的笔记。使用这个服务器，你可以在所有设备之间同步所有笔记。Joplin 支持端到端加密、Markdown 编辑、网页剪裁扩展，以及与各种云服务的同步。
+
+这个插件基于 [docker 镜像](https://hub.docker.com/r/etechonomy/joplin-server) 从 etechonomy。
 
 感谢 @poudenes 帮助开发！
 
-项目主页：https://github.com/laurent22/joplin
+## 配置
 
-基于的 Docker 镜像：https://hub.docker.com/r/etechonomy/joplin-server
+Webui 可以在 `<你的IP>:22300` 找到。
+
+### 选项
+
+| 选项 | 类型 | 默认值 | 描述 |
+|------|------|--------|-------|
+| `APP_BASE_URL` | 字符串 | `http://your_domain:port` | 服务运行的公共基础 URL |
+| `data_location` | 字符串 | `/config/addons_config/joplin` | Joplin 数据存储的路径 |
+| `DB_CLIENT` | 字符串 | | 数据库客户端类型（例如，`pg` 用于 PostgreSQL） |
+| `POSTGRES_HOST` | 字符串 | | PostgreSQL 服务器主机名 |
+| `POSTGRES_PORT` | 整数 | | PostgreSQL 服务器端口 |
+| `POSTGRES_DATABASE` | 字符串 | | PostgreSQL 数据库名称 |
+| `POSTGRES_USER` | 字符串 | | PostgreSQL 用户名 |
+| `POSTGRES_PASSWORD` | 字符串 | | PostgreSQL 密码 |
+| `MAILER_ENABLED` | 整数 | | 启用电子邮件服务（1=true, 0=false） |
+| `MAILER_HOST` | 字符串 | | SMTP 服务器主机名 |
+| `MAILER_PORT` | 整数 | | SMTP 服务器端口 |
+| `MAILER_SECURITY` | 字符串 | | SMTP 安全性（none, tls, starttls） |
+| `MAILER_AUTH_USER` | 字符串 | | SMTP 认证用户名 |
+| `MAILER_AUTH_PASSWORD` | 字符串 | | SMTP 认证密码 |
+| `MAILER_NOREPLY_NAME` | 字符串 | | 邮件发送者名称 |
+| `MAILER_NOREPLY_EMAIL` | 字符串 | | 邮件发送者地址 |
+
+### 示例配置
+
+```yaml
+APP_BASE_URL: "http://192.168.1.100:22300"
+data_location: "/config/addons_config/joplin"
+DB_CLIENT: "pg"
+POSTGRES_HOST: "core-mariadb"
+POSTGRES_PORT: 3306
+POSTGRES_DATABASE: "joplin"
+POSTGRES_USER: "joplin"
+POSTGRES_PASSWORD: "secure_password"
+MAILER_ENABLED: 1
+MAILER_HOST: "smtp.gmail.com"
+MAILER_PORT: 587
+MAILER_SECURITY: "starttls"
+MAILER_AUTH_USER: "your-email@gmail.com"
+MAILER_AUTH_PASSWORD: "your-app-password"
+MAILER_NOREPLY_NAME: "Joplin Server"
+MAILER_NOREPLY_EMAIL: "noreply@yourdomain.com"
+```
+
+### 数据库设置
+
+Joplin Server 默认使用 SQLite，但对于生产环境，推荐使用 PostgreSQL：
+
+1. 安装并配置一个 PostgreSQL 插件（例如，MariaDB 插件）
+2. 为 Joplin 创建数据库和用户
+3. 在 Joplin 插件中配置 PostgreSQL 选项
+4. 重启插件
+
+确保提供的数据库和用户存在，因为服务器不会自动创建它们。
+
+### 电子邮件配置
+
+要为用户注册和通知启用电子邮件功能：
+
+1. 配置你的 SMTP 服务器详细信息
+2. 将 `MAILER_ENABLED` 设置为 `1`
+3. 提供认证凭据
+4. 通过注册新用户来测试配置
+
+### 自定义脚本和环境变量
+
+这个插件支持通过 `addon_config` 映射的自定义脚本和环境变量：
+
+- **自定义脚本**：请参阅 [在插件中运行自定义脚本](https://github.com/alexbelgium/hassio-addons/wiki/Running-custom-scripts-in-Addons)
+- **环境变量**：请参阅 [为你的插件添加环境变量](https://github.com/alexbelgium/hassio-addons/wiki/Add-Environment-variables-to-your-Addon)
 
 ## 安装
 
 这个插件的安装非常简单，与安装任何其他 Hass.io 插件没有区别。
 
-1. [将我的 Hass.io 插件仓库][repository]添加到您的 Hass.io 实例。
-1. 安装此插件。
-1. 点击“保存”按钮以保存您的配置。
-1. 启动插件。
-1. 检查插件的日志以查看是否一切顺利。
-1. 仔细配置插件以符合您的偏好，请参考官方文档进行配置。
+1. [将我的 Hass.io 插件仓库][repository] 添加到你的 Hass.io 实例。
+2. 安装这个插件。
+3. 点击 `保存` 按钮来存储你的配置。
+4. 启动插件。
+5. 检查插件的日志，看看是否一切正常。
+6. 导航到 Web 界面来完成初始设置。
 
-## 配置
+## 设置步骤
 
-Web UI 位于 <http://homeassistant:port>
-
-```yaml
-APP_BASE_URL: 这是服务运行的基础公共 URL。例如，如果您希望它从 https://example.com/joplin 运行，这是您应该设置的 URL。基础 URL 可以包括端口。
-```
-
-要使用现有的 PostgreSQL 服务器，请在配置中设置以下变量：
-确保提供的数据库和用户存在，因为服务器将不会创建它们。
-
-```yaml
-DB_CLIENT=pg
-POSTGRES_PASSWORD=joplin
-POSTGRES_DATABASE=joplin
-POSTGRES_USER=joplin
-POSTGRES_PORT=5432
-POSTGRES_HOST=localhost
-```
-
-要使用电子邮件服务，请在配置中设置以下变量：
-
-```yaml
-1 = true, 0 = false
-MAILER_HOST=mail.example.com
-MAILER_PORT=995
-MAILER_SECURITY=none, tls, starttls
-MAILER_AUTH_USER=info@example.com
-MAILER_AUTH_PASSWORD=your_password
-MAILER_NOREPLY_NAME=from_name
-MAILER_NOREPLY_EMAIL=from_email
-MAILER_ENABLED=1
-```
+1. **初始设置**：启动插件后，导航到 Web 界面
+2. **创建管理员账户**：创建你的第一个管理员用户账户
+3. **配置同步**：设置你的 Joplin 客户端与服务器同步
+4. **可选数据库**：考虑切换到 PostgreSQL 以获得更好的性能
+5. **电子邮件服务**：配置电子邮件服务以进行用户管理功能
 
 ## 支持
 
-在 github 上创建问题
+在 [GitHub](https://github.com/alexbelgium/hassio-addons/issues) 上创建问题。
 
 [repository]: https://github.com/alexbelgium/hassio-addons
