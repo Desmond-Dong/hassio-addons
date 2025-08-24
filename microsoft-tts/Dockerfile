@@ -2,7 +2,7 @@ ARG BUILD_FROM
 FROM ${BUILD_FROM}
 ARG BUILD_ARCH
 
-ARG MICROSOFT_TTS_VERSION
+COPY --from=ghcr.nju.edu.cn/astral-sh/uv:latest /uv /uvx /bin/
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
@@ -12,22 +12,17 @@ WORKDIR /usr/src
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         netcat-traditional \
-        curl \
-        python3 \
-        python3-pip \
-    && pip install --no-cache-dir \
-        setuptools \
-        wheel \
-    && pip install --no-cache-dir \
-    https://ghfast.top/github.com/hugobloem/wyoming-microsoft-tts/archive/refs/tags/v${MICROSOFT_TTS_VERSION}.zip \
-    && rm -rf /var/lib/apt/lists/*
-
+        curl 
+        
 # Copy files
 WORKDIR /
 COPY rootfs /
+COPY pyproject.toml /
+
+RUN uv sync
 
 HEALTHCHECK --start-period=10m \
-    CMD echo '{ "type": "describe" }' \
-        | nc -w 1 localhost 10200 \
-        | grep -q "microsoft" \
-        || exit 1
+CMD echo '{ "type": "describe" }' \
+    | nc -w 1 localhost 10200 \
+    | grep -q "microsoft" \
+    || exit 1

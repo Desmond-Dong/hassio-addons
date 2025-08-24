@@ -1,14 +1,8 @@
+## 8.9.0-7 (23-08-2025)
+- https required for ingress
 
 ## 8.9.0 (23-08-2025)
 - Update to latest version from linuxserver/docker-calibre (changelog : https://github.com/linuxserver/docker-calibre/releases)
-## 8.8.0-4 (22-08-2025)
-- Fix ingress config to replace CWS port plac
-
-## 8.8.0-3 (22-08-2025)
-- Switch desktop GUI to HTTPS for ingress
-
-## 8.8.0-2 (12-08-2025)
-- Minor bugs fixed
 
 ## 8.8.0 (09-08-2025)
 - Update to latest version from linuxserver/docker-calibre (changelog : https://github.com/linuxserver/docker-calibre/releases)

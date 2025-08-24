@@ -1,6 +1,3 @@
----
 build_from:
-  amd64: ghcr.nju.edu.cn/home-assistant/amd64-base-debian:bullseye
-  aarch64: ghcr.nju.edu.cn/home-assistant/aarch64-base-debian:bullseye
-args:
-  MICROSOFT_TTS_VERSION: 1.3.1
+  amd64: ghcr.nju.edu.cn/home-assistant/amd64-base-debian:bookworm
+  aarch64: ghcr.nju.edu.cn/home-assistant/aarch64-base-debian:bookworm

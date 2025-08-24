@@ -1,7 +1,9 @@
 name: Cloudflared
-version: 5.3.7
+version: 5.3.8
+breaking_versions:
+  - 5.3.7
 slug: cloudflared
-description: '[老王杂谈说]：使用 Cloudflare Tunnel 远程连接 Home Assistant 而无需打开任何端口'
+description: '[老王杂谈说]：使用 Cloudflare Tunnel 远程连接到 Home Assistant 而不打开任何端口'
 url: https://ghfast.top/github.com/brenner-tobias/addon-cloudflared/
 codenotary: dev@brenner.tech
 startup: services

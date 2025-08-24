@@ -1,8 +1,7 @@
----
-name: "Microsoft TTS"
-description: "[老王杂谈说]：使用微软Azure进行文本转语音"
-version: "1.3.1"
-slug: "wyoming_microsoft_tts"
+name: Microsoft TTS
+description: '[老王杂谈说]：使用Microsoft Azure进行文本转语音'
+version: 1.3.3
+slug: wyoming_microsoft_tts
 init: false
 arch:
   - aarch64
@@ -10,7 +9,7 @@ arch:
 discovery:
   - wyoming
 ports:
-  "10200/tcp": null
+  10200/tcp: null
 options:
   debug_logging: false
   update_voices: true
@@ -20,4 +19,4 @@ schema:
   debug_logging: bool
   update_voices: bool
 tmpfs: true
-image: "ghcr.nju.edu.cn/hugobloem/{arch}-wyoming-microsoft-tts"
+image: ghcr.nju.edu.cn/hugobloem/{arch}-wyoming-microsoft-tts

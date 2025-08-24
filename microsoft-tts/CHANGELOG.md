@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.3.3](https://github.com/hugobloem/wyoming-microsoft-tts/compare/v1.3.2...v1.3.3) (2025-08-23)
+
+
+### 👷 Continuous Integration
+
+* Add GitHub Actions workflow for package publishing ([3590efb](https://github.com/hugobloem/wyoming-microsoft-tts/commit/3590efb2e8367c36ad9ec4d2f05bb3c9e5fed307))
+
+## [1.3.2](https://github.com/hugobloem/wyoming-microsoft-tts/compare/v1.3.1...v1.3.2) (2025-08-23)
+
+
+### 🐛 Bugfixes
+
+* improve error handling and logging in transform_voices_files function ([b2e0b90](https://github.com/hugobloem/wyoming-microsoft-tts/commit/b2e0b904733a3a395df5b4dd92859cc258640adc))
+
+
+### 🏗️ Maintenance
+
+* **deps:** update base image to Python 3.13 in Dockerfile ([cec2d59](https://github.com/hugobloem/wyoming-microsoft-tts/commit/cec2d595faa68052a913466fe022ac394dede97c))
+* Migrate to pyproject.toml and enhance CI workflows ([#123](https://github.com/hugobloem/wyoming-microsoft-tts/issues/123)) ([d0242b1](https://github.com/hugobloem/wyoming-microsoft-tts/commit/d0242b105d1d53e41254dbda5defd2183bdc37f8))
+
+
+### 🎨 Styles
+
+* format ([353b1e4](https://github.com/hugobloem/wyoming-microsoft-tts/commit/353b1e42c3d001e33159699d87758b90bef7315d))
+
 ## [1.3.1](https://github.com/hugobloem/wyoming-microsoft-tts/compare/v1.3.0...v1.3.1) (2025-08-21)
 
 

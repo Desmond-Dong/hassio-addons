@@ -19,7 +19,7 @@ IFS=';' read -ra languages <<< "$(bashio::config 'language')"
 
 echo "Starting Microsoft STT service with flags: ${flags[@]}, --language ${languages[@]}"
 
-exec python3 -m wyoming_microsoft_stt \
+exec uv run -m wyoming_microsoft_stt \
     --uri "tcp://0.0.0.0:10300" \
     --subscription-key "$(bashio::config 'subscription_key')" \
     --service-region "$(bashio::config 'service_region')" \
