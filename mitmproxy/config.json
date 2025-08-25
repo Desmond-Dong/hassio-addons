@@ -4,13 +4,13 @@
     "aarch64"
   ],
   "boot": "manual",
-  "description": "mitmproxy 是一个免费的开源交互式HTTPS代理。",
+  "description": "[老王杂谈说]：mitmproxy是一个免费且开源的交互式HTTPS代理",
   "environment": {},
   "map": [
     "addon_config:rw"
   ],
   "init": "false",
-  "version": "v12.1.1",
+  "version": "v12.1.2",
   "name": "mitmproxy",
   "options": {},
   "ports": {
@@ -24,7 +24,7 @@
   "schema": {},
   "slug": "mitmproxy",
   "startup": "services",
-  "upstream": "v12.1.1",
+  "upstream": "v12.1.2",
   "url": "https://ghfast.top/github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:1432]",
   "ingress": false,

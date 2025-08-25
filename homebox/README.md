@@ -1,38 +1,38 @@
 # Home assistant add-on: Homebox
 
-Homebox is the inventory and organization system built for the Home User! With a focus on simplicity and ease of use, Homebox is the perfect solution for your home inventory, organization, and management needs. While developing this project, I've tried to keep the following principles in mind:
+Homebox 是为家庭用户构建的库存和组织系统！它注重简单易用，是您家庭库存、组织和管理的完美解决方案。在开发这个项目时，我尽量遵循以下原则：
 
-- _Simple_ - Homebox is designed to be simple and easy to use. No complicated setup or configuration required. Use either a single docker container, or deploy yourself by compiling the binary for your platform of choice.
-- _Blazingly Fast_ - Homebox is written in Go, which makes it extremely fast and requires minimal resources to deploy. In general, idle memory usage is less than 50MB for the whole container.
-- _Portable_ - Homebox is designed to be portable and run on anywhere. We use SQLite and an embedded Web UI to make it easy to deploy, use, and backup.
+- _简单_ - Homebox 设计得简单易用。无需复杂的设置或配置。使用单个 Docker 容器，或者通过为您的选择平台编译二进制文件自行部署。
+- _飞快_ - Homebox 是用 Go 编写的，这使得它非常快速，并且部署所需的资源极少。通常，整个容器的空闲内存使用量不到 50MB。
+- _便携_ - Homebox 设计得便携，可以在任何地方运行。我们使用 SQLite 和嵌入式 Web UI，使其易于部署、使用和备份。
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有星标我的仓库的人！要星标它，请点击下面的图片，它将出现在右上角。谢谢！_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
-## About
+## 关于
 
-This addon uses the [docker image](https://github.com/sysadminsmedia/homebox).
+这个插件使用了 [docker 镜像](https://github.com/sysadminsmedia/homebox)。
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Hass.io add-on.
+这个插件的安装非常直接，与安装任何其他 Hass.io 插件没有区别。
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Open WebUI should work via ingress or <your-ip>:port.
-1. Register a user
-1. Go to add-on configuration and disable user registration, if you desire
-## Configuration
+1. [将我的 Hass.io 插件仓库][repository]添加到您的 Hass.io 实例。
+1. 安装这个插件。
+1. 点击 `保存` 按钮以保存您的配置。
+1. 启动插件。
+1. 检查插件的日志，看看是否一切正常。
+1. 通过 ingress 或 <your-ip>:port 应该可以打开 WebUI。
+1. 注册一个用户
+1. 转到插件配置并禁用用户注册，如果您希望这样做
+
+## 配置
 
 ```
-port : 7745 #port you want to run on.
+port : 7745 #您想要运行的端口。
 ```
 
-Webui can be found at `<your-ip>:port`.
+Webui 可以在 `<your-ip>:port` 找到。
 
 [repository]: https://github.com/jdeath/homeassistant-addons
