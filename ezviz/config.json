@@ -11,8 +11,6 @@
   ],
   "init": false,
   "startup": "services",
-  "ingress": true,
-  "ingress_port": 7777,
   "panel_icon": "mdi:camera",
   "ports": {
     "7777/tcp": 7777

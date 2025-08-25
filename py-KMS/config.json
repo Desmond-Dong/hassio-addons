@@ -13,8 +13,6 @@
   "startup": "services",
   "image": "ghcr.nju.edu.cn/thespad/py-kms",
   "boot": "auto",
-  "ingress": true,
-  "ingress_port": 1688,
   "init": false,
   "hassio_api": true,
   "hassio_role": "manager",

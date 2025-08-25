@@ -9,7 +9,6 @@
     "aarch64"
   ],
   "init": false,
-  "ingress": true,
   "image": "ghcr.nju.edu.cn/desmond-dong/k2fsa/k2fsa-{arch}",
   "ports": {
     "6006/tcp": 6006,
