@@ -17,9 +17,8 @@
   "name": "WIP - Collabora",
   "options": {
     "aliasgroup1": "",
-    "dictionaries": "",
     "domain": "",
-    "extra_params": "",
+    "extra_params": "--o:ssl.enable=false --o:user_interface.use_integration_theme=false --o:net.proto=IPv4",
     "password": "",
     "username": ""
   },
@@ -31,14 +30,15 @@
   },
   "schema": {
     "TZ": "str?",
-    "aliasgroup1": "str?",
+    "aliasgroup1": "str",
     "dictionaries": "str?",
     "domain": "str?",
     "extra_params": "str?",
-    "password": "password?",
-    "username": "str?"
+    "password": "password",
+    "username": "str"
   },
   "slug": "collabora",
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "25.4.5"
+  "version": "25.4.5-3",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:9980]/browser/dist/admin/admin.html"
 }
