@@ -22,24 +22,24 @@ Collabora Online 是一个基于 LibreOffice 技术的协作办公套件。
 
 ## 配置
 
-Web UI 可以在 <http://homeassistant:9980> 或通过 Ingress 访问。
+Webui 可以在 <http://homeassistant:9980> 或通过 Ingress 访问。
 
 ### 选项
 
-配置插件以允许从您的 Nextcloud 实例访问：
+配置插件以允许从你的 Nextcloud 实例访问：
 
 - `domain`: 匹配 Nextcloud 主机的正则表达式（例如 `cloud\\.example\\.com`）。
 - `username` 和 `password`: Collabora 管理控制台的可选凭证。
 - `aliasgroup1`: 允许 WOPI 连接的附加主机名。
 - `dictionaries`: 要安装的字典语言列表，空格分隔。
-- `extra_params`: 传递给 Collabora 启动脚本的附加参数。
+- `extra_params`: 传递给 Collabora 启动脚本的额外参数。
 
 ### 自定义脚本和环境变量
 
 此插件支持通过 `addon_config` 映射的自定义脚本和环境变量：
 
-- **自定义脚本**: 参考 [在插件中运行自定义脚本](https://github.com/alexbelgium/hassio-addons/wiki/Running-custom-scripts-in-Addons)
-- **环境变量**: 参考 [为您的插件添加环境变量](https://github.com/alexbelgium/hassio-addons/wiki/Add-Environment-variables-to-your-Addon)
+- **自定义脚本**: 查看 [在插件中运行自定义脚本](https://github.com/alexbelgium/hassio-addons/wiki/Running-custom-scripts-in-Addons)
+- **环境变量**: 查看 [向你的插件添加环境变量](https://github.com/alexbelgium/hassio-addons/wiki/Add-Environment-variables-to-your-Addon)
 
 ## 支持
 

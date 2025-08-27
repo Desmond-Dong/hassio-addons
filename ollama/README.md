@@ -1,6 +1,6 @@
-# Ollama Addon for Home Assistant
+# Ollama 扩展程序 for Home Assistant
 
-请注意，此插件使用 CPU 加速或实验性 Nvidia GPU 支持（如果它对您有效，请报告！）对于 ROCm 的支持仍然悬而未决。
+请注意，此扩展程序使用 CPU 加速或实验性 Nvidia GPU 支持（如果您能正常使用，请报告！）。对于 ROCm，支持仍然在等待中。
 
 ## 模型目录
 
@@ -8,7 +8,7 @@
 
 ## Ollama 集成
 
-要下载任何模型，请使用 Ollama 的 API 或通过 Home Assistant 集成 [Ollama](https://www.home-assistant.io/integrations/ollama/) 进行集成：
+要下载任何模型，请使用 Ollama 的 API 或与 Home Assistant 集成 [Ollama](https://www.home-assistant.io/integrations/ollama/)：
 
 [![添加 Ollama 集成](https://my.home-assistant.io/badges/brand.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=ollama)
 
@@ -16,7 +16,7 @@
 
 - URL: `http://76e18fb5-ollama:11434`
 
-如果您想更改模型，请删除集成（不是插件！）并重新启动集成配置的过程。
+如果您想更改模型，请删除集成（不是扩展程序！）并重新启动集成配置过程。
 
 ## UI 链接的说明
 

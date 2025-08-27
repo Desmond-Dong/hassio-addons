@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "为家庭用户设计的库存和组织系统。",
+  "description": "[老王杂谈说]：为家庭用户构建的库存和分类系统",
   "environment": {
     "HBOX_STORAGE_DATA": "/config",
     "HBOX_STORAGE_SQLITE_URL": "/config/homebox.db?_fk=1"
@@ -12,7 +12,7 @@
   "map": [
     "addon_config:rw"
   ],
-  "version": "0.20.2",
+  "version": "0.21.0",
   "name": "Homebox",
   "options": {
     "HBOX_OPTIONS_ALLOW_REGISTRATION": "true"
@@ -28,7 +28,7 @@
   },
   "slug": "homebox",
   "startup": "services",
-  "upstream": "0.20.2",
+  "upstream": "0.21.0",
   "url": "https://ghfast.top/github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:7745]",
   "ingress": false,

@@ -32,7 +32,7 @@ init: false
 startup: services
 name: ESPHome Device Builder (beta)
 panel_title: ESPHome Builder (beta)
-version: 2025.8.0
+version: 2025.8.1
 slug: esphome-beta
 description: '[老王杂谈说]：ESPHome设备构建器的Beta版本'
 image: ghcr.nju.edu.cn/esphome/esphome-hassio

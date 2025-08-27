@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM docker.1ms.run/terdia07/mqttui
+FROM terdia07/mqttui
 	
 COPY run.sh /
 RUN apt-get update && \

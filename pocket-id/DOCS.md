@@ -2,9 +2,9 @@
 
 ## 概述
 
-[Pocket ID](https://pocket-id.org/) 是一个简单易用的 **OIDC（OpenID Connect）提供程序**，它支持使用密钥进行身份验证。它允许您的服务无缝且安全地进行用户身份验证，而无需依赖传统密码。
+[Pocket ID](https://pocket-id.org/) 是一个简单易用的 **OIDC（OpenID Connect）提供者**，它允许使用密钥进行身份验证。它允许您的服务无缝且安全地进行用户身份验证，而无需依赖传统密码。
 
-此扩展作为 Home Assistant 扩展运行，在您的网络中提供**身份提供程序**。
+此扩展作为 Home Assistant 扩展运行，在您的网络中提供 **身份提供者**。
 
 ## 支持的架构
 
@@ -26,7 +26,7 @@ TRUST_PROXY: true
 
 ### 选项：`APP_URL`
 
-`APP_URL` 选项设置 Pocket ID 实例的公开 URL。这必须是 HTTPS，并且客户端可以访问它以正确进行身份验证。
+`APP_URL` 选项设置 Pocket ID 实例的面向公众的 URL。这必须是 HTTPS 并且客户端可以访问，以便身份验证正常工作。
 
 ### 选项：`TRUST_PROXY`
 
@@ -41,13 +41,13 @@ MaxMind GeoIP 数据库集成的可选许可证密钥。如果提供，它将启
 1. **在 Home Assistant 中安装扩展**。
 2. **根据需要配置**选项，通过扩展设置。
 3. **启动扩展**以启动 Pocket ID。
-4. **使用配置的 `APP_URL`** 以与您的 OIDC 兼容应用程序集成。
+4. **使用配置的 `APP_URL`** 来与您的 OIDC 兼容应用程序集成。
 
 ## 故障排除
 
-- 确保 `APP_URL` 已正确设置并可访问。
+- 确保 `APP_URL` 设置正确且可访问。
 - 如果使用反向代理，将 `TRUST_PROXY` 设置为 `true` 以避免身份验证问题。
-- 如果需要地理位置功能，请获取并配置 MaxMind 许可证密钥。
+- 如果需要地理位置功能，获取并配置 MaxMind 许可证密钥。
 
 ## 更多信息
 

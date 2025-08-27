@@ -7,7 +7,7 @@
     "i386"
   ],
   "boot": "auto",
-  "description": "TriliumNext Notes是一款注重构建大型个人知识库的层次化笔记应用程序。",
+  "description": "[老王杂谈说]：TriliumNext Notes是一款以构建大型个人知识库为重点的层级式笔记应用。",
   "environment": {
     "TRILIUM_DATA_DIR": "/config"
   },
@@ -25,11 +25,11 @@
   "schema": {},
   "slug": "triliumnext",
   "startup": "services",
-  "upstream": "v0.95.0",
+  "upstream": "v0.98.0",
   "url": "https://ghfast.top/github.com/jdeath/homeassistant-addons",
-  "version": "v0.95.0",
+  "version": "v0.98.0",
   "ingress": false,
   "ingress_port": 8080,
-  "image": "triliumnext/notes",
+  "image": "triliumnext/trilium",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]"
 }
