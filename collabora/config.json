@@ -14,7 +14,7 @@
   "map": [
     "addon_config:rw"
   ],
-  "name": "WIP - Collabora",
+  "name": "Collabora",
   "options": {
     "aliasgroup1": "",
     "domain": "",
@@ -31,14 +31,16 @@
   "schema": {
     "TZ": "str?",
     "aliasgroup1": "str",
+    "cert_domain": "bool?",
+    "server_name": "str?",
     "dictionaries": "str?",
-    "domain": "str?",
+    "domain1": "str?",
     "extra_params": "str?",
     "password": "password",
     "username": "str"
   },
   "slug": "collabora",
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "25.4.5-3",
+  "version": "25.4.5-5",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:9980]/browser/dist/admin/admin.html"
 }

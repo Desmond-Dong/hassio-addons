@@ -1,9 +1,8 @@
----
-version: 2.7.2
-slug: mariadb
 name: MariaDB
+slug: mariadb
+version: 1.0.5
 description: '[老王杂谈说]：一个SQL数据库服务器'
-url: https://ghfast.top/github.com/home-assistant/addons/tree/master/mariadb
+url: https://ghfast.top/github.com/erik73/hassio-addons
 arch:
   - armhf
   - armv7
@@ -12,7 +11,7 @@ arch:
   - i386
 backup_post: unlock-tables-for-backup
 backup_pre: lock-tables-for-backup
-image: docker.1ms.run/homeassistant/{arch}-addon-mariadb
+image: ghcr.nju.edu.cn/erik73/mariadb/{arch}
 init: false
 options:
   databases:
@@ -34,7 +33,7 @@ schema:
   rights:
     - database: str
       privileges:
-        - "list(ALTER|CREATE|CREATE ROUTINE|CREATE TEMPORARY TABLES|CREATE VIEW|DELETE|DELETE HISTORY|DROP|EVENT|GRANT OPTION|INDEX|INSERT|LOCK TABLES|SELECT|SHOW VIEW|TRIGGER|UPDATE)?"
+        - list(ALTER|CREATE|CREATE ROUTINE|CREATE TEMPORARY TABLES|CREATE VIEW|DELETE|DELETE HISTORY|DROP|EVENT|GRANT OPTION|INDEX|INSERT|LOCK TABLES|SELECT|SHOW VIEW|TRIGGER|UPDATE)?
       username: str
   mariadb_server_args:
     - str?
