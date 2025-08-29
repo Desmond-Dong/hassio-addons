@@ -1,12 +1,17 @@
 ARG BUILD_FROM
-FROM python:slim
+FROM python:3.12-alpine
+#FROM python:slim
 
-
-RUN apt-get update -y && \
-	apt-get install -y git jq --no-install-recommends && \
+RUN apk add --no-cache bash git jq && \
 	mkdir /app && cd /app && \
 	git clone --depth=1 https://ghfast.top/github.com/jdeath/CheckRoyalCaribbeanPrice.git ./ && \
 	pip install --no-cache-dir --root-user-action=ignore requests Apprise bs4
+
+#RUN apt-get update -y && \
+#	apt-get install -y git jq --no-install-recommends && \
+#	mkdir /app && cd /app && \
+#	git clone --depth=1 https://ghfast.top/github.com/jdeath/CheckRoyalCaribbeanPrice.git ./ && \
+#	pip install --no-cache-dir --root-user-action=ignore requests Apprise bs4
 
 ENV PYTHONUNBUFFERED=1
 WORKDIR /app
