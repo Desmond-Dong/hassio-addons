@@ -1,5 +1,5 @@
 name: Z-Wave JS UI
-version: 5.0.0
+version: 5.1.0
 slug: zwavejs2mqtt
 description: '[老王杂谈说]：完全可配置的Z-Wave JS网关和控制面板'
 url: https://ghfast.top/github.com/hassio-addons/addon-zwave-js-ui

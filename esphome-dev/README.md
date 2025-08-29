@@ -1,4 +1,4 @@
-# ESPHome 设备构建器（开发分支）
+# ESPHome Device Builder (开发分支)
 
 [![ESPHome logo][logo]][website]
 
@@ -7,7 +7,7 @@
 
 ## 关于
 
-这个附加功能允许您编写配置，并通过 Home Assistant 将您的微控制器直接转换为智能家居设备，**无需编程经验**。您需要做的是编写 YAML 配置文件；其余的（空中更新、编译）都由 ESPHome 处理。
+这个插件允许您编写配置，并通过 Home Assistant 将您的微控制器直接变成智能家居设备，**无需编程经验**。您只需要编写 YAML 配置文件；其余（空中更新、编译）均由 ESPHome 处理。
 
 <p align="center">
 <img title="ESPHome Device Builder 截图" src="https://github.com/esphome/home-assistant-addon/raw/main/esphome-dev/images/screenshot.png" width="700px"></img>

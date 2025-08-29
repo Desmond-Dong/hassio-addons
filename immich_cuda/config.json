@@ -6,7 +6,7 @@
     "**/machine-learning/*"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "[老王杂谈说]：从您的手机直接进行自托管照片和视频备份解决方案",
+  "description": "[老王杂谈说]：从您的手机直接获取自托管照片和视频备份解决方案",
   "devices": [
     "/dev/dri",
     "/dev/dxg",
@@ -147,7 +147,7 @@
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
   "usb": true,
-  "version": "1.139.3",
+  "version": "1.139.4",
   "video": true,
   "webui": "http://[HOST]:[PORT:8080]"
 }
