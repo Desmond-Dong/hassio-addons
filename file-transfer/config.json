@@ -10,7 +10,6 @@
   "boot": "auto",
   "host_network": true,
   "image": "ghcr.nju.edu.cn/desmond-dong/file-transfer/file-transfer-{arch}",
-  "ingress": true,
   "ports": {
     "8080/tcp": 8080
   }
