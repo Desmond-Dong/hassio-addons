@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "用于整理您的immich库的电动工具",
+  "description": "[老王杂谈说]：用于组织你的immich库的电动工具",
   "hassio_api": true,
   "image": "ghcr.nju.edu.cn/alexbelgium/immich_power_tools-{arch}",
   "init": false,
@@ -32,6 +32,6 @@
   },
   "slug": "immich_power_tools",
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "0.17.0",
+  "version": "0.18.0",
   "webui": "http://[HOST]:[PORT:3000]"
 }

@@ -13,4 +13,3 @@ if [ -d /homeassistant/addons_config/calibre-web ] && [ ! -L /homeassistant/addo
     fi
     rm -r /homeassistant/addons_config/calibre-web
 fi
-

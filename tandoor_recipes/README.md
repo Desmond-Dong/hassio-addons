@@ -1,4 +1,4 @@
-# Hass.io 添加组件：Tandoor 食谱
+# Hass.io 添加组件：Tandoor 配方
 
 [![捐赠][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
 [![捐赠][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
@@ -14,22 +14,22 @@
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_感谢所有给我的仓库点赞的人！点击下面的图片点赞，它将出现在右上角。谢谢！_
+_感谢所有给我的仓库点赞的人！要点赞，请点击下面的图片，然后它会在右上角。谢谢！_
 
-[![@alexbelgium/hassio-addons 的星标者仓库列表](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
+[![@alexbelgium/hassio-addons 的星标者仓库名册](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
-![下载趋势](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/tandoor_recipes/stats.png)
+![下载量趋势](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/tandoor_recipes/stats.png)
 
 ## 关于
 
-[Tandoor 食谱](https://github.com/TandoorRecipes/recipes)，由 [vabene1111](https://github.com/vabene1111) 制作，旨在供那些拥有食谱集合并希望与家人和朋友分享或以整齐的方式存储的人使用。存在基本的权限系统，但此应用程序不打算作为公共页面运行。
+[Tandoor 配方](https://github.com/TandoorRecipes/recipes)，由 [vabene1111](https://github.com/vabene1111) 制作，旨在为那些想要与家人和朋友分享配方集或简单以整齐的方式存储它们的人。存在基本的权限系统，但此应用程序并非设计为公共页面的运行。
 
 ## 配置
 
-Webui 可以在 <http://homeassistant:PORT> 或通过使用入口在侧边栏中找到。
-配置可以通过应用 webUI 进行，除了以下选项。
+Webui 可在 <http://homeassistant:PORT> 或通过侧边栏使用入口找到。
+配置可以通过应用 WebUI 进行，但以下选项除外。
 
-对于入口支持，请参阅：https://community.home-assistant.io/t/ingress-access-for-tandoor-recipes/717859
+有关入口支持的更多信息，请参阅：https://community.home-assistant.io/t/ingress-access-for-tandoor-recipes/717859
 完整文档：https://docs.tandoor.dev/install/docker/
 
 ### 选项
@@ -40,7 +40,7 @@ Webui 可以在 <http://homeassistant:PORT> 或通过使用入口在侧边栏中
 | `ALLOWED_HOSTS` | 字符串 | | **必需**：用于入口的逗号分隔的 Home Assistant URL |
 | `DB_TYPE` | 列表 | `sqlite` | 数据库类型（sqlite 或 postgresql_external） |
 | `DEBUG` | 列表 | `0` | 调试模式（0=正常，1=调试） |
-| `externalfiles_folder` | 字符串 | | 用于外部食谱文件导入的文件夹 |
+| `externalfiles_folder` | 字符串 | | 用于外部配方文件导入的文件夹 |
 | `POSTGRES_HOST` | 字符串 | | PostgreSQL 主机（postgresql_external 所需） |
 | `POSTGRES_PORT` | 字符串 | | PostgreSQL 端口（postgresql_external 所需） |
 | `POSTGRES_USER` | 字符串 | | PostgreSQL 用户名（postgresql_external 所需） |
@@ -70,14 +70,14 @@ externalfiles_folder: "/config/addons_config/tandoor_recipes/externalfiles"
 
 ## 安装
 
-此添加组件的安装非常简单，与安装任何其他 Hass.io 添加组件没有区别。
+此添加组件的安装非常简单，与其他 Hass.io 添加组件的安装方式相同。
 
-1. [将我的 Hass.io 添加组件仓库][repository]添加到您的 Hass.io 实例。
-1. 安装此添加组件。
-1. 点击 `保存` 按钮以存储您的配置。
-1. 启动添加组件。
-1. 检查添加组件的日志，以查看是否一切正常。
-1. 仔细配置添加组件以满足您的偏好，请参阅官方文档进行配置。
+1. 将我的 Hass.io 添加组件仓库 [repository] 添加到您的 Hass.io 实例。
+2. 安装此添加组件。
+3. 点击 `保存` 按钮以保存您的配置。
+4. 启动添加组件。
+5. 检查添加组件的日志，看看是否一切顺利。
+6. 仔细配置添加组件以符合您的偏好，请参阅官方文档进行配置。
 
 ## 支持
 
@@ -89,6 +89,6 @@ externalfiles_folder: "/config/addons_config/tandoor_recipes/externalfiles"
 
 [repository]: https://github.com/alexbelgium/hassio-addons
 
-## 外部食谱文件
-目录 /config/addons_config/tandoor_recipes/externalfiles 可用于将外部文件导入 Tandoor。您可以将此映射到 Docker 中的 /opt/recipes/externalfiles。
-按照此处指示：https://docs.tandoor.dev/features/external_recipes/
+## 外部配方文件
+目录 /config/addons_config/tandoor_recipes/externalfiles 可用于将外部文件导入 Tandoor。您可以将其映射到 Docker 中的 /opt/recipes/externalfiles。
+按照这里的指示：https://docs.tandoor.dev/features/external_recipes/
