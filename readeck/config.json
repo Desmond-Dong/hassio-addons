@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "一个简单的网络应用程序，让您可以保存您喜欢并想要永远保留的网页的有价值的可读内容。",
+  "description": "[老王杂谈说]：一个简单的网络应用程序，让你可以保存你喜欢的网页上宝贵且可读的内容，并希望永远保存下来。",
   "environment": {
     "READECK_SERVER_HOST": "0.0.0.0"
   },
@@ -12,7 +12,7 @@
     "addon_config:rw"
   ],
   "init": "false",
-  "version": "0.19.2",
+  "version": "0.20.0",
   "name": "readeck",
   "options": {},
   "ports": {
