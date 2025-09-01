@@ -1,3 +1,7 @@
+## 2.4-4 (01-09-2025)
+- Minor bugs fixed
+## 2.4-3 (01-09-2025)
+- Minor bugs fixed
 ## 2.4-2 (15-07-2025)
 
 - Minor bugs fixed

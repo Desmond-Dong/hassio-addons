@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "银弹（SB）是一个可扩展的开源个人知识平台。",
+  "description": "[老王杂谈说]：Silver Bullet (SB) 是一个可扩展的开源个人知识平台",
   "environment": {
     "SB_FOLDER": "/config/",
     "PUID": "0",
@@ -13,7 +13,7 @@
   "map": [
     "addon_config:rw"
   ],
-  "version": "0.10.4",
+  "version": "2.0.0",
   "name": "silverbullet",
   "ports": {
     "3000/tcp": "3000"
@@ -29,7 +29,7 @@
   },
   "slug": "silverbullet",
   "startup": "services",
-  "upstream": "0.10.4",
+  "upstream": "2.0.0",
   "url": "https://ghfast.top/github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:3000]",
   "ingress": false,

@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "管理你的个人锻炼、体重和饮食计划",
+  "description": "[老王杂谈说]：管理你的个人锻炼、体重和饮食计划",
   "image": "ghcr.nju.edu.cn/alexbelgium/wger-{arch}",
   "map": [
     "share:rw",
@@ -27,6 +27,6 @@
   "slug": "wger",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "2.4-2",
+  "version": "2.4-4",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:80]"
 }
