@@ -37,7 +37,7 @@ ENV SYNC_EXERCISES_ON_STARTUP=True \
 USER root
 
 RUN echo "wger ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
-    sed -i "1a sudo -E '/./ha_entrypoint.sh' || true" /home/wger/entrypoint.sh
+    sed -i "1a sudo -E /./ha_entrypoint.sh && sudo -E chown wger /.env && source /.env" /home/wger/entrypoint.sh
 
 ##################
 # 3 Install apps #
@@ -77,9 +77,13 @@ ADD "https://ghfast.top/raw.githubusercontent.com/alexbelgium/hassio-addons/mast
 ADD "https://ghfast.top/raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_entrypoint_modif.sh" "/ha_entrypoint_modif.sh"
 RUN chmod 777 /ha_entrypoint.sh /ha_entrypoint_modif.sh && /ha_entrypoint_modif.sh && rm /ha_entrypoint_modif.sh
 
+# Standalone bashio command
+ADD "https://ghfast.top/raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/bashio-standalone.sh" "/.bashio-standalone.sh"
+RUN chmod 777 /.bashio-standalone.sh
 
 USER wger
-#CMD [ "/ha_entrypoint.sh" ]
+#ENTRYPOINT ["/usr/bin/env"]
+#CMD ["/ha_entrypoint.sh"]
 
 ############
 # 5 Labels #

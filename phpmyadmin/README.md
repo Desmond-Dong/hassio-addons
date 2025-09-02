@@ -8,13 +8,13 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-一个用于官方 MariaDB 插件的网页界面。
+一个用于官方 MariaDB add-on 的网页界面。
 
 ## 关于
 
-phpMyAdmin 是一个用于 MySQL & MariaDB 的数据库管理工具。常见的操作（如管理数据库、表、列、关系、索引、用户、权限等）可以通过用户界面进行，同时您仍然可以直接执行任何 SQL 语句。
+phpMyAdmin 是一个用于 MySQL & MariaDB 的数据库管理工具。常用的操作（管理数据库、表、列、关系、索引、用户、权限等）可以通过用户界面进行，同时您仍然可以直接执行任何 SQL 语句。
 
-这个插件是专门设计用来管理官方 Home Assistant MariaDB 插件的。
+这个 add-on 是专门设计用来管理官方 Home Assistant MariaDB add-on 的。
 
 ![phpMyAdmin 截图][screenshot]
 

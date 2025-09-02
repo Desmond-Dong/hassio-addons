@@ -26,7 +26,7 @@ _Thanks to everyone having starred my repo! To star it click on the image below,
 
 Self-hosted photo and video backup solution directly from your mobile phone. This is the NoML (No Machine Learning) variant of Immich designed for systems without machine learning capabilities or users who prefer to disable ML features for performance or resource management reasons.
 
-This add-on is based on the [docker image](https://github.com/imagegenius/docker-immich) from imagegenius with machine learning components excluded to reduce resource consumption and improve compatibility with resource-constrained systems.
+This addon is based on the [docker image](https://github.com/imagegenius/docker-immich) from imagegenius with machine learning components excluded to reduce resource consumption and improve compatibility with resource-constrained systems.
 
 ## Use Cases
 
@@ -88,14 +88,14 @@ MACHINE_LEARNING_WORKER_TIMEOUT: 120
 
 ### Mounting Drives
 
-This add-on supports mounting both local drives and remote SMB shares:
+This addon supports mounting both local drives and remote SMB shares:
 
 - **Local drives**: See [Mounting Local Drives in Addons](https://github.com/alexbelgium/hassio-addons/wiki/Mounting-Local-Drives-in-Addons)
 - **Remote shares**: See [Mounting Remote Shares in Addons](https://github.com/alexbelgium/hassio-addons/wiki/Mounting-remote-shares-in-Addons)
 
 ### Custom Scripts and Environment Variables
 
-This add-on supports custom scripts and environment variables through the `addon_config` mapping:
+This addon supports custom scripts and environment variables through the ` addon_config` mapping:
 
 - **Custom scripts**: See [Running Custom Scripts in Addons](https://github.com/alexbelgium/hassio-addons/wiki/Running-custom-scripts-in-Addons)
 - **Environment variables**: See [Add Environment Variables to your Addon](https://github.com/alexbelgium/hassio-addons/wiki/Add-Environment-variables-to-your-Addon)

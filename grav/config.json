@@ -4,7 +4,7 @@
     "amd64"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "快速、简单和灵活的基于文件的Web平台。",
+  "description": "[老王杂谈说]：快速、简单、灵活，基于文件的Web平台",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -94,6 +94,6 @@
   "slug": "grav",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons",
-  "version": "1.7.48",
+  "version": "1.7.49.2",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:80]"
 }
