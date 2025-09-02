@@ -1,5 +1,5 @@
 name: phpMyAdmin
-version: 1.0.4
+version: 0.12.0
 slug: phpmyadmin
 description: '[老王杂谈说]：官方MariaDB插件的网页界面'
 url: https://ghfast.top/github.com/hassio-addons/addon-phpmyadmin
@@ -18,4 +18,4 @@ hassio_api: true
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   upload_limit: int?
-image: ghcr.nju.edu.cn/erik73/phpmyadmin/{arch}
+image: ghcr.nju.edu.cn/hassio-addons/phpmyadmin/{arch}

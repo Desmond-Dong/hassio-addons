@@ -3,11 +3,13 @@
 ############################
 # Change database location #
 ############################
+echo "... set database path"
 sed -i "s|/home/wger/db/database.sqlite|/data/database.sqlite|g" /home/wger/src/settings.py
 
 #####################
 # Adapt directories #
 #####################
+echo "... create directories"
 mkdir -p /data/static
 if [ -d /home/wger/static ]; then
     if [ -n "$(ls -A /home/wger/static 2> /dev/null)" ]; then
@@ -29,12 +31,13 @@ ln -s /data/media /home/wger
 #####################
 # Align permissions #
 #####################
+echo "... align permissions"
 (
     set -o posix
     export -p
 ) > /data/env.sh
-chown -R 1000:1000 /data
-chown -R 1000:1000 /home/wger
+chown -R wger /data
+chown -R wger /home/wger
 chmod -R 777 /data
 
 bashio::log.info "Starting nginx"
@@ -42,4 +45,3 @@ nginx || true &
 true
 
 bashio::log.info "Starting entrypoint"
-su -p -s /bin/bash wger -c "/home/wger/entrypoint.sh"

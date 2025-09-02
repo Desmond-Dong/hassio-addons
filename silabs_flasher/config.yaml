@@ -1,8 +1,8 @@
 ---
-version: 0.3.3
+version: 0.3.4
 slug: silabs_flasher
 name: Silicon Labs Flasher
-description: '[老王杂谈说]：硅 Labs固件烧录器插件'
+description: '[老王杂谈说]：Silicon Labs 固件刷新器附加程序'
 url: >
   https://ghfast.top/github.com/home-assistant/addons/tree/master/silabs_flasher
 
@@ -19,7 +19,6 @@ init: false
 options:
   device: null
   bootloader_baudrate: "115200"
-  ezsp_baudrate: null
   flow_control: true
   verbose: false
 schema:
