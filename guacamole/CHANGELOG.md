@@ -1,3 +1,9 @@
+## 1.6.0-7 (02-09-2025)
+- Minor bugs fixed
+## 1.6.0-6 (02-09-2025)
+- Minor bugs fixed
+## 1.6.0-5 (02-09-2025)
+- Minor bugs fixed
 ## 1.6.0-4 (24-07-2025)
 - Minor bugs fixed
 ## 1.6.0-3 (24-07-2025)

@@ -1,10 +1,9 @@
-## ⚠️ Open Issue : [🐛 [Guacamole] fresh install fails - can't start postgres (opened 2025-07-24)](https://github.com/alexbelgium/hassio-addons/issues/1976) by [@pietro4711](https://github.com/pietro4711)
-# Home assistant add-on: guacamole
+# Home assistant add-on: Guacamole
 
 [![Donate][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
 [![Donate][paypal-badge]](https://www.paypal.com/donate/?hosted_button_id=DZFULJZTP3UQA)
 
-![Version](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fguacamole%2Fconfig.json)
+![Version](https://img.shields.io/badge/dynamic/json?label=版本&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fguacamole%2Fconfig.json)
 ![Ingress](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fguacamole%2Fconfig.json)
 ![Arch](https://img.shields.io/badge/dynamic/json?color=success&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fguacamole%2Fconfig.json)
 
@@ -15,50 +14,75 @@
 [donation-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20(no%20paypal)-%23d32f2f?logo=buy-me-a-coffee&style=flat&logoColor=white
 [paypal-badge]: https://img.shields.io/badge/Buy%20me%20a%20coffee%20with%20Paypal-0070BA?logo=paypal&style=flat&logoColor=white
 
-_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+_感谢所有给我的仓库点赞的人！要点赞，请点击下面的图片，然后它将出现在右上角。谢谢！_
 
 [![Stargazers repo roster for @alexbelgium/hassio-addons](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.github/stars2.svg)](https://github.com/alexbelgium/hassio-addons/stargazers)
 
-![downloads evolution](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/guacamole/stats.png)
+![下载趋势](https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/guacamole/stats.png)
 
-## About
+## 关于
 
-[Apache Guacamole](https://guacamole.apache.org/) 是一种无客户端的远程桌面网关。它支持标准协议，如 VNC、RDP 和 SSH。这个容器只是使用官方或第三方 HTML5 前端所需的后端服务器组件。
+[Apache Guacamole](https://guacamole.apache.org/) 是一个无客户端的远程桌面网关，支持标准协议如 VNC、RDP 和 SSH。它提供了一个基于 Web 的界面，用于访问远程系统，而用户无需在其设备上安装任何客户端软件。Guacamole 作为代理，在基于 Web 的前端和实际的远程桌面协议之间进行翻译。
 
-这个插件基于以下 Docker 镜像：https://github.com/abesnier/docker-guacamole
+此插件结合了 Guacamole 服务器（guacd）和 Web 应用组件，并集成了 PostgreSQL 数据库，用于存储连接配置和用户管理。该解决方案提供了一个完整的远程桌面网关，可以通过 Web 浏览器从任何地方安全地访问计算机和服务器。
 
-## Configuration
+此插件基于以下 docker 镜像：https://github.com/abesnier/docker-guacamole
 
-Web UI 可以在 <http://homeassistant:8080> 找到。
+## 配置
 
-默认用户名是 guacadmin，密码是 guacadmin。
+Web 界面可以在 `<你的 IP>:8080` 或通过 Ingress 在侧边栏中找到。
 
-插件选项：
+默认用户名是 `guacadmin`，密码是 `guacadmin`。强烈建议在首次登录后立即更改此密码。
+
+### 选项
+
+| 选项 | 类型 | 默认值 | 描述 |
+|------|------|--------|------|
+| `EXTENSIONS` | str | `auth-totp` | 启用 Guacamole 扩展（例如，`auth-totp`） |
+| `TZ` | str | | 时区（例如，`Europe/London`） |
+
+### 示例配置
 
 ```yaml
-EXTENSIONS: auth-totp # see https://github.com/maxwaldorf/guacamole#enabling-extensions
-TZ: Europe/Paris # 设置特定时区
+EXTENSIONS: "auth-totp"
+TZ: "Europe/London"
 ```
 
-## Installation
+### 数据库设置
 
-这个插件的安装非常简单，与安装任何其他插件没有区别。
+此插件自动配置一个 PostgreSQL 数据库，用于存储 Guacamole 配置、用户和连接。数据库文件存储在 `/config/postgres` 中，并在首次启动时自动创建。
 
-1. 将我的插件仓库添加到您的 Home Assistant 实例中（在 Supervisor 插件商店的右上角，或者如果您已经配置了我的 HA，请点击下面的按钮）
-   [![打开您的 Home Assistant 实例并显示填充了特定仓库 URL 的添加插件仓库对话框。](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
-1. 安装这个插件。
-1. 点击 `Save` 按钮以保存您的配置。
-1. 根据您的偏好设置插件选项。
+### 自定义脚本和环境变量
+
+此插件通过 `addon_config` 映射支持自定义脚本和环境变量：
+
+- **自定义脚本**：参见 [在插件中运行自定义脚本](https://github.com/alexbelgium/hassio-addons/wiki/Running-custom-scripts-in-Addons)
+- **环境变量**：参见 [为你的插件添加环境变量](https://github.com/alexbelgium/hassio-addons/wiki/Add-Environment-variables-to-your-Addon)
+
+## 安装
+
+此插件的安装非常简单，与其他 Hass.io 插件安装没有区别。
+
+1. [将我的 Hass.io 插件仓库][repository] 添加到你的 Hass.io 实例。
+1. 安装此插件。
+1. 点击 `保存` 按钮以保存你的配置。
 1. 启动插件。
-1. 检查插件的日志以查看是否一切正常。
-1. 打开 Web UI 并调整软件选项
+1. 检查插件的日志，看看是否一切正常。
+1. 进入 Web 界面，使用默认凭证（`guacadmin`/`guacadmin`）登录。
+1. 立即更改默认密码以确保安全。
+1. 通过 Guacamole Web 界面配置你的远程连接。
 
-## Support
+## 设置
 
-在 GitHub 上创建问题
+安装并首次登录后：
 
-## Illustration
+1. **更改默认密码**：进入设置 → 用户 → guacadmin 并更改密码
+2. **创建连接**：使用 Web 界面添加到你的远程系统的 RDP、VNC 或 SSH 连接
+3. **配置扩展**：如果使用 TOTP 身份验证，请在用户设置中配置它
+4. **用户管理**：创建其他用户并根据需要分配连接权限
 
-![illustration](https://www.linuxserver.io/user/pages/content/images/2021/05/menu.png)
+## 支持
+
+在 [GitHub][repository] 上创建问题
 
 [repository]: https://github.com/alexbelgium/hassio-addons
