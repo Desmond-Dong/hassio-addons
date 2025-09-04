@@ -4,15 +4,11 @@
 
 [![Discord][discord-shield]][discord] [![Community Forum][forum-shield]][forum]
 
-Looks and smells like Sonarr but made for music.
+看起来像Sonarr，但专为音乐设计。
 
-## About
+## 关于
 
-[Lidarr] is a music collection manager for Usenet and BitTorrent users. It can
-monitor multiple RSS feeds for new tracks from your favorite artists and will
-grab, sort and rename them. It can also be configured to automatically upgrade
-the quality of files already downloaded when a better quality format becomes
-available.
+[Lidarr] 是一个用于Usenet和BitTorrent用户的音乐集合管理器。它可以监控多个RSS源以获取您最喜欢的艺术家的最新曲目，并将其抓取、排序和重命名。它还可以配置为在更好的质量格式可用时自动升级已下载文件的质量。
 
 [Lidarr]: https://lidarr.audio/
 
@@ -22,5 +18,5 @@ available.
 [forum]: https://community.home-assistant.io/t/?u=frenck
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
-[release-shield]: https://img.shields.io/badge/version-v0.12.0-blue.svg
-[release]: https://github.com/hassio-addons/addon-lidarr/tree/v0.12.0
+[release-shield]: https://img.shields.io/badge/version-v0.13.0-blue.svg
+[release]: https://github.com/hassio-addons/addon-lidarr/tree/v0.13.0
