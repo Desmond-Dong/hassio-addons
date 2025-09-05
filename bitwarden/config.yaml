@@ -1,21 +1,21 @@
 name: Vaultwarden (Bitwarden)
-version: 0.24.2
+version: 0.24.3
 slug: bitwarden
-description: Open source password management solution
+description: '[老王杂谈说]：开源密码管理解决方案'
 url: https://ghfast.top/github.com/hassio-addons/addon-bitwarden
 codenotary: codenotary@frenck.dev
 webui: '[PROTO:ssl]://[HOST]:[PORT:7277]'
 init: false
 arch:
-- aarch64
-- amd64
-- armv7
+  - aarch64
+  - amd64
+  - armv7
 ports:
   7277/tcp: 7277
 ports_description:
   7277/tcp: Vaultwarden Web interface
 map:
-- ssl
+  - ssl
 options:
   ssl: true
   certfile: fullchain.pem

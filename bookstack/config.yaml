@@ -1,19 +1,19 @@
 name: Bookstack
-version: 3.1.1
+version: 3.2.0
 slug: bookstack
-description: Simple & Free Wiki Software
+description: '[老王杂谈说]：简单免费维基软件'
 url: https://ghfast.top/github.com/hassio-addons/addon-bookstack
 codenotary: codenotary@frenck.dev
 webui: '[PROTO:ssl]://[HOST]:[PORT:80]'
 init: false
 arch:
-- aarch64
-- amd64
-- armv7
+  - aarch64
+  - amd64
+  - armv7
 services:
-- mysql:want
+  - mysql:want
 map:
-- ssl
+  - ssl
 ports:
   80/tcp: 2665
 ports_description:
@@ -36,6 +36,6 @@ schema:
   keyfile: str
   ssl: bool
   envvars:
-  - name: str
-    value: str
+    - name: str
+      value: str
 image: ghcr.nju.edu.cn/hassio-addons/bookstack/{arch}

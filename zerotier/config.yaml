@@ -1,34 +1,33 @@
 name: ZeroTier One
-version: 0.22.0
+version: 0.22.1
 slug: zerotier
-description: Radically simplify your network with a virtual networking layer that
-  works the same everywhere
+description: '[老王杂谈说]：用一种在任何地方都一样的虚拟网络层来彻底简化您的网络'
 url: https://ghfast.top/github.com/hassio-addons/addon-zerotier
 codenotary: codenotary@frenck.dev
 startup: services
 init: false
 arch:
-- aarch64
-- amd64
-- armv7
+  - aarch64
+  - amd64
+  - armv7
 ports:
   9993/tcp: 9993
 ports_description:
   9993/tcp: ZeroTier's primary port
 host_network: true
 privileged:
-- NET_ADMIN
-- SYS_ADMIN
+  - NET_ADMIN
+  - SYS_ADMIN
 devices:
-- /dev/net/tun
+  - /dev/net/tun
 map:
-- ssl:rw
+  - ssl:rw
 options:
   networks: []
   api_auth_token: ''
 schema:
   networks:
-  - str
+    - str
   api_auth_token: str
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
 image: ghcr.nju.edu.cn/hassio-addons/zerotier/{arch}

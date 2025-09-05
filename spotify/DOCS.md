@@ -1,35 +1,28 @@
 # Home Assistant Community Add-on: Spotify Connect
 
-The Home Assistant Spotify Connect add-on allows you to use your device,
-running Home Assistant, to play your Spotify music. This add-on uses the
-Spotify Connect protocol, which makes it a device that can be controlled
-by all the official clients.
+Home Assistant Spotify Connect插件允许您使用运行Home Assistant的设备来播放您的Spotify音乐。此插件使用Spotify Connect协议，使其成为一个可以被所有官方客户端控制的设备。
 
-For example; Running Home Assistant on a Raspberry Pi with this add-on
-installed will allow you to play your Spotify music on the Pi. So all you'll
-have to do is hook up your sound system to the Pi and start booming!
+例如；在Raspberry Pi上运行Home Assistant并安装此插件，将允许您在Pi上播放您的Spotify音乐。因此，您只需将您的音响系统连接到Pi并开始播放！
 
-## Installation
+## 安装
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
+此插件的安装非常直接，与安装任何其他Home Assistant插件没有区别。
 
-1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.
+1. 点击下面的Home Assistant My按钮以在您的Home Assistant实例中打开插件。
 
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
+   [![在您的Home Assistant实例中打开此插件][ addon-badge]][ addon]
 
-1. Click the "Install" button to install the add-on.
-1. Select your audio output device and hit `Save` on that as well.
-1. Start the "Spotify Connect" add-on.
-1. Check the logs of the "Spotify Connect" to see if everything went well.
-1. Ready to go!
+1. 点击“安装”按钮以安装插件。
+1. 选择您的音频输出设备，并在该设备上点击“保存”。
+1. 启动“Spotify Connect”插件。
+1. 检查“Spotify Connect”的日志，以查看一切是否正常。
+1. 准备就绪！
 
-## Configuration
+## 配置
 
-**Note**: _Remember to restart the add-on when the configuration is changed._
+**注意**：_更改配置时请记住重启插件。_
 
-Example add-on configuration:
+示例插件配置：
 
 ```yaml
 log_level: info
@@ -41,128 +34,99 @@ password: MySpotifyPassword
 autoplay: true
 ```
 
-**Note**: _This is just an example, don't copy and paste it! Create your own!_
+**注意**：_这只是个示例，不要复制粘贴！创建您自己的！_
 
-### Option: `log_level`
+### 选项：`log_level`
 
-The `log_level` option controls the level of log output by the addon and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
+`log_level`选项控制插件的日志输出级别，可以更改为更详细或更简洁，这在您遇到未知问题时可能很有用。可能的值有：
 
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`: Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
+- `trace`：显示所有细节，例如所有调用的内部函数。
+- `debug`：显示详细的调试信息。
+- `info`：正常（通常）有趣的事件。
+- `warning`：非错误的异常情况。
+- `error`：不需要立即处理的运行时错误。
+- `fatal`：发生了严重错误。插件变得无法使用。
 
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
+请注意，每个级别自动包含更严重级别的日志消息，例如，`debug`也会显示`info`消息。默认情况下，`log_level`设置为`info`，这是推荐设置，除非您正在调试。
 
-Setting the `log_level` to `debug` will also turn on debug mode on the
-Spotify service.
+将`log_level`设置为`debug`也会在Spotify服务中开启调试模式。
 
-### Option: `name`
+### 选项：`name`
 
-The name of your device (the Spotify Connect target), as shown on
-the official Spotify clients.
+您的设备名称（Spotify Connect目标），在官方Spotify客户端中显示。
 
-### Option: `bitrate`
+### 选项：`bitrate`
 
-The bitrate Spotify should use. The higher, the better the sound quality,
-however, the add-on consumes more data.
+Spotify应使用的比特率。越高，音质越好，但插件消耗的数据也越多。
 
-Valid values: `96`, `160` (default) or `320`.
+有效值：`96`，`160`（默认）或`320`。
 
-### Option: `initial_volume`
+### 选项：`initial_volume`
 
-Initial volume in % from 0-100. This setting takes effect when the addon starts or
-recovers from a crash.
+初始音量，范围从0-100%。此设置在插件启动或从崩溃中恢复时生效。
 
-initial_volume: 50 # Optional
+initial_volume: 50 # 可选
 
-### Option: `username`
+### 选项：`username`
 
-**IMPORTANT**: _This requires a Spotify Premium account!_
+**重要**：_这需要Spotify高级账户！_
 
-The username you use to login to your Spotify Premium account. Setting
-this will bind the add-on to your account exclusively.
+您用于登录Spotify高级账户的用户名。设置此选项将使插件专门绑定到您的账户。
 
-This can be helpful when experiencing discovery issues on your network or
-to disallow guests on your network to use the add-on.
+当您在网络中发现问题时，这会很有帮助，或者可以禁止网络上的访客使用此插件。
 
-### Option: `password`
+### 选项：`password`
 
-The password you use to login to your Spotify Premium account.
+您用于登录Spotify高级账户的密码。
 
-### Option: `autoplay`
+### 选项：`autoplay`
 
-Whether Spotify should autoplay similar songs when reaching the end of the queue.
+当播放队列结束时，Spotify是否应自动播放相似的歌曲。
 
-## Known issues and limitations
+## 已知问题和限制
 
-- This add-on requires a Spotify Premium account.
+- 此插件需要Spotify高级账户。
 
-## Changelog & Releases
+## 更改日志与发布
 
-This repository keeps a change log using [GitHub's releases][releases]
-functionality.
+此存储库使用GitHub的发布功能[发布日志]。
 
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
+发布基于[语义版本控制]，并使用`MAJOR.MINOR.PATCH`格式。简而言之，版本将根据以下内容增加：
 
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
+- `MAJOR`：不兼容或重大更改。
+- `MINOR`：向后兼容的新功能和增强。
+- `PATCH`：向后兼容的补丁和软件包更新。
 
-## Support
+## 支持
 
-Got questions?
+有问题？
 
-You have several options to get them answered:
+您有几个选项可以回答这些问题：
 
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- Home Assistant Community Add-ons Discord聊天服务器[discord]用于插件支持和功能请求。
+- Home Assistant Discord聊天服务器[discord-ha]用于一般Home Assistant讨论和问题。
+- Home Assistant社区论坛[forum]。
+- 加入Reddit的[Reddit子版块][reddit]在[/r/homeassistant][reddit]
 
-You could also [open an issue here][issue] GitHub.
+您还可以在GitHub上[打开一个问题][issue]。
 
-## Authors & contributors
+## 作者与贡献者
 
-The original setup of this repository is by [Franck Nijhof][frenck].
+此存储库的原始设置由[Franck Nijhof][frenck]完成。
 
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
+要查看所有作者和贡献者的完整列表，请查看[贡献者页面][contributors]。
 
-## License
+## 许可证
 
-MIT License
+MIT许可证
 
-Copyright (c) 2018-2025 Franck Nijhof
+版权所有（c）2018-2025 Franck Nijhof
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+特此免费授予任何人获取此软件及其相关文档文件（“软件”）副本的权限，可在软件中自由处理，包括但不限于使用、复制、修改、合并、发布、分发、再许可和/或销售软件副本的权限，并允许提供软件的人这样做，但须遵守以下条件：
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+上述版权声明和本许可声明应包含在软件的所有副本或重要部分中。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+软件按“原样”提供，不提供任何明示或暗示的保证，包括但不限于对适销性、特定用途适用性和非侵权性的保证。在任何情况下，作者或版权持有人均不对任何索赔、损害或其他责任负责，无论是因合同、侵权或其他行为引起的，均与软件的使用或其他交易有关。
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_spotify&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository

@@ -1,7 +1,7 @@
 name: AppDaemon
-version: 0.17.8
+version: 0.17.9
 slug: appdaemon
-description: '[老王杂谈说]：使用 AppDaemon 4.x 为 Home Assistant 创建 Python 应用和仪表板'
+description: '[老王杂谈说]：使用AppDaemon 4.x为Home Assistant创建Python应用和仪表板'
 url: https://ghfast.top/github.com/hassio-addons/addon-appdaemon
 codenotary: codenotary@frenck.dev
 webui: http://[HOST]:[PORT:5050]

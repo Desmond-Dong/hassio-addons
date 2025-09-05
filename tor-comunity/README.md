@@ -8,29 +8,22 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-Protect your privacy and access Home Assistant via Tor.
+保护您的隐私并通过Tor访问Home Assistant。
 
-## About
+## 关于
 
-This Tor add-on allows you to access you Home Assistant instance as an Onion site,
-trough [Tor's Hidden Service][tor-hidden-service] feature. With this feature
-enabled, you do not need to open your firewall ports or setup HTTPS to enable
-secure remote access.
+此Tor插件允许您将Home Assistant实例作为洋葱站点访问，
+通过[Tor的隐藏服务][tor-hidden-service]功能。启用此功能后，
+您无需打开防火墙端口或设置HTTPS即可启用安全的远程访问。
 
-This is useful if you want to have:
+如果您想要：
 
-- Access your Home Assistant instance remotely without opening a firewall port
-  or setting up a VPN.
-- Don’t want to or know how to get an SSL/TLS certificate and HTTPS
-  configuration setup.
-- Want to block attackers from even being able to access/scan your port and
-  server at all.
-- Want to block anyone from knowing your home IP address and seeing your
-  traffic to your Home Assistant.
+- 远程访问您的Home Assistant实例，而无需打开防火墙端口或设置VPN。
+- 没有想要或知道如何获取SSL/TLS证书和HTTPS配置。
+- 想要阻止攻击者甚至能够访问/扫描您的端口和服务器。
+- 想要阻止任何人知道您的家庭IP地址并看到您访问Home Assistant的流量。
 
-The add-on also offers the possibility to open a Sock proxy into the
-Tor network. Allowing you to access Tor from any of your (SOCKS supporting)
-applications through your Home Assistant installation.
+该插件还提供将Sock代理打开到Tor网络的可能性。允许您通过Home Assistant安装访问Tor，通过您的任何（支持SOCKS）应用程序。
 
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
@@ -42,6 +35,6 @@ applications through your Home Assistant installation.
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
 [patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[release-shield]: https://img.shields.io/badge/version-v6.1.1-blue.svg
-[release]: https://github.com/hassio-addons/addon-tor/tree/v6.1.1
+[release-shield]: https://img.shields.io/badge/version-v6.1.2-blue.svg
+[release]: https://github.com/hassio-addons/addon-tor/tree/v6.1.2
 [tor-hidden-service]: https://www.torproject.org/docs/hidden-services.html.en
