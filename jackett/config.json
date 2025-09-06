@@ -5,7 +5,7 @@
     "armv7"
   ],
   "codenotary": "alexandrep.github@gmail.com",
-  "description": "[老王杂谈说]：将应用程序（Sonarr、Sickrage、CouchPotato、Mylar等）中的查询翻译成特定跟踪站点的HTTP查询，解析HTML响应，然后将结果发送回请求软件",
+  "description": "[老王杂谈说]：将应用程序（Sonarr、Sickrage、CouchPotato、Mylar等）中的查询翻译成针对特定跟踪站点的HTTP查询，解析HTML响应，然后将结果发送回请求软件",
   "devices": [
     "/dev/dri",
     "/dev/dri/card0",
@@ -111,6 +111,6 @@
   "slug": "jackett_nas",
   "udev": true,
   "url": "https://ghfast.top/github.com/alexbelgium/hassio-addons/tree/master/jackett",
-  "version": "0.22.2367",
+  "version": "0.22.2429",
   "webui": "http://[HOST]:[PORT:9117]"
 }

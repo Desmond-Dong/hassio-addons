@@ -4,12 +4,12 @@
     "aarch64"
   ],
   "boot": "manual",
-  "description": "[老王杂谈说]：如果皇家加勒比附加产品或邮轮价格下降，自动接收通知",
+  "description": "[老王杂谈说]：如果皇家加勒比海附加产品或邮轮价格下降，自动接收通知",
   "environment": {},
   "map": [
     "addon_config:rw"
   ],
-  "version": "2.0",
+  "version": "2.1",
   "name": "Royal Caribbean Price Check",
   "ports": {},
   "ports_description": {},
